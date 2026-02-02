@@ -1,0 +1,155 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "appointmnests12",
+  "email" : [ ],
+  "flowDesc" : "appointmnests12",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/upload/view/test_flu_outreach.csv",
+        "tableProperties" : [ {
+          "tblName" : "flu_outreach",
+          "tblSize" : "6.06",
+          "tblRecordCount" : 333840
+        } ],
+        "tableNamesList" : {
+          "flu_outreach" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false,
+          "fileLocation" : "SFTP"
+        },
+        "jdbcData" : {
+          "connectionName" : "sftp",
+          "groupName" : "dev"
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/upload/view/appointments.csv",
+        "tableProperties" : [ {
+          "tblName" : "appointments",
+          "tblSize" : "22.63",
+          "tblRecordCount" : 274082
+        } ],
+        "tableNamesList" : {
+          "appointments" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false,
+          "fileLocation" : "SFTP"
+        },
+        "jdbcData" : {
+          "connectionName" : "sftp",
+          "groupName" : "dev"
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 763632389368,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "flu_outreach" : "appointments"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "PATIENTID" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "PATIENTID",
+          "destColumn" : "PATIENT_ID"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "PATIENTID",
+          "destColumn" : "PATIENT_ID"
+        }, {
+          "srcColumn" : "DEPARTMENTID",
+          "destColumn" : "DEPARTMENT_ID"
+        }, {
+          "srcColumn" : "USERID",
+          "destColumn" : "USER_ID"
+        }, {
+          "srcColumn" : "ORGANIZATION_ID",
+          "destColumn" : "ORGANIZATION_ID"
+        }, {
+          "srcColumn" : "EMR_PATIENT_ID",
+          "destColumn" : "EMR_PATIENT_ID"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"42a7a15c-22dd-444b-89f4-47062e0a5dd7\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":6.06,\"fileName\":\"\",\"filePath\":\"\",\"s3ToHdf\":\"\",\"sftpDataset\":true,\"sftpType\":\"sftp\",\"sftpFilePath\":\"/upload/view/test_flu_outreach.csv\",\"fileLocation\":\"SFTP\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"flu_outreach\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"PATIENTID\":\"10746305\",\"EMR_PATIENT_ID\":\"550528ce8361d5cf64a89962a0448706bc28af3e07def0728ab3342f977a6685\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"41985\",\"DEPARTMENTID\":\"11830\",\"LATEST_APPOINTMENT_ID\":\"67181352\",\"SRC_CREATED_AT\":\"33:17.5\",\"SRC_UPDATED_AT\":\"25:57.0\",\"STATUS\":\"Pending\",\"GENDER\":\"Female\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"50 to 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"},{\"PATIENTID\":\"9750275\",\"EMR_PATIENT_ID\":\"184a6d9f103afed465446ab56fb21cab89d9e539e00f84fcf2dfdb8aeb0ead02\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"27216\",\"DEPARTMENTID\":\"9461\",\"LATEST_APPOINTMENT_ID\":\"67249197\",\"SRC_CREATED_AT\":\"12:40.1\",\"SRC_UPDATED_AT\":\"41:14.1\",\"STATUS\":\"Pending\",\"GENDER\":\"Male\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"50 to 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"},{\"PATIENTID\":\"7429178\",\"EMR_PATIENT_ID\":\"4cf2c20695b14f08cddf4c990a615f433ea737ef080bd42c1a830ffcf2437bc7\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"20392\",\"DEPARTMENTID\":\"20500\",\"LATEST_APPOINTMENT_ID\":\"67687513\",\"SRC_CREATED_AT\":\"31:35.4\",\"SRC_UPDATED_AT\":\"02:19.3\",\"STATUS\":\"Pending\",\"GENDER\":\"Male\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"50 to 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"},{\"PATIENTID\":\"11759918\",\"EMR_PATIENT_ID\":\"18b804a420a3093343ead1a53b3e6634597fe009f4af5da3f392e6846f0d559e\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"25909\",\"DEPARTMENTID\":\"23139\",\"LATEST_APPOINTMENT_ID\":\"56704160\",\"SRC_CREATED_AT\":\"23:31.0\",\"SRC_UPDATED_AT\":\"12:33.2\",\"STATUS\":\"Pending\",\"GENDER\":\"Male\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"greater than 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"},{\"PATIENTID\":\"3749542\",\"EMR_PATIENT_ID\":\"074043f30cb682bb59e0bc03c4a1fa751d83a7b349ea6d434567f57d06296c85\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"15373\",\"DEPARTMENTID\":\"11242\",\"LATEST_APPOINTMENT_ID\":\"67682861\",\"SRC_CREATED_AT\":\"58:46.5\",\"SRC_UPDATED_AT\":\"49:44.0\",\"STATUS\":\"Pending\",\"GENDER\":\"Male\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"50 to 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"},{\"PATIENTID\":\"15213015\",\"EMR_PATIENT_ID\":\"98EWM95ct8tBYWroCxXYN9vCgN7NTcR6nUsvCx1mEdLZ06c92972c5b2fbacfb291095e65\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"31885\",\"DEPARTMENTID\":\"28153\",\"LATEST_APPOINTMENT_ID\":\"67697983\",\"SRC_CREATED_AT\":\"39:32.1\",\"SRC_UPDATED_AT\":\"22:19.1\",\"STATUS\":\"Pending\",\"GENDER\":\"Male\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"greater than 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"},{\"PATIENTID\":\"4351284\",\"EMR_PATIENT_ID\":\"2294f83b934793232c6b6037d9224ceb15967b7eafbe681c2925dd478565be40\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"17902\",\"DEPARTMENTID\":\"9271\",\"LATEST_APPOINTMENT_ID\":\"67511052\",\"SRC_CREATED_AT\":\"26:48.2\",\"SRC_UPDATED_AT\":\"36:38.1\",\"STATUS\":\"Pending\",\"GENDER\":\"Female\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"50 to 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"},{\"PATIENTID\":\"13378384\",\"EMR_PATIENT_ID\":\"169ac1e3dbb827f9f9e72896871beaa5e2bf9fd83a3dcb393462180609ea1aea\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"15372\",\"DEPARTMENTID\":\"9689\",\"LATEST_APPOINTMENT_ID\":\"67612008\",\"SRC_CREATED_AT\":\"04:41.2\",\"SRC_UPDATED_AT\":\"38:58.2\",\"STATUS\":\"Pending\",\"GENDER\":\"Male\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"50 to 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"},{\"PATIENTID\":\"4163132\",\"EMR_PATIENT_ID\":\"d68c9bf7e625493952eca13d5712920901d11b262dece8a63172dbdafc8cb9ac\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"18538\",\"DEPARTMENTID\":\"8330\",\"LATEST_APPOINTMENT_ID\":\"67246159\",\"SRC_CREATED_AT\":\"14:18.0\",\"SRC_UPDATED_AT\":\"33:48.5\",\"STATUS\":\"Pending\",\"GENDER\":\"Male\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"greater than 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"},{\"PATIENTID\":\"8048374\",\"EMR_PATIENT_ID\":\"8rdABs8nC2jTwVhR9axWW7WMbGZxW7JUzNV5pRF8KvQv0ec3ac20365620ea451ba9\",\"ORGANIZATION_ID\":\"154\",\"USERID\":\"20401\",\"DEPARTMENTID\":\"20500\",\"LATEST_APPOINTMENT_ID\":\"67687594\",\"SRC_CREATED_AT\":\"34:54.7\",\"SRC_UPDATED_AT\":\"02:29.6\",\"STATUS\":\"Pending\",\"GENDER\":\"Female\",\"TITLE\":\"Sanofi-Flu-2025-2026\",\"AGE_GROUP\":\"greater than 64\",\"PREVIOUS_OUTREACH_FLAG\":\"Never Outreached\",\"PREVIOUS_OUTREACH_STATUS\":\"Not Interacted\",\"CONTEXT\":\"{\"}],\"schema\":[{\"columnName\":\"PATIENTID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"EMR_PATIENT_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"ORGANIZATION_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"USERID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"DEPARTMENTID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"LATEST_APPOINTMENT_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"SRC_CREATED_AT\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"SRC_UPDATED_AT\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"APPOINTMENT_DATE\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"STATUS\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"TITLE\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"AGE_GROUP\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"PREVIOUS_OUTREACH_FLAG\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"PREVIOUS_OUTREACH_STATUS\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"CONTEXT\",\"columnType\":\"string\",\"nullable\":true}],\"count\":333840,\"isPrimaryDataset\":true}],\"target\":[{\"id\":\"61318ee8-2675-4add-9332-b909a51b079c\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":22.63,\"fileName\":\"\",\"filePath\":\"\",\"s3ToHdf\":\"\",\"sftpDataset\":true,\"sftpType\":\"sftp\",\"sftpFilePath\":\"/upload/view/appointments.csv\",\"fileLocation\":\"SFTP\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"appointments\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"ID\":\"20489274\",\"EMR_APPOINTMENT_ID\":\"18621957\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"17107\",\"PATIENT_ID\":\"3486907\",\"CREATED_AT\":\"00:54.7\",\"UPDATED_AT\":\"32:15.2\",\"DEPARTMENT_ID\":\"4501\",\"REASON\":\"Follow Up 15\",\"DURATION\":\"15\",\"EMR_PATIENT_ID\":\"623290eb5b9db7929202414df2e13d09a63491a0f67a1f6a96b82ce748d9ece5\",\"APPOINTMENT_STATUS\":\"cancelled\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"40\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"},{\"ID\":\"34739538\",\"EMR_APPOINTMENT_ID\":\"10839990\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"175\",\"PATIENT_ID\":\"2538767\",\"CREATED_AT\":\"24:00.9\",\"UPDATED_AT\":\"04:05.3\",\"DEPARTMENT_ID\":\"52\",\"REASON\":\"Follow Up Adult 20\",\"DURATION\":\"20\",\"EMR_PATIENT_ID\":\"0169fe37e1b320d71f231ccc729b67eabf4476a8291a389f487aaf7317f3093f\",\"APPOINTMENT_STATUS\":\"cancelled\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"18\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"},{\"ID\":\"35949497\",\"EMR_APPOINTMENT_ID\":\"89717170\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"12759\",\"PATIENT_ID\":\"1526380\",\"CREATED_AT\":\"10:34.8\",\"UPDATED_AT\":\"10:39.5\",\"DEPARTMENT_ID\":\"1635\",\"REASON\":\"Established Patient 15\",\"DURATION\":\"15\",\"EMR_PATIENT_ID\":\"9a8ec083cb11271dd875c0082fe61e865a135c41a09ae98cfed211071ef99285\",\"APPOINTMENT_STATUS\":\"future\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"37\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"},{\"ID\":\"59912545\",\"EMR_APPOINTMENT_ID\":\"28271869\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"40766\",\"PATIENT_ID\":\"14501689\",\"CREATED_AT\":\"27:31.8\",\"UPDATED_AT\":\"46:58.8\",\"DEPARTMENT_ID\":\"25248\",\"REASON\":\"G_ANNUAL EXAM\",\"DURATION\":\"30\",\"EMR_PATIENT_ID\":\"4SxDspwwkviwR3evbZHrPa3Rw13kBr51Nxv86mECyXUF5921c2100150d53200f\",\"APPOINTMENT_STATUS\":\"future\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"1204\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"},{\"ID\":\"3912180\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"9452\",\"PATIENT_ID\":\"743940\",\"CREATED_AT\":\"48:08.1\",\"UPDATED_AT\":\"11:58.0\",\"EMR_ENCOUNTER_ID\":\"ecd69a04614905e7b8d151113aad81fb470932b5351804fe243162cce4e433dd\",\"REASON\":\"CON       \",\"DURATION\":\"45\",\"EMR_PATIENT_ID\":\"Gr8Kcyt8UVRF1Pux7YHiK32Spm7cmnFVL6hd7LSLHqoB06c6e74badac2606cb02\",\"APPOINTMENT_STATUS\":\"Pen\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"41\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"},{\"ID\":\"60477063\",\"EMR_APPOINTMENT_ID\":\"11873187\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"42745\",\"PATIENT_ID\":\"127892\",\"CREATED_AT\":\"10:41.3\",\"UPDATED_AT\":\"10:41.6\",\"DEPARTMENT_ID\":\"27886\",\"REASON\":\"Dental SRP\",\"DURATION\":\"60\",\"EMR_PATIENT_ID\":\"264dc254275e312a7c538ac0583e1d0f810f7cb0f60bef54eb17715724b6b02b\",\"APPOINTMENT_STATUS\":\"future\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"22\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"},{\"ID\":\"49352297\",\"EMR_APPOINTMENT_ID\":\"259205376\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"18629\",\"PATIENT_ID\":\"2939233\",\"CREATED_AT\":\"48:04.4\",\"UPDATED_AT\":\"48:04.6\",\"DEPARTMENT_ID\":\"21638\",\"REASON\":\"Consult\",\"DURATION\":\"15\",\"EMR_PATIENT_ID\":\"42ba49e18d815c547c615fea8eca60eb871c7907c7d6a71bb6f3b224ce83db28\",\"APPOINTMENT_STATUS\":\"future\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"154\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"},{\"ID\":\"32069250\",\"EMR_APPOINTMENT_ID\":\"1233340\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"20753\",\"PATIENT_ID\":\"5201720\",\"CREATED_AT\":\"31:42.9\",\"UPDATED_AT\":\"16:23.5\",\"DEPARTMENT_ID\":\"15464\",\"REASON\":\"Injection\",\"DURATION\":\"10\",\"EMR_PATIENT_ID\":\"bb68015e068ecf60f1cf688522db9baad471cf5ecc42b71d2c94abac3fe96cdc\",\"APPOINTMENT_STATUS\":\"charge entered\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"193\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"},{\"ID\":\"16508607\",\"EMR_APPOINTMENT_ID\":\"7647512\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"2043\",\"PATIENT_ID\":\"20893\",\"CREATED_AT\":\"02:21.2\",\"UPDATED_AT\":\"02:21.2\",\"DEPARTMENT_ID\":\"53\",\"REASON\":\"Mental Health Follow-up\",\"DURATION\":\"15\",\"EMR_PATIENT_ID\":\"aafe2aa421466f279d95efbbfc470e78f95f80bee1d724789d37452cd113e1ea\",\"APPOINTMENT_STATUS\":\"future\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"18\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"},{\"ID\":\"56071951\",\"EMR_APPOINTMENT_ID\":\"27952637\",\"APPOINTMENT_TIME\":\"00:00.0\",\"USER_ID\":\"40754\",\"PATIENT_ID\":\"13984505\",\"CREATED_AT\":\"26:03.5\",\"UPDATED_AT\":\"26:32.4\",\"DEPARTMENT_ID\":\"26811\",\"REASON\":\"G_ANNUAL EXAM\",\"DURATION\":\"15\",\"EMR_PATIENT_ID\":\"be09e7a4576750937fd14ff3946b9bd46a43ec244d707849d1651e7a0f87e983\",\"APPOINTMENT_STATUS\":\"future\",\"ORDERS\":\"\\\"\\\"\\\"{}\\\"\\\"\\\"\",\"ORGANIZATION_ID\":\"1204\",\"VALID_FROM\":\"29:28.0\",\"CURRENT_IND\":\"Y\",\"POP_HEALTH_FLU_FLAG\":\"N\"}],\"schema\":[{\"columnName\":\"ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"EMR_APPOINTMENT_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"APPOINTMENT_TIME\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"USER_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"PATIENT_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"CREATED_AT\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"UPDATED_AT\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"EMR_ENCOUNTER_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"DEPARTMENT_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"REASON\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"DURATION\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"EMR_PATIENT_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"APPOINTMENT_STATUS\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"ORDERS\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"ORGANIZATION_ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"VALID_FROM\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"VALID_TO\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"CURRENT_IND\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"POP_HEALTH_FLU_FLAG\",\"columnType\":\"string\",\"nullable\":true}],\"count\":274082,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"memory\":5,\"threads\":2,\"comparisonType\":\"default\",\"chunks\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"comparisonTypeSelectedByUser\":false,\"convertNumberToLong\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"appointmnests12\",\"data_monitoring\":false,\"dimensions\":[],\"aggregations\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\"},\"mapping\":{\"mappings\":{\"763632389368\":{\"source\":\"42a7a15c-22dd-444b-89f4-47062e0a5dd7\",\"target\":\"61318ee8-2675-4add-9332-b909a51b079c\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"1c166485-5ab5-4558-855c-941db73b0a81\",\"sourceColumnName\":\"PATIENTID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"PATIENT_ID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"a1b4e20c-fb14-4472-b5c2-e48ad21cbd18\",\"sourceColumnName\":\"DEPARTMENTID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"DEPARTMENT_ID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"18591954-078d-4dc7-a0be-4895665ddf62\",\"sourceColumnName\":\"USERID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"USER_ID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"5e129607-6555-4cab-8ccc-57396508139d\",\"sourceColumnName\":\"ORGANIZATION_ID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"ORGANIZATION_ID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"b2098957-73b0-4536-8543-28981232a03e\",\"sourceColumnName\":\"EMR_PATIENT_ID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"EMR_PATIENT_ID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"763632389368\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 11560,
+  "dmsProjectId" : 781,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:25:00.659924765Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
