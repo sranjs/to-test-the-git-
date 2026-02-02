@@ -1,0 +1,220 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"5e9e6c0d-4785-4de9-9c3c-43772f53cad8\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${sf_conn}\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"SF_GOOD_DATA\",\"partitionProperties\":{\"numberOfPart\":963,\"column\":null},\"defaultSchema\":[{\"columnName\":\"CONGESTION_SURCHARGE\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DOLOCATIONID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EXTRA\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FARE_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IMPROVEMENT_SURCHARGE\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"MTA_TAX\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PASSENGER_COUNT\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PAYMENT_TYPE\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PULOCATIONID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RATECODEID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"STORE_AND_FWD_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"TEXT\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIP_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOLLS_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOTAL_AMOUNT\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TPEP_DROPOFF_DATETIME\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP_NTZ\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TPEP_PICKUP_DATETIME\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP_NTZ\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TRIP_DISTANCE\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VENDORID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"YEAR\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"CONGESTION_SURCHARGE\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DOLOCATIONID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EXTRA\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FARE_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IMPROVEMENT_SURCHARGE\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"MTA_TAX\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PASSENGER_COUNT\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PAYMENT_TYPE\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PULOCATIONID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RATECODEID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"STORE_AND_FWD_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"TEXT\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIP_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOLLS_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOTAL_AMOUNT\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TPEP_DROPOFF_DATETIME\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP_NTZ\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TPEP_PICKUP_DATETIME\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP_NTZ\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TRIP_DISTANCE\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VENDORID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"YEAR\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1106599457,\"tableSize\":23997,\"noOfPartition\":963,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"d5a0ff6f-9375-462f-b9a3-d033cdbbbf37\",\"from\":\"source\",\"type\":\"SQL\",\"connectionName\":\"${conn}\",\"schemaName\":\"SCHEMA_1\",\"tableName\":\"s1\",\"partitionProperties\":{},\"defaultSchema\":[{\"columnName\":\"USER_ID\",\"columnType\":\"long\",\"actualColumnType\":\"NUMBER\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"USERNAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME_NULLABLEFALSE\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"MIDDLE_NAME_NULLABLETRUE\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"USER_ID\",\"columnType\":\"long\",\"actualColumnType\":\"NUMBER\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"USERNAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME_NULLABLEFALSE\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"MIDDLE_NAME_NULLABLETRUE\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sqlQuery\":\"c2VsZWN0ICogZnJvbSBVU0VSUw==\",\"prompt\":\"\",\"aiHelp\":true,\"tables\":[]}],\"target\":[{\"id\":\"23db435e-75b5-4ddf-92eb-95d9f02a7a2c\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"${sf_conn}\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"SF_GOOD_DATA\",\"partitionProperties\":{\"numberOfPart\":963,\"column\":null},\"defaultSchema\":[{\"columnName\":\"CONGESTION_SURCHARGE\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DOLOCATIONID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EXTRA\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FARE_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IMPROVEMENT_SURCHARGE\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"MTA_TAX\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PASSENGER_COUNT\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PAYMENT_TYPE\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PULOCATIONID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RATECODEID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"STORE_AND_FWD_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"TEXT\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIP_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOLLS_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOTAL_AMOUNT\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TPEP_DROPOFF_DATETIME\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP_NTZ\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TPEP_PICKUP_DATETIME\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP_NTZ\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TRIP_DISTANCE\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VENDORID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"YEAR\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"CONGESTION_SURCHARGE\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DOLOCATIONID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EXTRA\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FARE_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IMPROVEMENT_SURCHARGE\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"MTA_TAX\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PASSENGER_COUNT\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PAYMENT_TYPE\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PULOCATIONID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RATECODEID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"STORE_AND_FWD_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"TEXT\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIP_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOLLS_AMOUNT\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOTAL_AMOUNT\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TPEP_DROPOFF_DATETIME\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP_NTZ\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TPEP_PICKUP_DATETIME\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP_NTZ\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TRIP_DISTANCE\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"REAL\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VENDORID\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"YEAR\",\"columnType\":\"decimal(38,0)\",\"actualColumnType\":\"FIXED\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1106599457,\"tableSize\":23997,\"noOfPartition\":963,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"memory\":8,\"threads\":2,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"chunks\":true,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"comparisonTypeSelectedByUser\":false,\"convertNumberToLong\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"var\"},\"mapping\":{\"mappings\":{\"1518791170636\":{\"source\":\"5e9e6c0d-4785-4de9-9c3c-43772f53cad8\",\"target\":\"23db435e-75b5-4ddf-92eb-95d9f02a7a2c\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"720d4800-96ce-482e-b5ef-e7cbeb4d2ae2\",\"sourceColumnName\":\"YEAR\",\"sourceColumnType\":\"decimal(38,0)\",\"sourceActualColumnType\":\"FIXED\",\"sourceNullable\":false,\"targetColumnName\":\"YEAR\",\"targetColumnType\":\"decimal(38,0)\",\"targetActualColumnType\":\"FIXED\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"2c944fc8-8ddd-457a-b46f-890e3eabfadd\",\"sourceColumnName\":\"VENDORID\",\"sourceColumnType\":\"decimal(38,0)\",\"sourceActualColumnType\":\"FIXED\",\"sourceNullable\":false,\"targetColumnName\":\"VENDORID\",\"targetColumnType\":\"decimal(38,0)\",\"targetActualColumnType\":\"FIXED\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"1f69ee36-274b-40b0-a5ea-54c723a578d7\",\"sourceColumnName\":\"TRIP_DISTANCE\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"REAL\",\"sourceNullable\":false,\"targetColumnName\":\"TRIP_DISTANCE\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"REAL\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"82b5a7a1-5538-4d18-9e34-e717b3833edb\",\"sourceColumnName\":\"TPEP_PICKUP_DATETIME\",\"sourceColumnType\":\"timestamp\",\"sourceActualColumnType\":\"TIMESTAMP_NTZ\",\"sourceNullable\":false,\"targetColumnName\":\"TPEP_PICKUP_DATETIME\",\"targetColumnType\":\"timestamp\",\"targetActualColumnType\":\"TIMESTAMP_NTZ\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"3f45e1b0-859a-4f60-98a5-c775a05586f2\",\"sourceColumnName\":\"TPEP_DROPOFF_DATETIME\",\"sourceColumnType\":\"timestamp\",\"sourceActualColumnType\":\"TIMESTAMP_NTZ\",\"sourceNullable\":false,\"targetColumnName\":\"TPEP_DROPOFF_DATETIME\",\"targetColumnType\":\"timestamp\",\"targetActualColumnType\":\"TIMESTAMP_NTZ\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"1f2b6519-c251-4cec-a5ea-203ee72ee327\",\"sourceColumnName\":\"TOTAL_AMOUNT\",\"sourceColumnType\":\"decimal(38,0)\",\"sourceActualColumnType\":\"FIXED\",\"sourceNullable\":false,\"targetColumnName\":\"TOTAL_AMOUNT\",\"targetColumnType\":\"decimal(38,0)\",\"targetActualColumnType\":\"FIXED\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"b25756d9-6607-4b2f-85d3-de97dc0d395e\",\"sourceColumnName\":\"TOLLS_AMOUNT\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"REAL\",\"sourceNullable\":false,\"targetColumnName\":\"TOLLS_AMOUNT\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"REAL\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"14853b0d-9ab5-4dcf-bfab-521715be107c\",\"sourceColumnName\":\"TIP_AMOUNT\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"REAL\",\"sourceNullable\":false,\"targetColumnName\":\"TIP_AMOUNT\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"REAL\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"9b456688-7370-4673-a09a-275b637c7711\",\"sourceColumnName\":\"STORE_AND_FWD_FLAG\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"TEXT\",\"sourceNullable\":false,\"targetColumnName\":\"STORE_AND_FWD_FLAG\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"TEXT\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"bf652ae3-5eb1-407a-8826-70737e6754ae\",\"sourceColumnName\":\"RATECODEID\",\"sourceColumnType\":\"decimal(38,0)\",\"sourceActualColumnType\":\"FIXED\",\"sourceNullable\":false,\"targetColumnName\":\"RATECODEID\",\"targetColumnType\":\"decimal(38,0)\",\"targetActualColumnType\":\"FIXED\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"1b542df3-9b0c-4ff2-a4d4-d263b78d1c9e\",\"sourceColumnName\":\"PULOCATIONID\",\"sourceColumnType\":\"decimal(38,0)\",\"sourceActualColumnType\":\"FIXED\",\"sourceNullable\":false,\"targetColumnName\":\"PULOCATIONID\",\"targetColumnType\":\"decimal(38,0)\",\"targetActualColumnType\":\"FIXED\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"00041ded-487f-4142-825b-64562b573c9b\",\"sourceColumnName\":\"PAYMENT_TYPE\",\"sourceColumnType\":\"decimal(38,0)\",\"sourceActualColumnType\":\"FIXED\",\"sourceNullable\":false,\"targetColumnName\":\"PAYMENT_TYPE\",\"targetColumnType\":\"decimal(38,0)\",\"targetActualColumnType\":\"FIXED\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"1c7a8e2e-5756-416a-a3ed-36b012f38b54\",\"sourceColumnName\":\"PASSENGER_COUNT\",\"sourceColumnType\":\"decimal(38,0)\",\"sourceActualColumnType\":\"FIXED\",\"sourceNullable\":false,\"targetColumnName\":\"PASSENGER_COUNT\",\"targetColumnType\":\"decimal(38,0)\",\"targetActualColumnType\":\"FIXED\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4bc0ecb3-7fb9-4920-8a53-16c04fe148ad\",\"sourceColumnName\":\"MTA_TAX\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"REAL\",\"sourceNullable\":false,\"targetColumnName\":\"MTA_TAX\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"REAL\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"9065f71e-51d9-4773-8679-ef354444d7ee\",\"sourceColumnName\":\"IMPROVEMENT_SURCHARGE\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"REAL\",\"sourceNullable\":false,\"targetColumnName\":\"IMPROVEMENT_SURCHARGE\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"REAL\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"6055ee8d-455a-4a2e-9924-304aeb722fa4\",\"sourceColumnName\":\"FARE_AMOUNT\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"REAL\",\"sourceNullable\":false,\"targetColumnName\":\"FARE_AMOUNT\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"REAL\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"772d9e94-c447-44c8-a35e-4b6a28843daa\",\"sourceColumnName\":\"EXTRA\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"REAL\",\"sourceNullable\":false,\"targetColumnName\":\"EXTRA\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"REAL\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"f0fcf050-83ec-4240-8c28-91c64ae8c4fc\",\"sourceColumnName\":\"DOLOCATIONID\",\"sourceColumnType\":\"decimal(38,0)\",\"sourceActualColumnType\":\"FIXED\",\"sourceNullable\":false,\"targetColumnName\":\"DOLOCATIONID\",\"targetColumnType\":\"decimal(38,0)\",\"targetActualColumnType\":\"FIXED\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"afef4392-34f1-4902-a9f6-1e84ca85bdf4\",\"sourceColumnName\":\"CONGESTION_SURCHARGE\",\"sourceColumnType\":\"decimal(38,0)\",\"sourceActualColumnType\":\"FIXED\",\"sourceNullable\":false,\"targetColumnName\":\"CONGESTION_SURCHARGE\",\"targetColumnType\":\"decimal(38,0)\",\"targetActualColumnType\":\"FIXED\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1518791170636\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "8g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "var",
+  "flowDesc" : "var",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "${sf_conn}",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "SF_GOOD_DATA" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "SF_GOOD_DATA",
+          "tblSize" : "23997",
+          "tblRecordCount" : 1106599457,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      }, {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "SCHEMA_1",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "${conn}",
+          "groupName" : "dev"
+        },
+        "transformationSQL" : true,
+        "sqlStatements" : {
+          "s1" : [ {
+            "sql" : "select * from USERS",
+            "name" : "s1"
+          } ]
+        },
+        "tableNamesList" : {
+          "s1" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "s1"
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "${sf_conn}",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "SF_GOOD_DATA" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "SF_GOOD_DATA",
+          "tblSize" : "23997",
+          "tblRecordCount" : 1106599457,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 1518791170636,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "SF_GOOD_DATA" : "SF_GOOD_DATA"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "VENDORID" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "VENDORID",
+          "destColumn" : "VENDORID"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "YEAR",
+          "destColumn" : "YEAR"
+        }, {
+          "srcColumn" : "VENDORID",
+          "destColumn" : "VENDORID"
+        }, {
+          "srcColumn" : "TRIP_DISTANCE",
+          "destColumn" : "TRIP_DISTANCE"
+        }, {
+          "srcColumn" : "TPEP_PICKUP_DATETIME",
+          "destColumn" : "TPEP_PICKUP_DATETIME"
+        }, {
+          "srcColumn" : "TPEP_DROPOFF_DATETIME",
+          "destColumn" : "TPEP_DROPOFF_DATETIME"
+        }, {
+          "srcColumn" : "TOTAL_AMOUNT",
+          "destColumn" : "TOTAL_AMOUNT"
+        }, {
+          "srcColumn" : "TOLLS_AMOUNT",
+          "destColumn" : "TOLLS_AMOUNT"
+        }, {
+          "srcColumn" : "TIP_AMOUNT",
+          "destColumn" : "TIP_AMOUNT"
+        }, {
+          "srcColumn" : "STORE_AND_FWD_FLAG",
+          "destColumn" : "STORE_AND_FWD_FLAG"
+        }, {
+          "srcColumn" : "RATECODEID",
+          "destColumn" : "RATECODEID"
+        }, {
+          "srcColumn" : "PULOCATIONID",
+          "destColumn" : "PULOCATIONID"
+        }, {
+          "srcColumn" : "PAYMENT_TYPE",
+          "destColumn" : "PAYMENT_TYPE"
+        }, {
+          "srcColumn" : "PASSENGER_COUNT",
+          "destColumn" : "PASSENGER_COUNT"
+        }, {
+          "srcColumn" : "MTA_TAX",
+          "destColumn" : "MTA_TAX"
+        }, {
+          "srcColumn" : "IMPROVEMENT_SURCHARGE",
+          "destColumn" : "IMPROVEMENT_SURCHARGE"
+        }, {
+          "srcColumn" : "FARE_AMOUNT",
+          "destColumn" : "FARE_AMOUNT"
+        }, {
+          "srcColumn" : "EXTRA",
+          "destColumn" : "EXTRA"
+        }, {
+          "srcColumn" : "DOLOCATIONID",
+          "destColumn" : "DOLOCATIONID"
+        }, {
+          "srcColumn" : "CONGESTION_SURCHARGE",
+          "destColumn" : "CONGESTION_SURCHARGE"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5",
+          "CHUNK_DATA_AND_PROCESS" : "true"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "parameters" : [ {
+    "paramName" : "sf_conn",
+    "paramValue" : "snowflake_NYC_TAXI_DATA",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  } ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 9025,
+  "dmsProjectId" : 707,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:22:24.422930906Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
