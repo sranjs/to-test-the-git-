@@ -1,0 +1,222 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Schema\"],\"tablesList\":{\"source\":[{\"id\":\"8fa25fd9-c603-4cd2-8b6e-2b61f900a6b7\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"db2_db2inst1\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEES_ORACLE\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"schema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMPLOYEE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"integer\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"HIRE_DATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SALARY\",\"columnType\":\"decimal(8,0)\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"8270bb6f-3812-41f8-91a5-2d81e7b50ee0\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"db2_db2inst1\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"schema\":[{\"columnName\":\"C_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_MKTSEGMENT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NATION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_PHONE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_REGION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"67c5aa44-9418-4b42-9f2b-c2c9d8cd2c6f\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"db2_db2inst1\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPTY_TAB\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"schema\":[{\"columnName\":\"AGE\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SECOND\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"68e64817-449f-4bf1-8262-740672c1d447\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"EMPLOYEE_ID\"},\"schema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMPLOYEE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"HIRE_DATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":7,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SALARY\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"EMPLOYEE_ID\"],\"foreignKeyInfo\":null,\"count\":4,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":\"EMPLOYEE_ID\",\"indexInfo\":[{\"keyName\":\"SYS_C0010045\",\"keyType\":\"NORMAL\",\"ordinalPosition\":1,\"columnName\":\"EMPLOYEE_ID\"}]},{\"id\":\"eaa8a64b-db95-4c2e-bf9e-541fa100f124\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER_BAD\",\"partitionProperties\":{\"numberOfPart\":17,\"column\":\"C_CUSTKEY\"},\"schema\":[{\"columnName\":\"C_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_MKTSEGMENT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NATION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_PHONE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_REGION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"C_CUSTKEY\"],\"foreignKeyInfo\":null,\"count\":3000000,\"tableSize\":328,\"noOfPartition\":17,\"partitionColumn\":\"C_CUSTKEY\",\"indexInfo\":[{\"keyName\":\"CUSTOMER_BAD_C_CUSTKEY_IDX\",\"keyType\":\"NORMAL\",\"ordinalPosition\":1,\"columnName\":\"C_CUSTKEY\"}]},{\"id\":\"90f55cd3-63e6-4b15-9a8b-e87dfa6427ee\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":17,\"column\":\"C_CUSTKEY\"},\"schema\":[{\"columnName\":\"C_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_MKTSEGMENT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NATION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_PHONE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_REGION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"C_CUSTKEY\"],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":328,\"noOfPartition\":17,\"partitionColumn\":\"C_CUSTKEY\",\"indexInfo\":[{\"keyName\":\"CUSTOMER_PK\",\"keyType\":\"NORMAL\",\"ordinalPosition\":1,\"columnName\":\"C_CUSTKEY\"}]},{\"id\":\"59f087a3-7661-4aff-be76-86e272ce4a95\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPTY_TAB\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"schema\":[{\"columnName\":\"AGE\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SECOND\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":3,\"threads\":2,\"memory\":8,\"test_case_name\":\"three tables schema compare\",\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"eab6fba8-1203-4898-b62a-247b0eec2bf9\":{\"source\":\"8270bb6f-3812-41f8-91a5-2d81e7b50ee0\",\"target\":\"90f55cd3-63e6-4b15-9a8b-e87dfa6427ee\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"b96e34b5-a994-4a55-bc98-f6869fda2a87\",\"sourceColumnName\":\"C_REGION\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"C_REGION\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"6f627e2c-647c-4087-a831-c65b47bc1581\",\"sourceColumnName\":\"C_PHONE\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"C_PHONE\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"3d60436f-f903-4f0d-a958-4b37b3ad4047\",\"sourceColumnName\":\"C_NATION\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"C_NATION\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"27760a56-3baa-4b23-829e-240ce4033f92\",\"sourceColumnName\":\"C_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"C_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"0f789e34-d71f-4baa-97fd-858a6f0ad079\",\"sourceColumnName\":\"C_MKTSEGMENT\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"C_MKTSEGMENT\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"83ddcf5b-1f00-4849-a327-1c73bb9db32b\",\"sourceColumnName\":\"C_CUSTKEY\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"C_CUSTKEY\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true},{\"id\":\"112422fb-45fe-41da-8f67-669231b5c389\",\"sourceColumnName\":\"C_CITY\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"C_CITY\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"2c1a8ba5-0c10-4539-9a8f-2c09eb984771\",\"sourceColumnName\":\"C_ADDRESS\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"C_ADDRESS\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"765ab101-6d6f-48df-b85b-d17dd734a4ff\":{\"source\":\"67c5aa44-9418-4b42-9f2b-c2c9d8cd2c6f\",\"target\":\"59f087a3-7661-4aff-be76-86e272ce4a95\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"6fc15760-f4ee-46ce-9313-db7474b16c90\",\"sourceColumnName\":\"SECOND\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"SECOND\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"806bbd81-4267-47c0-99d5-bd06ef295f14\",\"sourceColumnName\":\"FIRST\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"FIRST\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"594006e1-c7d2-4bbe-81a8-cd28466d95f3\",\"sourceColumnName\":\"AGE\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"AGE\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"549fe6af-143d-4bff-8cc8-b000a1fefc68\":{\"source\":\"8fa25fd9-c603-4cd2-8b6e-2b61f900a6b7\",\"target\":\"68e64817-449f-4bf1-8262-740672c1d447\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"a9dc8e19-a145-4e8f-af4b-04a7fd0630ad\",\"sourceColumnName\":\"SALARY\",\"sourceColumnType\":\"decimal(8,0)\",\"sourceActualColumnType\":\"double\",\"sourceNullable\":false,\"targetColumnName\":\"SALARY\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"97698758-13f0-4d8e-a41a-82383da74e8e\",\"sourceColumnName\":\"LAST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"LAST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"63533568-df86-45ad-948d-cd85ca5bedb3\",\"sourceColumnName\":\"HIRE_DATE\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"HIRE_DATE\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"dae8acad-e774-481c-b679-c44782a17460\",\"sourceColumnName\":\"FIRST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"FIRST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"6093427d-031f-4d44-b087-7c728754f811\",\"sourceColumnName\":\"EMPLOYEE_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"integer\",\"sourceNullable\":false,\"targetColumnName\":\"EMPLOYEE_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true},{\"id\":\"c69f5dfe-11f0-48e5-9c65-6d9af50eb22f\",\"sourceColumnName\":\"EMAIL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"EMAIL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "three tables schema compare",
+  "APP_VERSION" : "7_08",
+  "flowDesc" : "three tables schema compare",
+  "LicensedName" : "7_08",
+  "numExecutors" : 3,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DATAQ",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "db2_db2inst1",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "EMPLOYEES_ORACLE" : null,
+          "CUSTOMER" : null,
+          "EMPTY_TAB" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "EMPLOYEES_ORACLE",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPTY_TAB",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DATAQ",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "oracle_19C",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "EMPLOYEES" : {
+            "numberOfPart" : 0,
+            "column" : "EMPLOYEE_ID"
+          },
+          "CUSTOMER_BAD" : {
+            "numberOfPart" : 17,
+            "column" : "C_CUSTKEY"
+          },
+          "CUSTOMER" : {
+            "numberOfPart" : 17,
+            "column" : "C_CUSTKEY"
+          },
+          "EMPTY_TAB" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "EMPLOYEES",
+          "tblSize" : "0.06",
+          "tblRecordCount" : 4,
+          "primaryKeys" : [ "EMPLOYEE_ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER_BAD",
+          "tblSize" : "328",
+          "tblRecordCount" : 3000000,
+          "primaryKeys" : [ "C_CUSTKEY" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER",
+          "tblSize" : "328",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ "C_CUSTKEY" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPTY_TAB",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "SCHEMA_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "SCHEMA_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "CUSTOMER" : "CUSTOMER"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "VALIDATE_COMPARE_KEYS" : "true"
+        }
+      }, {
+        "matchBoth" : true,
+        "compareType" : "SCHEMA_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "EMPTY_TAB" : "EMPTY_TAB"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "VALIDATE_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS" : "false"
+        }
+      }, {
+        "matchBoth" : true,
+        "compareType" : "SCHEMA_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "EMPLOYEES_ORACLE" : "EMPLOYEES"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "VALIDATE_COMPARE_KEYS" : "true"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_08",
+  "API_APP_BUILD" : "7_08",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "SCHEMA COMPARE",
+  "flowId" : 8343,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:23.847708765Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

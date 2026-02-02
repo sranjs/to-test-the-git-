@@ -1,0 +1,153 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"92a6feb5-0a3b-4038-acc0-8523cf294611\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0.05,\"fileName\":\"Using_for_Multiply.csv\",\"filePath\":\"/my_data/user_files/namrata/Using_for_Multiply.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"UsingforMultiplycsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"First\":\"Smith\",\"Last_Name\":\"Deo\",\"DOB\":\"19850101\",\"Age\":\"null\",\"Pincode\":\"12345\",\"gender\":\"M\"},{\"First\":\"Johnson\",\"Last_Name\":\"Williams\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12345\",\"gender\":\"F\"},{\"First\":\"Williams\",\"Last_Name\":\"Brown\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12345\",\"gender\":\"M\"},{\"First\":\"Brown\",\"Last_Name\":\"Wilson\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12346\",\"gender\":\"F\"},{\"First\":\"Wilson\",\"Last_Name\":\"Johnson\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12346\",\"gender\":\"M\"},{\"First\":\"Johnson\",\"Last_Name\":\"Miller\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12346\",\"gender\":\"F\"},{\"First\":\"Miller\",\"Last_Name\":\"Davis\",\"DOB\":\"19871205\",\"Age\":\"null\",\"Pincode\":\"12347\",\"gender\":\"M\"},{\"First\":\"Davis\",\"Last_Name\":\"Taylor\",\"DOB\":\"19801078\",\"Age\":\"null\",\"Pincode\":\"12347\",\"gender\":\"F\"},{\"First\":\"Taylor\",\"Last_Name\":\"Anderson\",\"DOB\":\"19911030\",\"Age\":\"null\",\"Pincode\":\"12347\",\"gender\":\"M\"},{\"First\":\"Anderson\",\"Last_Name\":\"Martinez\",\"DOB\":\"19801078\",\"Age\":\"null\",\"Pincode\":\"12348\",\"gender\":\"F\"}],\"schema\":[{\"columnName\":\"First\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Last_Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"DOB\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Pincode\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"gender\",\"columnType\":\"string\",\"nullable\":true}],\"count\":13,\"isPrimaryDataset\":true}],\"target\":[{\"id\":\"04779afa-273c-495a-8cbd-3d00b573d2ad\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0.05,\"fileName\":\"Using_for_Multiply.csv\",\"filePath\":\"/my_data/user_files/namrata/Using_for_Multiply.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"UsingforMultiplycsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"First\":\"Smith\",\"Last_Name\":\"Deo\",\"DOB\":\"19850101\",\"Age\":\"null\",\"Pincode\":\"12345\",\"gender\":\"M\"},{\"First\":\"Johnson\",\"Last_Name\":\"Williams\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12345\",\"gender\":\"F\"},{\"First\":\"Williams\",\"Last_Name\":\"Brown\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12345\",\"gender\":\"M\"},{\"First\":\"Brown\",\"Last_Name\":\"Wilson\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12346\",\"gender\":\"F\"},{\"First\":\"Wilson\",\"Last_Name\":\"Johnson\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12346\",\"gender\":\"M\"},{\"First\":\"Johnson\",\"Last_Name\":\"Miller\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12346\",\"gender\":\"F\"},{\"First\":\"Miller\",\"Last_Name\":\"Davis\",\"DOB\":\"19871205\",\"Age\":\"null\",\"Pincode\":\"12347\",\"gender\":\"M\"},{\"First\":\"Davis\",\"Last_Name\":\"Taylor\",\"DOB\":\"19801078\",\"Age\":\"null\",\"Pincode\":\"12347\",\"gender\":\"F\"},{\"First\":\"Taylor\",\"Last_Name\":\"Anderson\",\"DOB\":\"19911030\",\"Age\":\"null\",\"Pincode\":\"12347\",\"gender\":\"M\"},{\"First\":\"Anderson\",\"Last_Name\":\"Martinez\",\"DOB\":\"19801078\",\"Age\":\"null\",\"Pincode\":\"12348\",\"gender\":\"F\"}],\"schema\":[{\"columnName\":\"First\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Last_Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"DOB\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Pincode\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"gender\",\"columnType\":\"string\",\"nullable\":true}],\"count\":13,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"some\",\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"7a7f3787-a4f7-4e45-ba8f-54c97cf30268\":{\"source\":\"92a6feb5-0a3b-4038-acc0-8523cf294611\",\"target\":\"04779afa-273c-495a-8cbd-3d00b573d2ad\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"4778ff9d-7aef-455e-83c9-b48faeeae314\",\"sourceColumnName\":\"gender\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"gender\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"ed1946a1-c214-424e-a2c2-196c600439dd\",\"sourceColumnName\":\"Pincode\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Pincode\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"cd7f1b16-ad8a-45d7-9cc6-eacf9d411271\",\"sourceColumnName\":\"Age\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Age\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"e1eee301-be0b-46af-a9d7-abd2f8703554\",\"sourceColumnName\":\"DOB\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"DOB\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"5e50e2bf-4c61-4c6b-b9f7-0a1520289368\",\"sourceColumnName\":\"Last_Name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Last_Name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"699e54fe-4b42-4e0d-8540-60bf537b7f76\",\"sourceColumnName\":\"First\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"First\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "some",
+  "APP_VERSION" : "7_08",
+  "flowDesc" : "some",
+  "LicensedName" : "7_08",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/namrata/Using_for_Multiply.csv",
+        "tableProperties" : [ {
+          "tblName" : "UsingforMultiplycsv",
+          "tblSize" : "0.05",
+          "tblRecordCount" : 13
+        } ],
+        "tableNamesList" : {
+          "UsingforMultiplycsv" : null
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1",
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        }
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/namrata/Using_for_Multiply.csv",
+        "tableProperties" : [ {
+          "tblName" : "UsingforMultiplycsv",
+          "tblSize" : "0.05",
+          "tblRecordCount" : 13
+        } ],
+        "tableNamesList" : {
+          "UsingforMultiplycsv" : null
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1",
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        }
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "UsingforMultiplycsv" : "UsingforMultiplycsv"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "gender", "Age" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "gender",
+          "destColumn" : "gender"
+        }, {
+          "srcColumn" : "Age",
+          "destColumn" : "Age"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "gender",
+          "destColumn" : "gender"
+        }, {
+          "srcColumn" : "Pincode",
+          "destColumn" : "Pincode"
+        }, {
+          "srcColumn" : "Age",
+          "destColumn" : "Age"
+        }, {
+          "srcColumn" : "DOB",
+          "destColumn" : "DOB"
+        }, {
+          "srcColumn" : "Last_Name",
+          "destColumn" : "Last_Name"
+        }, {
+          "srcColumn" : "First",
+          "destColumn" : "First"
+        } ],
+        "keyValueProperties" : {
+          "VALIDATE_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS" : "false"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_08",
+  "API_APP_BUILD" : "7_08",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 8346,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:23.854443480Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
