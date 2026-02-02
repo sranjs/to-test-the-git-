@@ -1,20 +1,15 @@
 {
-  "executorCores" : 2,
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"fdbec6eb-4f98-4bc6-a12c-ae5e2d79033e\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_new_19c\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_10K_ORACLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":3,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"583e8f49-7fad-4c4e-8d4c-351a170499c8\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"dataops\",\"typeTable\":\"TABLE\",\"tableName\":\"employee_10k_postgres_nokey\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":40000,\"tableSize\":2,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"oracle_19C_to_postgres_count_compare\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"convertNumberToLong\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"29818250132\":{\"source\":\"fdbec6eb-4f98-4bc6-a12c-ae5e2d79033e\",\"target\":\"583e8f49-7fad-4c4e-8d4c-351a170499c8\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"29818250132\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
   "executorMemory" : "2g",
-  "numExecutors" : 2,
+  "executorCores" : 2,
   "executeOn" : "LOCAL",
-  "flowName" : "oracle_19C_to_postgres_count_compare",
-  "email" : [ ],
-  "flowDesc" : "oracle_19C_to_postgres_count_compare",
-  "hadoop" : false,
-  "livy" : false,
-  "root" : "dataCompare",
-  "API_APP_BUILD" : "7_49",
-  "UI_VERSION" : "7_49",
+  "flowName" : "oracle_19c_to_postgres_count_compare",
   "APP_VERSION" : "7_49",
+  "flowDesc" : "oracle_19C_to_postgres_count_compare",
   "LicensedName" : "7_49",
-  "parameters" : [ ],
-  "flowType" : "COUNTS COMPARE",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
   "jobMap" : {
     "source" : {
       "dependentJob" : true,
@@ -115,14 +110,19 @@
       }
     }
   },
-  "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"fdbec6eb-4f98-4bc6-a12c-ae5e2d79033e\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_new_19c\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_10K_ORACLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":3,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"583e8f49-7fad-4c4e-8d4c-351a170499c8\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"dataops\",\"typeTable\":\"TABLE\",\"tableName\":\"employee_10k_postgres_nokey\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":40000,\"tableSize\":2,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"oracle_19C_to_postgres_count_compare\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"convertNumberToLong\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"29818250132\":{\"source\":\"fdbec6eb-4f98-4bc6-a12c-ae5e2d79033e\",\"target\":\"583e8f49-7fad-4c4e-8d4c-351a170499c8\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"29818250132\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
-  "flowId" : 7351,
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "COUNTS COMPARE",
+  "flowId" : 12306,
   "dmsProjectId" : 630,
   "syncInfo" : {
-    "syncId" : "FOLDER",
-    "timestamp" : "2026-02-02T07:19:57.425308329Z",
-    "syncType" : "FOLDER",
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:20:48.421403474Z",
+    "syncType" : "PROJECT",
     "user" : "system"
   }
 }
