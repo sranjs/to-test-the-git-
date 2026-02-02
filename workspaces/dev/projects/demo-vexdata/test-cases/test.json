@@ -17,27 +17,27 @@
       "description" : "source component",
       "id" : "source",
       "sourceData" : [ {
-        "datasetFormat" : "JDBC",
-        "databaseName" : "sampledb_src",
-        "datasetPath" : "projects",
-        "jdbcData" : {
-          "connectionName" : "sampledb_src",
-          "groupName" : "dev"
-        },
-        "tableNamesList" : {
-          "Jan_2020_ontime" : null
-        },
+        "datasetFormat" : "CSV",
+        "datasetPath" : "s3://dataqio/sample_csv/region/east/east_sales_q1.csv",
         "tableProperties" : [ {
-          "tblName" : "Jan_2020_ontime",
-          "tblSize" : "10.52",
-          "tblRecordCount" : 49518,
-          "primaryKeys" : [ ],
-          "indexKeys" : [ ],
-          "foreignKeys" : [ ],
-          "primaryKeysEnabled" : true,
-          "indexKeysEnabled" : false,
-          "foreignKeysEnabled" : false
-        } ]
+          "tblName" : "test",
+          "tblSize" : "0",
+          "tblRecordCount" : 8
+        } ],
+        "tableNamesList" : {
+          "test" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false,
+          "fileLocation" : "S3"
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
       } ],
       "position" : {
         "x" : 610,
@@ -49,27 +49,27 @@
       "description" : "target component",
       "id" : "target",
       "sourceData" : [ {
-        "datasetFormat" : "JDBC",
-        "databaseName" : "sampledb_src",
-        "datasetPath" : "projects",
-        "jdbcData" : {
-          "connectionName" : "sampledb_src",
-          "groupName" : "dev"
-        },
-        "tableNamesList" : {
-          "Jan_2020_ontime" : null
-        },
+        "datasetFormat" : "CSV",
+        "datasetPath" : "s3://dataqio/sample_csv/region/east/east_sales_q1.csv",
         "tableProperties" : [ {
-          "tblName" : "Jan_2020_ontime",
-          "tblSize" : "10.52",
-          "tblRecordCount" : 49518,
-          "primaryKeys" : [ ],
-          "indexKeys" : [ ],
-          "foreignKeys" : [ ],
-          "primaryKeysEnabled" : true,
-          "indexKeysEnabled" : false,
-          "foreignKeysEnabled" : false
-        } ]
+          "tblName" : "test",
+          "tblSize" : "0",
+          "tblRecordCount" : 8
+        } ],
+        "tableNamesList" : {
+          "test" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false,
+          "fileLocation" : "S3"
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
       } ],
       "position" : {
         "x" : 599,
@@ -83,13 +83,13 @@
       "id" : "dataCompare",
       "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
       "filesCompareList" : [ {
-        "unitTestCaseId" : 1108636422640,
+        "unitTestCaseId" : 1277527988874,
         "matchBoth" : true,
         "compareType" : "CELL_BY_CELL_COMPARE",
         "compareColumns" : false,
         "compareCommonColumnsOnly" : true,
         "srcDestTableMap" : {
-          "Jan_2020_ontime" : "Jan_2020_ontime"
+          "test" : "test"
         },
         "srcDestComponentMap" : {
           "source" : "target"
@@ -101,68 +101,29 @@
         "compareKey" : [ ],
         "compareKeyNew" : [ ],
         "columnMapping" : [ {
-          "srcColumn" : "TAIL_NUM",
-          "destColumn" : "TAIL_NUM"
+          "srcColumn" : "sale_date",
+          "destColumn" : "sale_date"
         }, {
-          "srcColumn" : "ORIGIN_AIRPORT_SEQ_ID",
-          "destColumn" : "ORIGIN_AIRPORT_SEQ_ID"
+          "srcColumn" : "customer_id",
+          "destColumn" : "customer_id"
         }, {
-          "srcColumn" : "ORIGIN_AIRPORT_ID",
-          "destColumn" : "ORIGIN_AIRPORT_ID"
+          "srcColumn" : "discount",
+          "destColumn" : "discount"
         }, {
-          "srcColumn" : "ORIGIN",
-          "destColumn" : "ORIGIN"
+          "srcColumn" : "price",
+          "destColumn" : "price"
         }, {
-          "srcColumn" : "OP_UNIQUE_CARRIER",
-          "destColumn" : "OP_UNIQUE_CARRIER"
+          "srcColumn" : "quantity",
+          "destColumn" : "quantity"
         }, {
-          "srcColumn" : "OP_CARRIER_FL_NUM",
-          "destColumn" : "OP_CARRIER_FL_NUM"
+          "srcColumn" : "product",
+          "destColumn" : "product"
         }, {
-          "srcColumn" : "OP_CARRIER_AIRLINE_ID",
-          "destColumn" : "OP_CARRIER_AIRLINE_ID"
+          "srcColumn" : "region",
+          "destColumn" : "region"
         }, {
-          "srcColumn" : "OP_CARRIER",
-          "destColumn" : "OP_CARRIER"
-        }, {
-          "srcColumn" : "DIVERTED",
-          "destColumn" : "DIVERTED"
-        }, {
-          "srcColumn" : "DISTANCE",
-          "destColumn" : "DISTANCE"
-        }, {
-          "srcColumn" : "DEST_AIRPORT_SEQ_ID",
-          "destColumn" : "DEST_AIRPORT_SEQ_ID"
-        }, {
-          "srcColumn" : "DEST_AIRPORT_ID",
-          "destColumn" : "DEST_AIRPORT_ID"
-        }, {
-          "srcColumn" : "DEST",
-          "destColumn" : "DEST"
-        }, {
-          "srcColumn" : "DEP_TIME_BLK",
-          "destColumn" : "DEP_TIME_BLK"
-        }, {
-          "srcColumn" : "DEP_TIME",
-          "destColumn" : "DEP_TIME"
-        }, {
-          "srcColumn" : "DEP_DEL15",
-          "destColumn" : "DEP_DEL15"
-        }, {
-          "srcColumn" : "DAY_OF_WEEK",
-          "destColumn" : "DAY_OF_WEEK"
-        }, {
-          "srcColumn" : "DAY_OF_MONTH",
-          "destColumn" : "DAY_OF_MONTH"
-        }, {
-          "srcColumn" : "CANCELLED",
-          "destColumn" : "CANCELLED"
-        }, {
-          "srcColumn" : "ARR_TIME",
-          "destColumn" : "ARR_TIME"
-        }, {
-          "srcColumn" : "ARR_DEL15",
-          "destColumn" : "ARR_DEL15"
+          "srcColumn" : "transaction_id",
+          "destColumn" : "transaction_id"
         } ],
         "keyValueProperties" : {
           "DETECT_COMPARE_KEYS" : "true",
@@ -174,18 +135,17 @@
         "y" : 181
       },
       "keyValueProps" : {
-        "CONVERT_NUMBER_TO_LONG" : "false",
         "BAD_RECORD_COUNT" : "10"
       }
     }
   },
   "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"de869949-e073-4323-af6a-1f5eda42fb38\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"sampledb_src\",\"schemaName\":\"sampledb_src\",\"typeTable\":\"TABLE\",\"tableName\":\"Jan_2020_ontime\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"ARR_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ARR_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CANCELLED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_MONTH\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_WEEK\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME_BLK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DISTANCE\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIVERTED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_AIRLINE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_FL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_UNIQUE_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TAIL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"ARR_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ARR_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CANCELLED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_MONTH\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_WEEK\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME_BLK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DISTANCE\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIVERTED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_AIRLINE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_FL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_UNIQUE_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TAIL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":49518,\"tableSize\":10.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"a5e87db0-90f4-402a-bec3-1554837fac22\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"sampledb_src\",\"schemaName\":\"sampledb_src\",\"typeTable\":\"TABLE\",\"tableName\":\"Jan_2020_ontime\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"ARR_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ARR_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CANCELLED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_MONTH\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_WEEK\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME_BLK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DISTANCE\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIVERTED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_AIRLINE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_FL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_UNIQUE_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TAIL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"ARR_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ARR_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CANCELLED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_MONTH\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_WEEK\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME_BLK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DISTANCE\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIVERTED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_AIRLINE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_FL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_UNIQUE_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TAIL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":49518,\"tableSize\":10.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"test\",\"data_monitoring\":false,\"dimensions\":[],\"aggregations\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\"},\"mapping\":{\"mappings\":{\"1108636422640\":{\"source\":\"de869949-e073-4323-af6a-1f5eda42fb38\",\"target\":\"a5e87db0-90f4-402a-bec3-1554837fac22\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"a24409d5-a397-4701-9baa-5dc12efba831\",\"sourceColumnName\":\"TAIL_NUM\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"TAIL_NUM\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"3493476f-e0b8-4ae0-b541-c828fce20b25\",\"sourceColumnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"a805d97d-856f-4be4-9cfb-c036953ce258\",\"sourceColumnName\":\"ORIGIN_AIRPORT_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"ORIGIN_AIRPORT_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8fb9714d-1b6f-4f95-8932-21a63b42579f\",\"sourceColumnName\":\"ORIGIN\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"ORIGIN\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"591d1a08-dc52-4e16-ae81-a628b46dc8fb\",\"sourceColumnName\":\"OP_UNIQUE_CARRIER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"OP_UNIQUE_CARRIER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"f1cb9f13-b6e3-4723-a521-66ce965f6e16\",\"sourceColumnName\":\"OP_CARRIER_FL_NUM\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"OP_CARRIER_FL_NUM\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"47afdb63-5ac1-4bb9-9129-119d198b173f\",\"sourceColumnName\":\"OP_CARRIER_AIRLINE_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"OP_CARRIER_AIRLINE_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"0d203397-1416-4e54-8282-c8a312f0f341\",\"sourceColumnName\":\"OP_CARRIER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"OP_CARRIER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8fa4db53-12fe-4709-a2a5-f75d4e45010e\",\"sourceColumnName\":\"DIVERTED\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":false,\"targetColumnName\":\"DIVERTED\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"919bad06-d893-4bc7-85aa-21ef425846e2\",\"sourceColumnName\":\"DISTANCE\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":false,\"targetColumnName\":\"DISTANCE\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"658ed836-0d7e-46a0-9056-43c16c83000c\",\"sourceColumnName\":\"DEST_AIRPORT_SEQ_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"DEST_AIRPORT_SEQ_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"824a6696-519c-4c27-b39d-38588aa53636\",\"sourceColumnName\":\"DEST_AIRPORT_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"DEST_AIRPORT_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"c3320652-fc6c-4067-a676-d8555f6222c1\",\"sourceColumnName\":\"DEST\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"DEST\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"00f73a10-7784-4464-a094-ced61ef64e7e\",\"sourceColumnName\":\"DEP_TIME_BLK\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"DEP_TIME_BLK\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"f0b0dbd2-dea7-46ef-ba3f-1079f093b38c\",\"sourceColumnName\":\"DEP_TIME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"DEP_TIME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"6031cbd0-f8c1-4584-b76a-edc581c87df3\",\"sourceColumnName\":\"DEP_DEL15\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":true,\"targetColumnName\":\"DEP_DEL15\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"1cd000f2-665a-4194-b664-ccf49282421c\",\"sourceColumnName\":\"DAY_OF_WEEK\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"DAY_OF_WEEK\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"3750d9ba-1964-46d1-9c27-2145bc5a93cb\",\"sourceColumnName\":\"DAY_OF_MONTH\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"DAY_OF_MONTH\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"989b1c3b-86bf-44b3-828c-5b5ded49d788\",\"sourceColumnName\":\"CANCELLED\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":false,\"targetColumnName\":\"CANCELLED\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8c797379-e4b1-45d0-99fb-e65c4cdbdd6e\",\"sourceColumnName\":\"ARR_TIME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"ARR_TIME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"5fecd65c-4f2b-497e-b92d-effb7985f422\",\"sourceColumnName\":\"ARR_DEL15\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":true,\"targetColumnName\":\"ARR_DEL15\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\",\"detectCompareKeys\":true}}},\"dataQualityState\":{},\"columnRules\":{},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1108636422640\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
-  "flowId" : 12598,
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"371430eb-d95b-4cbb-8824-d4ea9ebfb11b\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"\",\"filePath\":\"\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"S3\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"s3://dataqio/sample_csv/region/east/east_sales_q1.csv\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"test\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"transaction_id\":\"3001\",\"region\":\"east\",\"product\":\"laptop\",\"quantity\":\"3\",\"price\":\"1200.00\",\"discount\":\"100.00\",\"customer_id\":\"C021\",\"sale_date\":\"2024-03-01\"},{\"transaction_id\":\"3002\",\"region\":\"east\",\"product\":\"phone\",\"quantity\":\"7\",\"price\":\"800.00\",\"discount\":\"80.00\",\"customer_id\":\"C022\",\"sale_date\":\"2024-03-05\"},{\"transaction_id\":\"3003\",\"region\":\"east\",\"product\":\"tablet\",\"quantity\":\"5\",\"price\":\"500.00\",\"discount\":\"40.00\",\"customer_id\":\"C023\",\"sale_date\":\"2024-03-10\"},{\"transaction_id\":\"3004\",\"region\":\"east\",\"product\":\"laptop\",\"quantity\":\"2\",\"price\":\"1200.00\",\"discount\":\"75.00\",\"customer_id\":\"C024\",\"sale_date\":\"2024-03-15\"},{\"transaction_id\":\"3005\",\"region\":\"east\",\"product\":\"phone\",\"quantity\":\"9\",\"price\":\"800.00\",\"discount\":\"150.00\",\"customer_id\":\"C025\",\"sale_date\":\"2024-03-20\"},{\"transaction_id\":\"3006\",\"region\":\"east\",\"product\":\"tablet\",\"quantity\":\"4\",\"price\":\"500.00\",\"discount\":\"35.00\",\"customer_id\":\"C026\",\"sale_date\":\"2024-03-25\"},{\"transaction_id\":\"3007\",\"region\":\"east\",\"product\":\"laptop\",\"quantity\":\"6\",\"price\":\"1200.00\",\"discount\":\"200.00\",\"customer_id\":\"C027\",\"sale_date\":\"2024-03-28\"},{\"transaction_id\":\"3008\",\"region\":\"east\",\"product\":\"phone\",\"quantity\":\"3\",\"price\":\"800.00\",\"discount\":\"50.00\",\"customer_id\":\"C028\",\"sale_date\":\"2024-03-29\"}],\"schema\":[{\"columnName\":\"transaction_id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"region\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"product\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"quantity\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"price\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"discount\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"customer_id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"sale_date\",\"columnType\":\"string\",\"nullable\":true}],\"count\":8,\"isPrimaryDataset\":true}],\"target\":[{\"id\":\"9494e3c0-d6b8-4bb0-9804-ba6938cc58f7\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"\",\"filePath\":\"\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"S3\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"s3://dataqio/sample_csv/region/east/east_sales_q1.csv\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"test\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"transaction_id\":\"3001\",\"region\":\"east\",\"product\":\"laptop\",\"quantity\":\"3\",\"price\":\"1200.00\",\"discount\":\"100.00\",\"customer_id\":\"C021\",\"sale_date\":\"2024-03-01\"},{\"transaction_id\":\"3002\",\"region\":\"east\",\"product\":\"phone\",\"quantity\":\"7\",\"price\":\"800.00\",\"discount\":\"80.00\",\"customer_id\":\"C022\",\"sale_date\":\"2024-03-05\"},{\"transaction_id\":\"3003\",\"region\":\"east\",\"product\":\"tablet\",\"quantity\":\"5\",\"price\":\"500.00\",\"discount\":\"40.00\",\"customer_id\":\"C023\",\"sale_date\":\"2024-03-10\"},{\"transaction_id\":\"3004\",\"region\":\"east\",\"product\":\"laptop\",\"quantity\":\"2\",\"price\":\"1200.00\",\"discount\":\"75.00\",\"customer_id\":\"C024\",\"sale_date\":\"2024-03-15\"},{\"transaction_id\":\"3005\",\"region\":\"east\",\"product\":\"phone\",\"quantity\":\"9\",\"price\":\"800.00\",\"discount\":\"150.00\",\"customer_id\":\"C025\",\"sale_date\":\"2024-03-20\"},{\"transaction_id\":\"3006\",\"region\":\"east\",\"product\":\"tablet\",\"quantity\":\"4\",\"price\":\"500.00\",\"discount\":\"35.00\",\"customer_id\":\"C026\",\"sale_date\":\"2024-03-25\"},{\"transaction_id\":\"3007\",\"region\":\"east\",\"product\":\"laptop\",\"quantity\":\"6\",\"price\":\"1200.00\",\"discount\":\"200.00\",\"customer_id\":\"C027\",\"sale_date\":\"2024-03-28\"},{\"transaction_id\":\"3008\",\"region\":\"east\",\"product\":\"phone\",\"quantity\":\"3\",\"price\":\"800.00\",\"discount\":\"50.00\",\"customer_id\":\"C028\",\"sale_date\":\"2024-03-29\"}],\"schema\":[{\"columnName\":\"transaction_id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"region\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"product\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"quantity\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"price\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"discount\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"customer_id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"sale_date\",\"columnType\":\"string\",\"nullable\":true}],\"count\":8,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"test\",\"data_monitoring\":false,\"dimensions\":[],\"aggregations\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\"},\"mapping\":{\"mappings\":{\"1277527988874\":{\"source\":\"371430eb-d95b-4cbb-8824-d4ea9ebfb11b\",\"target\":\"9494e3c0-d6b8-4bb0-9804-ba6938cc58f7\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"a7e82a08-2373-4612-a22c-350b6be15ae2\",\"sourceColumnName\":\"sale_date\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"sale_date\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"99ddd72a-c015-41f2-9801-eb4b27f15528\",\"sourceColumnName\":\"customer_id\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"customer_id\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"ac90bb08-f989-4190-9d75-67bd5711788c\",\"sourceColumnName\":\"discount\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"discount\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"62d9048c-e0da-4049-99c1-732dd792e7a7\",\"sourceColumnName\":\"price\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"price\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"9ce33ad3-b20a-4f86-9c1f-969aed4a96dc\",\"sourceColumnName\":\"quantity\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"quantity\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"5a2f703f-77d9-40bf-a9dd-2c2733d88933\",\"sourceColumnName\":\"product\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"product\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"916f6b83-b9bd-4702-acf5-f197481d20d0\",\"sourceColumnName\":\"region\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"region\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"a0bd35b0-f514-44df-934a-1133db12e0c7\",\"sourceColumnName\":\"transaction_id\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"transaction_id\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\",\"detectCompareKeys\":true}}},\"dataQualityState\":{},\"columnRules\":{},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1277527988874\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 12272,
   "dmsProjectId" : 781,
   "syncInfo" : {
     "syncId" : "PROJECT",
-    "timestamp" : "2026-02-02T07:23:40.279761242Z",
+    "timestamp" : "2026-02-02T07:23:49.828445631Z",
     "syncType" : "PROJECT",
     "user" : "system"
   }
