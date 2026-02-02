@@ -1,0 +1,114 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"65ff9730-2e6f-4a88-9b88-3530d03bf0a9\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"tableName\":\"HOSPITAL_DATA_CLEANED\",\"schema\":[{\"columnName\":\"CITY\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"COUNTRYCODE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"DOB\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true},{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"HOSPITAL_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ICD9\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"NHS_NUMBER\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PATIENT_INCOME\",\"columnType\":\"decimal(5, 2)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"PATIENT_START_DATETIME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PROVIDER_NUMBER\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"P_FNAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"P_LNAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ZIPCODE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null,\"isPrimaryDataset\":true},{\"id\":\"f53ce2ae-5868-40fe-aa92-f7d98d0f4220\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"tableName\":\"ENROLL_DETAIL_SNAPSHOT\",\"schema\":[{\"columnName\":\"ACCOUNT_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"ACCOUNT_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ACTOR_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"CALCULATED_APPROVE_DT\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"CALCULATED_CANCELLED_DT\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"CALCULATED_RECEIVED_DT\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"CALCULATED_WITHDRAW_DT\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"DCA_GRADES_FOR_REPORTING\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ENROLLMENT_COUNT\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"ENROLLMENT_PERIOD\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ENROLLMENT_PERIOD_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ENROLLMENT_YEAR\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"ENROLL_APPROVED_DATE\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"FULL_TIME_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"GRADE_LEVEL_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"GRADUATION_YEAR\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"INIT_ENROLL_YEAR\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"INSERT_DATE\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"INSTITUTION_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"K12_CTEPATHWAY\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"K12_IDENTITY_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"KW_PUBLIC_ENROLL_DETAIL_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"KW_PUBLIC_ENROLL_DETAIL_KEY\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"KW_SOURCE_SYSTEM_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"MESO_PROPERTY\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"MKT_BUSINESS_LINE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"MKT_PROPERTY\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"MKT_SCHOOL_TYPE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PAPER_WORK_STATUS\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PAPER_WORK_YEAR\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"PARTICIPANT_PROGRAM_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"PARTICIPANT_PROGRAM_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PARTICIPANT_PROGRAM_TYPE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PARTICIPANT_PROGRAM_TYPE_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"PEAK_IS_ACTIVE_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PEMD_BUSINESS_LINE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PEMD_COUNT_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PEMD_COUNT_SAMS_MS_HS_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PEMD_PROPERTY\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PEMD_SCHOOL_TYPE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PROGRAM_DEDUPLICATION_FLAG\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PROGRAM_END_DATE\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"PROGRAM_HOST_SCHOOL\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PROGRAM_START_DATE\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"REGISTRATION_STATUS\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"SAMS_SCHOOL_YEAR\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"SCHOOL_CODE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"SCHOOL_CTEPATHWAY\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"SCHOOL_ENROLL_DATE\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"SCHOOL_ENROLL_STATUS\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"SCHOOL_ENROLL_YEAR\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"SCHOOL_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"SCHOOL_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"SCHOOL_STATUS\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"SCHOOL_WITHDRAW_DATE\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"SHOW_IN_PEMD\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"SNAPSHOT_DATE_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"SOURCE_SYSTEM_CODE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"STUDENT_FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"STUDENT_GRADE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"STUDENT_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"STUDENT_LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"STUDENT_MIDDLE_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"STUDENT_STATUS\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"WITHDRAW_DATE\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":true},{\"columnName\":\"XSCHSTU_PARTPROGRAM_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"XSCH_PARTPROGRAM_ID\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"rules on two tables\",\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"1\":{\"id\":1,\"ruleName\":\"r1 first table\",\"ruleType\":\"Column Rule\",\"executeOn\":\"source\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"tableName\":\"HOSPITAL_DATA_CLEANED\",\"columnName\":\"CITY\",\"sqlExpression\":\"length(CITY) < 3\",\"sql\":\"\",\"rulesLevel\":\"Warning\",\"enable\":true},\"2\":{\"id\":2,\"ruleName\":\"r2\",\"ruleType\":\"Column Rule\",\"executeOn\":\"source\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"tableName\":\"HOSPITAL_DATA_CLEANED\",\"columnName\":\"EMAIL\",\"sqlExpression\":\"length(EMAIL) > 15\",\"sql\":\"\",\"rulesLevel\":\"Warning\",\"enable\":true}}}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "session_id" : "1c9ee07d-3936-447f-9c85-1394c578820a",
+  "executeOn" : "LOCAL",
+  "flowName" : "dataq1689360074364",
+  "APP_VERSION" : "707-2f842cc875",
+  "flowDesc" : "rules on two tables",
+  "LicensedName" : "microsoft",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "snowflake_NYC_TAXI_DATA",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "HOSPITAL_DATA_CLEANED" : null,
+          "ENROLL_DETAIL_SNAPSHOT" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "HOSPITAL_DATA_CLEANED",
+          "tblSize" : "0",
+          "tblRecordCount" : 100,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ENROLL_DETAIL_SNAPSHOT",
+          "tblSize" : "0",
+          "tblRecordCount" : 1,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "HOSPITAL_DATA_CLEANED" : {
+            "rules" : [ {
+              "ruleType" : "SQL_WHERE",
+              "column" : "CITY",
+              "sql" : "length(CITY) < 3",
+              "creationTime" : 1689360074365,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "r1firsttable",
+              "description" : "r1 first table"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "EMAIL",
+              "sql" : "length(EMAIL) > 15",
+              "creationTime" : 1689360074365,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "r2",
+              "description" : "r2"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : { }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "UI_VERSION" : "b412a37a5c-29",
+  "API_APP_BUILD" : "Jun 20, 2023 8:09:18 PM",
+  "parameters" : [ ],
+  "email" : [ ],
+  "session.id" : "1c9ee07d-3936-447f-9c85-1394c578820a",
+  "flowType" : "DATA QUALITY",
+  "flowId" : 8404,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:39.860808296Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

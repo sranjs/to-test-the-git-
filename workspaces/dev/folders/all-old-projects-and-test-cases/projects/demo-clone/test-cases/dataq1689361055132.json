@@ -1,0 +1,173 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"e1a5c302-89d5-40d3-93bb-0c8d0b5be349\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"tableName\":\"CUSTOMER\",\"schema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":false},{\"columnName\":\"IP_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ID\"],\"foreignKeyInfo\":null,\"count\":43838,\"tableSize\":4,\"noOfPartition\":0,\"partitionColumn\":\"ID\",\"indexInfo\":null},{\"id\":\"227e1f33-a940-4363-92ef-9e4d0f9fa4f5\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"tableName\":\"CUSTOMER_1\",\"schema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":false},{\"columnName\":\"IP_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ID\"],\"foreignKeyInfo\":null,\"count\":43838,\"tableSize\":4,\"noOfPartition\":0,\"partitionColumn\":\"ID\",\"indexInfo\":null}],\"target\":[{\"id\":\"9d797286-4a3c-4556-8ef2-c55146d3d4da\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_new_19\",\"schemaName\":\"DATAQ\",\"tableName\":\"CUSTOMER\",\"schema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":false},{\"columnName\":\"IP_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ID\"],\"foreignKeyInfo\":null,\"count\":43838,\"tableSize\":4,\"noOfPartition\":0,\"partitionColumn\":\"ID\",\"indexInfo\":null},{\"id\":\"1e868808-bc48-4f2a-bf23-8dba4a4fdef8\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_new_19\",\"schemaName\":\"DATAQ\",\"tableName\":\"CUSTOMER_1\",\"schema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":false},{\"columnName\":\"IP_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ID\"],\"foreignKeyInfo\":null,\"count\":43838,\"tableSize\":4,\"noOfPartition\":0,\"partitionColumn\":\"ID\",\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"counts comparision\",\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"c03c64bc-5ff2-4714-9395-8c6967466ee0\":{\"source\":\"e1a5c302-89d5-40d3-93bb-0c8d0b5be349\",\"target\":\"9d797286-4a3c-4556-8ef2-c55146d3d4da\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"e5a71673-c767-4de2-94e6-ebaa6a9ac080\",\"sourceColumnName\":\"LAST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"LAST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"ff0b4b79-b4d5-4e26-9588-5ee147783b3e\",\"sourceColumnName\":\"IP_ADDRESS\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"IP_ADDRESS\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"aaf1d6f5-ef5e-4805-b4be-c2e488aa310c\",\"sourceColumnName\":\"ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"a3755899-7f09-4046-9ac7-cd04fceb87d4\",\"sourceColumnName\":\"GENDER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"GENDER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"b3ad5533-2923-4fd2-9b98-068debb1aa54\",\"sourceColumnName\":\"FIRST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"FIRST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"374921e2-abab-4e7c-9d16-dfe5f4d717d0\",\"sourceColumnName\":\"EMAIL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"EMAIL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"b32792ef-a5f7-43e8-ad65-4c85950d5231\":{\"source\":\"227e1f33-a940-4363-92ef-9e4d0f9fa4f5\",\"target\":\"1e868808-bc48-4f2a-bf23-8dba4a4fdef8\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"8c148ce5-4959-4b7a-92f9-e41cc01c4123\",\"sourceColumnName\":\"LAST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"LAST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"5fca1de5-6e38-4fbb-8d64-d3fc52681e2e\",\"sourceColumnName\":\"IP_ADDRESS\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"IP_ADDRESS\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"16e84fc5-d07f-415a-87f9-104891bf4bae\",\"sourceColumnName\":\"ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"2dd5c5a9-07d3-4e4b-8210-d216fec742a2\",\"sourceColumnName\":\"GENDER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"GENDER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"a04ed672-3b88-443e-8a0a-f0ee86a071d2\",\"sourceColumnName\":\"FIRST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"FIRST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"650d7d09-f85f-4416-bab7-68b8d3bd0b36\",\"sourceColumnName\":\"EMAIL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"EMAIL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"2b1a79d0-40c9-4c79-98bf-12e191339cae\":{\"source\":\"e1a5c302-89d5-40d3-93bb-0c8d0b5be349\",\"target\":\"1e868808-bc48-4f2a-bf23-8dba4a4fdef8\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"ace0226a-95f4-434f-a4c8-61f8b63772d2\",\"sourceColumnName\":\"LAST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"LAST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"df9b1c3a-5bfb-4274-bb2e-d52f7509e8b4\",\"sourceColumnName\":\"IP_ADDRESS\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"IP_ADDRESS\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"b367a3ce-02d9-4dca-881c-80a5dff44df4\",\"sourceColumnName\":\"ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"43fd2da5-b735-4f66-b0fc-0dcaedd6497d\",\"sourceColumnName\":\"GENDER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"GENDER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"fba9ba23-63f0-46fe-8348-57c4b756a79d\",\"sourceColumnName\":\"FIRST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"FIRST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"2575e91e-6f65-4014-9a0b-2e74ce25381e\",\"sourceColumnName\":\"EMAIL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"EMAIL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{}}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "session_id" : "1c9ee07d-3936-447f-9c85-1394c578820a",
+  "executeOn" : "LOCAL",
+  "flowName" : "dataq1689361055132",
+  "APP_VERSION" : "707-2f842cc875",
+  "flowDesc" : "counts comparision",
+  "LicensedName" : "microsoft",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DATAQ",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "oracle_19C",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "CUSTOMER" : null,
+          "CUSTOMER_1" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "CUSTOMER",
+          "tblSize" : "4",
+          "tblRecordCount" : 43838,
+          "primaryKeys" : [ "ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER_1",
+          "tblSize" : "4",
+          "tblRecordCount" : 43838,
+          "primaryKeys" : [ "ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DATAQ",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "oracle_new_19",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "CUSTOMER" : null,
+          "CUSTOMER_1" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "CUSTOMER",
+          "tblSize" : "4",
+          "tblRecordCount" : 43838,
+          "primaryKeys" : [ "ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER_1",
+          "tblSize" : "4",
+          "tblRecordCount" : 43838,
+          "primaryKeys" : [ "ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "COUNTS_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "COUNTS_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "CUSTOMER" : "CUSTOMER"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false
+      }, {
+        "matchBoth" : true,
+        "compareType" : "COUNTS_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "CUSTOMER_1" : "CUSTOMER_1"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false
+      }, {
+        "matchBoth" : true,
+        "compareType" : "COUNTS_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "CUSTOMER" : "CUSTOMER_1"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "COUNTS_COMPARE_TOLERANCE" : "0",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "b412a37a5c-29",
+  "API_APP_BUILD" : "Jun 20, 2023 8:09:18 PM",
+  "parameters" : [ ],
+  "email" : [ ],
+  "session.id" : "1c9ee07d-3936-447f-9c85-1394c578820a",
+  "flowType" : "COUNTS COMPARE",
+  "flowId" : 8403,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:39.799028283Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
