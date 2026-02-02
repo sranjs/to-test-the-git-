@@ -1,0 +1,659 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "tess sql",
+  "email" : [ ],
+  "flowDesc" : "tess sql",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataQuality",
+  "parameters" : [ {
+    "paramName" : "SQL_EXECUTION_TIMEOUT_DQ_-123",
+    "paramValue" : "20",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  } ],
+  "flowType" : "DATA QUALITY",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "new_snowflake_rsa_encrypted",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "STRESS_TEST_DQ_RULES" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "STRESS_TEST_DQ_RULES",
+          "tblSize" : "1",
+          "tblRecordCount" : 254,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "STRESS_TEST_DQ_RULES" : {
+            "rules" : [ {
+              "unitTestCaseId" : 1192716080291,
+              "userProvidedTestCaseId" : "Cost -1",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "Select CONCAT('$', ROUND(SUM(visit_amount) / 1000, 1), 'K')  from l5.pac_opp_patient  t1 left join l5.payer t2 on t1.payer_master_id=t2.payer_master_id left join l5.pcp t3  on t1.org_hierarchy_master_id=t3.org_hierarchy_master_id where t1.visit_start_date ${Date} and readmission_flag=TRUE and ${Conract_var}",
+              "creationTime" : 1768352005933,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Acute Inpatient",
+                "widget" : "Readmissions",
+                "kpi" : "Cost due to Readmissions",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 629536842772,
+              "userProvidedTestCaseId" : "Cost -2",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "Select Concat(round(Sum(Case when readmission_flag=true then 1 else 0 end)/sum(case when readmission_index_visit_flag=true then 1 else 0 end)*100,1),'%') from l5.pac_opp_patient  t1 left join l5.payer t2 on t1.payer_master_id=t2.payer_master_id left join l5.pcp t3  on t1.org_hierarchy_master_id=t3.org_hierarchy_master_id where t1.visit_start_date ${Date} and ${Conract_var}",
+              "creationTime" : 1768352005933,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Acute Inpatient",
+                "widget" : "Readmission",
+                "kpi" : "Readmission %",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 886299877155,
+              "userProvidedTestCaseId" : "Cost -3",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(visit_amount) / 1000000, 1), 'M')  visit_amount  from l5.pac_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where month_of_visit ${Date} and ${Conract_var}",
+              "creationTime" : 1768352005933,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Acute Inpatient",
+                "widget" : "Summary",
+                "kpi" : "IP Cost",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1227603598994,
+              "userProvidedTestCaseId" : "Cost -4",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select distinct \nround(cast(sum(numerator)/sum(denominator)  as float))\n        from (\n      SELECT\n  month_of_measurement,\n  payer_master_id,\n  metric_type,\n  metric,\n  metric_name,\n  org_hierarchy_master_id,plan_name,\n  COALESCE(num, 0) numerator,\n  COALESCE(den, 0) denominator\nFROM\n  (\n    SELECT\n     ap.month_of_measurement,\n     ap.payer_master_id,\n      'cost' metric_type,\n      'inpatient_pmpm' metric,\n          'Inpatient PMPM' metric_name,\n      ap.org_hierarchy_master_id,ap.plan_name,\n      num,\n      den\n    FROM\n      (\n        SELECT\n          count(empi) den,\n          md5(a.payer_id||':'||a.plan_id) AS payer_master_id,\n          month_of_attribution as month_of_measurement,\n          org_hierarchy_master_id,plan_name,\n        FROM\n        l5.attribution_patient a where ${Conract_var}\n        GROUP BY\n          month_of_attribution,\n          payer_master_id,\n          org_hierarchy_master_id,plan_name\n      ) ap\n    LEFT JOIN\n     (\n        SELECT\n          payer_master_id,\n          month_of_visit,\n          org_hierarchy_master_id,\n          SUM(visit_amount) num\n          from\n           l5.visit_pcp\n           where visit_type = 'Inpatient'\n          GROUP BY\n                payer_master_id,\n                month_of_visit,\n                org_hierarchy_master_id\n      ) ep\n      ON ep.month_of_visit = ap.month_of_measurement\n      AND ep.payer_master_id = ap.payer_master_id\n      AND ep.org_hierarchy_master_id =ap.org_hierarchy_master_id where ap.month_of_measurement ${Date}))group by all;",
+              "creationTime" : 1768352005934,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Acute Inpatient",
+                "widget" : "Summary",
+                "kpi" : "IP PMPM",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 771345285181,
+              "userProvidedTestCaseId" : "Cost -5",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(visit_amount) / 1000, 1), 'K') visit_amount from l5.pac_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date ${Date}  and acsc_flag = 'True' and ${Conract_var}",
+              "creationTime" : 1768352005934,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Acute Inpatient",
+                "widget" : "ACSC",
+                "kpi" : "Cost due to ACSC",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 732631923473,
+              "userProvidedTestCaseId" : "Cost -6",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select round(sum(case when acsc_flag = 'True' then 1 else 0 end)/count(visit_id)*100,1)  from l5.pac_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date ${Date}  and ${Conract_var}",
+              "creationTime" : 1768352005934,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Acute Inpatient",
+                "widget" : "ACSC",
+                "kpi" : "% of IP Admits due to ACSC",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1360646546841,
+              "userProvidedTestCaseId" : "Cost -7",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(visit_amount) / 1000000, 1), 'M') from l5.pac_opp_patient t1  left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date ${Date}  and ${Conract_var}  and non_elective_ip_admit_flag = 'True' ",
+              "creationTime" : 1768352005934,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Acute Inpatient",
+                "widget" : "Potentially Avoidable Short Stays",
+                "kpi" : "Cost due to Potentially Avoidable Short Stays",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 364895576288,
+              "userProvidedTestCaseId" : "Cost -8",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select round(sum(case when non_elective_ip_admit_flag = 'True' then 1 else 0 end)/count(visit_id)*100,1)  from l5.pac_opp_patient t1  left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date ${Date}  and ${Conract_var}",
+              "creationTime" : 1768352005934,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Acute Inpatient",
+                "widget" : "Potentially Avoidable Short Stays",
+                "kpi" : "% of Potentially Avoidable Short Stays",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1002302374501,
+              "userProvidedTestCaseId" : "Cost -9",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(cost_centre1_amount) / 1000000, 1), 'M')  from l5.part_b_drugs_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date ${Date}\n  AND ${Conract_var}",
+              "creationTime" : 1768352005934,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Medication",
+                "widget" : "Medical Benefit Drugs",
+                "kpi" : "Cost due to Medical Benefit Drugs",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 254946166919,
+              "userProvidedTestCaseId" : "Cost -10",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT\n    ROUND(numerator / denominator) AS Pharmacy_PMPM\nFROM (\n    SELECT\n        t1.contract_name,\n        t1.payer_name,\n        t1.plan_name,\n        t1.numerator,\n        t2.denominator\n    FROM (\n        SELECT\n            p.contract_name,\n            p.payer_name,\n            p.plan_name,\n            SUM(visit_amount) AS numerator\n        FROM l5.visit_pcp ao\n        LEFT JOIN l5.payer p\n            ON p.payer_master_id = ao.payer_master_id\n        LEFT JOIN l5.date dt\n            ON dt.month_of_date = ao.month_of_visit\n        LEFT JOIN l5.pcp m\n            ON m.org_hierarchy_master_id = ao.org_hierarchy_master_id\n        WHERE visit_type = 'Medication'\n          AND month_of_date  ${Date}\n        GROUP BY\n            p.contract_name,\n            p.payer_name,\n            p.plan_name\n    ) t1\n    LEFT JOIN (\n        SELECT\n            p.contract_name,\n            p.payer_name,\n            p.plan_name,\n            COUNT(empi) AS denominator\n        FROM l5.attribution z\n        LEFT JOIN l5.payer p\n            ON p.payer_master_id = z.payer_master_id\n        LEFT JOIN l5.date dt\n            ON dt.month_of_date = z.month_of_attribution\n        LEFT JOIN l5.pcp m\n            ON m.org_hierarchy_master_id = z.org_hierarchy_master_id\n        WHERE month_of_date  ${Date}\n        GROUP BY\n            p.contract_name,\n            p.payer_name,\n            p.plan_name\n    ) t2\n      ON t1.contract_name = t2.contract_name\n     AND t1.payer_name = t2.payer_name\n     AND t1.plan_name = t2.plan_name\n) final\nWHERE ${Conract_var}\n",
+              "creationTime" : 1768352005934,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Medication",
+                "widget" : "Summary >> Pharmacy Benefit Drugs",
+                "kpi" : "PMPM",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 569362973874,
+              "userProvidedTestCaseId" : "Cost -11",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select Concat(round(count(distinct case when brand_status = 'Generic' then visit_id end)/count(distinct visit_id)*100,1),'%')from l5.medication_management_patient t1 left join l5.ndc_data t2 on t1.ndc_code = t2.ndc left join l5.pcp t3 on t1.org_hierarchy_master_id= t3.org_hierarchy_master_id left join l5.payer t4 on t1.payer_master_id= t4.payer_master_id where visit_start_date  ${Date}\nand ${Conract_var}",
+              "creationTime" : 1768352005934,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Medication",
+                "widget" : "Summary >> Medication Metrics",
+                "kpi" : "Generic Medication%",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 344835656286,
+              "userProvidedTestCaseId" : "Cost -12",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select concat(round(count( case when primary_procedure_code = cheapest_biosimilar_cpt_code then visit_id end)/count(visit_id)*100,1),'%')from l5.part_b_drugs_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date   ${Date}\nand ${Conract_var}  and t1.biosimilar_flag = ('1') ;",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Medication",
+                "widget" : "Summary >> Medication Metrics",
+                "kpi" : "Biosimilar %",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1683773812865,
+              "userProvidedTestCaseId" : "Cost -13",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT \n  Concat(ROUND(\n    COUNT(CASE WHEN step_therapy_category_type <> 'Category 3' THEN visit_id END) ${default_file_name} 100.0 \n    / NULLIF(COUNT(visit_id), 0), \n  1) ,'%')AS patience_comp_rate\nFROM l5.medication_step_therapy_opp_patient t1\nLEFT JOIN l5.pcp t2 \n  ON t1.org_hierarchy_master_id = t2.org_hierarchy_master_id\nLEFT JOIN l5.payer t3 \n  ON t1.payer_master_id = t3.payer_master_id\nWHERE visit_start_date ${Date}\nand ${Conract_var}",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Medication",
+                "widget" : "Summary >> Medication Metrics",
+                "kpi" : "Patience compliance rate",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 373546899518,
+              "userProvidedTestCaseId" : "Cost -14",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(impactable_opportunity) / 1000, 1), 'K')  from l5.part_b_drugs_opp_patient  t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date  ${Date}\nand ${Conract_var} and biosimilar_flag = 1 ;",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Medication",
+                "widget" : "Medical Benefit Drugs",
+                "kpi" : "Possible Reduction",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1123174064029,
+              "userProvidedTestCaseId" : "Cost -15",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(cost_centre1_amount) / 1000, 1), 'K')  from l5.medication_step_therapy_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date  ${Date}\nand ${Conract_var}",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Medication",
+                "widget" : "Step Therapy",
+                "kpi" : "Cost due to Anti-VEGF drugs (ophthalmology)",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1685193145578,
+              "userProvidedTestCaseId" : "Cost -16",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(impactable_opportunity) / 1000, 1), 'K') from l5.medication_step_therapy_opp_patient  t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date  ${Date}\nand ${Conract_var}",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Medication",
+                "widget" : "Step Therapy",
+                "kpi" : "Possible Reduction",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 980627670013,
+              "userProvidedTestCaseId" : "Cost -17",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(visit_amount) / 1000000, 1), 'M') from l5.visit_pcp t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where month_of_visit ${Date}  and ${Conract_var}  and visit_type = 'Outpatient' ;",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "Summary",
+                "kpi" : "OP Cost",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 462218545339,
+              "userProvidedTestCaseId" : "Cost -18",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "Select Concat(round(count( case when avoidable_sub_category in ('Emergent, Primary Care Treatable','Non Emergent') then visit_id end)/count(visit_id)  *100,1),'%')from l5.ed_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where month_of_visit ${Date}  and ${Conract_var}",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "Summary ->Outpatient metrics",
+                "kpi" : "Avoidable ED%",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 843934895581,
+              "userProvidedTestCaseId" : "Cost -19",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select round((visit_count*12000.0/member_months),2 ) from (select count(visit_id) visit_count from L5.hopd_opp_patient hp  left join L5.pcp p on hp.org_hierarchy_master_id = p.org_hierarchy_master_id  left join L5.payer p2 on hp.payer_master_id = p2.payer_master_id  where visit_start_date ${Date}  and ${Conract_var}) t1 left join (select count(${default_file_name}) member_months from L5.attribution_patient  where ${Conract_var} and month_of_attribution ${Date}) t2 on true;",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "Summary->Outpatient metrics",
+                "kpi" : "Surgery/1000",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1576808131681,
+              "userProvidedTestCaseId" : "Cost -20",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT DISTINCT  \n  ROUND(CAST(SUM(ED_1000.numerator) / NULLIF(SUM(ED_1000.denominator), 0) AS FLOAT),2) AS ed_per_1000\nFROM (\n  SELECT\n    ap.month_of_measurement,\n    MD5(ap.payer_id || ':' || ap.plan_id) AS payer_master_id,\n    ap.plan_name,\n    ap.org_hierarchy_master_id,\n    COALESCE(ep.num, 0) ${default_file_name} 12000 AS numerator,\n    COALESCE(ap.den, 0) AS denominator\n  FROM (\n    SELECT\n      COUNT(empi) AS den,\n      payer_id,\n      plan_id,\n      plan_name,\n      month_of_attribution AS month_of_measurement,\n      org_hierarchy_master_id\n    FROM l5.attribution_patient\n    WHERE ${Conract_var}\n    GROUP BY\n      month_of_attribution,\n      payer_id,\n      plan_id,\n      plan_name,\n      org_hierarchy_master_id\n  ) ap\n  LEFT JOIN (\n    SELECT\n      month_of_visit,\n      payer_master_id,\n      org_hierarchy_master_id,\n      COUNT(visit_id) AS num\n    FROM l5.ed_opp_patient\n    GROUP BY\n      month_of_visit,\n      payer_master_id,\n      org_hierarchy_master_id\n  ) ep \n    ON ep.month_of_visit = ap.month_of_measurement\n   AND ep.payer_master_id = MD5(ap.payer_id || ':' || ap.plan_id)\n   AND ep.org_hierarchy_master_id = ap.org_hierarchy_master_id\n  WHERE ap.month_of_measurement  ${Date}\n) AS ED_1000\nLEFT JOIN l5.payer p \n  ON ED_1000.payer_master_id = p.payer_master_id\nLEFT JOIN l5.pcp pc \n  ON ED_1000.org_hierarchy_master_id = pc.org_hierarchy_master_id;",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "Summary->Outpatient metrics",
+                "kpi" : "ED/1000",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1728413195311,
+              "userProvidedTestCaseId" : "Cost -21",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(visit_amount) / 1000000, 1), 'M') from l5.ed_opp_patient t1  left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where month_of_visit  ${Date} and ${Conract_var}\nand ed_to_ip_flag ='False' ;",
+              "creationTime" : 1768352005935,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "ED",
+                "kpi" : "Cost due to ED",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1719502939688,
+              "userProvidedTestCaseId" : "Cost -22",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT\n   \n    ROUND(numerator / denominator) AS Outpatient_PMPM\nFROM (\n    SELECT\n        t1.contract_name,\n        t1.payer_name,\n        t1.plan_name,\n        t1.numerator,\n        t2.denominator\n    FROM (\n        SELECT\n            p.contract_name,\n            p.payer_name,\n            p.plan_name,\n            SUM(visit_amount) AS numerator\n        FROM l5.visit_pcp ao\n        LEFT JOIN l5.payer p\n            ON p.payer_master_id = ao.payer_master_id\n        LEFT JOIN l5.date dt\n            ON dt.month_of_date = ao.month_of_visit\n        LEFT JOIN l5.pcp m\n            ON m.org_hierarchy_master_id = ao.org_hierarchy_master_id\n        WHERE visit_type = 'Outpatient'\n          AND month_of_date ${Date}\n        GROUP BY\n            p.contract_name,\n            p.payer_name,\n            p.plan_name\n    ) t1\n    LEFT JOIN (\n        SELECT\n            p.contract_name,\n            p.payer_name,\n            p.plan_name,\n            COUNT(empi) AS denominator\n        FROM l5.attribution z\n        LEFT JOIN l5.payer p\n            ON p.payer_master_id = z.payer_master_id\n        LEFT JOIN l5.date dt\n            ON dt.month_of_date = z.month_of_attribution\n        LEFT JOIN l5.pcp m\n            ON m.org_hierarchy_master_id = z.org_hierarchy_master_id\n        WHERE month_of_date ${Date}\n        GROUP BY\n            p.contract_name,\n            p.payer_name,\n            p.plan_name\n    ) t2\n      ON t1.contract_name = t2.contract_name\n     AND t1.payer_name = t2.payer_name\n     AND t1.plan_name = t2.plan_name\n) final\nWHERE ${Conract_var}\n",
+              "creationTime" : 1768352005936,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "Summary >> OP Cost",
+                "kpi" : "OP PMPM",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 867728696591,
+              "userProvidedTestCaseId" : "Cost -23",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(visit_amount) / 1000000, 1), 'M')   from l5.hopd_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date  ${Date} and ${Conract_var}",
+              "creationTime" : 1768352005936,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "Outpatient Surgery",
+                "kpi" : "Cost due to Outpatient Surgery",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1563447615468,
+              "userProvidedTestCaseId" : "Cost -24",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT \n  ROUND(\n    COUNT(DISTINCT CASE \n      WHEN asc_procedure_flag = '1' THEN visit_id \n    END) ${default_file_name} 100.0 / NULLIF(COUNT(DISTINCT visit_id), 0), \n  1) AS asc_procedure_percent\nFROM l5.hopd_opp_patient t1\nLEFT JOIN l5.pcp t2 \n  ON t1.org_hierarchy_master_id = t2.org_hierarchy_master_id\nLEFT JOIN l5.payer t3 \n  ON t1.payer_master_id = t3.payer_master_id\nWHERE visit_start_date ${Date}\n  AND ${Conract_var}",
+              "creationTime" : 1768352005936,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "Outpatient Surgery",
+                "kpi" : "% of Potentially Redirectable",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 677651492766,
+              "userProvidedTestCaseId" : "Cost -25",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM((visit_amount) *0.5)/ 1000000, 1), 'M')  from l5.hopd_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where procedure_available_in_asc_flag = ('1')  and  visit_start_date ${Date}\n  AND ${Conract_var}",
+              "creationTime" : 1768352005936,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "Outpatient Surgery",
+                "kpi" : "Possible Reduction",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1614745244773,
+              "userProvidedTestCaseId" : "Cost -26",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select  CONCAT('$', ROUND(SUM(visit_amount) / 1000, 1), 'k')  from l5.outpatient_others_opp_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where visit_start_date ${Date}\n  AND ${Conract_var}",
+              "creationTime" : 1768352005936,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Outpatient",
+                "widget" : "Others",
+                "kpi" : "Cost due to Imaging + Physical Therapy (PT)",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 28572937338,
+              "userProvidedTestCaseId" : "Cost -27",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(visit_amount) / 1000000, 1), 'M') visit_amount from l5.visit_pcp t1\nleft join l5.pcp t2\non t1.org_hierarchy_master_id= t2.org_hierarchy_master_id\nleft join l5.payer t3\non t1.payer_master_id= t3.payer_master_id\nwhere month_of_visit ${Date}\nand ${Conract_var} ",
+              "creationTime" : 1768352005936,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Overview",
+                "widget" : "Total cost of care",
+                "kpi" : "Total cost of care",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1340210094011,
+              "userProvidedTestCaseId" : "Cost -28",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT DISTINCT  \n  ROUND(CAST(SUM(numerator) / NULLIF(SUM(denominator), 0) AS FLOAT),2) AS ip_per_1000\nFROM (\n  SELECT\n    ap.month_of_measurement,\n    MD5(ap.payer_id || ':' || ap.plan_id) AS payer_master_id,\n    ap.plan_name,\n    ap.org_hierarchy_master_id,\n    'utilization' AS metric_type,\n    'ip_per_1000' AS metric,\n    'IP/1000' AS metric_name,\n    COALESCE(ep.num ${default_file_name} 12000, 0) AS numerator,\n    COALESCE(ap.den, 0) AS denominator\n  FROM (\n    SELECT\n      COUNT(empi) AS den,\n      payer_id,\n      plan_id,\n      plan_name,\n      org_hierarchy_master_id,\n      month_of_attribution AS month_of_measurement\n    FROM l5.attribution_patient\n    WHERE ${Conract_var}\n    GROUP BY payer_id, plan_id, plan_name, org_hierarchy_master_id, month_of_attribution\n  ) ap\n  LEFT JOIN (\n    SELECT\n      payer_id,\n      plan_id,\n      org_hierarchy_master_id,\n      DATE_TRUNC('month', visit_start_date) AS month_of_visit,\n      COUNT(visit_id) AS num\n    FROM l5.readmit_patient\n    GROUP BY payer_id, plan_id, org_hierarchy_master_id, DATE_TRUNC('month', visit_start_date)\n  ) ep\n  ON ep.month_of_visit = ap.month_of_measurement\n  AND ep.payer_id = ap.payer_id\n  AND ep.plan_id = ap.plan_id\n  AND ep.org_hierarchy_master_id = ap.org_hierarchy_master_id\n  WHERE ap.month_of_measurement ${Date}\n) t;\n",
+              "creationTime" : 1768352005936,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Overview",
+                "widget" : "Key KPI",
+                "kpi" : "IP/1000",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 259378868894,
+              "userProvidedTestCaseId" : "Cost -29",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "Select Concat(round(Sum(Case when readmission_flag=true then 1 else 0 end)/sum(case when readmission_index_visit_flag=true then 1 else 0 end)*100,1),'%') from l5.pac_opp_patient  t1 left join l5.payer t2 on t1.payer_master_id=t2.payer_master_id left join l5.pcp t3  on t1.org_hierarchy_master_id=t3.org_hierarchy_master_id where t1.visit_start_date  ${Date}\nand ${Conract_var}",
+              "creationTime" : 1768352005936,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Overview",
+                "widget" : "Key KPI",
+                "kpi" : "Readmission %",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1583244033639,
+              "userProvidedTestCaseId" : "Cost -30",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select round((visit_count*12000.0/member_months),2)\nfrom (select sum(visit_count) visit_count from l5.visit_pcp hp\nleft join L5.pcp p on hp.org_hierarchy_master_id = p.org_hierarchy_master_id\nleft join L5.payer p2 on hp.payer_master_id = p2.payer_master_id\nwhere month_of_visit ${Date}\nand visit_sub_type= 'SNF Inpatient Claim'\nand ${Conract_var}) t1\nleft join (select count(${default_file_name}) member_months from L5.attribution_patient\nwhere ${Conract_var}\nand month_of_attribution ${Date}) t2 on true;",
+              "creationTime" : 1768352005936,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Overview",
+                "widget" : "Key KPI",
+                "kpi" : "SNF/1000",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 377319989485,
+              "userProvidedTestCaseId" : "Cost -31",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT \n    ceil(((visit_count / member_months) ${default_file_name} 12000),2)AS imaging_utilization_per_1000\nFROM (\n    SELECT \n        SUM(v.visit_count) AS visit_count\n    FROM l5.visit_pcp v\n    LEFT JOIN l5.payer p ON v.payer_master_id = p.payer_master_id\n    LEFT JOIN l5.pcp pc ON v.org_hierarchy_master_id = pc.org_hierarchy_master_id\n    WHERE ${Conract_var}\n        AND v.month_of_visit ${Date}\n        AND v.visit_type = 'Professional'\n        AND v.visit_sub_type IN (\n            'Imaging Others', 'CT Imaging', 'MRI Imaging',\n            'Professional - Radiology - CT', 'Professional - Radiology - MRI', \n            'Professional - Imaging Others', 'Professional - Radiology - Mammography', \n            'Professional - Radiology - Nuclear', 'Professional - Radiology - PET', \n            'Professional - Radiology - Therapeutic', 'Professional - Radiology - X Ray'\n        )\n) t1\nLEFT JOIN (\n    SELECT \n        COUNT(a.empi) AS member_months\n    FROM l5.attribution a\n    LEFT JOIN l5.payer p ON a.payer_master_id = p.payer_master_id\n    LEFT JOIN l5.pcp pc ON a.org_hierarchy_master_id = pc.org_hierarchy_master_id\n    WHERE  ${Conract_var}\n        AND a.month_of_attribution ${Date}\n) t2 ON TRUE;\n",
+              "creationTime" : 1768352005937,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Overview",
+                "widget" : "Key KPI",
+                "kpi" : "Imaging/1000",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 667282032259,
+              "userProvidedTestCaseId" : "Cost -32",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT DISTINCT  \n  ROUND(CAST(SUM(ED_1000.numerator) / NULLIF(SUM(ED_1000.denominator), 0) AS FLOAT),2) AS ed_per_1000\nFROM (\n  SELECT\n    ap.month_of_measurement,\n    MD5(ap.payer_id || ':' || ap.plan_id) AS payer_master_id,\n    ap.plan_name,\n    ap.org_hierarchy_master_id,\n    COALESCE(ep.num, 0) ${default_file_name} 12000 AS numerator,\n    COALESCE(ap.den, 0) AS denominator\n  FROM (\n    SELECT\n      COUNT(empi) AS den,\n      payer_id,\n      plan_id,\n      plan_name,\n      month_of_attribution AS month_of_measurement,\n      org_hierarchy_master_id\n    FROM l5.attribution_patient\n    WHERE  ${Conract_var}\n    GROUP BY\n      month_of_attribution,\n      payer_id,\n      plan_id,\n      plan_name,\n      org_hierarchy_master_id\n  ) ap\n  LEFT JOIN (\n    SELECT\n      month_of_visit,\n      payer_master_id,\n      org_hierarchy_master_id,\n      COUNT(visit_id) AS num\n    FROM l5.ed_opp_patient\n    GROUP BY\n      month_of_visit,\n      payer_master_id,\n      org_hierarchy_master_id\n  ) ep \n    ON ep.month_of_visit = ap.month_of_measurement\n   AND ep.payer_master_id = MD5(ap.payer_id || ':' || ap.plan_id)\n   AND ep.org_hierarchy_master_id = ap.org_hierarchy_master_id\n  WHERE ap.month_of_measurement ${Date}\n) AS ED_1000\nLEFT JOIN l5.payer p \n  ON ED_1000.payer_master_id = p.payer_master_id\nLEFT JOIN l5.pcp pc \n  ON ED_1000.org_hierarchy_master_id = pc.org_hierarchy_master_id;",
+              "creationTime" : 1768352005937,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Overview",
+                "widget" : "Key KPI",
+                "kpi" : "ED/1000",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1582602081630,
+              "userProvidedTestCaseId" : "Cost -33",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT\n    \n    ROUND(numerator / denominator) AS Overall_PMPM\nFROM (\n    SELECT\n        t1.contract_name,\n        t1.payer_name,\n        t1.plan_name,\n        t1.numerator,\n        t2.denominator\n    FROM (\n        SELECT\n            p.contract_name,\n            p.payer_name,\n            p.plan_name,\n            SUM(visit_amount) AS numerator\n        FROM l5.visit_pcp ao\n        LEFT JOIN l5.payer p\n            ON p.payer_master_id = ao.payer_master_id\n        LEFT JOIN l5.date dt\n            ON dt.month_of_date = ao.month_of_visit\n        LEFT JOIN l5.pcp m\n            ON m.org_hierarchy_master_id = ao.org_hierarchy_master_id\n        WHERE month_of_date ${Date}\n        GROUP BY\n            p.contract_name,\n            p.payer_name,\n            p.plan_name\n    ) t1\n    LEFT JOIN (\n        SELECT\n            p.contract_name,\n            p.payer_name,\n            p.plan_name,\n            COUNT(empi) AS denominator\n        FROM l5.attribution z\n        LEFT JOIN l5.payer p\n            ON p.payer_master_id = z.payer_master_id\n        LEFT JOIN l5.date dt\n            ON dt.month_of_date = z.month_of_attribution\n        LEFT JOIN l5.pcp m\n            ON m.org_hierarchy_master_id = z.org_hierarchy_master_id\n        WHERE month_of_date ${Date}\n        GROUP BY\n            p.contract_name,\n            p.payer_name,\n            p.plan_name\n    ) t2\n      ON t1.contract_name = t2.contract_name\n     AND t1.payer_name = t2.payer_name\n     AND t1.plan_name = t2.plan_name\n) final\nWHERE  ${Conract_var}\n",
+              "creationTime" : 1768352005937,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Overview",
+                "widget" : "Total cost of care",
+                "kpi" : "Overall PMPM",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 190481152265,
+              "userProvidedTestCaseId" : "Cost -34",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(visit_amount) / 1000000, 1), 'M')  from l5.network_leakage_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where month_of_visit ${Date} and visit_category='Professional' and ${Conract_var}",
+              "creationTime" : 1768352005937,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Professional",
+                "widget" : "Professional",
+                "kpi" : "Professional Cost",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1640247488598,
+              "userProvidedTestCaseId" : "Cost -35",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "with attr as  ( select count(${default_file_name}) member_months  from L5.attribution_patient  where  month_of_attribution ${Date}  and ${Conract_var}) ,  expend as  (select sum(visit_amount) professionaL_expenditure  from L5.visit_patient vp  where  ${Conract_var}  and visit_start_date ${Date}  and visit_category = 'Professional' ) select round(professionaL_expenditure /member_months) as prof_pmpm  from attr, expend;",
+              "creationTime" : 1768352005937,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Professional",
+                "widget" : "Professional",
+                "kpi" : "Professional PMPM",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 1629796260869,
+              "userProvidedTestCaseId" : "Cost -36",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "select CONCAT('$', ROUND(SUM(visit_amount) / 1000000, 1), 'M') from l5.network_leakage_patient t1 left join l5.pcp t2 on t1.org_hierarchy_master_id= t2.org_hierarchy_master_id left join l5.payer t3 on t1.payer_master_id= t3.payer_master_id where month_of_visit  ${Date}\nand ${Conract_var} and visit_category='Professional'  and t1.out_of_network_flag=true ;",
+              "creationTime" : 1768352005937,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Professional",
+                "widget" : "Leakage Metrics",
+                "kpi" : "Total Leakage",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 101728706613,
+              "userProvidedTestCaseId" : "Cost -37",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT    CONCAT(     ROUND(       (SUM(CASE WHEN t1.out_of_network_flag = true THEN visit_amount ELSE 0 END)        / SUM(visit_amount)) ${default_file_name} 100, 1),      '%'   ) AS Leakage_Percentage  FROM l5.network_leakage_patient t1 LEFT JOIN l5.pcp t2   ON t1.org_hierarchy_master_id = t2.org_hierarchy_master_id LEFT JOIN l5.payer t3   ON t1.payer_master_id = t3.payer_master_id WHERE  month_of_visit  ${Date}\nand ${Conract_var}   AND visit_category = 'Professional' ;",
+              "creationTime" : 1768352005937,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Professional",
+                "widget" : "Leakage Metrics",
+                "kpi" : "Leakage%",
+                "testData" : "Year ="
+              }
+            }, {
+              "unitTestCaseId" : 411137558580,
+              "userProvidedTestCaseId" : "Cost -38",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT \n    CONCAT('$', ROUND(SUM(CASE WHEN t1.out_of_network_flag = true \n                               AND sp.alternate_servicing_provider_npi1 IS NOT NULL \n                          THEN visit_amount ELSE 0 END) / 1000000, 1), 'M') AS Savings,\n    CONCAT('$', ROUND(SUM(visit_amount) / 1000000, 1), 'M') AS Total_amount,\n    ROUND( (SUM(CASE WHEN t1.out_of_network_flag = true \n                     AND sp.alternate_servicing_provider_npi1 IS NOT NULL \n                THEN visit_amount ELSE 0 END) \n           / SUM(visit_amount)) ${default_file_name} 100, 1) AS Potentially_Avoidable_Leakage_Percentage\nFROM l5.visit_pcp t1\nLEFT JOIN l5.pcp t2\nON t1.org_hierarchy_master_id = t2.org_hierarchy_master_id\nLEFT JOIN l5.payer t3\nON t1.payer_master_id = t3.payer_master_id\nLEFT JOIN l5.servicing_provider sp\nON t1.servicing_provider_npi = sp.servicing_provider_npi\nWHERE month_of_visit  ${Date}\nand ${Conract_var}\nAND visit_category = 'Professional';\n\n",
+              "creationTime" : 1768352005937,
+              "level" : "Warning",
+              "description" : "Acute Inpatient",
+              "dqAdditionalInfo" : {
+                "tab" : "Professional",
+                "widget" : "Leakage Metrics",
+                "kpi" : "Potentially avoidable leakage%",
+                "testData" : "Year ="
+              }
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "10"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"06c4acd9-c3a5-4be6-a3f9-dc61bef277fa\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"RECORD_ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RULE_DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RULE_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":500,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RULE_TYPE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SEVERITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":4000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"RECORD_ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RULE_DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RULE_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":500,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RULE_TYPE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SEVERITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":4000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":254,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"tess sql\",\"data_monitoring\":false,\"dimensions\":[],\"aggregations\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\"},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"f5fa3675-f54e-44f6-8275-46e41b1aedef\":{\"userProvidedTestCaseId\":\"Cost -1\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMCwgMSksICdLJykgIGZyb20gbDUucGFjX29wcF9wYXRpZW50ICB0MSBsZWZ0IGpvaW4gbDUucGF5ZXIgdDIgb24gdDEucGF5ZXJfbWFzdGVyX2lkPXQyLnBheWVyX21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGNwIHQzICBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD10My5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCB3aGVyZSB0MS52aXNpdF9zdGFydF9kYXRlICR7RGF0ZX0gYW5kIHJlYWRtaXNzaW9uX2ZsYWc9VFJVRSBhbmQgJHtDb25yYWN0X3Zhcn0=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"f5fa3675-f54e-44f6-8275-46e41b1aedef\",\"unitTestId\":\"1192716080291\",\"dqAdditionalInfo\":{\"tab\":\"Acute Inpatient\",\"widget\":\"Readmissions\",\"kpi\":\"Cost due to Readmissions\",\"testData\":\"Year =\"}},\"8617c064-b89d-4a43-8f2d-9864f9c3beda\":{\"userProvidedTestCaseId\":\"Cost -2\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U2VsZWN0IENvbmNhdChyb3VuZChTdW0oQ2FzZSB3aGVuIHJlYWRtaXNzaW9uX2ZsYWc9dHJ1ZSB0aGVuIDEgZWxzZSAwIGVuZCkvc3VtKGNhc2Ugd2hlbiByZWFkbWlzc2lvbl9pbmRleF92aXNpdF9mbGFnPXRydWUgdGhlbiAxIGVsc2UgMCBlbmQpKjEwMCwxKSwnJScpIGZyb20gbDUucGFjX29wcF9wYXRpZW50ICB0MSBsZWZ0IGpvaW4gbDUucGF5ZXIgdDIgb24gdDEucGF5ZXJfbWFzdGVyX2lkPXQyLnBheWVyX21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGNwIHQzICBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD10My5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCB3aGVyZSB0MS52aXNpdF9zdGFydF9kYXRlICR7RGF0ZX0gYW5kICR7Q29ucmFjdF92YXJ9\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"8617c064-b89d-4a43-8f2d-9864f9c3beda\",\"unitTestId\":\"629536842772\",\"dqAdditionalInfo\":{\"tab\":\"Acute Inpatient\",\"widget\":\"Readmission\",\"kpi\":\"Readmission %\",\"testData\":\"Year =\"}},\"2d2f8682-e2c2-47cf-b881-c30a58febdbf\":{\"userProvidedTestCaseId\":\"Cost -3\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMDAwMCwgMSksICdNJykgIHZpc2l0X2Ftb3VudCAgZnJvbSBsNS5wYWNfb3BwX3BhdGllbnQgdDEgbGVmdCBqb2luIGw1LnBjcCB0MiBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD0gdDIub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgbGVmdCBqb2luIGw1LnBheWVyIHQzIG9uIHQxLnBheWVyX21hc3Rlcl9pZD0gdDMucGF5ZXJfbWFzdGVyX2lkIHdoZXJlIG1vbnRoX29mX3Zpc2l0ICR7RGF0ZX0gYW5kICR7Q29ucmFjdF92YXJ9\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"2d2f8682-e2c2-47cf-b881-c30a58febdbf\",\"unitTestId\":\"886299877155\",\"dqAdditionalInfo\":{\"tab\":\"Acute Inpatient\",\"widget\":\"Summary\",\"kpi\":\"IP Cost\",\"testData\":\"Year =\"}},\"760eb821-f8fa-43e0-af8c-7de8b182983f\":{\"userProvidedTestCaseId\":\"Cost -4\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IGRpc3RpbmN0IApyb3VuZChjYXN0KHN1bShudW1lcmF0b3IpL3N1bShkZW5vbWluYXRvcikgIGFzIGZsb2F0KSkKICAgICAgICBmcm9tICgKICAgICAgU0VMRUNUCiAgbW9udGhfb2ZfbWVhc3VyZW1lbnQsCiAgcGF5ZXJfbWFzdGVyX2lkLAogIG1ldHJpY190eXBlLAogIG1ldHJpYywKICBtZXRyaWNfbmFtZSwKICBvcmdfaGllcmFyY2h5X21hc3Rlcl9pZCxwbGFuX25hbWUsCiAgQ09BTEVTQ0UobnVtLCAwKSBudW1lcmF0b3IsCiAgQ09BTEVTQ0UoZGVuLCAwKSBkZW5vbWluYXRvcgpGUk9NCiAgKAogICAgU0VMRUNUCiAgICAgYXAubW9udGhfb2ZfbWVhc3VyZW1lbnQsCiAgICAgYXAucGF5ZXJfbWFzdGVyX2lkLAogICAgICAnY29zdCcgbWV0cmljX3R5cGUsCiAgICAgICdpbnBhdGllbnRfcG1wbScgbWV0cmljLAogICAgICAgICAgJ0lucGF0aWVudCBQTVBNJyBtZXRyaWNfbmFtZSwKICAgICAgYXAub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQsYXAucGxhbl9uYW1lLAogICAgICBudW0sCiAgICAgIGRlbgogICAgRlJPTQogICAgICAoCiAgICAgICAgU0VMRUNUCiAgICAgICAgICBjb3VudChlbXBpKSBkZW4sCiAgICAgICAgICBtZDUoYS5wYXllcl9pZHx8JzonfHxhLnBsYW5faWQpIEFTIHBheWVyX21hc3Rlcl9pZCwKICAgICAgICAgIG1vbnRoX29mX2F0dHJpYnV0aW9uIGFzIG1vbnRoX29mX21lYXN1cmVtZW50LAogICAgICAgICAgb3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQscGxhbl9uYW1lLAogICAgICAgIEZST00KICAgICAgICBsNS5hdHRyaWJ1dGlvbl9wYXRpZW50IGEgd2hlcmUgJHtDb25yYWN0X3Zhcn0KICAgICAgICBHUk9VUCBCWQogICAgICAgICAgbW9udGhfb2ZfYXR0cmlidXRpb24sCiAgICAgICAgICBwYXllcl9tYXN0ZXJfaWQsCiAgICAgICAgICBvcmdfaGllcmFyY2h5X21hc3Rlcl9pZCxwbGFuX25hbWUKICAgICAgKSBhcAogICAgTEVGVCBKT0lOCiAgICAgKAogICAgICAgIFNFTEVDVAogICAgICAgICAgcGF5ZXJfbWFzdGVyX2lkLAogICAgICAgICAgbW9udGhfb2ZfdmlzaXQsCiAgICAgICAgICBvcmdfaGllcmFyY2h5X21hc3Rlcl9pZCwKICAgICAgICAgIFNVTSh2aXNpdF9hbW91bnQpIG51bQogICAgICAgICAgZnJvbQogICAgICAgICAgIGw1LnZpc2l0X3BjcAogICAgICAgICAgIHdoZXJlIHZpc2l0X3R5cGUgPSAnSW5wYXRpZW50JwogICAgICAgICAgR1JPVVAgQlkKICAgICAgICAgICAgICAgIHBheWVyX21hc3Rlcl9pZCwKICAgICAgICAgICAgICAgIG1vbnRoX29mX3Zpc2l0LAogICAgICAgICAgICAgICAgb3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKICAgICAgKSBlcAogICAgICBPTiBlcC5tb250aF9vZl92aXNpdCA9IGFwLm1vbnRoX29mX21lYXN1cmVtZW50CiAgICAgIEFORCBlcC5wYXllcl9tYXN0ZXJfaWQgPSBhcC5wYXllcl9tYXN0ZXJfaWQKICAgICAgQU5EIGVwLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkID1hcC5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCB3aGVyZSBhcC5tb250aF9vZl9tZWFzdXJlbWVudCAke0RhdGV9KSlncm91cCBieSBhbGw7\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"760eb821-f8fa-43e0-af8c-7de8b182983f\",\"unitTestId\":\"1227603598994\",\"dqAdditionalInfo\":{\"tab\":\"Acute Inpatient\",\"widget\":\"Summary\",\"kpi\":\"IP PMPM\",\"testData\":\"Year =\"}},\"f17ed3d4-dd86-48ad-82a5-6543917c154f\":{\"userProvidedTestCaseId\":\"Cost -5\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMCwgMSksICdLJykgdmlzaXRfYW1vdW50IGZyb20gbDUucGFjX29wcF9wYXRpZW50IHQxIGxlZnQgam9pbiBsNS5wY3AgdDIgb24gdDEub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQ9IHQyLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkIGxlZnQgam9pbiBsNS5wYXllciB0MyBvbiB0MS5wYXllcl9tYXN0ZXJfaWQ9IHQzLnBheWVyX21hc3Rlcl9pZCB3aGVyZSB2aXNpdF9zdGFydF9kYXRlICR7RGF0ZX0gIGFuZCBhY3NjX2ZsYWcgPSAnVHJ1ZScgYW5kICR7Q29ucmFjdF92YXJ9\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"f17ed3d4-dd86-48ad-82a5-6543917c154f\",\"unitTestId\":\"771345285181\",\"dqAdditionalInfo\":{\"tab\":\"Acute Inpatient\",\"widget\":\"ACSC\",\"kpi\":\"Cost due to ACSC\",\"testData\":\"Year =\"}},\"f1ffb0bd-07eb-478c-9565-0e8ac86945bc\":{\"userProvidedTestCaseId\":\"Cost -6\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IHJvdW5kKHN1bShjYXNlIHdoZW4gYWNzY19mbGFnID0gJ1RydWUnIHRoZW4gMSBlbHNlIDAgZW5kKS9jb3VudCh2aXNpdF9pZCkqMTAwLDEpICBmcm9tIGw1LnBhY19vcHBfcGF0aWVudCB0MSBsZWZ0IGpvaW4gbDUucGNwIHQyIG9uIHQxLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkPSB0Mi5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGF5ZXIgdDMgb24gdDEucGF5ZXJfbWFzdGVyX2lkPSB0My5wYXllcl9tYXN0ZXJfaWQgd2hlcmUgdmlzaXRfc3RhcnRfZGF0ZSAke0RhdGV9ICBhbmQgJHtDb25yYWN0X3Zhcn0=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"f1ffb0bd-07eb-478c-9565-0e8ac86945bc\",\"unitTestId\":\"732631923473\",\"dqAdditionalInfo\":{\"tab\":\"Acute Inpatient\",\"widget\":\"ACSC\",\"kpi\":\"% of IP Admits due to ACSC\",\"testData\":\"Year =\"}},\"c183a635-7dd2-4a3c-8ea3-de9930354436\":{\"userProvidedTestCaseId\":\"Cost -7\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMDAwMCwgMSksICdNJykgZnJvbSBsNS5wYWNfb3BwX3BhdGllbnQgdDEgIGxlZnQgam9pbiBsNS5wY3AgdDIgb24gdDEub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQ9IHQyLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkIGxlZnQgam9pbiBsNS5wYXllciB0MyBvbiB0MS5wYXllcl9tYXN0ZXJfaWQ9IHQzLnBheWVyX21hc3Rlcl9pZCB3aGVyZSB2aXNpdF9zdGFydF9kYXRlICR7RGF0ZX0gIGFuZCAke0NvbnJhY3RfdmFyfSAgYW5kIG5vbl9lbGVjdGl2ZV9pcF9hZG1pdF9mbGFnID0gJ1RydWUnIA==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"c183a635-7dd2-4a3c-8ea3-de9930354436\",\"unitTestId\":\"1360646546841\",\"dqAdditionalInfo\":{\"tab\":\"Acute Inpatient\",\"widget\":\"Potentially Avoidable Short Stays\",\"kpi\":\"Cost due to Potentially Avoidable Short Stays\",\"testData\":\"Year =\"}},\"41acaad2-88a5-4ba0-9ceb-b75429be5dc8\":{\"userProvidedTestCaseId\":\"Cost -8\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IHJvdW5kKHN1bShjYXNlIHdoZW4gbm9uX2VsZWN0aXZlX2lwX2FkbWl0X2ZsYWcgPSAnVHJ1ZScgdGhlbiAxIGVsc2UgMCBlbmQpL2NvdW50KHZpc2l0X2lkKSoxMDAsMSkgIGZyb20gbDUucGFjX29wcF9wYXRpZW50IHQxICBsZWZ0IGpvaW4gbDUucGNwIHQyIG9uIHQxLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkPSB0Mi5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGF5ZXIgdDMgb24gdDEucGF5ZXJfbWFzdGVyX2lkPSB0My5wYXllcl9tYXN0ZXJfaWQgd2hlcmUgdmlzaXRfc3RhcnRfZGF0ZSAke0RhdGV9ICBhbmQgJHtDb25yYWN0X3Zhcn0=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"41acaad2-88a5-4ba0-9ceb-b75429be5dc8\",\"unitTestId\":\"364895576288\",\"dqAdditionalInfo\":{\"tab\":\"Acute Inpatient\",\"widget\":\"Potentially Avoidable Short Stays\",\"kpi\":\"% of Potentially Avoidable Short Stays\",\"testData\":\"Year =\"}},\"b30eedab-5cac-4182-bc00-23d62a72e0ea\":{\"userProvidedTestCaseId\":\"Cost -9\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTShjb3N0X2NlbnRyZTFfYW1vdW50KSAvIDEwMDAwMDAsIDEpLCAnTScpICBmcm9tIGw1LnBhcnRfYl9kcnVnc19vcHBfcGF0aWVudCB0MSBsZWZ0IGpvaW4gbDUucGNwIHQyIG9uIHQxLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkPSB0Mi5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGF5ZXIgdDMgb24gdDEucGF5ZXJfbWFzdGVyX2lkPSB0My5wYXllcl9tYXN0ZXJfaWQgd2hlcmUgdmlzaXRfc3RhcnRfZGF0ZSAke0RhdGV9CiAgQU5EICR7Q29ucmFjdF92YXJ9\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"b30eedab-5cac-4182-bc00-23d62a72e0ea\",\"unitTestId\":\"1002302374501\",\"dqAdditionalInfo\":{\"tab\":\"Medication\",\"widget\":\"Medical Benefit Drugs\",\"kpi\":\"Cost due to Medical Benefit Drugs\",\"testData\":\"Year =\"}},\"ca375f21-2b4a-499b-95b4-6af858e72801\":{\"userProvidedTestCaseId\":\"Cost -10\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUCiAgICBST1VORChudW1lcmF0b3IgLyBkZW5vbWluYXRvcikgQVMgUGhhcm1hY3lfUE1QTQpGUk9NICgKICAgIFNFTEVDVAogICAgICAgIHQxLmNvbnRyYWN0X25hbWUsCiAgICAgICAgdDEucGF5ZXJfbmFtZSwKICAgICAgICB0MS5wbGFuX25hbWUsCiAgICAgICAgdDEubnVtZXJhdG9yLAogICAgICAgIHQyLmRlbm9taW5hdG9yCiAgICBGUk9NICgKICAgICAgICBTRUxFQ1QKICAgICAgICAgICAgcC5jb250cmFjdF9uYW1lLAogICAgICAgICAgICBwLnBheWVyX25hbWUsCiAgICAgICAgICAgIHAucGxhbl9uYW1lLAogICAgICAgICAgICBTVU0odmlzaXRfYW1vdW50KSBBUyBudW1lcmF0b3IKICAgICAgICBGUk9NIGw1LnZpc2l0X3BjcCBhbwogICAgICAgIExFRlQgSk9JTiBsNS5wYXllciBwCiAgICAgICAgICAgIE9OIHAucGF5ZXJfbWFzdGVyX2lkID0gYW8ucGF5ZXJfbWFzdGVyX2lkCiAgICAgICAgTEVGVCBKT0lOIGw1LmRhdGUgZHQKICAgICAgICAgICAgT04gZHQubW9udGhfb2ZfZGF0ZSA9IGFvLm1vbnRoX29mX3Zpc2l0CiAgICAgICAgTEVGVCBKT0lOIGw1LnBjcCBtCiAgICAgICAgICAgIE9OIG0ub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgPSBhby5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZAogICAgICAgIFdIRVJFIHZpc2l0X3R5cGUgPSAnTWVkaWNhdGlvbicKICAgICAgICAgIEFORCBtb250aF9vZl9kYXRlICAke0RhdGV9CiAgICAgICAgR1JPVVAgQlkKICAgICAgICAgICAgcC5jb250cmFjdF9uYW1lLAogICAgICAgICAgICBwLnBheWVyX25hbWUsCiAgICAgICAgICAgIHAucGxhbl9uYW1lCiAgICApIHQxCiAgICBMRUZUIEpPSU4gKAogICAgICAgIFNFTEVDVAogICAgICAgICAgICBwLmNvbnRyYWN0X25hbWUsCiAgICAgICAgICAgIHAucGF5ZXJfbmFtZSwKICAgICAgICAgICAgcC5wbGFuX25hbWUsCiAgICAgICAgICAgIENPVU5UKGVtcGkpIEFTIGRlbm9taW5hdG9yCiAgICAgICAgRlJPTSBsNS5hdHRyaWJ1dGlvbiB6CiAgICAgICAgTEVGVCBKT0lOIGw1LnBheWVyIHAKICAgICAgICAgICAgT04gcC5wYXllcl9tYXN0ZXJfaWQgPSB6LnBheWVyX21hc3Rlcl9pZAogICAgICAgIExFRlQgSk9JTiBsNS5kYXRlIGR0CiAgICAgICAgICAgIE9OIGR0Lm1vbnRoX29mX2RhdGUgPSB6Lm1vbnRoX29mX2F0dHJpYnV0aW9uCiAgICAgICAgTEVGVCBKT0lOIGw1LnBjcCBtCiAgICAgICAgICAgIE9OIG0ub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgPSB6Lm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkCiAgICAgICAgV0hFUkUgbW9udGhfb2ZfZGF0ZSAgJHtEYXRlfQogICAgICAgIEdST1VQIEJZCiAgICAgICAgICAgIHAuY29udHJhY3RfbmFtZSwKICAgICAgICAgICAgcC5wYXllcl9uYW1lLAogICAgICAgICAgICBwLnBsYW5fbmFtZQogICAgKSB0MgogICAgICBPTiB0MS5jb250cmFjdF9uYW1lID0gdDIuY29udHJhY3RfbmFtZQogICAgIEFORCB0MS5wYXllcl9uYW1lID0gdDIucGF5ZXJfbmFtZQogICAgIEFORCB0MS5wbGFuX25hbWUgPSB0Mi5wbGFuX25hbWUKKSBmaW5hbApXSEVSRSAke0NvbnJhY3RfdmFyfQo=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"ca375f21-2b4a-499b-95b4-6af858e72801\",\"unitTestId\":\"254946166919\",\"dqAdditionalInfo\":{\"tab\":\"Medication\",\"widget\":\"Summary >> Pharmacy Benefit Drugs\",\"kpi\":\"PMPM\",\"testData\":\"Year =\"}},\"63a3e2c3-4c0b-4352-a941-e4e6011cbbd1\":{\"userProvidedTestCaseId\":\"Cost -11\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENvbmNhdChyb3VuZChjb3VudChkaXN0aW5jdCBjYXNlIHdoZW4gYnJhbmRfc3RhdHVzID0gJ0dlbmVyaWMnIHRoZW4gdmlzaXRfaWQgZW5kKS9jb3VudChkaXN0aW5jdCB2aXNpdF9pZCkqMTAwLDEpLCclJylmcm9tIGw1Lm1lZGljYXRpb25fbWFuYWdlbWVudF9wYXRpZW50IHQxIGxlZnQgam9pbiBsNS5uZGNfZGF0YSB0MiBvbiB0MS5uZGNfY29kZSA9IHQyLm5kYyBsZWZ0IGpvaW4gbDUucGNwIHQzIG9uIHQxLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkPSB0My5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGF5ZXIgdDQgb24gdDEucGF5ZXJfbWFzdGVyX2lkPSB0NC5wYXllcl9tYXN0ZXJfaWQgd2hlcmUgdmlzaXRfc3RhcnRfZGF0ZSAgJHtEYXRlfQphbmQgJHtDb25yYWN0X3Zhcn0=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"63a3e2c3-4c0b-4352-a941-e4e6011cbbd1\",\"unitTestId\":\"569362973874\",\"dqAdditionalInfo\":{\"tab\":\"Medication\",\"widget\":\"Summary >> Medication Metrics\",\"kpi\":\"Generic Medication%\",\"testData\":\"Year =\"}},\"c39399db-7ec1-42d3-bfec-5859e9682aa3\":{\"userProvidedTestCaseId\":\"Cost -12\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IGNvbmNhdChyb3VuZChjb3VudCggY2FzZSB3aGVuIHByaW1hcnlfcHJvY2VkdXJlX2NvZGUgPSBjaGVhcGVzdF9iaW9zaW1pbGFyX2NwdF9jb2RlIHRoZW4gdmlzaXRfaWQgZW5kKS9jb3VudCh2aXNpdF9pZCkqMTAwLDEpLCclJylmcm9tIGw1LnBhcnRfYl9kcnVnc19vcHBfcGF0aWVudCB0MSBsZWZ0IGpvaW4gbDUucGNwIHQyIG9uIHQxLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkPSB0Mi5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGF5ZXIgdDMgb24gdDEucGF5ZXJfbWFzdGVyX2lkPSB0My5wYXllcl9tYXN0ZXJfaWQgd2hlcmUgdmlzaXRfc3RhcnRfZGF0ZSAgICR7RGF0ZX0KYW5kICR7Q29ucmFjdF92YXJ9ICBhbmQgdDEuYmlvc2ltaWxhcl9mbGFnID0gKCcxJykgOw==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"c39399db-7ec1-42d3-bfec-5859e9682aa3\",\"unitTestId\":\"344835656286\",\"dqAdditionalInfo\":{\"tab\":\"Medication\",\"widget\":\"Summary >> Medication Metrics\",\"kpi\":\"Biosimilar %\",\"testData\":\"Year =\"}},\"b045314a-ab1d-48bc-9171-3a8afffb4cc3\":{\"userProvidedTestCaseId\":\"Cost -13\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUIAogIENvbmNhdChST1VORCgKICAgIENPVU5UKENBU0UgV0hFTiBzdGVwX3RoZXJhcHlfY2F0ZWdvcnlfdHlwZSA8PiAnQ2F0ZWdvcnkgMycgVEhFTiB2aXNpdF9pZCBFTkQpICogMTAwLjAgCiAgICAvIE5VTExJRihDT1VOVCh2aXNpdF9pZCksIDApLCAKICAxKSAsJyUnKUFTIHBhdGllbmNlX2NvbXBfcmF0ZQpGUk9NIGw1Lm1lZGljYXRpb25fc3RlcF90aGVyYXB5X29wcF9wYXRpZW50IHQxCkxFRlQgSk9JTiBsNS5wY3AgdDIgCiAgT04gdDEub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgPSB0Mi5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZApMRUZUIEpPSU4gbDUucGF5ZXIgdDMgCiAgT04gdDEucGF5ZXJfbWFzdGVyX2lkID0gdDMucGF5ZXJfbWFzdGVyX2lkCldIRVJFIHZpc2l0X3N0YXJ0X2RhdGUgJHtEYXRlfQphbmQgJHtDb25yYWN0X3Zhcn0=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"b045314a-ab1d-48bc-9171-3a8afffb4cc3\",\"unitTestId\":\"1683773812865\",\"dqAdditionalInfo\":{\"tab\":\"Medication\",\"widget\":\"Summary >> Medication Metrics\",\"kpi\":\"Patience compliance rate\",\"testData\":\"Year =\"}},\"bb66c71e-6bb9-4a90-91ad-4407592c3e15\":{\"userProvidedTestCaseId\":\"Cost -14\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTShpbXBhY3RhYmxlX29wcG9ydHVuaXR5KSAvIDEwMDAsIDEpLCAnSycpICBmcm9tIGw1LnBhcnRfYl9kcnVnc19vcHBfcGF0aWVudCAgdDEgbGVmdCBqb2luIGw1LnBjcCB0MiBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD0gdDIub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgbGVmdCBqb2luIGw1LnBheWVyIHQzIG9uIHQxLnBheWVyX21hc3Rlcl9pZD0gdDMucGF5ZXJfbWFzdGVyX2lkIHdoZXJlIHZpc2l0X3N0YXJ0X2RhdGUgICR7RGF0ZX0KYW5kICR7Q29ucmFjdF92YXJ9IGFuZCBiaW9zaW1pbGFyX2ZsYWcgPSAxIDs=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"bb66c71e-6bb9-4a90-91ad-4407592c3e15\",\"unitTestId\":\"373546899518\",\"dqAdditionalInfo\":{\"tab\":\"Medication\",\"widget\":\"Medical Benefit Drugs\",\"kpi\":\"Possible Reduction\",\"testData\":\"Year =\"}},\"44842975-8251-47b2-aeb0-67d6e4d5c996\":{\"userProvidedTestCaseId\":\"Cost -15\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTShjb3N0X2NlbnRyZTFfYW1vdW50KSAvIDEwMDAsIDEpLCAnSycpICBmcm9tIGw1Lm1lZGljYXRpb25fc3RlcF90aGVyYXB5X29wcF9wYXRpZW50IHQxIGxlZnQgam9pbiBsNS5wY3AgdDIgb24gdDEub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQ9IHQyLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkIGxlZnQgam9pbiBsNS5wYXllciB0MyBvbiB0MS5wYXllcl9tYXN0ZXJfaWQ9IHQzLnBheWVyX21hc3Rlcl9pZCB3aGVyZSB2aXNpdF9zdGFydF9kYXRlICAke0RhdGV9CmFuZCAke0NvbnJhY3RfdmFyfQ==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"44842975-8251-47b2-aeb0-67d6e4d5c996\",\"unitTestId\":\"1123174064029\",\"dqAdditionalInfo\":{\"tab\":\"Medication\",\"widget\":\"Step Therapy\",\"kpi\":\"Cost due to Anti-VEGF drugs (ophthalmology)\",\"testData\":\"Year =\"}},\"dcfa2eb2-4074-45df-94f7-b2b1ee1fb834\":{\"userProvidedTestCaseId\":\"Cost -16\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTShpbXBhY3RhYmxlX29wcG9ydHVuaXR5KSAvIDEwMDAsIDEpLCAnSycpIGZyb20gbDUubWVkaWNhdGlvbl9zdGVwX3RoZXJhcHlfb3BwX3BhdGllbnQgIHQxIGxlZnQgam9pbiBsNS5wY3AgdDIgb24gdDEub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQ9IHQyLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkIGxlZnQgam9pbiBsNS5wYXllciB0MyBvbiB0MS5wYXllcl9tYXN0ZXJfaWQ9IHQzLnBheWVyX21hc3Rlcl9pZCB3aGVyZSB2aXNpdF9zdGFydF9kYXRlICAke0RhdGV9CmFuZCAke0NvbnJhY3RfdmFyfQ==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"dcfa2eb2-4074-45df-94f7-b2b1ee1fb834\",\"unitTestId\":\"1685193145578\",\"dqAdditionalInfo\":{\"tab\":\"Medication\",\"widget\":\"Step Therapy\",\"kpi\":\"Possible Reduction\",\"testData\":\"Year =\"}},\"4e7c7aa4-1e29-42d4-9f28-d157ffba018b\":{\"userProvidedTestCaseId\":\"Cost -17\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMDAwMCwgMSksICdNJykgZnJvbSBsNS52aXNpdF9wY3AgdDEgbGVmdCBqb2luIGw1LnBjcCB0MiBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD0gdDIub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgbGVmdCBqb2luIGw1LnBheWVyIHQzIG9uIHQxLnBheWVyX21hc3Rlcl9pZD0gdDMucGF5ZXJfbWFzdGVyX2lkIHdoZXJlIG1vbnRoX29mX3Zpc2l0ICR7RGF0ZX0gIGFuZCAke0NvbnJhY3RfdmFyfSAgYW5kIHZpc2l0X3R5cGUgPSAnT3V0cGF0aWVudCcgOw==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"4e7c7aa4-1e29-42d4-9f28-d157ffba018b\",\"unitTestId\":\"980627670013\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"Summary\",\"kpi\":\"OP Cost\",\"testData\":\"Year =\"}},\"39df7142-9322-4fe8-86d8-4121022b05c5\":{\"userProvidedTestCaseId\":\"Cost -18\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U2VsZWN0IENvbmNhdChyb3VuZChjb3VudCggY2FzZSB3aGVuIGF2b2lkYWJsZV9zdWJfY2F0ZWdvcnkgaW4gKCdFbWVyZ2VudCwgUHJpbWFyeSBDYXJlIFRyZWF0YWJsZScsJ05vbiBFbWVyZ2VudCcpIHRoZW4gdmlzaXRfaWQgZW5kKS9jb3VudCh2aXNpdF9pZCkgICoxMDAsMSksJyUnKWZyb20gbDUuZWRfb3BwX3BhdGllbnQgdDEgbGVmdCBqb2luIGw1LnBjcCB0MiBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD0gdDIub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgbGVmdCBqb2luIGw1LnBheWVyIHQzIG9uIHQxLnBheWVyX21hc3Rlcl9pZD0gdDMucGF5ZXJfbWFzdGVyX2lkIHdoZXJlIG1vbnRoX29mX3Zpc2l0ICR7RGF0ZX0gIGFuZCAke0NvbnJhY3RfdmFyfQ==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"39df7142-9322-4fe8-86d8-4121022b05c5\",\"unitTestId\":\"462218545339\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"Summary ->Outpatient metrics\",\"kpi\":\"Avoidable ED%\",\"testData\":\"Year =\"}},\"34033183-955e-44e4-a191-12afbc61e749\":{\"userProvidedTestCaseId\":\"Cost -19\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IHJvdW5kKCh2aXNpdF9jb3VudCoxMjAwMC4wL21lbWJlcl9tb250aHMpLDIgKSBmcm9tIChzZWxlY3QgY291bnQodmlzaXRfaWQpIHZpc2l0X2NvdW50IGZyb20gTDUuaG9wZF9vcHBfcGF0aWVudCBocCAgbGVmdCBqb2luIEw1LnBjcCBwIG9uIGhwLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkID0gcC5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCAgbGVmdCBqb2luIEw1LnBheWVyIHAyIG9uIGhwLnBheWVyX21hc3Rlcl9pZCA9IHAyLnBheWVyX21hc3Rlcl9pZCAgd2hlcmUgdmlzaXRfc3RhcnRfZGF0ZSAke0RhdGV9ICBhbmQgJHtDb25yYWN0X3Zhcn0pIHQxIGxlZnQgam9pbiAoc2VsZWN0IGNvdW50KCopIG1lbWJlcl9tb250aHMgZnJvbSBMNS5hdHRyaWJ1dGlvbl9wYXRpZW50ICB3aGVyZSAke0NvbnJhY3RfdmFyfSBhbmQgbW9udGhfb2ZfYXR0cmlidXRpb24gJHtEYXRlfSkgdDIgb24gdHJ1ZTs=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"34033183-955e-44e4-a191-12afbc61e749\",\"unitTestId\":\"843934895581\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"Summary->Outpatient metrics\",\"kpi\":\"Surgery/1000\",\"testData\":\"Year =\"}},\"90ef5f7a-9f46-428c-bdde-f5f3dc97ea40\":{\"userProvidedTestCaseId\":\"Cost -20\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUIERJU1RJTkNUICAKICBST1VORChDQVNUKFNVTShFRF8xMDAwLm51bWVyYXRvcikgLyBOVUxMSUYoU1VNKEVEXzEwMDAuZGVub21pbmF0b3IpLCAwKSBBUyBGTE9BVCksMikgQVMgZWRfcGVyXzEwMDAKRlJPTSAoCiAgU0VMRUNUCiAgICBhcC5tb250aF9vZl9tZWFzdXJlbWVudCwKICAgIE1ENShhcC5wYXllcl9pZCB8fCAnOicgfHwgYXAucGxhbl9pZCkgQVMgcGF5ZXJfbWFzdGVyX2lkLAogICAgYXAucGxhbl9uYW1lLAogICAgYXAub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQsCiAgICBDT0FMRVNDRShlcC5udW0sIDApICogMTIwMDAgQVMgbnVtZXJhdG9yLAogICAgQ09BTEVTQ0UoYXAuZGVuLCAwKSBBUyBkZW5vbWluYXRvcgogIEZST00gKAogICAgU0VMRUNUCiAgICAgIENPVU5UKGVtcGkpIEFTIGRlbiwKICAgICAgcGF5ZXJfaWQsCiAgICAgIHBsYW5faWQsCiAgICAgIHBsYW5fbmFtZSwKICAgICAgbW9udGhfb2ZfYXR0cmlidXRpb24gQVMgbW9udGhfb2ZfbWVhc3VyZW1lbnQsCiAgICAgIG9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkCiAgICBGUk9NIGw1LmF0dHJpYnV0aW9uX3BhdGllbnQKICAgIFdIRVJFICR7Q29ucmFjdF92YXJ9CiAgICBHUk9VUCBCWQogICAgICBtb250aF9vZl9hdHRyaWJ1dGlvbiwKICAgICAgcGF5ZXJfaWQsCiAgICAgIHBsYW5faWQsCiAgICAgIHBsYW5fbmFtZSwKICAgICAgb3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKICApIGFwCiAgTEVGVCBKT0lOICgKICAgIFNFTEVDVAogICAgICBtb250aF9vZl92aXNpdCwKICAgICAgcGF5ZXJfbWFzdGVyX2lkLAogICAgICBvcmdfaGllcmFyY2h5X21hc3Rlcl9pZCwKICAgICAgQ09VTlQodmlzaXRfaWQpIEFTIG51bQogICAgRlJPTSBsNS5lZF9vcHBfcGF0aWVudAogICAgR1JPVVAgQlkKICAgICAgbW9udGhfb2ZfdmlzaXQsCiAgICAgIHBheWVyX21hc3Rlcl9pZCwKICAgICAgb3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKICApIGVwIAogICAgT04gZXAubW9udGhfb2ZfdmlzaXQgPSBhcC5tb250aF9vZl9tZWFzdXJlbWVudAogICBBTkQgZXAucGF5ZXJfbWFzdGVyX2lkID0gTUQ1KGFwLnBheWVyX2lkIHx8ICc6JyB8fCBhcC5wbGFuX2lkKQogICBBTkQgZXAub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgPSBhcC5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZAogIFdIRVJFIGFwLm1vbnRoX29mX21lYXN1cmVtZW50ICAke0RhdGV9CikgQVMgRURfMTAwMApMRUZUIEpPSU4gbDUucGF5ZXIgcCAKICBPTiBFRF8xMDAwLnBheWVyX21hc3Rlcl9pZCA9IHAucGF5ZXJfbWFzdGVyX2lkCkxFRlQgSk9JTiBsNS5wY3AgcGMgCiAgT04gRURfMTAwMC5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCA9IHBjLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkOw==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"90ef5f7a-9f46-428c-bdde-f5f3dc97ea40\",\"unitTestId\":\"1576808131681\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"Summary->Outpatient metrics\",\"kpi\":\"ED/1000\",\"testData\":\"Year =\"}},\"aa2c513e-4404-4525-9362-2e1abc5e573d\":{\"userProvidedTestCaseId\":\"Cost -21\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMDAwMCwgMSksICdNJykgZnJvbSBsNS5lZF9vcHBfcGF0aWVudCB0MSAgbGVmdCBqb2luIGw1LnBjcCB0MiBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD0gdDIub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgbGVmdCBqb2luIGw1LnBheWVyIHQzIG9uIHQxLnBheWVyX21hc3Rlcl9pZD0gdDMucGF5ZXJfbWFzdGVyX2lkIHdoZXJlIG1vbnRoX29mX3Zpc2l0ICAke0RhdGV9IGFuZCAke0NvbnJhY3RfdmFyfQphbmQgZWRfdG9faXBfZmxhZyA9J0ZhbHNlJyA7\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"aa2c513e-4404-4525-9362-2e1abc5e573d\",\"unitTestId\":\"1728413195311\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"ED\",\"kpi\":\"Cost due to ED\",\"testData\":\"Year =\"}},\"531d089b-2d44-427c-a886-ff8b33faf58c\":{\"userProvidedTestCaseId\":\"Cost -22\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUCiAgIAogICAgUk9VTkQobnVtZXJhdG9yIC8gZGVub21pbmF0b3IpIEFTIE91dHBhdGllbnRfUE1QTQpGUk9NICgKICAgIFNFTEVDVAogICAgICAgIHQxLmNvbnRyYWN0X25hbWUsCiAgICAgICAgdDEucGF5ZXJfbmFtZSwKICAgICAgICB0MS5wbGFuX25hbWUsCiAgICAgICAgdDEubnVtZXJhdG9yLAogICAgICAgIHQyLmRlbm9taW5hdG9yCiAgICBGUk9NICgKICAgICAgICBTRUxFQ1QKICAgICAgICAgICAgcC5jb250cmFjdF9uYW1lLAogICAgICAgICAgICBwLnBheWVyX25hbWUsCiAgICAgICAgICAgIHAucGxhbl9uYW1lLAogICAgICAgICAgICBTVU0odmlzaXRfYW1vdW50KSBBUyBudW1lcmF0b3IKICAgICAgICBGUk9NIGw1LnZpc2l0X3BjcCBhbwogICAgICAgIExFRlQgSk9JTiBsNS5wYXllciBwCiAgICAgICAgICAgIE9OIHAucGF5ZXJfbWFzdGVyX2lkID0gYW8ucGF5ZXJfbWFzdGVyX2lkCiAgICAgICAgTEVGVCBKT0lOIGw1LmRhdGUgZHQKICAgICAgICAgICAgT04gZHQubW9udGhfb2ZfZGF0ZSA9IGFvLm1vbnRoX29mX3Zpc2l0CiAgICAgICAgTEVGVCBKT0lOIGw1LnBjcCBtCiAgICAgICAgICAgIE9OIG0ub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgPSBhby5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZAogICAgICAgIFdIRVJFIHZpc2l0X3R5cGUgPSAnT3V0cGF0aWVudCcKICAgICAgICAgIEFORCBtb250aF9vZl9kYXRlICR7RGF0ZX0KICAgICAgICBHUk9VUCBCWQogICAgICAgICAgICBwLmNvbnRyYWN0X25hbWUsCiAgICAgICAgICAgIHAucGF5ZXJfbmFtZSwKICAgICAgICAgICAgcC5wbGFuX25hbWUKICAgICkgdDEKICAgIExFRlQgSk9JTiAoCiAgICAgICAgU0VMRUNUCiAgICAgICAgICAgIHAuY29udHJhY3RfbmFtZSwKICAgICAgICAgICAgcC5wYXllcl9uYW1lLAogICAgICAgICAgICBwLnBsYW5fbmFtZSwKICAgICAgICAgICAgQ09VTlQoZW1waSkgQVMgZGVub21pbmF0b3IKICAgICAgICBGUk9NIGw1LmF0dHJpYnV0aW9uIHoKICAgICAgICBMRUZUIEpPSU4gbDUucGF5ZXIgcAogICAgICAgICAgICBPTiBwLnBheWVyX21hc3Rlcl9pZCA9IHoucGF5ZXJfbWFzdGVyX2lkCiAgICAgICAgTEVGVCBKT0lOIGw1LmRhdGUgZHQKICAgICAgICAgICAgT04gZHQubW9udGhfb2ZfZGF0ZSA9IHoubW9udGhfb2ZfYXR0cmlidXRpb24KICAgICAgICBMRUZUIEpPSU4gbDUucGNwIG0KICAgICAgICAgICAgT04gbS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCA9IHoub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKICAgICAgICBXSEVSRSBtb250aF9vZl9kYXRlICR7RGF0ZX0KICAgICAgICBHUk9VUCBCWQogICAgICAgICAgICBwLmNvbnRyYWN0X25hbWUsCiAgICAgICAgICAgIHAucGF5ZXJfbmFtZSwKICAgICAgICAgICAgcC5wbGFuX25hbWUKICAgICkgdDIKICAgICAgT04gdDEuY29udHJhY3RfbmFtZSA9IHQyLmNvbnRyYWN0X25hbWUKICAgICBBTkQgdDEucGF5ZXJfbmFtZSA9IHQyLnBheWVyX25hbWUKICAgICBBTkQgdDEucGxhbl9uYW1lID0gdDIucGxhbl9uYW1lCikgZmluYWwKV0hFUkUgJHtDb25yYWN0X3Zhcn0K\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"531d089b-2d44-427c-a886-ff8b33faf58c\",\"unitTestId\":\"1719502939688\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"Summary >> OP Cost\",\"kpi\":\"OP PMPM\",\"testData\":\"Year =\"}},\"b126bdf6-2f81-4ee8-a858-ae705fe17e3b\":{\"userProvidedTestCaseId\":\"Cost -23\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMDAwMCwgMSksICdNJykgICBmcm9tIGw1LmhvcGRfb3BwX3BhdGllbnQgdDEgbGVmdCBqb2luIGw1LnBjcCB0MiBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD0gdDIub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgbGVmdCBqb2luIGw1LnBheWVyIHQzIG9uIHQxLnBheWVyX21hc3Rlcl9pZD0gdDMucGF5ZXJfbWFzdGVyX2lkIHdoZXJlIHZpc2l0X3N0YXJ0X2RhdGUgICR7RGF0ZX0gYW5kICR7Q29ucmFjdF92YXJ9\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"b126bdf6-2f81-4ee8-a858-ae705fe17e3b\",\"unitTestId\":\"867728696591\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"Outpatient Surgery\",\"kpi\":\"Cost due to Outpatient Surgery\",\"testData\":\"Year =\"}},\"c370f393-95e6-4178-a44e-d90721252f46\":{\"userProvidedTestCaseId\":\"Cost -24\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUIAogIFJPVU5EKAogICAgQ09VTlQoRElTVElOQ1QgQ0FTRSAKICAgICAgV0hFTiBhc2NfcHJvY2VkdXJlX2ZsYWcgPSAnMScgVEhFTiB2aXNpdF9pZCAKICAgIEVORCkgKiAxMDAuMCAvIE5VTExJRihDT1VOVChESVNUSU5DVCB2aXNpdF9pZCksIDApLCAKICAxKSBBUyBhc2NfcHJvY2VkdXJlX3BlcmNlbnQKRlJPTSBsNS5ob3BkX29wcF9wYXRpZW50IHQxCkxFRlQgSk9JTiBsNS5wY3AgdDIgCiAgT04gdDEub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgPSB0Mi5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZApMRUZUIEpPSU4gbDUucGF5ZXIgdDMgCiAgT04gdDEucGF5ZXJfbWFzdGVyX2lkID0gdDMucGF5ZXJfbWFzdGVyX2lkCldIRVJFIHZpc2l0X3N0YXJ0X2RhdGUgJHtEYXRlfQogIEFORCAke0NvbnJhY3RfdmFyfQ==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"c370f393-95e6-4178-a44e-d90721252f46\",\"unitTestId\":\"1563447615468\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"Outpatient Surgery\",\"kpi\":\"% of Potentially Redirectable\",\"testData\":\"Year =\"}},\"7aca7b0b-e041-44c0-998c-6b19d72fbe01\":{\"userProvidedTestCaseId\":\"Cost -25\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSgodmlzaXRfYW1vdW50KSAqMC41KS8gMTAwMDAwMCwgMSksICdNJykgIGZyb20gbDUuaG9wZF9vcHBfcGF0aWVudCB0MSBsZWZ0IGpvaW4gbDUucGNwIHQyIG9uIHQxLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkPSB0Mi5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGF5ZXIgdDMgb24gdDEucGF5ZXJfbWFzdGVyX2lkPSB0My5wYXllcl9tYXN0ZXJfaWQgd2hlcmUgcHJvY2VkdXJlX2F2YWlsYWJsZV9pbl9hc2NfZmxhZyA9ICgnMScpICBhbmQgIHZpc2l0X3N0YXJ0X2RhdGUgJHtEYXRlfQogIEFORCAke0NvbnJhY3RfdmFyfQ==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"7aca7b0b-e041-44c0-998c-6b19d72fbe01\",\"unitTestId\":\"677651492766\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"Outpatient Surgery\",\"kpi\":\"Possible Reduction\",\"testData\":\"Year =\"}},\"f5827d4b-2cfa-4c0c-8bc6-38c3aef2d163\":{\"userProvidedTestCaseId\":\"Cost -26\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0ICBDT05DQVQoJyQnLCBST1VORChTVU0odmlzaXRfYW1vdW50KSAvIDEwMDAsIDEpLCAnaycpICBmcm9tIGw1Lm91dHBhdGllbnRfb3RoZXJzX29wcF9wYXRpZW50IHQxIGxlZnQgam9pbiBsNS5wY3AgdDIgb24gdDEub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQ9IHQyLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkIGxlZnQgam9pbiBsNS5wYXllciB0MyBvbiB0MS5wYXllcl9tYXN0ZXJfaWQ9IHQzLnBheWVyX21hc3Rlcl9pZCB3aGVyZSB2aXNpdF9zdGFydF9kYXRlICR7RGF0ZX0KICBBTkQgJHtDb25yYWN0X3Zhcn0=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"f5827d4b-2cfa-4c0c-8bc6-38c3aef2d163\",\"unitTestId\":\"1614745244773\",\"dqAdditionalInfo\":{\"tab\":\"Outpatient\",\"widget\":\"Others\",\"kpi\":\"Cost due to Imaging + Physical Therapy (PT)\",\"testData\":\"Year =\"}},\"fee6787c-e253-46fd-9ce0-5e1576f612ae\":{\"userProvidedTestCaseId\":\"Cost -27\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMDAwMCwgMSksICdNJykgdmlzaXRfYW1vdW50IGZyb20gbDUudmlzaXRfcGNwIHQxCmxlZnQgam9pbiBsNS5wY3AgdDIKb24gdDEub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQ9IHQyLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkCmxlZnQgam9pbiBsNS5wYXllciB0MwpvbiB0MS5wYXllcl9tYXN0ZXJfaWQ9IHQzLnBheWVyX21hc3Rlcl9pZAp3aGVyZSBtb250aF9vZl92aXNpdCAke0RhdGV9CmFuZCAke0NvbnJhY3RfdmFyfSA=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"fee6787c-e253-46fd-9ce0-5e1576f612ae\",\"unitTestId\":\"28572937338\",\"dqAdditionalInfo\":{\"tab\":\"Overview\",\"widget\":\"Total cost of care\",\"kpi\":\"Total cost of care\",\"testData\":\"Year =\"}},\"a695e4ac-1191-4e6f-b6da-15ca71e2ce33\":{\"userProvidedTestCaseId\":\"Cost -28\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUIERJU1RJTkNUICAKICBST1VORChDQVNUKFNVTShudW1lcmF0b3IpIC8gTlVMTElGKFNVTShkZW5vbWluYXRvciksIDApIEFTIEZMT0FUKSwyKSBBUyBpcF9wZXJfMTAwMApGUk9NICgKICBTRUxFQ1QKICAgIGFwLm1vbnRoX29mX21lYXN1cmVtZW50LAogICAgTUQ1KGFwLnBheWVyX2lkIHx8ICc6JyB8fCBhcC5wbGFuX2lkKSBBUyBwYXllcl9tYXN0ZXJfaWQsCiAgICBhcC5wbGFuX25hbWUsCiAgICBhcC5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCwKICAgICd1dGlsaXphdGlvbicgQVMgbWV0cmljX3R5cGUsCiAgICAnaXBfcGVyXzEwMDAnIEFTIG1ldHJpYywKICAgICdJUC8xMDAwJyBBUyBtZXRyaWNfbmFtZSwKICAgIENPQUxFU0NFKGVwLm51bSAqIDEyMDAwLCAwKSBBUyBudW1lcmF0b3IsCiAgICBDT0FMRVNDRShhcC5kZW4sIDApIEFTIGRlbm9taW5hdG9yCiAgRlJPTSAoCiAgICBTRUxFQ1QKICAgICAgQ09VTlQoZW1waSkgQVMgZGVuLAogICAgICBwYXllcl9pZCwKICAgICAgcGxhbl9pZCwKICAgICAgcGxhbl9uYW1lLAogICAgICBvcmdfaGllcmFyY2h5X21hc3Rlcl9pZCwKICAgICAgbW9udGhfb2ZfYXR0cmlidXRpb24gQVMgbW9udGhfb2ZfbWVhc3VyZW1lbnQKICAgIEZST00gbDUuYXR0cmlidXRpb25fcGF0aWVudAogICAgV0hFUkUgJHtDb25yYWN0X3Zhcn0KICAgIEdST1VQIEJZIHBheWVyX2lkLCBwbGFuX2lkLCBwbGFuX25hbWUsIG9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkLCBtb250aF9vZl9hdHRyaWJ1dGlvbgogICkgYXAKICBMRUZUIEpPSU4gKAogICAgU0VMRUNUCiAgICAgIHBheWVyX2lkLAogICAgICBwbGFuX2lkLAogICAgICBvcmdfaGllcmFyY2h5X21hc3Rlcl9pZCwKICAgICAgREFURV9UUlVOQygnbW9udGgnLCB2aXNpdF9zdGFydF9kYXRlKSBBUyBtb250aF9vZl92aXNpdCwKICAgICAgQ09VTlQodmlzaXRfaWQpIEFTIG51bQogICAgRlJPTSBsNS5yZWFkbWl0X3BhdGllbnQKICAgIEdST1VQIEJZIHBheWVyX2lkLCBwbGFuX2lkLCBvcmdfaGllcmFyY2h5X21hc3Rlcl9pZCwgREFURV9UUlVOQygnbW9udGgnLCB2aXNpdF9zdGFydF9kYXRlKQogICkgZXAKICBPTiBlcC5tb250aF9vZl92aXNpdCA9IGFwLm1vbnRoX29mX21lYXN1cmVtZW50CiAgQU5EIGVwLnBheWVyX2lkID0gYXAucGF5ZXJfaWQKICBBTkQgZXAucGxhbl9pZCA9IGFwLnBsYW5faWQKICBBTkQgZXAub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgPSBhcC5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZAogIFdIRVJFIGFwLm1vbnRoX29mX21lYXN1cmVtZW50ICR7RGF0ZX0KKSB0Owo=\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"a695e4ac-1191-4e6f-b6da-15ca71e2ce33\",\"unitTestId\":\"1340210094011\",\"dqAdditionalInfo\":{\"tab\":\"Overview\",\"widget\":\"Key KPI\",\"kpi\":\"IP/1000\",\"testData\":\"Year =\"}},\"2078fcad-a041-47b0-a1cb-14f33b3b723e\":{\"userProvidedTestCaseId\":\"Cost -29\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U2VsZWN0IENvbmNhdChyb3VuZChTdW0oQ2FzZSB3aGVuIHJlYWRtaXNzaW9uX2ZsYWc9dHJ1ZSB0aGVuIDEgZWxzZSAwIGVuZCkvc3VtKGNhc2Ugd2hlbiByZWFkbWlzc2lvbl9pbmRleF92aXNpdF9mbGFnPXRydWUgdGhlbiAxIGVsc2UgMCBlbmQpKjEwMCwxKSwnJScpIGZyb20gbDUucGFjX29wcF9wYXRpZW50ICB0MSBsZWZ0IGpvaW4gbDUucGF5ZXIgdDIgb24gdDEucGF5ZXJfbWFzdGVyX2lkPXQyLnBheWVyX21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGNwIHQzICBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD10My5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCB3aGVyZSB0MS52aXNpdF9zdGFydF9kYXRlICAke0RhdGV9CmFuZCAke0NvbnJhY3RfdmFyfQ==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"2078fcad-a041-47b0-a1cb-14f33b3b723e\",\"unitTestId\":\"259378868894\",\"dqAdditionalInfo\":{\"tab\":\"Overview\",\"widget\":\"Key KPI\",\"kpi\":\"Readmission %\",\"testData\":\"Year =\"}},\"4b77911f-bd09-44b4-a773-382334e8bae8\":{\"userProvidedTestCaseId\":\"Cost -30\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IHJvdW5kKCh2aXNpdF9jb3VudCoxMjAwMC4wL21lbWJlcl9tb250aHMpLDIpCmZyb20gKHNlbGVjdCBzdW0odmlzaXRfY291bnQpIHZpc2l0X2NvdW50IGZyb20gbDUudmlzaXRfcGNwIGhwCmxlZnQgam9pbiBMNS5wY3AgcCBvbiBocC5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCA9IHAub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKbGVmdCBqb2luIEw1LnBheWVyIHAyIG9uIGhwLnBheWVyX21hc3Rlcl9pZCA9IHAyLnBheWVyX21hc3Rlcl9pZAp3aGVyZSBtb250aF9vZl92aXNpdCAke0RhdGV9CmFuZCB2aXNpdF9zdWJfdHlwZT0gJ1NORiBJbnBhdGllbnQgQ2xhaW0nCmFuZCAke0NvbnJhY3RfdmFyfSkgdDEKbGVmdCBqb2luIChzZWxlY3QgY291bnQoKikgbWVtYmVyX21vbnRocyBmcm9tIEw1LmF0dHJpYnV0aW9uX3BhdGllbnQKd2hlcmUgJHtDb25yYWN0X3Zhcn0KYW5kIG1vbnRoX29mX2F0dHJpYnV0aW9uICR7RGF0ZX0pIHQyIG9uIHRydWU7\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"4b77911f-bd09-44b4-a773-382334e8bae8\",\"unitTestId\":\"1583244033639\",\"dqAdditionalInfo\":{\"tab\":\"Overview\",\"widget\":\"Key KPI\",\"kpi\":\"SNF/1000\",\"testData\":\"Year =\"}},\"4599396b-3f9d-4d10-966a-cd1e3ebeeebf\":{\"userProvidedTestCaseId\":\"Cost -31\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUIAogICAgY2VpbCgoKHZpc2l0X2NvdW50IC8gbWVtYmVyX21vbnRocykgKiAxMjAwMCksMilBUyBpbWFnaW5nX3V0aWxpemF0aW9uX3Blcl8xMDAwCkZST00gKAogICAgU0VMRUNUIAogICAgICAgIFNVTSh2LnZpc2l0X2NvdW50KSBBUyB2aXNpdF9jb3VudAogICAgRlJPTSBsNS52aXNpdF9wY3AgdgogICAgTEVGVCBKT0lOIGw1LnBheWVyIHAgT04gdi5wYXllcl9tYXN0ZXJfaWQgPSBwLnBheWVyX21hc3Rlcl9pZAogICAgTEVGVCBKT0lOIGw1LnBjcCBwYyBPTiB2Lm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkID0gcGMub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKICAgIFdIRVJFICR7Q29ucmFjdF92YXJ9CiAgICAgICAgQU5EIHYubW9udGhfb2ZfdmlzaXQgJHtEYXRlfQogICAgICAgIEFORCB2LnZpc2l0X3R5cGUgPSAnUHJvZmVzc2lvbmFsJwogICAgICAgIEFORCB2LnZpc2l0X3N1Yl90eXBlIElOICgKICAgICAgICAgICAgJ0ltYWdpbmcgT3RoZXJzJywgJ0NUIEltYWdpbmcnLCAnTVJJIEltYWdpbmcnLAogICAgICAgICAgICAnUHJvZmVzc2lvbmFsIC0gUmFkaW9sb2d5IC0gQ1QnLCAnUHJvZmVzc2lvbmFsIC0gUmFkaW9sb2d5IC0gTVJJJywgCiAgICAgICAgICAgICdQcm9mZXNzaW9uYWwgLSBJbWFnaW5nIE90aGVycycsICdQcm9mZXNzaW9uYWwgLSBSYWRpb2xvZ3kgLSBNYW1tb2dyYXBoeScsIAogICAgICAgICAgICAnUHJvZmVzc2lvbmFsIC0gUmFkaW9sb2d5IC0gTnVjbGVhcicsICdQcm9mZXNzaW9uYWwgLSBSYWRpb2xvZ3kgLSBQRVQnLCAKICAgICAgICAgICAgJ1Byb2Zlc3Npb25hbCAtIFJhZGlvbG9neSAtIFRoZXJhcGV1dGljJywgJ1Byb2Zlc3Npb25hbCAtIFJhZGlvbG9neSAtIFggUmF5JwogICAgICAgICkKKSB0MQpMRUZUIEpPSU4gKAogICAgU0VMRUNUIAogICAgICAgIENPVU5UKGEuZW1waSkgQVMgbWVtYmVyX21vbnRocwogICAgRlJPTSBsNS5hdHRyaWJ1dGlvbiBhCiAgICBMRUZUIEpPSU4gbDUucGF5ZXIgcCBPTiBhLnBheWVyX21hc3Rlcl9pZCA9IHAucGF5ZXJfbWFzdGVyX2lkCiAgICBMRUZUIEpPSU4gbDUucGNwIHBjIE9OIGEub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgPSBwYy5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZAogICAgV0hFUkUgICR7Q29ucmFjdF92YXJ9CiAgICAgICAgQU5EIGEubW9udGhfb2ZfYXR0cmlidXRpb24gJHtEYXRlfQopIHQyIE9OIFRSVUU7Cg==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"4599396b-3f9d-4d10-966a-cd1e3ebeeebf\",\"unitTestId\":\"377319989485\",\"dqAdditionalInfo\":{\"tab\":\"Overview\",\"widget\":\"Key KPI\",\"kpi\":\"Imaging/1000\",\"testData\":\"Year =\"}},\"1de965bf-e3a7-4a44-bd85-c2db9fcfb46e\":{\"userProvidedTestCaseId\":\"Cost -32\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUIERJU1RJTkNUICAKICBST1VORChDQVNUKFNVTShFRF8xMDAwLm51bWVyYXRvcikgLyBOVUxMSUYoU1VNKEVEXzEwMDAuZGVub21pbmF0b3IpLCAwKSBBUyBGTE9BVCksMikgQVMgZWRfcGVyXzEwMDAKRlJPTSAoCiAgU0VMRUNUCiAgICBhcC5tb250aF9vZl9tZWFzdXJlbWVudCwKICAgIE1ENShhcC5wYXllcl9pZCB8fCAnOicgfHwgYXAucGxhbl9pZCkgQVMgcGF5ZXJfbWFzdGVyX2lkLAogICAgYXAucGxhbl9uYW1lLAogICAgYXAub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQsCiAgICBDT0FMRVNDRShlcC5udW0sIDApICogMTIwMDAgQVMgbnVtZXJhdG9yLAogICAgQ09BTEVTQ0UoYXAuZGVuLCAwKSBBUyBkZW5vbWluYXRvcgogIEZST00gKAogICAgU0VMRUNUCiAgICAgIENPVU5UKGVtcGkpIEFTIGRlbiwKICAgICAgcGF5ZXJfaWQsCiAgICAgIHBsYW5faWQsCiAgICAgIHBsYW5fbmFtZSwKICAgICAgbW9udGhfb2ZfYXR0cmlidXRpb24gQVMgbW9udGhfb2ZfbWVhc3VyZW1lbnQsCiAgICAgIG9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkCiAgICBGUk9NIGw1LmF0dHJpYnV0aW9uX3BhdGllbnQKICAgIFdIRVJFICAke0NvbnJhY3RfdmFyfQogICAgR1JPVVAgQlkKICAgICAgbW9udGhfb2ZfYXR0cmlidXRpb24sCiAgICAgIHBheWVyX2lkLAogICAgICBwbGFuX2lkLAogICAgICBwbGFuX25hbWUsCiAgICAgIG9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkCiAgKSBhcAogIExFRlQgSk9JTiAoCiAgICBTRUxFQ1QKICAgICAgbW9udGhfb2ZfdmlzaXQsCiAgICAgIHBheWVyX21hc3Rlcl9pZCwKICAgICAgb3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQsCiAgICAgIENPVU5UKHZpc2l0X2lkKSBBUyBudW0KICAgIEZST00gbDUuZWRfb3BwX3BhdGllbnQKICAgIEdST1VQIEJZCiAgICAgIG1vbnRoX29mX3Zpc2l0LAogICAgICBwYXllcl9tYXN0ZXJfaWQsCiAgICAgIG9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkCiAgKSBlcCAKICAgIE9OIGVwLm1vbnRoX29mX3Zpc2l0ID0gYXAubW9udGhfb2ZfbWVhc3VyZW1lbnQKICAgQU5EIGVwLnBheWVyX21hc3Rlcl9pZCA9IE1ENShhcC5wYXllcl9pZCB8fCAnOicgfHwgYXAucGxhbl9pZCkKICAgQU5EIGVwLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkID0gYXAub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKICBXSEVSRSBhcC5tb250aF9vZl9tZWFzdXJlbWVudCAke0RhdGV9CikgQVMgRURfMTAwMApMRUZUIEpPSU4gbDUucGF5ZXIgcCAKICBPTiBFRF8xMDAwLnBheWVyX21hc3Rlcl9pZCA9IHAucGF5ZXJfbWFzdGVyX2lkCkxFRlQgSk9JTiBsNS5wY3AgcGMgCiAgT04gRURfMTAwMC5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCA9IHBjLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkOw==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"1de965bf-e3a7-4a44-bd85-c2db9fcfb46e\",\"unitTestId\":\"667282032259\",\"dqAdditionalInfo\":{\"tab\":\"Overview\",\"widget\":\"Key KPI\",\"kpi\":\"ED/1000\",\"testData\":\"Year =\"}},\"4c51731d-294e-4c81-b4e9-9df7adec036d\":{\"userProvidedTestCaseId\":\"Cost -33\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUCiAgICAKICAgIFJPVU5EKG51bWVyYXRvciAvIGRlbm9taW5hdG9yKSBBUyBPdmVyYWxsX1BNUE0KRlJPTSAoCiAgICBTRUxFQ1QKICAgICAgICB0MS5jb250cmFjdF9uYW1lLAogICAgICAgIHQxLnBheWVyX25hbWUsCiAgICAgICAgdDEucGxhbl9uYW1lLAogICAgICAgIHQxLm51bWVyYXRvciwKICAgICAgICB0Mi5kZW5vbWluYXRvcgogICAgRlJPTSAoCiAgICAgICAgU0VMRUNUCiAgICAgICAgICAgIHAuY29udHJhY3RfbmFtZSwKICAgICAgICAgICAgcC5wYXllcl9uYW1lLAogICAgICAgICAgICBwLnBsYW5fbmFtZSwKICAgICAgICAgICAgU1VNKHZpc2l0X2Ftb3VudCkgQVMgbnVtZXJhdG9yCiAgICAgICAgRlJPTSBsNS52aXNpdF9wY3AgYW8KICAgICAgICBMRUZUIEpPSU4gbDUucGF5ZXIgcAogICAgICAgICAgICBPTiBwLnBheWVyX21hc3Rlcl9pZCA9IGFvLnBheWVyX21hc3Rlcl9pZAogICAgICAgIExFRlQgSk9JTiBsNS5kYXRlIGR0CiAgICAgICAgICAgIE9OIGR0Lm1vbnRoX29mX2RhdGUgPSBhby5tb250aF9vZl92aXNpdAogICAgICAgIExFRlQgSk9JTiBsNS5wY3AgbQogICAgICAgICAgICBPTiBtLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkID0gYW8ub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKICAgICAgICBXSEVSRSBtb250aF9vZl9kYXRlICR7RGF0ZX0KICAgICAgICBHUk9VUCBCWQogICAgICAgICAgICBwLmNvbnRyYWN0X25hbWUsCiAgICAgICAgICAgIHAucGF5ZXJfbmFtZSwKICAgICAgICAgICAgcC5wbGFuX25hbWUKICAgICkgdDEKICAgIExFRlQgSk9JTiAoCiAgICAgICAgU0VMRUNUCiAgICAgICAgICAgIHAuY29udHJhY3RfbmFtZSwKICAgICAgICAgICAgcC5wYXllcl9uYW1lLAogICAgICAgICAgICBwLnBsYW5fbmFtZSwKICAgICAgICAgICAgQ09VTlQoZW1waSkgQVMgZGVub21pbmF0b3IKICAgICAgICBGUk9NIGw1LmF0dHJpYnV0aW9uIHoKICAgICAgICBMRUZUIEpPSU4gbDUucGF5ZXIgcAogICAgICAgICAgICBPTiBwLnBheWVyX21hc3Rlcl9pZCA9IHoucGF5ZXJfbWFzdGVyX2lkCiAgICAgICAgTEVGVCBKT0lOIGw1LmRhdGUgZHQKICAgICAgICAgICAgT04gZHQubW9udGhfb2ZfZGF0ZSA9IHoubW9udGhfb2ZfYXR0cmlidXRpb24KICAgICAgICBMRUZUIEpPSU4gbDUucGNwIG0KICAgICAgICAgICAgT04gbS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCA9IHoub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKICAgICAgICBXSEVSRSBtb250aF9vZl9kYXRlICR7RGF0ZX0KICAgICAgICBHUk9VUCBCWQogICAgICAgICAgICBwLmNvbnRyYWN0X25hbWUsCiAgICAgICAgICAgIHAucGF5ZXJfbmFtZSwKICAgICAgICAgICAgcC5wbGFuX25hbWUKICAgICkgdDIKICAgICAgT04gdDEuY29udHJhY3RfbmFtZSA9IHQyLmNvbnRyYWN0X25hbWUKICAgICBBTkQgdDEucGF5ZXJfbmFtZSA9IHQyLnBheWVyX25hbWUKICAgICBBTkQgdDEucGxhbl9uYW1lID0gdDIucGxhbl9uYW1lCikgZmluYWwKV0hFUkUgICR7Q29ucmFjdF92YXJ9Cg==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"4c51731d-294e-4c81-b4e9-9df7adec036d\",\"unitTestId\":\"1582602081630\",\"dqAdditionalInfo\":{\"tab\":\"Overview\",\"widget\":\"Total cost of care\",\"kpi\":\"Overall PMPM\",\"testData\":\"Year =\"}},\"4494820f-a4d7-4920-b203-6d3e5d0e08a1\":{\"userProvidedTestCaseId\":\"Cost -34\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMDAwMCwgMSksICdNJykgIGZyb20gbDUubmV0d29ya19sZWFrYWdlX3BhdGllbnQgdDEgbGVmdCBqb2luIGw1LnBjcCB0MiBvbiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZD0gdDIub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQgbGVmdCBqb2luIGw1LnBheWVyIHQzIG9uIHQxLnBheWVyX21hc3Rlcl9pZD0gdDMucGF5ZXJfbWFzdGVyX2lkIHdoZXJlIG1vbnRoX29mX3Zpc2l0ICR7RGF0ZX0gYW5kIHZpc2l0X2NhdGVnb3J5PSdQcm9mZXNzaW9uYWwnIGFuZCAke0NvbnJhY3RfdmFyfQ==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"4494820f-a4d7-4920-b203-6d3e5d0e08a1\",\"unitTestId\":\"190481152265\",\"dqAdditionalInfo\":{\"tab\":\"Professional\",\"widget\":\"Professional\",\"kpi\":\"Professional Cost\",\"testData\":\"Year =\"}},\"0e1f352c-185c-4828-a8f6-44fdf84dbc9d\":{\"userProvidedTestCaseId\":\"Cost -35\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"d2l0aCBhdHRyIGFzICAoIHNlbGVjdCBjb3VudCgqKSBtZW1iZXJfbW9udGhzICBmcm9tIEw1LmF0dHJpYnV0aW9uX3BhdGllbnQgIHdoZXJlICBtb250aF9vZl9hdHRyaWJ1dGlvbiAke0RhdGV9ICBhbmQgJHtDb25yYWN0X3Zhcn0pICwgIGV4cGVuZCBhcyAgKHNlbGVjdCBzdW0odmlzaXRfYW1vdW50KSBwcm9mZXNzaW9uYUxfZXhwZW5kaXR1cmUgIGZyb20gTDUudmlzaXRfcGF0aWVudCB2cCAgd2hlcmUgICR7Q29ucmFjdF92YXJ9ICBhbmQgdmlzaXRfc3RhcnRfZGF0ZSAke0RhdGV9ICBhbmQgdmlzaXRfY2F0ZWdvcnkgPSAnUHJvZmVzc2lvbmFsJyApIHNlbGVjdCByb3VuZChwcm9mZXNzaW9uYUxfZXhwZW5kaXR1cmUgL21lbWJlcl9tb250aHMpIGFzIHByb2ZfcG1wbSAgZnJvbSBhdHRyLCBleHBlbmQ7\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"0e1f352c-185c-4828-a8f6-44fdf84dbc9d\",\"unitTestId\":\"1640247488598\",\"dqAdditionalInfo\":{\"tab\":\"Professional\",\"widget\":\"Professional\",\"kpi\":\"Professional PMPM\",\"testData\":\"Year =\"}},\"61864ed1-9c03-416c-82d9-ac1be4b0ab6d\":{\"userProvidedTestCaseId\":\"Cost -36\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"c2VsZWN0IENPTkNBVCgnJCcsIFJPVU5EKFNVTSh2aXNpdF9hbW91bnQpIC8gMTAwMDAwMCwgMSksICdNJykgZnJvbSBsNS5uZXR3b3JrX2xlYWthZ2VfcGF0aWVudCB0MSBsZWZ0IGpvaW4gbDUucGNwIHQyIG9uIHQxLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkPSB0Mi5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCBsZWZ0IGpvaW4gbDUucGF5ZXIgdDMgb24gdDEucGF5ZXJfbWFzdGVyX2lkPSB0My5wYXllcl9tYXN0ZXJfaWQgd2hlcmUgbW9udGhfb2ZfdmlzaXQgICR7RGF0ZX0KYW5kICR7Q29ucmFjdF92YXJ9IGFuZCB2aXNpdF9jYXRlZ29yeT0nUHJvZmVzc2lvbmFsJyAgYW5kIHQxLm91dF9vZl9uZXR3b3JrX2ZsYWc9dHJ1ZSA7\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"61864ed1-9c03-416c-82d9-ac1be4b0ab6d\",\"unitTestId\":\"1629796260869\",\"dqAdditionalInfo\":{\"tab\":\"Professional\",\"widget\":\"Leakage Metrics\",\"kpi\":\"Total Leakage\",\"testData\":\"Year =\"}},\"4636aa79-9cb9-4732-9dff-feefa945b2ba\":{\"userProvidedTestCaseId\":\"Cost -37\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUICAgIENPTkNBVCggICAgIFJPVU5EKCAgICAgICAoU1VNKENBU0UgV0hFTiB0MS5vdXRfb2ZfbmV0d29ya19mbGFnID0gdHJ1ZSBUSEVOIHZpc2l0X2Ftb3VudCBFTFNFIDAgRU5EKSAgICAgICAgLyBTVU0odmlzaXRfYW1vdW50KSkgKiAxMDAsIDEpLCAgICAgICclJyAgICkgQVMgTGVha2FnZV9QZXJjZW50YWdlICBGUk9NIGw1Lm5ldHdvcmtfbGVha2FnZV9wYXRpZW50IHQxIExFRlQgSk9JTiBsNS5wY3AgdDIgICBPTiB0MS5vcmdfaGllcmFyY2h5X21hc3Rlcl9pZCA9IHQyLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkIExFRlQgSk9JTiBsNS5wYXllciB0MyAgIE9OIHQxLnBheWVyX21hc3Rlcl9pZCA9IHQzLnBheWVyX21hc3Rlcl9pZCBXSEVSRSAgbW9udGhfb2ZfdmlzaXQgICR7RGF0ZX0KYW5kICR7Q29ucmFjdF92YXJ9ICAgQU5EIHZpc2l0X2NhdGVnb3J5ID0gJ1Byb2Zlc3Npb25hbCcgOw==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"4636aa79-9cb9-4732-9dff-feefa945b2ba\",\"unitTestId\":\"101728706613\",\"dqAdditionalInfo\":{\"tab\":\"Professional\",\"widget\":\"Leakage Metrics\",\"kpi\":\"Leakage%\",\"testData\":\"Year =\"}},\"1555fc14-cab3-4365-938c-b5ff89c22d7a\":{\"userProvidedTestCaseId\":\"Cost -38\",\"ruleType\":\"SQL\",\"ruleName\":\"Acute Inpatient\",\"sql\":\"U0VMRUNUIAogICAgQ09OQ0FUKCckJywgUk9VTkQoU1VNKENBU0UgV0hFTiB0MS5vdXRfb2ZfbmV0d29ya19mbGFnID0gdHJ1ZSAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEFORCBzcC5hbHRlcm5hdGVfc2VydmljaW5nX3Byb3ZpZGVyX25waTEgSVMgTk9UIE5VTEwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgVEhFTiB2aXNpdF9hbW91bnQgRUxTRSAwIEVORCkgLyAxMDAwMDAwLCAxKSwgJ00nKSBBUyBTYXZpbmdzLAogICAgQ09OQ0FUKCckJywgUk9VTkQoU1VNKHZpc2l0X2Ftb3VudCkgLyAxMDAwMDAwLCAxKSwgJ00nKSBBUyBUb3RhbF9hbW91bnQsCiAgICBST1VORCggKFNVTShDQVNFIFdIRU4gdDEub3V0X29mX25ldHdvcmtfZmxhZyA9IHRydWUgCiAgICAgICAgICAgICAgICAgICAgIEFORCBzcC5hbHRlcm5hdGVfc2VydmljaW5nX3Byb3ZpZGVyX25waTEgSVMgTk9UIE5VTEwgCiAgICAgICAgICAgICAgICBUSEVOIHZpc2l0X2Ftb3VudCBFTFNFIDAgRU5EKSAKICAgICAgICAgICAvIFNVTSh2aXNpdF9hbW91bnQpKSAqIDEwMCwgMSkgQVMgUG90ZW50aWFsbHlfQXZvaWRhYmxlX0xlYWthZ2VfUGVyY2VudGFnZQpGUk9NIGw1LnZpc2l0X3BjcCB0MQpMRUZUIEpPSU4gbDUucGNwIHQyCk9OIHQxLm9yZ19oaWVyYXJjaHlfbWFzdGVyX2lkID0gdDIub3JnX2hpZXJhcmNoeV9tYXN0ZXJfaWQKTEVGVCBKT0lOIGw1LnBheWVyIHQzCk9OIHQxLnBheWVyX21hc3Rlcl9pZCA9IHQzLnBheWVyX21hc3Rlcl9pZApMRUZUIEpPSU4gbDUuc2VydmljaW5nX3Byb3ZpZGVyIHNwCk9OIHQxLnNlcnZpY2luZ19wcm92aWRlcl9ucGkgPSBzcC5zZXJ2aWNpbmdfcHJvdmlkZXJfbnBpCldIRVJFIG1vbnRoX29mX3Zpc2l0ICAke0RhdGV9CmFuZCAke0NvbnJhY3RfdmFyfQpBTkQgdmlzaXRfY2F0ZWdvcnkgPSAnUHJvZmVzc2lvbmFsJzsKCg==\",\"keyColumns\":[],\"tableName\":\"STRESS_TEST_DQ_RULES\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"1555fc14-cab3-4365-938c-b5ff89c22d7a\",\"unitTestId\":\"411137558580\",\"dqAdditionalInfo\":{\"tab\":\"Professional\",\"widget\":\"Leakage Metrics\",\"kpi\":\"Potentially avoidable leakage%\",\"testData\":\"Year =\"}}},\"columnRules\":{\"RECORD_ID\":{\"NOT_NULL\":{\"ruleName\":\"record_id_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"370291437284\"},\"NOT_EMPTY\":{\"ruleName\":\"record_id_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"365118818138\"},\"LEFT_SPACES\":{\"ruleName\":\"record_id_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"787344415655\"},\"RIGHT_SPACES\":{\"ruleName\":\"record_id_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1315132266861\"},\"UNIQUE_VALUES\":{\"ruleName\":\"record_id_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1325632596269\"},\"MIN_VALUE\":{\"ruleName\":\"record_id_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1411727351287\"},\"MAX_VALUE\":{\"ruleName\":\"record_id_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1571140253639\"},\"MIN_LENGTH\":{\"ruleName\":\"record_id_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"643749553604\"},\"MAX_LENGTH\":{\"ruleName\":\"record_id_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"290410318586\"},\"SQL_RULE\":{\"ruleName\":\"record_id_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"391153960994\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"record_id_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"RECORD_ID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1470209453703\"}},\"RID\":{\"NOT_NULL\":{\"ruleName\":\"rid_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"982406652997\"},\"NOT_EMPTY\":{\"ruleName\":\"rid_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1526773160678\"},\"LEFT_SPACES\":{\"ruleName\":\"rid_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1380651290206\"},\"RIGHT_SPACES\":{\"ruleName\":\"rid_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"995898363876\"},\"UNIQUE_VALUES\":{\"ruleName\":\"rid_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1697699913938\"},\"MIN_VALUE\":{\"ruleName\":\"rid_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"617457491715\"},\"MAX_VALUE\":{\"ruleName\":\"rid_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"503926538876\"},\"MIN_LENGTH\":{\"ruleName\":\"rid_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"546570405473\"},\"MAX_LENGTH\":{\"ruleName\":\"rid_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"75209737176\"},\"SQL_RULE\":{\"ruleName\":\"rid_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1712688763857\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"rid_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"RID\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1425816030705\"}},\"RULE_DESCRIPTION\":{\"NOT_NULL\":{\"ruleName\":\"rule_description_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"304265277399\"},\"NOT_EMPTY\":{\"ruleName\":\"rule_description_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"795628016153\"},\"LEFT_SPACES\":{\"ruleName\":\"rule_description_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"671208335232\"},\"RIGHT_SPACES\":{\"ruleName\":\"rule_description_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"19068918943\"},\"UNIQUE_VALUES\":{\"ruleName\":\"rule_description_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1115422972071\"},\"MIN_VALUE\":{\"ruleName\":\"rule_description_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"770000966510\"},\"MAX_VALUE\":{\"ruleName\":\"rule_description_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"967500965935\"},\"MIN_LENGTH\":{\"ruleName\":\"rule_description_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1069017069723\"},\"MAX_LENGTH\":{\"ruleName\":\"rule_description_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"486261802610\"},\"SQL_RULE\":{\"ruleName\":\"rule_description_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1535623595907\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"rule_description_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1749193055006\"}},\"RULE_NAME\":{\"NOT_NULL\":{\"ruleName\":\"rule_name_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"950797590029\"},\"NOT_EMPTY\":{\"ruleName\":\"rule_name_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1195966918835\"},\"LEFT_SPACES\":{\"ruleName\":\"rule_name_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1758410001286\"},\"RIGHT_SPACES\":{\"ruleName\":\"rule_name_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1596275981758\"},\"UNIQUE_VALUES\":{\"ruleName\":\"rule_name_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"477219112730\"},\"MIN_VALUE\":{\"ruleName\":\"rule_name_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1548806023404\"},\"MAX_VALUE\":{\"ruleName\":\"rule_name_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"567931380227\"},\"MIN_LENGTH\":{\"ruleName\":\"rule_name_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"365386220505\"},\"MAX_LENGTH\":{\"ruleName\":\"rule_name_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1753343758856\"},\"SQL_RULE\":{\"ruleName\":\"rule_name_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1599730642973\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"rule_name_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"RULE_NAME\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1655830845437\"}},\"RULE_TYPE\":{\"NOT_NULL\":{\"ruleName\":\"rule_type_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"297867027226\"},\"NOT_EMPTY\":{\"ruleName\":\"rule_type_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"264269884790\"},\"LEFT_SPACES\":{\"ruleName\":\"rule_type_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"790849919816\"},\"RIGHT_SPACES\":{\"ruleName\":\"rule_type_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1358134221072\"},\"UNIQUE_VALUES\":{\"ruleName\":\"rule_type_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1548832848205\"},\"MIN_VALUE\":{\"ruleName\":\"rule_type_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"594003344322\"},\"MAX_VALUE\":{\"ruleName\":\"rule_type_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1071639585065\"},\"MIN_LENGTH\":{\"ruleName\":\"rule_type_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"189146106872\"},\"MAX_LENGTH\":{\"ruleName\":\"rule_type_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1140535821677\"},\"SQL_RULE\":{\"ruleName\":\"rule_type_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"559452218300\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"rule_type_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"RULE_TYPE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"179790025652\"}},\"SEVERITY\":{\"NOT_NULL\":{\"ruleName\":\"severity_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"418309695343\"},\"NOT_EMPTY\":{\"ruleName\":\"severity_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"589984500523\"},\"LEFT_SPACES\":{\"ruleName\":\"severity_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"230409307799\"},\"RIGHT_SPACES\":{\"ruleName\":\"severity_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"232812401163\"},\"UNIQUE_VALUES\":{\"ruleName\":\"severity_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1740742867589\"},\"MIN_VALUE\":{\"ruleName\":\"severity_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"220965419952\"},\"MAX_VALUE\":{\"ruleName\":\"severity_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1580260474982\"},\"MIN_LENGTH\":{\"ruleName\":\"severity_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1211004125969\"},\"MAX_LENGTH\":{\"ruleName\":\"severity_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1086081888765\"},\"SQL_RULE\":{\"ruleName\":\"severity_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"803614524206\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"severity_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"SEVERITY\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"63179766608\"}},\"SQL_EXECUTE_COLUMN_DQ\":{\"NOT_NULL\":{\"ruleName\":\"sql_execute_column_dq_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"436506262442\"},\"NOT_EMPTY\":{\"ruleName\":\"sql_execute_column_dq_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1012575271333\"},\"LEFT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"223418446078\"},\"RIGHT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"655729415172\"},\"UNIQUE_VALUES\":{\"ruleName\":\"sql_execute_column_dq_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"588221659654\"},\"MIN_VALUE\":{\"ruleName\":\"sql_execute_column_dq_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"64381841592\"},\"MAX_VALUE\":{\"ruleName\":\"sql_execute_column_dq_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1220229859991\"},\"MIN_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"455189862670\"},\"MAX_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"972612325185\"},\"SQL_RULE\":{\"ruleName\":\"sql_execute_column_dq_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1719357623787\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"sql_execute_column_dq_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1059288692341\"}},\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\":{\"NOT_NULL\":{\"ruleName\":\"sql_execute_column_dq_expected_result_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1724324685069\"},\"NOT_EMPTY\":{\"ruleName\":\"sql_execute_column_dq_expected_result_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"184642074268\"},\"LEFT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_expected_result_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1030813517588\"},\"RIGHT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_expected_result_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1489602489562\"},\"UNIQUE_VALUES\":{\"ruleName\":\"sql_execute_column_dq_expected_result_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"548464334438\"},\"MIN_VALUE\":{\"ruleName\":\"sql_execute_column_dq_expected_result_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"1213795122981\"},\"MAX_VALUE\":{\"ruleName\":\"sql_execute_column_dq_expected_result_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"487177435176\"},\"MIN_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_expected_result_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"419651711238\"},\"MAX_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_expected_result_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"56513531449\"},\"SQL_RULE\":{\"ruleName\":\"sql_execute_column_dq_expected_result_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"382127947188\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"sql_execute_column_dq_expected_result_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"unitTestId\":\"550506023415\"}}},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1192716080291\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"629536842772\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"886299877155\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1227603598994\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"771345285181\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"732631923473\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1360646546841\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"364895576288\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1002302374501\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"254946166919\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"569362973874\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"344835656286\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1683773812865\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"373546899518\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1123174064029\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1685193145578\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"980627670013\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"462218545339\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"843934895581\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1576808131681\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1728413195311\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1719502939688\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"867728696591\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1563447615468\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"677651492766\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1614745244773\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"28572937338\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1340210094011\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"259378868894\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1583244033639\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"377319989485\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"667282032259\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1582602081630\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"190481152265\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1640247488598\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1629796260869\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"101728706613\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"411137558580\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 12585,
+  "dmsProjectId" : 781,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:23:40.319571256Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}

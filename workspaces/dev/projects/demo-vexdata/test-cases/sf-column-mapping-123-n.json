@@ -1,0 +1,183 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "sf column mapping 123\\n",
+  "email" : [ ],
+  "flowDesc" : "sf column mapping 123\n",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "new_snowflake_rsa_encrypted",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "HEALTH_DATA" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "HEALTH_DATA",
+          "tblSize" : "3",
+          "tblRecordCount" : 35555,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "new_snowflake_rsa_encrypted",
+          "groupName" : "dev"
+        },
+        "transformationSQL" : true,
+        "sqlStatements" : {
+          "HEALTH_DATA" : [ {
+            "sql" : "SELECT  \n      NHS_NUMBER AS NATIONAL_HEALTH_ID,  \n      HOSPITAL_NAME AS FACILITY_NAME,  \n      P_FNAME AS FIRST_NAME,  \n      P_LNAME AS LAST_NAME,  \n      DOB AS BIRTH_DATE,  \n      EMAIL AS EMAIL_ADDRESS,  \n      EMAIL AS COMMUNICATION_CHANNEL,  \n      GENDER AS SEX,  \n      CITY AS TOWN,  \n      ZIPCODE AS POSTAL_CODE,  \n      COUNTRYCODE AS COUNTRY,  \n      PROVIDER_NUMBER AS PROVIDER_ID,  \n      PATIENT_INCOME AS INCOME,  \n      PATIENT_START_DATETIME AS START_TIMESTAMP,  \n      ICD9 AS DIAGNOSIS_CODE,  \n      ID AS RECORD_ID  \n  FROM PUBLIC.HEALTH_DATA",
+            "name" : "HEALTH_DATA"
+          } ]
+        },
+        "tableNamesList" : {
+          "HEALTH_DATA" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "HEALTH_DATA"
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 564467490578,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "HEALTH_DATA" : "HEALTH_DATA"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "DOB", "NHS_NUMBER", "P_FNAME", "HOSPITAL_NAME" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "DOB",
+          "destColumn" : "BIRTH_DATE"
+        }, {
+          "srcColumn" : "NHS_NUMBER",
+          "destColumn" : "NATIONAL_HEALTH_ID"
+        }, {
+          "srcColumn" : "P_FNAME",
+          "destColumn" : "FIRST_NAME"
+        }, {
+          "srcColumn" : "HOSPITAL_NAME",
+          "destColumn" : "FACILITY_NAME"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "ID",
+          "destColumn" : "RECORD_ID"
+        }, {
+          "srcColumn" : "GENDER",
+          "destColumn" : "SEX"
+        }, {
+          "srcColumn" : "DOB",
+          "destColumn" : "BIRTH_DATE"
+        }, {
+          "srcColumn" : "COUNTRYCODE",
+          "destColumn" : "COUNTRY"
+        }, {
+          "srcColumn" : "CITY",
+          "destColumn" : "TOWN"
+        }, {
+          "srcColumn" : "NHS_NUMBER",
+          "destColumn" : "NATIONAL_HEALTH_ID"
+        }, {
+          "srcColumn" : "P_FNAME",
+          "destColumn" : "FIRST_NAME"
+        }, {
+          "srcColumn" : "ICD9",
+          "destColumn" : "DIAGNOSIS_CODE"
+        }, {
+          "srcColumn" : "PATIENT_START_DATETIME",
+          "destColumn" : "START_TIMESTAMP"
+        }, {
+          "srcColumn" : "EMAIL",
+          "destColumn" : "EMAIL_ADDRESS"
+        }, {
+          "srcColumn" : "PATIENT_INCOME",
+          "destColumn" : "INCOME"
+        }, {
+          "srcColumn" : "P_LNAME",
+          "destColumn" : "LAST_NAME"
+        }, {
+          "srcColumn" : "PROVIDER_NUMBER",
+          "destColumn" : "PROVIDER_ID"
+        }, {
+          "srcColumn" : "ZIPCODE",
+          "destColumn" : "POSTAL_CODE"
+        }, {
+          "srcColumn" : "HOSPITAL_NAME",
+          "destColumn" : "FACILITY_NAME"
+        } ],
+        "keyValueProperties" : { }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "10"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"4ea152fc-a96a-4b48-bce9-6516e394efb8\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HEALTH_DATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"CITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"COUNTRYCODE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DOB\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"HOSPITAL_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ICD9\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ID\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":27,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"NHS_NUMBER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PATIENT_INCOME\",\"columnType\":\"number(5,2)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PATIENT_START_DATETIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PROVIDER_NUMBER\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"P_FNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"P_LNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ZIPCODE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"CITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"COUNTRYCODE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DOB\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"HOSPITAL_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ICD9\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ID\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":27,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"NHS_NUMBER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PATIENT_INCOME\",\"columnType\":\"number(5,2)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PATIENT_START_DATETIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PROVIDER_NUMBER\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"P_FNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"P_LNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ZIPCODE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":35555,\"tableSize\":3,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"44542c59-0f62-4259-9095-f0d6cb917daa\",\"from\":\"target\",\"type\":\"SQL\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"tableName\":\"HEALTH_DATA\",\"partitionProperties\":{},\"defaultSchema\":[{\"columnName\":\"NATIONAL_HEALTH_ID\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FACILITY_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"BIRTH_DATE\",\"columnType\":\"date\",\"actualColumnType\":\"DATE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMAIL_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"COMMUNICATION_CHANNEL\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SEX\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOWN\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"POSTAL_CODE\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"COUNTRY\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PROVIDER_ID\",\"columnType\":\"long\",\"actualColumnType\":\"NUMBER\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"INCOME\",\"columnType\":\"decimal(5,2)\",\"actualColumnType\":\"NUMBER\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"START_TIMESTAMP\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIAGNOSIS_CODE\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"NATIONAL_HEALTH_ID\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FACILITY_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"BIRTH_DATE\",\"columnType\":\"date\",\"actualColumnType\":\"DATE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMAIL_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"COMMUNICATION_CHANNEL\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SEX\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TOWN\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"POSTAL_CODE\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"COUNTRY\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"PROVIDER_ID\",\"columnType\":\"long\",\"actualColumnType\":\"NUMBER\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"INCOME\",\"columnType\":\"decimal(5,2)\",\"actualColumnType\":\"NUMBER\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"START_TIMESTAMP\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIAGNOSIS_CODE\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sqlQuery\":\"U0VMRUNUICAKICAgICAgTkhTX05VTUJFUiBBUyBOQVRJT05BTF9IRUFMVEhfSUQsICAKICAgICAgSE9TUElUQUxfTkFNRSBBUyBGQUNJTElUWV9OQU1FLCAgCiAgICAgIFBfRk5BTUUgQVMgRklSU1RfTkFNRSwgIAogICAgICBQX0xOQU1FIEFTIExBU1RfTkFNRSwgIAogICAgICBET0IgQVMgQklSVEhfREFURSwgIAogICAgICBFTUFJTCBBUyBFTUFJTF9BRERSRVNTLCAgCiAgICAgIEVNQUlMIEFTIENPTU1VTklDQVRJT05fQ0hBTk5FTCwgIAogICAgICBHRU5ERVIgQVMgU0VYLCAgCiAgICAgIENJVFkgQVMgVE9XTiwgIAogICAgICBaSVBDT0RFIEFTIFBPU1RBTF9DT0RFLCAgCiAgICAgIENPVU5UUllDT0RFIEFTIENPVU5UUlksICAKICAgICAgUFJPVklERVJfTlVNQkVSIEFTIFBST1ZJREVSX0lELCAgCiAgICAgIFBBVElFTlRfSU5DT01FIEFTIElOQ09NRSwgIAogICAgICBQQVRJRU5UX1NUQVJUX0RBVEVUSU1FIEFTIFNUQVJUX1RJTUVTVEFNUCwgIAogICAgICBJQ0Q5IEFTIERJQUdOT1NJU19DT0RFLCAgCiAgICAgIElEIEFTIFJFQ09SRF9JRCAgCiAgRlJPTSBQVUJMSUMuSEVBTFRIX0RBVEE=\",\"prompt\":\"\",\"aiHelp\":false,\"tables\":[]}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"memory\":5,\"threads\":2,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"chunks\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"comparisonTypeSelectedByUser\":false,\"convertNumberToLong\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"sf column mapping 123\\n\",\"data_monitoring\":false,\"dimensions\":[],\"aggregations\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\"},\"mapping\":{\"mappings\":{\"564467490578\":{\"source\":\"4ea152fc-a96a-4b48-bce9-6516e394efb8\",\"target\":\"44542c59-0f62-4259-9095-f0d6cb917daa\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"eb6fad28-5399-4d3a-8dd5-43fd156cbb06\",\"sourceColumnName\":\"ID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"RECORD_ID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"112e26e4-fda8-41ad-94aa-ddfd8ce9b9f2\",\"sourceColumnName\":\"GENDER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"SEX\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"98c57543-ed8d-44f3-8ad3-0972a6ee90b7\",\"sourceColumnName\":\"DOB\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"BIRTH_DATE\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"DATE\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true},{\"id\":\"cf560db8-f95d-4ceb-87dd-2157261ff79d\",\"sourceColumnName\":\"COUNTRYCODE\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"COUNTRY\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"a94a14b1-a1a6-4c73-80d8-22d4f24e9e3a\",\"sourceColumnName\":\"CITY\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"TOWN\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4b3f4e32-11e9-47df-8142-bbdf18d2f494\",\"sourceColumnName\":\"NHS_NUMBER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"NATIONAL_HEALTH_ID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true},{\"id\":\"45348825-9eaa-4e73-9fb4-c6df659c5d4f\",\"sourceColumnName\":\"P_FNAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"FIRST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true},{\"id\":\"46072592-82c4-4bd6-abdd-1cc2ebb5221d\",\"sourceColumnName\":\"ICD9\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"DIAGNOSIS_CODE\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"0b8ded50-56e5-4724-9435-32265b10beaf\",\"sourceColumnName\":\"PATIENT_START_DATETIME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"START_TIMESTAMP\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"fbae71a1-2f32-428d-8b2c-1035a77a8823\",\"sourceColumnName\":\"EMAIL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"EMAIL_ADDRESS\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"295ef33d-409c-46b7-8132-5da27a304b1e\",\"sourceColumnName\":\"PATIENT_INCOME\",\"sourceColumnType\":\"number(5,2)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"INCOME\",\"targetColumnType\":\"decimal(5,2)\",\"targetActualColumnType\":\"NUMBER\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"e16ef183-b240-48a5-99f4-7b74be03008b\",\"sourceColumnName\":\"P_LNAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"LAST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"e328695e-b3f1-417c-8e62-4e40ed5d56ca\",\"sourceColumnName\":\"PROVIDER_NUMBER\",\"sourceColumnType\":\"number(38,0)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"PROVIDER_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"NUMBER\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"2bb6e6e2-5c67-48c0-82a6-cb213f5f2e58\",\"sourceColumnName\":\"ZIPCODE\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"POSTAL_CODE\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"79c2b832-64ff-4745-8bee-2d63a23e3a94\",\"sourceColumnName\":\"HOSPITAL_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"FACILITY_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"VARCHAR\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"564467490578\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 12615,
+  "dmsProjectId" : 781,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:23:40.225583244Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}

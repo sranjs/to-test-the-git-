@@ -1,0 +1,235 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"11b261f5-635d-49c5-811c-b80067244bff\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${dwh_connection_nyc}\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"DQ_SQL_TYPE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RULE_DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEST_CASE_SEVERITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"DQ_SQL_TYPE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RULE_DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEST_CASE_SEVERITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":15,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":100,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"Branyer copy of copy of import DQL rules all types\"},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"fca2f323-4ba4-4cee-b406-bc9ffe0f806c\":{\"userProvidedTestCaseId\":\"TC-102\",\"ruleType\":\"SQL\",\"ruleName\":\"Check for tables without primary keys\",\"sql\":\"U0VMRUNUIENPVU5UKERJU1RJTkNUIFRBQkxFX05BTUUpIEZST00gCiBJTkZPUk1BVElPTl9TQ0hFTUEuVEFCTEVTIFdIRVJFIFRBQkxFX1NDSEVNQSA9IENVUlJFTlRfU0NIRU1BKCkgQU5EIFRBQkxFX1RZUEUgPSAnQkFTRSBUQUJMRScgQU5EIFRBQkxFX05BTUUgTk9UIElOIChTRUxFQ1QgVEFCTEVfTkFNRSBGUk9NIAogSU5GT1JNQVRJT05fU0NIRU1BLlRBQkxFX0NPTlNUUkFJTlRTIFdIRVJFIENPTlNUUkFJTlRfVFlQRSA9ICdQUklNQVJZIEtFWScp\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"fca2f323-4ba4-4cee-b406-bc9ffe0f806c\",\"unitTestId\":\"342399403907\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT COUNT(DISTINCT TABLE_NAME) FROM \\n INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = CURRENT_SCHEMA() AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME NOT IN (SELECT TABLE_NAME FROM \\n INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE CONSTRAINT_TYPE = 'PRIMARY KEY')\"}},\"3801967d-de8c-4a37-bb83-aaf6cdb1eb8a\":{\"userProvidedTestCaseId\":\"TC-103\",\"ruleType\":\"SQL\",\"ruleName\":\"Monitor database storage usage (MB)\",\"sql\":\"U0VMRUNUIFJPVU5EKFNVTShCWVRFUykvMTAyNC8xMDI0LCAyKSBGUk9NIAogSU5GT1JNQVRJT05fU0NIRU1BLlRBQkxFX1NUT1JBR0VfTUVUUklDUyBXSEVSRSBBQ1RJVkVfQllURVMgPiAw\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"results\",\"condition\":\"=\",\"dataValidationValue\":\"0\",\"dqSQLOutputType\":\"DATA_VALIDATION\",\"id\":\"3801967d-de8c-4a37-bb83-aaf6cdb1eb8a\",\"unitTestId\":\"204149409774\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT ROUND(SUM(BYTES)/1024/1024, 2) FROM \\n INFORMATION_SCHEMA.TABLE_STORAGE_METRICS WHERE ACTIVE_BYTES > 0\"}},\"431b9c9f-c47f-4a00-b012-b0d8e1e96c85\":{\"userProvidedTestCaseId\":\"TC-104\",\"ruleType\":\"SQL\",\"ruleName\":\"Check for recently modified tables\",\"sql\":\"U0VMRUNUIENPVU5UKCopIEZST00gCiBJTkZPUk1BVElPTl9TQ0hFTUEuVEFCTEVTIFdIRVJFIFRBQkxFX1RZUEUgPSAnQkFTRSBUQUJMRScgQU5EIExBU1RfQUxURVJFRCA+IERBVEVBREQoREFZLCAtNywgQ1VSUkVOVF9USU1FU1RBTVAoKSk=\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"431b9c9f-c47f-4a00-b012-b0d8e1e96c85\",\"unitTestId\":\"198902045183\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT COUNT(${default_file_name}) FROM \\n INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND LAST_ALTERED > DATEADD(DAY, -7, CURRENT_TIMESTAMP())\"}},\"5219b893-1091-42e6-87c3-4b3eb2e7facb\":{\"userProvidedTestCaseId\":\"TC-105\",\"ruleType\":\"SQL\",\"ruleName\":\"Validate no tables with zero rows\",\"sql\":\"U0VMRUNUIENPVU5UKCopIEZST00gCiBJTkZPUk1BVElPTl9TQ0hFTUEuVEFCTEVTIFdIRVJFIFRBQkxFX1RZUEUgPSAnQkFTRSBUQUJMRScgQU5EIFJPV19DT1VOVCA9IDA=\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"5219b893-1091-42e6-87c3-4b3eb2e7facb\",\"unitTestId\":\"1071818851754\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT COUNT(${default_file_name}) FROM \\n INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND ROW_COUNT = 0\"}},\"537b05ec-9135-47f5-a05d-01941805db1b\":{\"userProvidedTestCaseId\":\"TC-106\",\"ruleType\":\"SQL\",\"ruleName\":\"Check for stale tables (not accessed in 30 days)\",\"sql\":\"U0VMRUNUIENPVU5UKCopIEZST00gCiBJTkZPUk1BVElPTl9TQ0hFTUEuVEFCTEVfU1RPUkFHRV9NRVRSSUNTIFdIRVJFIFRBQkxFX0RST1BQRUQgSVMgTlVMTCBBTkQgQUNUSVZFX0JZVEVTID4gMCBBTkQgVEFCTEVfTEFTVF9BTFRFUkVEIDwgREFURUFERChEQVksIC0zMCwgQ1VSUkVOVF9USU1FU1RBTVAoKSk=\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"537b05ec-9135-47f5-a05d-01941805db1b\",\"unitTestId\":\"568485188078\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT COUNT(${default_file_name}) FROM \\n INFORMATION_SCHEMA.TABLE_STORAGE_METRICS WHERE TABLE_DROPPED IS NULL AND ACTIVE_BYTES > 0 AND TABLE_LAST_ALTERED < DATEADD(DAY, -30, CURRENT_TIMESTAMP())\"}},\"3aec1a4b-1e1f-4c7d-b7ba-9b7ec5849bc9\":{\"userProvidedTestCaseId\":\"TC-107\",\"ruleType\":\"SQL\",\"ruleName\":\"Monitor total row count across all tables\",\"sql\":\"U0VMRUNUIFNVTShST1dfQ09VTlQpIEZST00gCiBJTkZPUk1BVElPTl9TQ0hFTUEuVEFCTEVTIFdIRVJFIFRBQkxFX1RZUEUgPSAnQkFTRSBUQUJMRSc=\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"results\",\"condition\":\"=\",\"dataValidationValue\":\"0\",\"dqSQLOutputType\":\"DATA_VALIDATION\",\"id\":\"3aec1a4b-1e1f-4c7d-b7ba-9b7ec5849bc9\",\"unitTestId\":\"161684288581\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT SUM(ROW_COUNT) FROM \\n INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'\"}},\"91ea1daf-5b8c-4e43-944e-7df3425cfab9\":{\"userProvidedTestCaseId\":\"TC-108\",\"ruleType\":\"SQL\",\"ruleName\":\"Check for duplicate column names across tables\",\"sql\":\"U0VMRUNUIENPVU5UKCopIEZST00gCiAoU0VMRUNUIENPTFVNTl9OQU1FIEZST00gCiBJTkZPUk1BVElPTl9TQ0hFTUEuQ09MVU1OUyBXSEVSRSBUQUJMRV9TQ0hFTUEgPSBDVVJSRU5UX1NDSEVNQSgpIEdST1VQIEJZIENPTFVNTl9OQU1FIEhBVklORyBDT1VOVChESVNUSU5DVCBUQUJMRV9OQU1FKSA+IDUp\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"91ea1daf-5b8c-4e43-944e-7df3425cfab9\",\"unitTestId\":\"631283119344\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT COUNT(${default_file_name}) FROM \\n (SELECT COLUMN_NAME FROM \\n INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = CURRENT_SCHEMA() GROUP BY COLUMN_NAME HAVING COUNT(DISTINCT TABLE_NAME) > 5)\"}},\"ec6adb2a-6070-4fa4-8fa3-11b984daff3b\":{\"userProvidedTestCaseId\":\"TC-109\",\"ruleType\":\"SQL\",\"ruleName\":\"Validate schema has views defined\",\"sql\":\"U0VMRUNUIENPVU5UKCopIEZST00gCiBJTkZPUk1BVElPTl9TQ0hFTUEuVklFV1MgV0hFUkUgVEFCTEVfU0NIRU1BID0gQ1VSUkVOVF9TQ0hFTUEoKQ==\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"ec6adb2a-6070-4fa4-8fa3-11b984daff3b\",\"unitTestId\":\"486225051278\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT COUNT(${default_file_name}) FROM \\n INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA = CURRENT_SCHEMA()\"}},\"10ed8abc-3403-4505-ae0a-720bef46957c\":{\"userProvidedTestCaseId\":\"TC-110\",\"ruleType\":\"SQL\",\"ruleName\":\"Check for tables with too many columns\",\"sql\":\"U0VMRUNUIENPVU5UKCopIEZST00gCiAoU0VMRUNUIFRBQkxFX05BTUUsIENPVU5UKCopIEFTIENPTF9DT1VOVCBGUk9NIAogSU5GT1JNQVRJT05fU0NIRU1BLkNPTFVNTlMgV0hFUkUgVEFCTEVfU0NIRU1BID0gQ1VSUkVOVF9TQ0hFTUEoKSBHUk9VUCBCWSBUQUJMRV9OQU1FIEhBVklORyBDT1VOVCgqKSA+IDUwKQ==\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"10ed8abc-3403-4505-ae0a-720bef46957c\",\"unitTestId\":\"1413841488191\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT COUNT(${default_file_name}) FROM \\n (SELECT TABLE_NAME, COUNT(${default_file_name}) AS COL_COUNT FROM \\n INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = CURRENT_SCHEMA() GROUP BY TABLE_NAME HAVING COUNT(${default_file_name}) > 50)\"}},\"a4f0e5e0-8ccd-4e28-b84b-d9f3a68b41ea\":{\"userProvidedTestCaseId\":\"TC-111\",\"ruleType\":\"SQL\",\"ruleName\":\"Monitor query history for failed queries\",\"sql\":\"U0VMRUNUIENPVU5UKCopIEZST00gCiBUQUJMRShJTkZPUk1BVElPTl9TQ0hFTUEuUVVFUllfSElTVE9SWShEQVRFX1JBTkdFX1NUQVJUPT5EQVRFQUREKCdob3VyJywtMjQsQ1VSUkVOVF9USU1FU1RBTVAoKSkpKSBXSEVSRSBFUlJPUl9DT0RFIElTIE5PVCBOVUxM\",\"keyColumns\":[],\"tableName\":\"DQ_RULES_TEMPLATE\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"noResults\",\"id\":\"a4f0e5e0-8ccd-4e28-b84b-d9f3a68b41ea\",\"unitTestId\":\"1108222355215\",\"dqAdditionalInfo\":{\"investigationQuery\":\"SELECT COUNT(${default_file_name}) FROM \\n TABLE(INFORMATION_SCHEMA.QUERY_HISTORY(DATE_RANGE_START=>DATEADD('hour',-24,CURRENT_TIMESTAMP()))) WHERE ERROR_CODE IS NOT NULL\"}},\"e7c3ebd3-20f5-45ff-a974-0c73a9937440\":{\"ruleName\":\"my rule with new line test\",\"sql\":\"IApTRUxFQ1QgIAogICAgVEVTVF9DQVNFX0lELCAgCiAgICBURVNUX0NBU0VfTkFNRSwgCiAgICBTUUxfRVhFQ1VURV9DT0xVTU5fRFEsICAKICAgIFJFUExBQ0UoUkVQTEFDRShTUUxfRVhFQ1VURV9DT0xVTU5fRFFfRVhQRUNURURfUkVTVUxULCAnJycnLCAnJyksICciJywgJycpIEFTIFNRTF9FWEVDVVRFX0NPTFVNTl9EUV9FWFBFQ1RFRF9SRVNVTFQsICAKICAgIFRFU1RfQ0FTRV9TRVZFUklUWSwgIAogICAgRFFfU1FMX1RZUEUgLCAKICAgICdsb3cnIGFzIFBSSU9SSVRZLCAKICAgIFNRTF9FWEVDVVRFX0NPTFVNTl9EUSBhcyBJTlZFU1RJR0FUSU9OX1FVRVJZLCAKICAgICdhZ2UnIGFzIENPTFVNTl9OQU1FLCAKICAgICdNYWpvciBpbWFnZSBjYW4gaGFwcGVuIHdpdGggdGhpcyBjaGFuZ2UnIGFzIElNUEFDVF9TVEFURU1FTlQsIAogICAgJ2xvdycgYXMgcHJpb3JpdHksIAogICAgJ0NPVU5UU19WQUxJREFUSU9OJyBhcyBEUV9TUUxfVFlQRSAKRlJPTSBEUV9SVUxFU19URU1QTEFURTs=\",\"keyColumns\":[],\"dqSQLOutputType\":\"COUNT_VALIDATION\",\"expectation\":\"noResults\",\"condition\":\">\",\"value\":\"0\",\"dataValidationValue\":\"\",\"rulesLevel\":\"Warning\",\"enable\":true,\"id\":\"e7c3ebd3-20f5-45ff-a974-0c73a9937440\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"ruleType\":\"SQL\",\"unitTestId\":\"1395667220876\"}},\"columnRules\":{\"DQ_SQL_TYPE\":{\"NOT_NULL\":{\"ruleName\":\"dq_sql_type_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"727610093534\"},\"NOT_EMPTY\":{\"ruleName\":\"dq_sql_type_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1581836711118\"},\"LEFT_SPACES\":{\"ruleName\":\"dq_sql_type_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1579185179658\"},\"RIGHT_SPACES\":{\"ruleName\":\"dq_sql_type_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"982357760407\"},\"UNIQUE_VALUES\":{\"ruleName\":\"dq_sql_type_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"724798794094\"},\"MIN_VALUE\":{\"ruleName\":\"dq_sql_type_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"496239943603\"},\"MAX_VALUE\":{\"ruleName\":\"dq_sql_type_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1581886626337\"},\"MIN_LENGTH\":{\"ruleName\":\"dq_sql_type_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"530455807226\"},\"MAX_LENGTH\":{\"ruleName\":\"dq_sql_type_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"530785506176\"},\"SQL_RULE\":{\"ruleName\":\"dq_sql_type_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1308331506277\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"dq_sql_type_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"DQ_SQL_TYPE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1505353260794\"}},\"RECORD_ID\":{\"NOT_NULL\":{\"ruleName\":\"record_id_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"736019398588\"},\"NOT_EMPTY\":{\"ruleName\":\"record_id_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1283667711979\"},\"LEFT_SPACES\":{\"ruleName\":\"record_id_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1126269519365\"},\"RIGHT_SPACES\":{\"ruleName\":\"record_id_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"572121888600\"},\"UNIQUE_VALUES\":{\"ruleName\":\"record_id_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"19380937323\"},\"MIN_VALUE\":{\"ruleName\":\"record_id_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1004404027659\"},\"MAX_VALUE\":{\"ruleName\":\"record_id_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1467851410489\"},\"MIN_LENGTH\":{\"ruleName\":\"record_id_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"544800468028\"},\"MAX_LENGTH\":{\"ruleName\":\"record_id_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1637644299084\"},\"SQL_RULE\":{\"ruleName\":\"record_id_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"366176021919\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"record_id_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"RECORD_ID\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"945505787662\"}},\"RULE_DESCRIPTION\":{\"NOT_NULL\":{\"ruleName\":\"rule_description_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1352244460820\"},\"NOT_EMPTY\":{\"ruleName\":\"rule_description_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"38164893321\"},\"LEFT_SPACES\":{\"ruleName\":\"rule_description_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"170874038896\"},\"RIGHT_SPACES\":{\"ruleName\":\"rule_description_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"180245976779\"},\"UNIQUE_VALUES\":{\"ruleName\":\"rule_description_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"853374859227\"},\"MIN_VALUE\":{\"ruleName\":\"rule_description_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"371720155679\"},\"MAX_VALUE\":{\"ruleName\":\"rule_description_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"441992249432\"},\"MIN_LENGTH\":{\"ruleName\":\"rule_description_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1105881305175\"},\"MAX_LENGTH\":{\"ruleName\":\"rule_description_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"277240070983\"},\"SQL_RULE\":{\"ruleName\":\"rule_description_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1558779464418\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"rule_description_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"RULE_DESCRIPTION\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"742954271615\"}},\"SQL_EXECUTE_COLUMN_DQ\":{\"NOT_NULL\":{\"ruleName\":\"sql_execute_column_dq_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"376261899442\"},\"NOT_EMPTY\":{\"ruleName\":\"sql_execute_column_dq_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1086433820447\"},\"LEFT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"184611918962\"},\"RIGHT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1055541054937\"},\"UNIQUE_VALUES\":{\"ruleName\":\"sql_execute_column_dq_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"111820115385\"},\"MIN_VALUE\":{\"ruleName\":\"sql_execute_column_dq_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1222704329975\"},\"MAX_VALUE\":{\"ruleName\":\"sql_execute_column_dq_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"754315084823\"},\"MIN_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1058666592964\"},\"MAX_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"898395736605\"},\"SQL_RULE\":{\"ruleName\":\"sql_execute_column_dq_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1242709931706\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"sql_execute_column_dq_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"785129317612\"}},\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\":{\"NOT_NULL\":{\"ruleName\":\"sql_execute_column_dq_expected_result_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1494836543511\"},\"NOT_EMPTY\":{\"ruleName\":\"sql_execute_column_dq_expected_result_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1708617578611\"},\"LEFT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_expected_result_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"169371280507\"},\"RIGHT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_expected_result_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1709339462925\"},\"UNIQUE_VALUES\":{\"ruleName\":\"sql_execute_column_dq_expected_result_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1750272619451\"},\"MIN_VALUE\":{\"ruleName\":\"sql_execute_column_dq_expected_result_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"577683922893\"},\"MAX_VALUE\":{\"ruleName\":\"sql_execute_column_dq_expected_result_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"642864487341\"},\"MIN_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_expected_result_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"245224125294\"},\"MAX_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_expected_result_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1742326408234\"},\"SQL_RULE\":{\"ruleName\":\"sql_execute_column_dq_expected_result_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1195183010893\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"sql_execute_column_dq_expected_result_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"698432560894\"}},\"TEST_CASE_SEVERITY\":{\"NOT_NULL\":{\"ruleName\":\"test_case_severity_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1090995960400\"},\"NOT_EMPTY\":{\"ruleName\":\"test_case_severity_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"23131213745\"},\"LEFT_SPACES\":{\"ruleName\":\"test_case_severity_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"506951226940\"},\"RIGHT_SPACES\":{\"ruleName\":\"test_case_severity_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1055368065623\"},\"UNIQUE_VALUES\":{\"ruleName\":\"test_case_severity_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"696850710810\"},\"MIN_VALUE\":{\"ruleName\":\"test_case_severity_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"798601388557\"},\"MAX_VALUE\":{\"ruleName\":\"test_case_severity_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"579621167773\"},\"MIN_LENGTH\":{\"ruleName\":\"test_case_severity_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"642469212446\"},\"MAX_LENGTH\":{\"ruleName\":\"test_case_severity_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"958744893188\"},\"SQL_RULE\":{\"ruleName\":\"test_case_severity_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"166000775182\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"test_case_severity_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"TEST_CASE_SEVERITY\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"unitTestId\":\"1562931210533\"}}},\"dynamicSql\":\"ClNFTEVDVCAKICAqIApGUk9NIERRX1JVTEVTX1RFTVBMQVRFX09OTFlfQ09VTlRTOw==\",\"dynamicSQLEnabled\":true,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"342399403907\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"204149409774\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"198902045183\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1071818851754\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"568485188078\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"161684288581\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"631283119344\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"486225051278\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1413841488191\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1108222355215\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1395667220876\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "branyer copy of copy of import dql rules all types",
+  "flowDesc" : "Branyer copy of copy of import DQL rules all types",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "${dwh_connection_nyc}",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "DQ_RULES_TEMPLATE" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "DQ_RULES_TEMPLATE",
+          "tblSize" : "1",
+          "tblRecordCount" : 15,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "DQ_RULES_TEMPLATE" : {
+            "rules" : [ {
+              "unitTestCaseId" : 342399403907,
+              "userProvidedTestCaseId" : "TC-102",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT COUNT(DISTINCT TABLE_NAME) FROM \n INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = CURRENT_SCHEMA() AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME NOT IN (SELECT TABLE_NAME FROM \n INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE CONSTRAINT_TYPE = 'PRIMARY KEY')",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Check for tables without primary keys",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT COUNT(DISTINCT TABLE_NAME) FROM \n INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = CURRENT_SCHEMA() AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME NOT IN (SELECT TABLE_NAME FROM \n INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE CONSTRAINT_TYPE = 'PRIMARY KEY')"
+              }
+            }, {
+              "unitTestCaseId" : 204149409774,
+              "userProvidedTestCaseId" : "TC-103",
+              "ruleType" : "SQL",
+              "dqSqlPassCondition" : {
+                "condition" : "=",
+                "conditionValue" : "0",
+                "dqSQLOutputType" : "DATA_VALIDATION"
+              },
+              "column" : "NA",
+              "sql" : "SELECT ROUND(SUM(BYTES)/1024/1024, 2) FROM \n INFORMATION_SCHEMA.TABLE_STORAGE_METRICS WHERE ACTIVE_BYTES > 0",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Monitor database storage usage (MB)",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT ROUND(SUM(BYTES)/1024/1024, 2) FROM \n INFORMATION_SCHEMA.TABLE_STORAGE_METRICS WHERE ACTIVE_BYTES > 0"
+              }
+            }, {
+              "unitTestCaseId" : 198902045183,
+              "userProvidedTestCaseId" : "TC-104",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT COUNT(${default_file_name}) FROM \n INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND LAST_ALTERED > DATEADD(DAY, -7, CURRENT_TIMESTAMP())",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Check for recently modified tables",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT COUNT(${default_file_name}) FROM \n INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND LAST_ALTERED > DATEADD(DAY, -7, CURRENT_TIMESTAMP())"
+              }
+            }, {
+              "unitTestCaseId" : 1071818851754,
+              "userProvidedTestCaseId" : "TC-105",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT COUNT(${default_file_name}) FROM \n INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND ROW_COUNT = 0",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Validate no tables with zero rows",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT COUNT(${default_file_name}) FROM \n INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND ROW_COUNT = 0"
+              }
+            }, {
+              "unitTestCaseId" : 568485188078,
+              "userProvidedTestCaseId" : "TC-106",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT COUNT(${default_file_name}) FROM \n INFORMATION_SCHEMA.TABLE_STORAGE_METRICS WHERE TABLE_DROPPED IS NULL AND ACTIVE_BYTES > 0 AND TABLE_LAST_ALTERED < DATEADD(DAY, -30, CURRENT_TIMESTAMP())",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Check for stale tables (not accessed in 30 days)",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT COUNT(${default_file_name}) FROM \n INFORMATION_SCHEMA.TABLE_STORAGE_METRICS WHERE TABLE_DROPPED IS NULL AND ACTIVE_BYTES > 0 AND TABLE_LAST_ALTERED < DATEADD(DAY, -30, CURRENT_TIMESTAMP())"
+              }
+            }, {
+              "unitTestCaseId" : 161684288581,
+              "userProvidedTestCaseId" : "TC-107",
+              "ruleType" : "SQL",
+              "dqSqlPassCondition" : {
+                "condition" : "=",
+                "conditionValue" : "0",
+                "dqSQLOutputType" : "DATA_VALIDATION"
+              },
+              "column" : "NA",
+              "sql" : "SELECT SUM(ROW_COUNT) FROM \n INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Monitor total row count across all tables",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT SUM(ROW_COUNT) FROM \n INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
+              }
+            }, {
+              "unitTestCaseId" : 631283119344,
+              "userProvidedTestCaseId" : "TC-108",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT COUNT(${default_file_name}) FROM \n (SELECT COLUMN_NAME FROM \n INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = CURRENT_SCHEMA() GROUP BY COLUMN_NAME HAVING COUNT(DISTINCT TABLE_NAME) > 5)",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Check for duplicate column names across tables",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT COUNT(${default_file_name}) FROM \n (SELECT COLUMN_NAME FROM \n INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = CURRENT_SCHEMA() GROUP BY COLUMN_NAME HAVING COUNT(DISTINCT TABLE_NAME) > 5)"
+              }
+            }, {
+              "unitTestCaseId" : 486225051278,
+              "userProvidedTestCaseId" : "TC-109",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT COUNT(${default_file_name}) FROM \n INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA = CURRENT_SCHEMA()",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Validate schema has views defined",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT COUNT(${default_file_name}) FROM \n INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA = CURRENT_SCHEMA()"
+              }
+            }, {
+              "unitTestCaseId" : 1413841488191,
+              "userProvidedTestCaseId" : "TC-110",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT COUNT(${default_file_name}) FROM \n (SELECT TABLE_NAME, COUNT(${default_file_name}) AS COL_COUNT FROM \n INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = CURRENT_SCHEMA() GROUP BY TABLE_NAME HAVING COUNT(${default_file_name}) > 50)",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Check for tables with too many columns",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT COUNT(${default_file_name}) FROM \n (SELECT TABLE_NAME, COUNT(${default_file_name}) AS COL_COUNT FROM \n INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = CURRENT_SCHEMA() GROUP BY TABLE_NAME HAVING COUNT(${default_file_name}) > 50)"
+              }
+            }, {
+              "unitTestCaseId" : 1108222355215,
+              "userProvidedTestCaseId" : "TC-111",
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : "SELECT COUNT(${default_file_name}) FROM \n TABLE(INFORMATION_SCHEMA.QUERY_HISTORY(DATE_RANGE_START=>DATEADD('hour',-24,CURRENT_TIMESTAMP()))) WHERE ERROR_CODE IS NOT NULL",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "Monitor query history for failed queries",
+              "dqAdditionalInfo" : {
+                "investigationQuery" : "SELECT COUNT(${default_file_name}) FROM \n TABLE(INFORMATION_SCHEMA.QUERY_HISTORY(DATE_RANGE_START=>DATEADD('hour',-24,CURRENT_TIMESTAMP()))) WHERE ERROR_CODE IS NOT NULL"
+              }
+            }, {
+              "unitTestCaseId" : 1395667220876,
+              "userProvidedTestCaseId" : null,
+              "ruleType" : "SQL",
+              "column" : "NA",
+              "sql" : " \nSELECT  \n    TEST_CASE_ID,  \n    TEST_CASE_NAME, \n    SQL_EXECUTE_COLUMN_DQ,  \n    REPLACE(REPLACE(SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT, '''', ''), '\"', '') AS SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT,  \n    TEST_CASE_SEVERITY,  \n    DQ_SQL_TYPE , \n    'low' as PRIORITY, \n    SQL_EXECUTE_COLUMN_DQ as INVESTIGATION_QUERY, \n    'age' as COLUMN_NAME, \n    'Major image can happen with this change' as IMPACT_STATEMENT, \n    'low' as priority, \n    'COUNTS_VALIDATION' as DQ_SQL_TYPE \nFROM DQ_RULES_TEMPLATE;",
+              "creationTime" : 1762128104986,
+              "level" : "Warning",
+              "description" : "my rule with new line test"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE",
+            "loadRulesDynamically" : {
+              "sqlStatements" : "\nSELECT \n  ${default_file_name} \nFROM DQ_RULES_TEMPLATE_ONLY_COUNTS;",
+              "connectionName" : "${dwh_connection_nyc}",
+              "databaseName" : "PUBLIC",
+              "schema" : "PUBLIC",
+              "enable" : true
+            }
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "100"
+      }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "parameters" : [ {
+    "paramName" : "SQL_EXECUTION_TIMEOUT_DQ_-123",
+    "paramValue" : "20",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  } ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 12547,
+  "dmsProjectId" : 781,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:23:42.283265472Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
