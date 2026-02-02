@@ -1,0 +1,140 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"491933c1-523e-489e-8fa9-c4f9eae1db55\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"dataops\",\"tableName\":\"persons_ora\",\"schema\":[{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"character varying\",\"nullable\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"character varying\",\"nullable\":false},{\"columnName\":\"person_id\",\"columnType\":\"long\",\"actualColumnType\":\"integer\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"person_id\"],\"foreignKeyInfo\":null,\"count\":1,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"ea441785-d3d7-4782-bbf8-450c2495f873\",\"from\":\"target\",\"type\":\"SQL\",\"connectionName\":\"postgres\",\"schemaName\":\"dataops\",\"tableName\":\"persons_ora\",\"schema\":[{\"columnName\":\"person_id\",\"columnType\":\"int\",\"actualColumnType\":\"serial\",\"nullable\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false}],\"sqlQuery\":\"select * from dataops.persons_ora where PERSON_ID < 3\"}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"persons_ora\",\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"e8b2d6b0-7738-43bd-917b-36c2dfc21907\":{\"source\":\"491933c1-523e-489e-8fa9-c4f9eae1db55\",\"target\":\"ea441785-d3d7-4782-bbf8-450c2495f873\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"55457cf0-41e4-4320-a090-5ec3d1e20640\",\"sourceColumnName\":\"person_id\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"integer\",\"sourceNullable\":false,\"targetColumnName\":\"person_id\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"serial\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"249c66f6-6a57-42b3-b169-9649fad4c768\",\"sourceColumnName\":\"last_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"character varying\",\"sourceNullable\":false,\"targetColumnName\":\"last_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"fca3023f-c0dd-4a01-8ca7-dcd7a198afdb\",\"sourceColumnName\":\"first_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"character varying\",\"sourceNullable\":false,\"targetColumnName\":\"first_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{}}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "session_id" : "b2d8657a-ca51-4737-89b7-1a223b1095c6",
+  "executeOn" : "LOCAL",
+  "flowName" : "dataq1691514119877",
+  "APP_VERSION" : "6_81",
+  "flowDesc" : "persons_ora",
+  "LicensedName" : "6_81",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "dataops",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "postgres",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "persons_ora" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "persons_ora",
+          "tblSize" : "0",
+          "tblRecordCount" : 1,
+          "primaryKeys" : [ "person_id" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "dataops",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "postgres",
+          "groupName" : "dev"
+        },
+        "transformationSQL" : true,
+        "sqlStatements" : {
+          "persons_ora" : [ {
+            "sql" : "select * from dataops.persons_ora where PERSON_ID < 3",
+            "name" : "persons_ora"
+          } ]
+        },
+        "tableNamesList" : {
+          "persons_ora" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "persons_ora"
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "persons_ora" : "persons_ora"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "person_id" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "person_id",
+          "destColumn" : "person_id"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "person_id",
+          "destColumn" : "person_id"
+        }, {
+          "srcColumn" : "last_name",
+          "destColumn" : "last_name"
+        }, {
+          "srcColumn" : "first_name",
+          "destColumn" : "first_name"
+        } ]
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "6_81",
+  "API_APP_BUILD" : "6_81",
+  "parameters" : [ ],
+  "email" : [ ],
+  "session.id" : "b2d8657a-ca51-4737-89b7-1a223b1095c6",
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 8397,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:37.003675106Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
