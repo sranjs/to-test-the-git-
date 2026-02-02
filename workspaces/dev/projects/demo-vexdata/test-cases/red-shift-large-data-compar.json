@@ -1,0 +1,260 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"58fba677-ec6a-4541-9540-86f2c6bdfe45\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"redshift\",\"schemaName\":\"dataq_demo\",\"typeTable\":\"TABLE\",\"tableName\":\"event\",\"partitionProperties\":{\"numberOfPart\":5,\"column\":null},\"defaultSchema\":[{\"columnName\":\"eventid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"venueid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"catid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"dateid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"eventname\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"starttime\",\"columnType\":\"timestamp\",\"actualColumnType\":\"93\",\"nullable\":false,\"columnMaxLength\":29,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"eventid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"venueid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"catid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"dateid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"eventname\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"starttime\",\"columnType\":\"timestamp\",\"actualColumnType\":\"93\",\"nullable\":false,\"columnMaxLength\":29,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":17596,\"tableSize\":36,\"noOfPartition\":5,\"partitionColumn\":null,\"indexInfo\":[]},{\"id\":\"e08c54e0-f661-4122-ba1d-fe238e456379\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"redshift\",\"schemaName\":\"dataq_demo\",\"typeTable\":\"TABLE\",\"tableName\":\"listing\",\"partitionProperties\":{\"numberOfPart\":5,\"column\":null},\"defaultSchema\":[{\"columnName\":\"listid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"sellerid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"eventid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"dateid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"numtickets\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"priceperticket\",\"columnType\":\"decimal(8,2)\",\"actualColumnType\":\"2\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"totalprice\",\"columnType\":\"decimal(8,2)\",\"actualColumnType\":\"2\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"listtime\",\"columnType\":\"timestamp\",\"actualColumnType\":\"93\",\"nullable\":false,\"columnMaxLength\":29,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"listid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"sellerid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"eventid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"dateid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"numtickets\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"priceperticket\",\"columnType\":\"decimal(8,2)\",\"actualColumnType\":\"2\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"totalprice\",\"columnType\":\"decimal(8,2)\",\"actualColumnType\":\"2\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"listtime\",\"columnType\":\"timestamp\",\"actualColumnType\":\"93\",\"nullable\":false,\"columnMaxLength\":29,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":384994,\"tableSize\":44,\"noOfPartition\":5,\"partitionColumn\":null,\"indexInfo\":[]},{\"id\":\"d85fe328-f460-4fba-be4a-e01bfc2cd131\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"redshift\",\"schemaName\":\"dataq_demo\",\"typeTable\":\"TABLE\",\"tableName\":\"customer\",\"partitionProperties\":{\"numberOfPart\":11,\"column\":null},\"defaultSchema\":[{\"columnName\":\"c_custkey\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_name\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":25,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_address\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":25,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_city\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_nation\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_region\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_phone\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_mktsegment\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"c_custkey\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_name\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":25,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_address\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":25,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_city\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_nation\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_region\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_phone\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_mktsegment\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":3000000,\"tableSize\":191,\"noOfPartition\":11,\"partitionColumn\":null,\"indexInfo\":[]}],\"target\":[{\"id\":\"fdfb60ff-e5ad-4114-85d4-caff0d9bf6e9\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"redshift\",\"schemaName\":\"dataq_demo\",\"typeTable\":\"TABLE\",\"tableName\":\"users\",\"partitionProperties\":{\"numberOfPart\":7,\"column\":null},\"defaultSchema\":[{\"columnName\":\"userid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"username\",\"columnType\":\"string\",\"actualColumnType\":\"1\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"firstname\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":30,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"lastname\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":30,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":30,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"1\",\"nullable\":false,\"columnMaxLength\":2,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"1\",\"nullable\":false,\"columnMaxLength\":14,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likesports\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"liketheatre\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likeconcerts\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likejazz\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likeclassical\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likeopera\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likerock\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likevegas\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likebroadway\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likemusicals\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"userid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"username\",\"columnType\":\"string\",\"actualColumnType\":\"1\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"firstname\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":30,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"lastname\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":30,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":30,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"1\",\"nullable\":false,\"columnMaxLength\":2,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"1\",\"nullable\":false,\"columnMaxLength\":14,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likesports\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"liketheatre\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likeconcerts\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likejazz\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likeclassical\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likeopera\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likerock\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likevegas\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likebroadway\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"likemusicals\",\"columnType\":\"boolean\",\"actualColumnType\":\"-7\",\"nullable\":false,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":99980,\"tableSize\":84,\"noOfPartition\":7,\"partitionColumn\":null,\"indexInfo\":[]},{\"id\":\"fdcab9b8-bb16-49d0-a5cd-cc6a9d767e67\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"redshift\",\"schemaName\":\"dataq_demo\",\"typeTable\":\"TABLE\",\"tableName\":\"listing\",\"partitionProperties\":{\"numberOfPart\":5,\"column\":null},\"defaultSchema\":[{\"columnName\":\"listid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"sellerid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"eventid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"dateid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"numtickets\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"priceperticket\",\"columnType\":\"decimal(8,2)\",\"actualColumnType\":\"2\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"totalprice\",\"columnType\":\"decimal(8,2)\",\"actualColumnType\":\"2\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"listtime\",\"columnType\":\"timestamp\",\"actualColumnType\":\"93\",\"nullable\":false,\"columnMaxLength\":29,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"listid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"sellerid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"eventid\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"dateid\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"numtickets\",\"columnType\":\"int\",\"actualColumnType\":\"5\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"priceperticket\",\"columnType\":\"decimal(8,2)\",\"actualColumnType\":\"2\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"totalprice\",\"columnType\":\"decimal(8,2)\",\"actualColumnType\":\"2\",\"nullable\":false,\"columnMaxLength\":8,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"listtime\",\"columnType\":\"timestamp\",\"actualColumnType\":\"93\",\"nullable\":false,\"columnMaxLength\":29,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":384994,\"tableSize\":44,\"noOfPartition\":5,\"partitionColumn\":null,\"indexInfo\":[]},{\"id\":\"98fdd43f-7205-49b9-b4ef-36cc9d995d4c\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"redshift\",\"schemaName\":\"dataq_demo\",\"typeTable\":\"TABLE\",\"tableName\":\"customer\",\"partitionProperties\":{\"numberOfPart\":11,\"column\":null},\"defaultSchema\":[{\"columnName\":\"c_custkey\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_name\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":25,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_address\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":25,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_city\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_nation\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_region\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_phone\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_mktsegment\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"c_custkey\",\"columnType\":\"long\",\"actualColumnType\":\"4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_name\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":25,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_address\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":25,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_city\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_nation\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_region\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_phone\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"c_mktsegment\",\"columnType\":\"string\",\"actualColumnType\":\"12\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":3000000,\"tableSize\":191,\"noOfPartition\":11,\"partitionColumn\":null,\"indexInfo\":[]}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":8,\"comparisonType\":\"ENABLE_SOURCE_COMPARE\",\"comparisonTypeSelectedByUser\":true,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":true,\"dataProfileBasic\":true,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":true,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"red shift large data compar\"},\"mapping\":{\"mappings\":{\"1211057542159\":{\"source\":\"e08c54e0-f661-4122-ba1d-fe238e456379\",\"target\":\"fdcab9b8-bb16-49d0-a5cd-cc6a9d767e67\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"4e54431d-ae02-4a72-851d-6058bbe533eb\",\"sourceColumnName\":\"listtime\",\"sourceColumnType\":\"timestamp\",\"sourceActualColumnType\":\"93\",\"sourceNullable\":false,\"targetColumnName\":\"listtime\",\"targetColumnType\":\"timestamp\",\"targetActualColumnType\":\"93\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4c1d219e-eaea-4887-9f30-a13ce27d8920\",\"sourceColumnName\":\"totalprice\",\"sourceColumnType\":\"decimal(8,2)\",\"sourceActualColumnType\":\"2\",\"sourceNullable\":false,\"targetColumnName\":\"totalprice\",\"targetColumnType\":\"decimal(8,2)\",\"targetActualColumnType\":\"2\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"cfa2d9ab-f47c-47fe-acc0-b1141bb81a7b\",\"sourceColumnName\":\"priceperticket\",\"sourceColumnType\":\"decimal(8,2)\",\"sourceActualColumnType\":\"2\",\"sourceNullable\":false,\"targetColumnName\":\"priceperticket\",\"targetColumnType\":\"decimal(8,2)\",\"targetActualColumnType\":\"2\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"d9a7e909-7b42-4e10-96c6-51c836fe4da7\",\"sourceColumnName\":\"numtickets\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"5\",\"sourceNullable\":false,\"targetColumnName\":\"numtickets\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"5\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"cac63e60-3a9f-4fd1-9fec-45df072c32d7\",\"sourceColumnName\":\"dateid\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"5\",\"sourceNullable\":false,\"targetColumnName\":\"dateid\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"5\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"b25f9ef4-60cc-4840-a31c-23a71aedb2bf\",\"sourceColumnName\":\"eventid\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"4\",\"sourceNullable\":false,\"targetColumnName\":\"eventid\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"4\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"6f2289e1-ad74-4279-bbf9-22ddf03b0c8a\",\"sourceColumnName\":\"sellerid\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"4\",\"sourceNullable\":false,\"targetColumnName\":\"sellerid\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"4\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"7adc6dbd-8ab6-49c2-bf27-e1782f13fd06\",\"sourceColumnName\":\"listid\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"4\",\"sourceNullable\":false,\"targetColumnName\":\"listid\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"4\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"951524937690\":{\"source\":\"d85fe328-f460-4fba-be4a-e01bfc2cd131\",\"target\":\"98fdd43f-7205-49b9-b4ef-36cc9d995d4c\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"9061222a-b5f0-45ff-9318-4a0779eb106f\",\"sourceColumnName\":\"c_mktsegment\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"12\",\"sourceNullable\":false,\"targetColumnName\":\"c_mktsegment\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"12\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"71d2f6d1-8634-4f13-9c23-0d52e95d7850\",\"sourceColumnName\":\"c_phone\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"12\",\"sourceNullable\":false,\"targetColumnName\":\"c_phone\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"12\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"9c5c6b95-b145-4e5d-8d79-5dd815e6aaa4\",\"sourceColumnName\":\"c_region\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"12\",\"sourceNullable\":false,\"targetColumnName\":\"c_region\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"12\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false,\"sourceSqlTransformation\":{\"transformationText\":\"upper(c_region)\",\"transformationSelect\":\"\",\"select_a_column\":false,\"from\":\"src\"},\"targetSqlTransformation\":{\"transformationText\":\"lower(c_region)\",\"transformationSelect\":\"\",\"select_a_column\":false,\"from\":\"dest\"}},{\"id\":\"67853d5c-0642-4910-bb03-1a264430ed5e\",\"sourceColumnName\":\"c_nation\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"12\",\"sourceNullable\":false,\"targetColumnName\":\"c_nation\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"12\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8d7256bf-1ee4-45ce-956e-b848517e376d\",\"sourceColumnName\":\"c_city\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"12\",\"sourceNullable\":false,\"targetColumnName\":\"c_city\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"12\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"e0f3c69d-4f21-4fcb-a57f-e2bca7e2db60\",\"sourceColumnName\":\"c_address\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"12\",\"sourceNullable\":false,\"targetColumnName\":\"c_address\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"12\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"7917ea80-fae5-4f30-9872-285c43d6664f\",\"sourceColumnName\":\"c_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"12\",\"sourceNullable\":false,\"targetColumnName\":\"c_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"12\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"9e098646-eb86-44a3-b60a-d3d8badd951f\",\"sourceColumnName\":\"c_custkey\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"4\",\"sourceNullable\":false,\"targetColumnName\":\"c_custkey\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"4\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1211057542159\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"951524937690\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "8g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "red shift large data compar",
+  "flowDesc" : "red shift large data compar",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "dataq_demo",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "redshift",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "event" : null,
+          "listing" : null,
+          "customer" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "event",
+          "tblSize" : "36",
+          "tblRecordCount" : 17596,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "listing",
+          "tblSize" : "44",
+          "tblRecordCount" : 384994,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "customer",
+          "tblSize" : "191",
+          "tblRecordCount" : 3000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "dataq_demo",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "redshift",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "users" : null,
+          "listing" : null,
+          "customer" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "users",
+          "tblSize" : "84",
+          "tblRecordCount" : 99980,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "listing",
+          "tblSize" : "44",
+          "tblRecordCount" : 384994,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "customer",
+          "tblSize" : "191",
+          "tblRecordCount" : 3000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 1211057542159,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "listing" : "listing"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ ],
+        "compareKeyNew" : [ ],
+        "columnMapping" : [ {
+          "srcColumn" : "listtime",
+          "destColumn" : "listtime"
+        }, {
+          "srcColumn" : "totalprice",
+          "destColumn" : "totalprice"
+        }, {
+          "srcColumn" : "priceperticket",
+          "destColumn" : "priceperticket"
+        }, {
+          "srcColumn" : "numtickets",
+          "destColumn" : "numtickets"
+        }, {
+          "srcColumn" : "dateid",
+          "destColumn" : "dateid"
+        }, {
+          "srcColumn" : "eventid",
+          "destColumn" : "eventid"
+        }, {
+          "srcColumn" : "sellerid",
+          "destColumn" : "sellerid"
+        }, {
+          "srcColumn" : "listid",
+          "destColumn" : "listid"
+        } ],
+        "keyValueProperties" : {
+          "VALIDATE_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5",
+          "CHUNK_DATA_AND_PROCESS" : "true"
+        }
+      }, {
+        "unitTestCaseId" : 951524937690,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "customer" : "customer"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ {
+          "srcColumn" : "c_region",
+          "destColumn" : "c_region",
+          "condition" : "upper(c_region)",
+          "conditionOn" : "src"
+        }, {
+          "srcColumn" : "c_region",
+          "destColumn" : "c_region",
+          "condition" : "lower(c_region)",
+          "conditionOn" : "dest"
+        } ],
+        "compareKey" : [ ],
+        "compareKeyNew" : [ ],
+        "columnMapping" : [ {
+          "srcColumn" : "c_mktsegment",
+          "destColumn" : "c_mktsegment"
+        }, {
+          "srcColumn" : "c_phone",
+          "destColumn" : "c_phone"
+        }, {
+          "srcColumn" : "c_region",
+          "destColumn" : "c_region"
+        }, {
+          "srcColumn" : "c_nation",
+          "destColumn" : "c_nation"
+        }, {
+          "srcColumn" : "c_city",
+          "destColumn" : "c_city"
+        }, {
+          "srcColumn" : "c_address",
+          "destColumn" : "c_address"
+        }, {
+          "srcColumn" : "c_name",
+          "destColumn" : "c_name"
+        }, {
+          "srcColumn" : "c_custkey",
+          "destColumn" : "c_custkey"
+        } ],
+        "keyValueProperties" : {
+          "VALIDATE_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5",
+          "CHUNK_DATA_AND_PROCESS" : "true"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "DATA_PROFILE_BASIC" : "true",
+        "ENABLE_SOURCE_COMPARE" : "true",
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "10"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 11806,
+  "dmsProjectId" : 781,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:24:10.501840553Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
