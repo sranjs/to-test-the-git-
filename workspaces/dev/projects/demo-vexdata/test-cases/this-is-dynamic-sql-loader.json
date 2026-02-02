@@ -1,0 +1,153 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"79374cd0-6f83-4458-aa49-b9bd845030d9\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${dwh_connection_nyc}\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EXPECTED_BEHAVIOR\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEST_CATEGORY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EXPECTED_BEHAVIOR\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEST_CATEGORY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":59,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"this is dynamic sql loader\"},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"557a5ad6-0392-4b5a-951f-636f60521cb2\":{\"userProvidedTestCaseId\":\"4\",\"ruleType\":\"SQL\",\"ruleName\":\"Check if order amount exceeds limit\",\"sql\":\"U0VMRUNUIHZhbHVlX251bWVyaWMgRlJPTSBsb29rdXBfZGF0YSBXSEVSRSBpZCA9IDg=\",\"keyColumns\":[],\"tableName\":\"TEST_DATA_WITH_SQL\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"results\",\"condition\":\">\",\"value\":\"5000\",\"id\":\"557a5ad6-0392-4b5a-951f-636f60521cb2\",\"unitTestId\":\"1701277978230\"},\"9a104d4f-e15f-4a6f-849d-c2132d38a867\":{\"userProvidedTestCaseId\":\"7\",\"ruleType\":\"SQL\",\"ruleName\":\"Check if order is cancelled (amount = 0)\",\"sql\":\"U0VMRUNUIHZhbHVlX251bWVyaWMgRlJPTSBsb29rdXBfZGF0YSBXSEVSRSBpZCA9IDEx\",\"keyColumns\":[],\"tableName\":\"TEST_DATA_WITH_SQL\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"results\",\"condition\":\"=\",\"value\":\"0\",\"id\":\"9a104d4f-e15f-4a6f-849d-c2132d38a867\",\"unitTestId\":\"185438749722\"},\"e6b06395-5643-447a-af29-bda10684b612\":{\"userProvidedTestCaseId\":\"8\",\"ruleType\":\"SQL\",\"ruleName\":\"Check stock count is zero\",\"sql\":\"U0VMRUNUIGNvdW50X3ZhbHVlIEZST00gbG9va3VwX2RhdGEgV0hFUkUgaWQgPSAxNA==\",\"keyColumns\":[],\"tableName\":\"TEST_DATA_WITH_SQL\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"results\",\"condition\":\"=\",\"value\":\"0\",\"id\":\"e6b06395-5643-447a-af29-bda10684b612\",\"unitTestId\":\"1475998183181\"},\"bb1e7a4b-53ff-441a-96c5-6fa4d4f3d042\":{\"userProvidedTestCaseId\":\"29\",\"ruleType\":\"SQL\",\"ruleName\":\"Check maximum priority\",\"sql\":\"U0VMRUNUIE1BWChwcmlvcml0eSkgRlJPTSBsb29rdXBfZGF0YQ==\",\"keyColumns\":[],\"tableName\":\"TEST_DATA_WITH_SQL\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"results\",\"condition\":\"=\",\"value\":\"3\",\"id\":\"bb1e7a4b-53ff-441a-96c5-6fa4d4f3d042\",\"unitTestId\":\"1124262425517\"},\"30d969c8-124d-4c2e-8e32-b61c8dc7b443\":{\"userProvidedTestCaseId\":\"3\",\"ruleType\":\"SQL\",\"ruleName\":\"Check if inventory is above threshold\",\"sql\":\"U0VMRUNUIHZhbHVlX251bWVyaWMgRlJPTSBsb29rdXBfZGF0YSBXSEVSRSBpZCA9IDEy\",\"keyColumns\":[],\"tableName\":\"TEST_DATA_WITH_SQL\",\"rulesLevel\":\"Warning\",\"enable\":true,\"expectation\":\"results\",\"condition\":\">\",\"value\":\"5000\",\"id\":\"30d969c8-124d-4c2e-8e32-b61c8dc7b443\",\"unitTestId\":\"211461164850\"}},\"columnRules\":{\"DESCRIPTION\":{\"NOT_NULL\":{\"ruleName\":\"description_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1454413708062\"},\"NOT_EMPTY\":{\"ruleName\":\"description_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"954520022494\"},\"LEFT_SPACES\":{\"ruleName\":\"description_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"134967180521\"},\"RIGHT_SPACES\":{\"ruleName\":\"description_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1386999554195\"},\"UNIQUE_VALUES\":{\"ruleName\":\"description_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"683876255594\"},\"MIN_VALUE\":{\"ruleName\":\"description_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1406676156060\"},\"MAX_VALUE\":{\"ruleName\":\"description_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"248860807097\"},\"MIN_LENGTH\":{\"ruleName\":\"description_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1651152746310\"},\"MAX_LENGTH\":{\"ruleName\":\"description_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1353298146013\"},\"SQL_RULE\":{\"ruleName\":\"description_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"696235326505\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"description_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"DESCRIPTION\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"27265734667\"}},\"EXPECTED_BEHAVIOR\":{\"NOT_NULL\":{\"ruleName\":\"expected_behavior_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1251787793778\"},\"NOT_EMPTY\":{\"ruleName\":\"expected_behavior_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"173272235000\"},\"LEFT_SPACES\":{\"ruleName\":\"expected_behavior_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"616726728837\"},\"RIGHT_SPACES\":{\"ruleName\":\"expected_behavior_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1618730398101\"},\"UNIQUE_VALUES\":{\"ruleName\":\"expected_behavior_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"68267761019\"},\"MIN_VALUE\":{\"ruleName\":\"expected_behavior_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1486655049963\"},\"MAX_VALUE\":{\"ruleName\":\"expected_behavior_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"529565358462\"},\"MIN_LENGTH\":{\"ruleName\":\"expected_behavior_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"650181625538\"},\"MAX_LENGTH\":{\"ruleName\":\"expected_behavior_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"157557172118\"},\"SQL_RULE\":{\"ruleName\":\"expected_behavior_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"415556194009\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"expected_behavior_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"EXPECTED_BEHAVIOR\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"273209485395\"}},\"RECORD_ID\":{\"NOT_NULL\":{\"ruleName\":\"record_id_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1645404642826\"},\"NOT_EMPTY\":{\"ruleName\":\"record_id_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"145432662690\"},\"LEFT_SPACES\":{\"ruleName\":\"record_id_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"130502737417\"},\"RIGHT_SPACES\":{\"ruleName\":\"record_id_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1647350228185\"},\"UNIQUE_VALUES\":{\"ruleName\":\"record_id_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"292160385310\"},\"MIN_VALUE\":{\"ruleName\":\"record_id_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1669924822226\"},\"MAX_VALUE\":{\"ruleName\":\"record_id_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1038161841369\"},\"MIN_LENGTH\":{\"ruleName\":\"record_id_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1353008847306\"},\"MAX_LENGTH\":{\"ruleName\":\"record_id_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1552699067633\"},\"SQL_RULE\":{\"ruleName\":\"record_id_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"288561171444\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"record_id_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"RECORD_ID\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"451103335156\"}},\"SQL_EXECUTE_COLUMN_DQ\":{\"NOT_NULL\":{\"ruleName\":\"sql_execute_column_dq_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"845449472460\"},\"NOT_EMPTY\":{\"ruleName\":\"sql_execute_column_dq_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1329138200605\"},\"LEFT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1400295546765\"},\"RIGHT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"628299919712\"},\"UNIQUE_VALUES\":{\"ruleName\":\"sql_execute_column_dq_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1281042477427\"},\"MIN_VALUE\":{\"ruleName\":\"sql_execute_column_dq_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"7632404502\"},\"MAX_VALUE\":{\"ruleName\":\"sql_execute_column_dq_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"881002500807\"},\"MIN_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1733718266743\"},\"MAX_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"856784957955\"},\"SQL_RULE\":{\"ruleName\":\"sql_execute_column_dq_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1165857640793\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"sql_execute_column_dq_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"314851127654\"}},\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\":{\"NOT_NULL\":{\"ruleName\":\"sql_execute_column_dq_expected_result_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"993856658752\"},\"NOT_EMPTY\":{\"ruleName\":\"sql_execute_column_dq_expected_result_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"22168872007\"},\"LEFT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_expected_result_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1555446170072\"},\"RIGHT_SPACES\":{\"ruleName\":\"sql_execute_column_dq_expected_result_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1118263659744\"},\"UNIQUE_VALUES\":{\"ruleName\":\"sql_execute_column_dq_expected_result_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"317547626399\"},\"MIN_VALUE\":{\"ruleName\":\"sql_execute_column_dq_expected_result_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"491911191165\"},\"MAX_VALUE\":{\"ruleName\":\"sql_execute_column_dq_expected_result_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1734268388974\"},\"MIN_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_expected_result_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1477663868747\"},\"MAX_LENGTH\":{\"ruleName\":\"sql_execute_column_dq_expected_result_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"606253709250\"},\"SQL_RULE\":{\"ruleName\":\"sql_execute_column_dq_expected_result_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"43447691951\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"sql_execute_column_dq_expected_result_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"341090025446\"}},\"TEST_CATEGORY\":{\"NOT_NULL\":{\"ruleName\":\"test_category_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"408294048558\"},\"NOT_EMPTY\":{\"ruleName\":\"test_category_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1256472977441\"},\"LEFT_SPACES\":{\"ruleName\":\"test_category_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"614219678463\"},\"RIGHT_SPACES\":{\"ruleName\":\"test_category_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"3587499170\"},\"UNIQUE_VALUES\":{\"ruleName\":\"test_category_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1702973408871\"},\"MIN_VALUE\":{\"ruleName\":\"test_category_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"443092602448\"},\"MAX_VALUE\":{\"ruleName\":\"test_category_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"345497990931\"},\"MIN_LENGTH\":{\"ruleName\":\"test_category_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1544276167150\"},\"MAX_LENGTH\":{\"ruleName\":\"test_category_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"1236582192529\"},\"SQL_RULE\":{\"ruleName\":\"test_category_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"532295212498\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"test_category_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"TEST_CATEGORY\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"unitTestId\":\"998781646500\"}}},\"dynamicSql\":\"\\nSELECT \\n    RECORD_ID AS test_case_id, \\n    description AS test_case_name,\\n    SQL_EXECUTE_COLUMN_DQ,\\n    SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT,\\n    'Warning' AS test_case_severity\\nFROM test_data_with_sql \\nWHERE RECORD_ID in (3,4,7,8,29);\",\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1701277978230\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"185438749722\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1475998183181\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1124262425517\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"211461164850\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "this is dynamic sql loader",
+  "flowDesc" : "this is dynamic sql loader",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "${dwh_connection_nyc}",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "TEST_DATA_WITH_SQL" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "TEST_DATA_WITH_SQL",
+          "tblSize" : "0",
+          "tblRecordCount" : 59,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "TEST_DATA_WITH_SQL" : {
+            "rules" : [ {
+              "unitTestCaseId" : 1701277978230,
+              "userProvidedTestCaseId" : "4",
+              "ruleType" : "SQL",
+              "dqSqlPassCondition" : {
+                "condition" : ">",
+                "conditionValue" : "5000"
+              },
+              "column" : "NA",
+              "sql" : "SELECT value_numeric FROM lookup_data WHERE id = 8",
+              "creationTime" : 1759280581633,
+              "level" : "Warning",
+              "description" : "Check if order amount exceeds limit"
+            }, {
+              "unitTestCaseId" : 185438749722,
+              "userProvidedTestCaseId" : "7",
+              "ruleType" : "SQL",
+              "dqSqlPassCondition" : {
+                "condition" : "=",
+                "conditionValue" : "0"
+              },
+              "column" : "NA",
+              "sql" : "SELECT value_numeric FROM lookup_data WHERE id = 11",
+              "creationTime" : 1759280581633,
+              "level" : "Warning",
+              "description" : "Check if order is cancelled (amount = 0)"
+            }, {
+              "unitTestCaseId" : 1475998183181,
+              "userProvidedTestCaseId" : "8",
+              "ruleType" : "SQL",
+              "dqSqlPassCondition" : {
+                "condition" : "=",
+                "conditionValue" : "0"
+              },
+              "column" : "NA",
+              "sql" : "SELECT count_value FROM lookup_data WHERE id = 14",
+              "creationTime" : 1759280581633,
+              "level" : "Warning",
+              "description" : "Check stock count is zero"
+            }, {
+              "unitTestCaseId" : 1124262425517,
+              "userProvidedTestCaseId" : "29",
+              "ruleType" : "SQL",
+              "dqSqlPassCondition" : {
+                "condition" : "=",
+                "conditionValue" : "3"
+              },
+              "column" : "NA",
+              "sql" : "SELECT MAX(priority) FROM lookup_data",
+              "creationTime" : 1759280581633,
+              "level" : "Warning",
+              "description" : "Check maximum priority"
+            }, {
+              "unitTestCaseId" : 211461164850,
+              "userProvidedTestCaseId" : "3",
+              "ruleType" : "SQL",
+              "dqSqlPassCondition" : {
+                "condition" : ">",
+                "conditionValue" : "5000"
+              },
+              "column" : "NA",
+              "sql" : "SELECT value_numeric FROM lookup_data WHERE id = 12",
+              "creationTime" : 1759280581633,
+              "level" : "Warning",
+              "description" : "Check if inventory is above threshold"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE",
+            "loadRulesDynamically" : {
+              "sqlStatements" : "\nSELECT \n    RECORD_ID AS test_case_id, \n    description AS test_case_name,\n    SQL_EXECUTE_COLUMN_DQ,\n    SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT,\n    'Warning' AS test_case_severity\nFROM test_data_with_sql \nWHERE RECORD_ID in (3,4,7,8,29);",
+              "connectionName" : "${dwh_connection_nyc}",
+              "databaseName" : "PUBLIC",
+              "schema" : "PUBLIC",
+              "enable" : true
+            }
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 11656,
+  "dmsProjectId" : 781,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:24:55.239205096Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}

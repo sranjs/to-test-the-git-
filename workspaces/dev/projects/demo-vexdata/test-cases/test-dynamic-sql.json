@@ -1,0 +1,155 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"c4de83c7-e50a-487e-ab1d-3668dc2184a4\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${dwh_connection_nyc}\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"${tbl_name}\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEST_CATEGORY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEST_CATEGORY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":25,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"cafc3b41-2ea5-45cf-8fd8-d859579b72d0\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"${dwh_connection_nyc}\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEST_CATEGORY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RECORD_ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEST_CATEGORY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":25,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":true,\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"test dynamic sql\"},\"mapping\":{\"mappings\":{\"1281550206123\":{\"source\":\"c4de83c7-e50a-487e-ab1d-3668dc2184a4\",\"target\":\"cafc3b41-2ea5-45cf-8fd8-d859579b72d0\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"6ccd8fb1-cccb-4af0-80ac-dbe4a6a87705\",\"sourceColumnName\":\"TEST_CATEGORY\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"TEST_CATEGORY\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"341c8b88-78c9-433c-8646-7fb78cfc0572\",\"sourceColumnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"fcf84f8d-a0a9-49b2-95f9-c5b7cc568d11\",\"sourceColumnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"SQL_EXECUTE_COLUMN_DQ\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"5a832ee9-ef30-409c-9dc9-3b205e647576\",\"sourceColumnName\":\"RECORD_ID\",\"sourceColumnType\":\"number(38,0)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":true,\"targetColumnName\":\"RECORD_ID\",\"targetColumnType\":\"number(38,0)\",\"targetActualColumnType\":\"number\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"e2dac2ea-fd3a-4c48-bb97-ff3942004c44\",\"sourceColumnName\":\"DESCRIPTION\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"DESCRIPTION\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1281550206123\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "test dynamic sql",
+  "flowDesc" : "test dynamic sql",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "${dwh_connection_nyc}",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "${tbl_name}" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "${tbl_name}",
+          "tblSize" : "0",
+          "tblRecordCount" : 25,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "${dwh_connection_nyc}",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "TEST_DATA_WITH_SQL" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "TEST_DATA_WITH_SQL",
+          "tblSize" : "0",
+          "tblRecordCount" : 25,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 1281550206123,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "${tbl_name}" : "TEST_DATA_WITH_SQL"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "RECORD_ID" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "RECORD_ID",
+          "destColumn" : "RECORD_ID"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "TEST_CATEGORY",
+          "destColumn" : "TEST_CATEGORY"
+        }, {
+          "srcColumn" : "SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT",
+          "destColumn" : "SQL_EXECUTE_COLUMN_DQ_EXPECTED_RESULT"
+        }, {
+          "srcColumn" : "SQL_EXECUTE_COLUMN_DQ",
+          "destColumn" : "SQL_EXECUTE_COLUMN_DQ"
+        }, {
+          "srcColumn" : "RECORD_ID",
+          "destColumn" : "RECORD_ID"
+        }, {
+          "srcColumn" : "DESCRIPTION",
+          "destColumn" : "DESCRIPTION"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "parameters" : [ {
+    "paramName" : "tbl_name",
+    "paramValue" : "TEST_DATA_WITH_SQL",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  } ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 11650,
+  "dmsProjectId" : 781,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:24:56.757875258Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
