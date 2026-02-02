@@ -1,0 +1,182 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "test",
+  "email" : [ ],
+  "flowDesc" : "test",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "API_APP_BUILD" : "7_49",
+  "UI_VERSION" : "7_49",
+  "APP_VERSION" : "7_49",
+  "LicensedName" : "7_49",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/dhiraj/mass_indu.csv",
+        "tableProperties" : [ {
+          "tblName" : "massinducsv",
+          "tblSize" : "0",
+          "tblRecordCount" : 2
+        } ],
+        "tableNamesList" : {
+          "massinducsv" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : "|",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/dhiraj/mass_indu.csv",
+        "tableProperties" : [ {
+          "tblName" : "massinducsv",
+          "tblSize" : "0",
+          "tblRecordCount" : 2
+        } ],
+        "tableNamesList" : {
+          "massinducsv" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : "|",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 364596781917,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "massinducsv" : "massinducsv"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ ],
+        "compareKeyNew" : [ ],
+        "columnMapping" : [ {
+          "srcColumn" : "\"editRequired\"",
+          "destColumn" : "\"editRequired\""
+        }, {
+          "srcColumn" : "\"transactionID\"",
+          "destColumn" : "\"transactionID\""
+        }, {
+          "srcColumn" : "\"originalclaimID\"",
+          "destColumn" : "\"originalclaimID\""
+        }, {
+          "srcColumn" : "\"claimID\"",
+          "destColumn" : "\"claimID\""
+        }, {
+          "srcColumn" : "\"claimsDetails\"",
+          "destColumn" : "\"claimsDetails\""
+        }, {
+          "srcColumn" : "\"loopID\"",
+          "destColumn" : "\"loopID\""
+        }, {
+          "srcColumn" : "\"loopName\"",
+          "destColumn" : "\"loopName\""
+        }, {
+          "srcColumn" : "\"propertyValue\"",
+          "destColumn" : "\"propertyValue\""
+        }, {
+          "srcColumn" : "\"propertyName\"",
+          "destColumn" : "\"propertyName\""
+        }, {
+          "srcColumn" : "\"editDescription\"",
+          "destColumn" : "\"editDescription\""
+        }, {
+          "srcColumn" : "\"claimStatusCode1\"",
+          "destColumn" : "\"claimStatusCode1\""
+        }, {
+          "srcColumn" : "\"claimStatusCategoryCode1\"",
+          "destColumn" : "\"claimStatusCategoryCode1\""
+        }, {
+          "srcColumn" : "\"claimStatusCode\"",
+          "destColumn" : "\"claimStatusCode\""
+        }, {
+          "srcColumn" : "\"claimStatusCategoryCode\"",
+          "destColumn" : "\"claimStatusCategoryCode\""
+        }, {
+          "srcColumn" : "\"editCode\"",
+          "destColumn" : "\"editCode\""
+        }, {
+          "srcColumn" : "\"controlNumber\"",
+          "destColumn" : "\"controlNumber\""
+        }, {
+          "srcColumn" : "filetype",
+          "destColumn" : "filetype"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"bb9cd7d3-40d5-4468-a1f3-098e3dfd68f9\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"mass_indu.csv\",\"filePath\":\"/my_data/user_files/dhiraj/mass_indu.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"massinducsv\",\"delimiter\":\"|\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"filetype\":\"005010X298A1\",\"controlNumber\":\"1234\",\"editCode\":\"MHERR102\",\"claimStatusCategoryCode\":\"DR03\",\"claimStatusCode\":\"275\",\"claimStatusCategoryCode1\":\"DR03\",\"claimStatusCode1\":\"101\",\"editDescription\":\"Multiple Claim Adjusting Same Claim\",\"propertyName\":\"OthPayerAdjClaimControlNum\",\"propertyValue\":\"CLAIM093018\",\"loopName\":\"ClaimInformation\",\"loopID\":\"CLAIM093019\",\"claimID\":\"CLAIM093019\",\"originalclaimID\":\"CLAIM093019\",\"transactionID\":\"cb565251-f5c4-4a52-9233-e4eabcf79861\",\"editRequired\":\"TRUE\"},{\"filetype\":\"005010X298A1\",\"controlNumber\":\"1234\",\"editCode\":\"MHERR102\",\"claimStatusCategoryCode\":\"DR03\",\"claimStatusCode\":\"275\",\"claimStatusCategoryCode1\":\"DR03\",\"claimStatusCode1\":\"101\",\"editDescription\":\"Multiple Claim Adjusting Same Claim\",\"propertyName\":\"OthPayerAdjClaimControlNum\",\"propertyValue\":\"CLAIM093018\",\"loopName\":\"ClaimInformation\",\"loopID\":\"CLAIM093020\",\"claimID\":\"CLAIM093020\",\"originalclaimID\":\"CLAIM093020\",\"transactionID\":\"cb565251-f5c4-4a52-9233-e4eabcf79861\",\"editRequired\":\"TRUE\"}],\"schema\":[{\"columnName\":\"filetype\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"controlNumber\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"editCode\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimStatusCategoryCode\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimStatusCode\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimStatusCategoryCode1\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimStatusCode1\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"editDescription\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"propertyName\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"propertyValue\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"loopName\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"loopID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimsDetails\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"originalclaimID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"transactionID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"editRequired\",\"columnType\":\"string\",\"nullable\":true}],\"count\":2,\"isPrimaryDataset\":true}],\"target\":[{\"id\":\"17f354b6-e9bd-4697-a3ea-89b2e905d888\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"mass_indu.csv\",\"filePath\":\"/my_data/user_files/dhiraj/mass_indu.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"massinducsv\",\"delimiter\":\"|\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"filetype\":\"005010X298A1\",\"controlNumber\":\"1234\",\"editCode\":\"MHERR102\",\"claimStatusCategoryCode\":\"DR03\",\"claimStatusCode\":\"275\",\"claimStatusCategoryCode1\":\"DR03\",\"claimStatusCode1\":\"101\",\"editDescription\":\"Multiple Claim Adjusting Same Claim\",\"propertyName\":\"OthPayerAdjClaimControlNum\",\"propertyValue\":\"CLAIM093018\",\"loopName\":\"ClaimInformation\",\"loopID\":\"CLAIM093019\",\"claimID\":\"CLAIM093019\",\"originalclaimID\":\"CLAIM093019\",\"transactionID\":\"cb565251-f5c4-4a52-9233-e4eabcf79861\",\"editRequired\":\"TRUE\"},{\"filetype\":\"005010X298A1\",\"controlNumber\":\"1234\",\"editCode\":\"MHERR102\",\"claimStatusCategoryCode\":\"DR03\",\"claimStatusCode\":\"275\",\"claimStatusCategoryCode1\":\"DR03\",\"claimStatusCode1\":\"101\",\"editDescription\":\"Multiple Claim Adjusting Same Claim\",\"propertyName\":\"OthPayerAdjClaimControlNum\",\"propertyValue\":\"CLAIM093018\",\"loopName\":\"ClaimInformation\",\"loopID\":\"CLAIM093020\",\"claimID\":\"CLAIM093020\",\"originalclaimID\":\"CLAIM093020\",\"transactionID\":\"cb565251-f5c4-4a52-9233-e4eabcf79861\",\"editRequired\":\"TRUE\"}],\"schema\":[{\"columnName\":\"filetype\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"controlNumber\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"editCode\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimStatusCategoryCode\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimStatusCode\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimStatusCategoryCode1\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimStatusCode1\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"editDescription\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"propertyName\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"propertyValue\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"loopName\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"loopID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimsDetails\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"claimID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"originalclaimID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"transactionID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"editRequired\",\"columnType\":\"string\",\"nullable\":true}],\"count\":2,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"chunks\":false,\"convertNumberToLong\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":true,\"slack\":false,\"template\":\"default\",\"mailingList\":\"vidya.bhushan@dataq.io,amankumar08888@gmail.com\",\"notifyOn\":\"ALWAYS\",\"edit\":true}},\"mapping\":{\"mappings\":{\"364596781917\":{\"source\":\"bb9cd7d3-40d5-4468-a1f3-098e3dfd68f9\",\"target\":\"17f354b6-e9bd-4697-a3ea-89b2e905d888\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"d37cb5fb-4034-4f15-b095-b0f60749b6a8\",\"sourceColumnName\":\"editRequired\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"editRequired\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"70d4c333-2352-4a12-996d-eb5d60747bce\",\"sourceColumnName\":\"transactionID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"transactionID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"9cff3c78-310a-49a9-b49f-570c5c4a64ed\",\"sourceColumnName\":\"originalclaimID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"originalclaimID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"ec565bb9-8f8e-4160-8fc6-7883d4ce1244\",\"sourceColumnName\":\"claimID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"claimID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"07cc5f1d-6c8f-4eec-99a1-0255153163ab\",\"sourceColumnName\":\"claimsDetails\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"claimsDetails\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"1324513f-88f9-449c-a6cc-70b6a95e7a72\",\"sourceColumnName\":\"loopID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"loopID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8c4991b3-01d6-4282-943e-c29b1083d97f\",\"sourceColumnName\":\"loopName\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"loopName\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"ef8f6b7a-2cae-4b9b-aeea-7f9f9bf762c1\",\"sourceColumnName\":\"propertyValue\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"propertyValue\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"7763cf47-b73e-40cb-b3b6-23dfdd26c2d5\",\"sourceColumnName\":\"propertyName\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"propertyName\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"b6554135-0720-4196-87ec-0fa8bf7e2e87\",\"sourceColumnName\":\"editDescription\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"editDescription\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"d5d7ff44-9a8f-476d-a447-e5eff6a7f8cb\",\"sourceColumnName\":\"claimStatusCode1\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"claimStatusCode1\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"f189bb43-ee4a-402d-9fe4-69ceffc8f85c\",\"sourceColumnName\":\"claimStatusCategoryCode1\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"claimStatusCategoryCode1\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"d2c84bf2-6555-4cec-9ec6-9134e0118cb6\",\"sourceColumnName\":\"claimStatusCode\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"claimStatusCode\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"d33484f3-9c3d-4e7e-9ae4-0d6e352b00f2\",\"sourceColumnName\":\"claimStatusCategoryCode\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"claimStatusCategoryCode\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"d604c2fe-da72-462a-9ebb-ec251edcf311\",\"sourceColumnName\":\"editCode\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"editCode\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8df6b5a6-94e9-4d2a-96c4-15e1c043bd15\",\"sourceColumnName\":\"controlNumber\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"controlNumber\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8e419196-120e-4b5b-a54e-06af17a4d696\",\"sourceColumnName\":\"filetype\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"filetype\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\",\"detectCompareKeys\":true}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"364596781917\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 7570,
+  "dmsProjectId" : 18,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:46.136195533Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
