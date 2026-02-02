@@ -1,44 +1,15 @@
 {
-  "executorCores" : 2,
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"519a5555-a0ff-4662-a493-9a81f637b033\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${dbConn}\",\"schemaName\":\"${schemaName}\",\"tableName\":\"dept_emp\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"schema\":[{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4},{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"d14c2911-8835-4b13-a5f9-a3733ecd5f00\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${dbConn}\",\"schemaName\":\"${schemaName}\",\"tableName\":\"${tableName}\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"dept_no\"},\"schema\":[{\"columnName\":\"dept_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":40},{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"dept_no\"],\"foreignKeyInfo\":null,\"count\":9,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"dept_no\",\"indexInfo\":null}],\"target\":[{\"id\":\"14e27968-46ce-4a88-86aa-b51b0de3b733\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"${dbConn}\",\"schemaName\":\"${schemaName}\",\"tableName\":\"dept_emp\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"schema\":[{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4},{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"662fb615-bd38-4153-926e-cc1b75605eed\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"${dbConn}\",\"schemaName\":\"${schemaName}\",\"tableName\":\"${tableName}\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"dept_no\"},\"schema\":[{\"columnName\":\"dept_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":40},{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"dept_no\"],\"foreignKeyInfo\":null,\"count\":9,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"dept_no\",\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test-2508\",\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"cb096f67-f01b-4b92-9547-9f3bf96332c0\":{\"source\":\"519a5555-a0ff-4662-a493-9a81f637b033\",\"target\":\"14e27968-46ce-4a88-86aa-b51b0de3b733\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"a1f45c1f-debe-467b-9ff1-2ed4d3441978\",\"sourceColumnName\":\"to_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"to_date\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"a5bd87b3-397f-4a0e-80f3-9d00dcdd24d6\",\"sourceColumnName\":\"from_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"from_date\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"b6d6dbae-7558-42c0-a332-a8cf75860b16\",\"sourceColumnName\":\"emp_no\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"emp_no\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"ddd6f6d2-0195-4e89-8e0a-838b54ed1f07\",\"sourceColumnName\":\"dept_no\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"char\",\"sourceNullable\":false,\"targetColumnName\":\"dept_no\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"char\",\"targetNullable\":false,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"ccad2363-e78a-478c-ac59-250fd7cb9d1b\":{\"source\":\"d14c2911-8835-4b13-a5f9-a3733ecd5f00\",\"target\":\"662fb615-bd38-4153-926e-cc1b75605eed\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"cf7cf10f-a106-4564-9bd6-070408804797\",\"sourceColumnName\":\"dept_no\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"char\",\"sourceNullable\":false,\"targetColumnName\":\"dept_no\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"char\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"6c0857ea-87d1-4b83-8b15-68a1c25153e4\",\"sourceColumnName\":\"dept_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"dept_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[]}",
   "executorMemory" : "5g",
-  "numExecutors" : 2,
+  "executorCores" : 2,
   "executeOn" : "LOCAL",
-  "flowName" : "test-2508",
-  "email" : [ ],
-  "flowDesc" : "test-2508",
-  "hadoop" : false,
-  "livy" : false,
-  "root" : "dataCompare",
-  "API_APP_BUILD" : "7_08",
-  "UI_VERSION" : "7_08",
+  "flowName" : "test 2508",
   "APP_VERSION" : "7_08",
+  "flowDesc" : "test-2508",
   "LicensedName" : "7_08",
-  "parameters" : [ {
-    "paramName" : "dbConn",
-    "paramValue" : "demo_conn",
-    "param_type" : "string",
-    "code" : null,
-    "codeConnectionSource" : null,
-    "codeLanguage" : null,
-    "codeSchema" : null
-  }, {
-    "paramName" : "schemaName",
-    "paramValue" : "employee",
-    "param_type" : "string",
-    "code" : null,
-    "codeConnectionSource" : null,
-    "codeLanguage" : null,
-    "codeSchema" : null
-  }, {
-    "paramName" : "tableName",
-    "paramValue" : "departments",
-    "param_type" : "string",
-    "code" : null,
-    "codeConnectionSource" : null,
-    "codeLanguage" : null,
-    "codeSchema" : null
-  } ],
-  "flowType" : "CELL BY CELL COMPARE",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
   "jobMap" : {
     "source" : {
       "dependentJob" : true,
@@ -218,13 +189,42 @@
       }
     }
   },
-  "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"519a5555-a0ff-4662-a493-9a81f637b033\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${dbConn}\",\"schemaName\":\"${schemaName}\",\"tableName\":\"dept_emp\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"schema\":[{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4},{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"d14c2911-8835-4b13-a5f9-a3733ecd5f00\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${dbConn}\",\"schemaName\":\"${schemaName}\",\"tableName\":\"${tableName}\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"dept_no\"},\"schema\":[{\"columnName\":\"dept_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":40},{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"dept_no\"],\"foreignKeyInfo\":null,\"count\":9,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"dept_no\",\"indexInfo\":null}],\"target\":[{\"id\":\"14e27968-46ce-4a88-86aa-b51b0de3b733\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"${dbConn}\",\"schemaName\":\"${schemaName}\",\"tableName\":\"dept_emp\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"schema\":[{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4},{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"662fb615-bd38-4153-926e-cc1b75605eed\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"${dbConn}\",\"schemaName\":\"${schemaName}\",\"tableName\":\"${tableName}\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"dept_no\"},\"schema\":[{\"columnName\":\"dept_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":40},{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"dept_no\"],\"foreignKeyInfo\":null,\"count\":9,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"dept_no\",\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test-2508\",\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"cb096f67-f01b-4b92-9547-9f3bf96332c0\":{\"source\":\"519a5555-a0ff-4662-a493-9a81f637b033\",\"target\":\"14e27968-46ce-4a88-86aa-b51b0de3b733\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"a1f45c1f-debe-467b-9ff1-2ed4d3441978\",\"sourceColumnName\":\"to_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"to_date\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"a5bd87b3-397f-4a0e-80f3-9d00dcdd24d6\",\"sourceColumnName\":\"from_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"from_date\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"b6d6dbae-7558-42c0-a332-a8cf75860b16\",\"sourceColumnName\":\"emp_no\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"emp_no\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"ddd6f6d2-0195-4e89-8e0a-838b54ed1f07\",\"sourceColumnName\":\"dept_no\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"char\",\"sourceNullable\":false,\"targetColumnName\":\"dept_no\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"char\",\"targetNullable\":false,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"ccad2363-e78a-478c-ac59-250fd7cb9d1b\":{\"source\":\"d14c2911-8835-4b13-a5f9-a3733ecd5f00\",\"target\":\"662fb615-bd38-4153-926e-cc1b75605eed\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"cf7cf10f-a106-4564-9bd6-070408804797\",\"sourceColumnName\":\"dept_no\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"char\",\"sourceNullable\":false,\"targetColumnName\":\"dept_no\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"char\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"6c0857ea-87d1-4b83-8b15-68a1c25153e4\",\"sourceColumnName\":\"dept_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"dept_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[]}",
-  "flowId" : 6151,
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_08",
+  "API_APP_BUILD" : "7_08",
+  "parameters" : [ {
+    "paramName" : "dbConn",
+    "paramValue" : "demo_conn",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  }, {
+    "paramName" : "schemaName",
+    "paramValue" : "employee",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  }, {
+    "paramName" : "tableName",
+    "paramValue" : "departments",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  } ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 12284,
   "dmsProjectId" : 18,
   "syncInfo" : {
     "syncId" : "FOLDER",
-    "timestamp" : "2026-02-02T07:19:47.007013875Z",
+    "timestamp" : "2026-02-02T07:19:53.078204388Z",
     "syncType" : "FOLDER",
     "user" : "system"
   }

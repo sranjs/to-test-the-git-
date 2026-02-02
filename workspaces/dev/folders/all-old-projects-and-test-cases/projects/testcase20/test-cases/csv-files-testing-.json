@@ -1,0 +1,180 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"e7b18ce2-e91a-4841-a2a0-a22095a6a2e2\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"employee_data.csv\",\"filePath\":\"/my_data/user_files/Aman/employee_data.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"employeedatacsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"EMPLOYEEID\":\"1\",\"FIRSTNAME\":\"Isacco\",\"LASTNAME\":\"Swindin\",\"JOININGDATE\":\"iswindin0@washington.edu\",\"GENDER\":\"Male\",\"IPADDRESS\":\"69.144.174.122\"},{\"EMPLOYEEID\":\"2\",\"FIRSTNAME\":\"Caitlin\",\"LASTNAME\":\"Lain\",\"JOININGDATE\":\"clain1@51.la\",\"GENDER\":\"Polygender\",\"IPADDRESS\":\"99.71.18.187\"},{\"EMPLOYEEID\":\"3\",\"FIRSTNAME\":\"Almeria\",\"LASTNAME\":\"Thaine\",\"JOININGDATE\":\"athaine2@sakura.ne.jp\",\"GENDER\":\"Female\",\"IPADDRESS\":\"188.80.157.91\"},{\"EMPLOYEEID\":\"4\",\"FIRSTNAME\":\"Darleen\",\"LASTNAME\":\"Lammert\",\"JOININGDATE\":\"dlammert3@list-manage.com\",\"GENDER\":\"Female\",\"IPADDRESS\":\"6.53.94.76\"},{\"EMPLOYEEID\":\"5\",\"FIRSTNAME\":\"Roosevelt\",\"LASTNAME\":\"Houson\",\"JOININGDATE\":\"rhouson4@sciencedaily.com\",\"GENDER\":\"Male\",\"IPADDRESS\":\"176.93.42.183\"},{\"EMPLOYEEID\":\"6\",\"FIRSTNAME\":\"Bernie\",\"LASTNAME\":\"Jacqueme\",\"JOININGDATE\":\"bjacqueme5@cam.ac.uk\",\"GENDER\":\"Male\",\"IPADDRESS\":\"15.244.152.191\"},{\"EMPLOYEEID\":\"7\",\"FIRSTNAME\":\"Chad\",\"LASTNAME\":\"Florio\",\"JOININGDATE\":\"cflorio6@google.es\",\"GENDER\":\"Female\",\"IPADDRESS\":\"134.93.25.168\"},{\"EMPLOYEEID\":\"8\",\"FIRSTNAME\":\"Lothaire\",\"LASTNAME\":\"Toppin\",\"JOININGDATE\":\"ltoppin7@yahoo.com\",\"GENDER\":\"Male\",\"IPADDRESS\":\"63.242.74.229\"},{\"EMPLOYEEID\":\"9\",\"FIRSTNAME\":\"Gina\",\"LASTNAME\":\"Sans\",\"JOININGDATE\":\"gsans8@reddit.com\",\"GENDER\":\"Female\",\"IPADDRESS\":\"92.232.141.166\"},{\"EMPLOYEEID\":\"10\",\"FIRSTNAME\":\"Ileane\",\"LASTNAME\":\"McFadin\",\"JOININGDATE\":\"imcfadin9@mail.ru\",\"GENDER\":\"Female\",\"IPADDRESS\":\"164.98.204.191\"}],\"schema\":[{\"columnName\":\"EMPLOYEEID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"FIRSTNAME\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"LASTNAME\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"JOININGDATE\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"IPADDRESS\",\"columnType\":\"string\",\"nullable\":true}],\"count\":35,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"csv files testing \",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{\"EMPLOYEEID\":{\"NOT_NULL\":{\"ruleName\":\"not_null_employeeid\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"617875640106\"},\"NOT_EMPTY\":{\"ruleName\":\"not_empty_employeeid\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1477939171030\"},\"LEFT_SPACES\":{\"ruleName\":\"left_spaces_employeeid\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"517469871031\"},\"RIGHT_SPACES\":{\"ruleName\":\"right_spaces_employeeid\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"76396906624\"},\"UNIQUE_VALUES\":{\"ruleName\":\"unique_values_employeeid\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1548520111302\"},\"MIN_VALUE\":{\"ruleName\":\"min_value_employeeid\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"583651992303\"},\"MAX_VALUE\":{\"ruleName\":\"max_value_employeeid\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"57508635948\"},\"MIN_LENGTH\":{\"ruleName\":\"min_length_employeeid\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1122470027916\"},\"MAX_LENGTH\":{\"ruleName\":\"max_length_employeeid\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"481949281918\"},\"SQL_RULE\":{\"ruleName\":\"sql_rule_employeeid\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"216577632511\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"regular_expression_employeeid\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"EMPLOYEEID\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"273066342293\"}},\"FIRSTNAME\":{\"NOT_NULL\":{\"ruleName\":\"not_null_firstname\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1284677608601\"},\"NOT_EMPTY\":{\"ruleName\":\"not_empty_firstname\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1619286243387\"},\"LEFT_SPACES\":{\"ruleName\":\"left_spaces_firstname\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1341872313892\"},\"RIGHT_SPACES\":{\"ruleName\":\"right_spaces_firstname\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1181939659017\"},\"UNIQUE_VALUES\":{\"ruleName\":\"unique_values_firstname\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1495656562277\"},\"MIN_VALUE\":{\"ruleName\":\"min_value_firstname\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"19395832735\"},\"MAX_VALUE\":{\"ruleName\":\"max_value_firstname\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"266667830202\"},\"MIN_LENGTH\":{\"value\":3,\"ruleName\":\"min_length_firstname\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"75769745340\"},\"MAX_LENGTH\":{\"value\":12,\"ruleName\":\"max_length_firstname\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1706888422460\"},\"SQL_RULE\":{\"ruleName\":\"sql_rule_firstname\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1266409870457\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"regular_expression_firstname\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"FIRSTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"507423834542\"}},\"LASTNAME\":{\"NOT_NULL\":{\"ruleName\":\"not_null_lastname\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"581829715347\"},\"NOT_EMPTY\":{\"ruleName\":\"not_empty_lastname\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"470846799671\"},\"LEFT_SPACES\":{\"ruleName\":\"left_spaces_lastname\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"887635533020\"},\"RIGHT_SPACES\":{\"ruleName\":\"right_spaces_lastname\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"144038882848\"},\"UNIQUE_VALUES\":{\"ruleName\":\"unique_values_lastname\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1208501748283\"},\"MIN_VALUE\":{\"ruleName\":\"min_value_lastname\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1243325582851\"},\"MAX_VALUE\":{\"ruleName\":\"max_value_lastname\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"26880725432\"},\"MIN_LENGTH\":{\"value\":4,\"ruleName\":\"min_length_lastname\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1664183677971\"},\"MAX_LENGTH\":{\"value\":10,\"ruleName\":\"max_length_lastname\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"830725409177\"},\"SQL_RULE\":{\"ruleName\":\"sql_rule_lastname\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1570752739813\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"regular_expression_lastname\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"LASTNAME\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"638925423591\"}},\"JOININGDATE\":{\"NOT_NULL\":{\"ruleName\":\"not_null_joiningdate\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1359071495764\"},\"NOT_EMPTY\":{\"ruleName\":\"not_empty_joiningdate\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"228625246999\"},\"LEFT_SPACES\":{\"ruleName\":\"left_spaces_joiningdate\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"948421480042\"},\"RIGHT_SPACES\":{\"ruleName\":\"right_spaces_joiningdate\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"830025193618\"},\"UNIQUE_VALUES\":{\"ruleName\":\"unique_values_joiningdate\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"357640783441\"},\"MIN_VALUE\":{\"ruleName\":\"min_value_joiningdate\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"751737248184\"},\"MAX_VALUE\":{\"ruleName\":\"max_value_joiningdate\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1130179944132\"},\"MIN_LENGTH\":{\"value\":12,\"ruleName\":\"min_length_joiningdate\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"193099409712\"},\"MAX_LENGTH\":{\"value\":31,\"ruleName\":\"max_length_joiningdate\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1025300369439\"},\"SQL_RULE\":{\"ruleName\":\"sql_rule_joiningdate\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"21435437484\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"regular_expression_joiningdate\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"JOININGDATE\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"335280049792\"}},\"GENDER\":{\"NOT_NULL\":{\"ruleName\":\"not_null_gender\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1436780897731\"},\"NOT_EMPTY\":{\"ruleName\":\"not_empty_gender\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1071435666100\"},\"LEFT_SPACES\":{\"ruleName\":\"left_spaces_gender\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1204500325025\"},\"RIGHT_SPACES\":{\"ruleName\":\"right_spaces_gender\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"864989166879\"},\"UNIQUE_VALUES\":{\"ruleName\":\"unique_values_gender\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"108032142713\"},\"MIN_VALUE\":{\"ruleName\":\"min_value_gender\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1535793273594\"},\"MAX_VALUE\":{\"ruleName\":\"max_value_gender\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"600789270175\"},\"MIN_LENGTH\":{\"value\":4,\"ruleName\":\"min_length_gender\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"251711914710\"},\"MAX_LENGTH\":{\"value\":11,\"ruleName\":\"max_length_gender\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1725088746123\"},\"SQL_RULE\":{\"ruleName\":\"sql_rule_gender\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1730803843226\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"regular_expression_gender\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"GENDER\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"764153537337\"}},\"IPADDRESS\":{\"NOT_NULL\":{\"ruleName\":\"not_null_ipaddress\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1128716041482\"},\"NOT_EMPTY\":{\"ruleName\":\"not_empty_ipaddress\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"131791121498\"},\"LEFT_SPACES\":{\"ruleName\":\"left_spaces_ipaddress\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"113962232853\"},\"RIGHT_SPACES\":{\"ruleName\":\"right_spaces_ipaddress\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1190282983458\"},\"UNIQUE_VALUES\":{\"ruleName\":\"unique_values_ipaddress\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1401195159613\"},\"MIN_VALUE\":{\"ruleName\":\"min_value_ipaddress\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1218133065291\"},\"MAX_VALUE\":{\"ruleName\":\"max_value_ipaddress\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"227132029994\"},\"MIN_LENGTH\":{\"value\":10,\"ruleName\":\"min_length_ipaddress\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"1526579244844\"},\"MAX_LENGTH\":{\"value\":15,\"ruleName\":\"max_length_ipaddress\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"734460688156\"},\"SQL_RULE\":{\"ruleName\":\"sql_rule_ipaddress\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"42732515319\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"regular_expression_ipaddress\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"IPADDRESS\",\"tableName\":\"employeedatacsv\",\"unitTestId\":\"981567298278\"}}},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1706888422460\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"75769745340\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"830725409177\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1664183677971\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1025300369439\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"193099409712\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1725088746123\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"251711914710\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"734460688156\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1526579244844\",\"updated\":false},{\"unitTestCaseId\":\"617875640106\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1477939171030\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"517469871031\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"76396906624\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1548520111302\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"583651992303\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"57508635948\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1122470027916\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"481949281918\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"216577632511\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"273066342293\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1284677608601\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1619286243387\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1341872313892\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1181939659017\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1495656562277\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"19395832735\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"266667830202\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1266409870457\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"507423834542\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"581829715347\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"470846799671\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"887635533020\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"144038882848\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1208501748283\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1243325582851\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"26880725432\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1570752739813\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"638925423591\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1359071495764\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"228625246999\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"948421480042\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"830025193618\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"357640783441\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"751737248184\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1130179944132\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"21435437484\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"335280049792\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1436780897731\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1071435666100\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1204500325025\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"864989166879\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"108032142713\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1535793273594\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"600789270175\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1730803843226\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"764153537337\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1128716041482\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"131791121498\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"113962232853\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1190282983458\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1401195159613\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"1218133065291\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"227132029994\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"42732515319\",\"saved\":true,\"updated\":false,\"deleted\":false},{\"unitTestCaseId\":\"981567298278\",\"saved\":true,\"updated\":false,\"deleted\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "csv files testing ",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "csv files testing ",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/Aman/employee_data.csv",
+        "tableProperties" : [ {
+          "tblName" : "employeedatacsv",
+          "tblSize" : "0",
+          "tblRecordCount" : 35
+        } ],
+        "tableNamesList" : {
+          "employeedatacsv" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "employeedatacsv" : {
+            "rules" : [ {
+              "unitTestCaseId" : 75769745340,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "FIRSTNAME",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 3,
+              "level" : "Warning",
+              "description" : "min_length_firstname"
+            }, {
+              "unitTestCaseId" : 1706888422460,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "FIRSTNAME",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 12,
+              "level" : "Warning",
+              "description" : "max_length_firstname"
+            }, {
+              "unitTestCaseId" : 1664183677971,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "LASTNAME",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 4,
+              "level" : "Warning",
+              "description" : "min_length_lastname"
+            }, {
+              "unitTestCaseId" : 830725409177,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "LASTNAME",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 10,
+              "level" : "Warning",
+              "description" : "max_length_lastname"
+            }, {
+              "unitTestCaseId" : 193099409712,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "JOININGDATE",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 12,
+              "level" : "Warning",
+              "description" : "min_length_joiningdate"
+            }, {
+              "unitTestCaseId" : 1025300369439,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "JOININGDATE",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 31,
+              "level" : "Warning",
+              "description" : "max_length_joiningdate"
+            }, {
+              "unitTestCaseId" : 251711914710,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "GENDER",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 4,
+              "level" : "Warning",
+              "description" : "min_length_gender"
+            }, {
+              "unitTestCaseId" : 1725088746123,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "GENDER",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 11,
+              "level" : "Warning",
+              "description" : "max_length_gender"
+            }, {
+              "unitTestCaseId" : 1526579244844,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "IPADDRESS",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 10,
+              "level" : "Warning",
+              "description" : "min_length_ipaddress"
+            }, {
+              "unitTestCaseId" : 734460688156,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "IPADDRESS",
+              "creationTime" : 1737466076125,
+              "ruleValue" : 15,
+              "level" : "Warning",
+              "description" : "max_length_ipaddress"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "IN_MEMORY"
+          }
+        },
+        "fileDataMonitorInput" : {
+          "fileMonitors" : [ {
+            "fileAlias" : "employeedatacsv",
+            "dimensions" : [ ]
+          } ]
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 7553,
+  "dmsProjectId" : 630,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:51.901890981Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

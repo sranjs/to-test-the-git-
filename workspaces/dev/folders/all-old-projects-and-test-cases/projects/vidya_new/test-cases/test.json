@@ -1,15 +1,16 @@
 {
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"662f536b-0a36-4590-8f8a-17edf4a3ec2c\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"tableName\":\"dept_emp\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"schema\":[{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4},{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"5115757c-0edd-416a-a1c2-642d96c9409a\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"tableName\":\"departments\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"dept_no\"},\"schema\":[{\"columnName\":\"dept_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":40},{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"dept_no\"],\"foreignKeyInfo\":null,\"count\":9,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"dept_no\",\"indexInfo\":null}],\"target\":[{\"id\":\"e6730ecb-397d-40a1-b8d6-09eecd5f242a\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"tableName\":\"dept_emp\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"schema\":[{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4},{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"6825bf03-3e22-4964-aa13-44aef12520c9\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"tableName\":\"departments\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"dept_no\"},\"schema\":[{\"columnName\":\"dept_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":40},{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"dept_no\"],\"foreignKeyInfo\":null,\"count\":9,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"dept_no\",\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test\",\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"8ab34d12-b9cf-4b10-9957-b976bb396788\":{\"source\":\"662f536b-0a36-4590-8f8a-17edf4a3ec2c\",\"target\":\"e6730ecb-397d-40a1-b8d6-09eecd5f242a\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"6f8eb3e4-14a5-4c57-81eb-b7b57372f1cf\",\"sourceColumnName\":\"to_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"to_date\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"0057f203-518b-454b-8c9d-3aeb6314dc1e\",\"sourceColumnName\":\"from_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"from_date\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"bb4fe977-0c28-4b7a-bc94-c9a292a2520d\",\"sourceColumnName\":\"emp_no\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"emp_no\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"d7f34c8f-0264-4186-8ff0-c6b14b4dca07\",\"sourceColumnName\":\"dept_no\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"char\",\"sourceNullable\":false,\"targetColumnName\":\"dept_no\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"char\",\"targetNullable\":false,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"cb71d1cf-d8d8-4858-b7b9-2fd0284f28d1\":{\"source\":\"5115757c-0edd-416a-a1c2-642d96c9409a\",\"target\":\"6825bf03-3e22-4964-aa13-44aef12520c9\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"4c7c4a8d-ee5b-4a95-a537-91fee63652b8\",\"sourceColumnName\":\"dept_no\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"char\",\"sourceNullable\":false,\"targetColumnName\":\"dept_no\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"char\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"1e24bf36-4304-4e82-b7a7-1e7199d5a5fb\",\"sourceColumnName\":\"dept_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"dept_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[]}",
-  "executorMemory" : "5g",
   "executorCores" : 2,
+  "executorMemory" : "2g",
+  "numExecutors" : 2,
   "executeOn" : "LOCAL",
   "flowName" : "test",
-  "APP_VERSION" : "7_08",
+  "email" : [ ],
   "flowDesc" : "test",
-  "LicensedName" : "7_08",
-  "numExecutors" : 2,
+  "hadoop" : false,
   "livy" : false,
-  "groupName" : "dev",
+  "root" : "dataCompare",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
   "jobMap" : {
     "source" : {
       "dependentJob" : true,
@@ -17,37 +18,20 @@
       "id" : "source",
       "sourceData" : [ {
         "datasetFormat" : "JDBC",
-        "databaseName" : "employee",
+        "databaseName" : "PUBLIC",
         "datasetPath" : "projects",
         "jdbcData" : {
-          "connectionName" : "demo_conn",
+          "connectionName" : "snowflake_NYC_TAXI_DATA",
           "groupName" : "dev"
         },
         "tableNamesList" : {
-          "dept_emp" : {
-            "numberOfPart" : 0,
-            "column" : "emp_no"
-          },
-          "departments" : {
-            "numberOfPart" : 0,
-            "column" : "dept_no"
-          }
+          "EMPLOYEEDATA" : null
         },
         "tableProperties" : [ {
-          "tblName" : "dept_emp",
-          "tblSize" : "17.03",
-          "tblRecordCount" : 331570,
-          "primaryKeys" : [ "emp_no", "dept_no" ],
-          "indexKeys" : [ ],
-          "foreignKeys" : [ ],
-          "primaryKeysEnabled" : true,
-          "indexKeysEnabled" : false,
-          "foreignKeysEnabled" : false
-        }, {
-          "tblName" : "departments",
-          "tblSize" : "0.03",
-          "tblRecordCount" : 9,
-          "primaryKeys" : [ "dept_no" ],
+          "tblName" : "EMPLOYEEDATA",
+          "tblSize" : "0",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
           "indexKeys" : [ ],
           "foreignKeys" : [ ],
           "primaryKeysEnabled" : true,
@@ -66,37 +50,20 @@
       "id" : "target",
       "sourceData" : [ {
         "datasetFormat" : "JDBC",
-        "databaseName" : "employee",
+        "databaseName" : "PUBLIC",
         "datasetPath" : "projects",
         "jdbcData" : {
-          "connectionName" : "demo_conn",
+          "connectionName" : "snowflake_NYC_TAXI_DATA",
           "groupName" : "dev"
         },
         "tableNamesList" : {
-          "dept_emp" : {
-            "numberOfPart" : 0,
-            "column" : "emp_no"
-          },
-          "departments" : {
-            "numberOfPart" : 0,
-            "column" : "dept_no"
-          }
+          "EMPLOYEEDATA" : null
         },
         "tableProperties" : [ {
-          "tblName" : "dept_emp",
-          "tblSize" : "17.03",
-          "tblRecordCount" : 331570,
-          "primaryKeys" : [ "emp_no", "dept_no" ],
-          "indexKeys" : [ ],
-          "foreignKeys" : [ ],
-          "primaryKeysEnabled" : true,
-          "indexKeysEnabled" : false,
-          "foreignKeysEnabled" : false
-        }, {
-          "tblName" : "departments",
-          "tblSize" : "0.03",
-          "tblRecordCount" : 9,
-          "primaryKeys" : [ "dept_no" ],
+          "tblName" : "EMPLOYEEDATA",
+          "tblSize" : "0",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
           "indexKeys" : [ ],
           "foreignKeys" : [ ],
           "primaryKeysEnabled" : true,
@@ -116,12 +83,13 @@
       "id" : "dataCompare",
       "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
       "filesCompareList" : [ {
+        "unitTestCaseId" : 1699409872500,
         "matchBoth" : true,
         "compareType" : "CELL_BY_CELL_COMPARE",
         "compareColumns" : false,
         "compareCommonColumnsOnly" : true,
         "srcDestTableMap" : {
-          "dept_emp" : "dept_emp"
+          "EMPLOYEEDATA" : "EMPLOYEEDATA"
         },
         "srcDestComponentMap" : {
           "source" : "target"
@@ -130,77 +98,51 @@
         "validateRowsCount" : false,
         "tolerance" : [ ],
         "sqlTransform" : [ ],
-        "compareKey" : [ "emp_no", "dept_no" ],
+        "compareKey" : [ "EMPLOYEEID" ],
         "compareKeyNew" : [ {
-          "srcColumn" : "emp_no",
-          "destColumn" : "emp_no"
-        }, {
-          "srcColumn" : "dept_no",
-          "destColumn" : "dept_no"
+          "srcColumn" : "EMPLOYEEID",
+          "destColumn" : "EMPLOYEEID"
         } ],
         "columnMapping" : [ {
-          "srcColumn" : "to_date",
-          "destColumn" : "to_date"
+          "srcColumn" : "LASTNAME",
+          "destColumn" : "LASTNAME"
         }, {
-          "srcColumn" : "from_date",
-          "destColumn" : "from_date"
+          "srcColumn" : "JOININGDATE",
+          "destColumn" : "JOININGDATE"
         }, {
-          "srcColumn" : "emp_no",
-          "destColumn" : "emp_no"
+          "srcColumn" : "IPADDRESS",
+          "destColumn" : "IPADDRESS"
         }, {
-          "srcColumn" : "dept_no",
-          "destColumn" : "dept_no"
-        } ]
-      }, {
-        "matchBoth" : true,
-        "compareType" : "CELL_BY_CELL_COMPARE",
-        "compareColumns" : false,
-        "compareCommonColumnsOnly" : true,
-        "srcDestTableMap" : {
-          "departments" : "departments"
-        },
-        "srcDestComponentMap" : {
-          "source" : "target"
-        },
-        "saveAllDiffOutput" : "",
-        "validateRowsCount" : false,
-        "tolerance" : [ ],
-        "sqlTransform" : [ ],
-        "compareKey" : [ "dept_no" ],
-        "compareKeyNew" : [ {
-          "srcColumn" : "dept_no",
-          "destColumn" : "dept_no"
+          "srcColumn" : "GENDER",
+          "destColumn" : "GENDER"
+        }, {
+          "srcColumn" : "FIRSTNAME",
+          "destColumn" : "FIRSTNAME"
+        }, {
+          "srcColumn" : "EMPLOYEEID",
+          "destColumn" : "EMPLOYEEID"
         } ],
-        "columnMapping" : [ {
-          "srcColumn" : "dept_no",
-          "destColumn" : "dept_no"
-        }, {
-          "srcColumn" : "dept_name",
-          "destColumn" : "dept_name"
-        } ]
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
       } ],
       "position" : {
         "x" : 819,
         "y" : 181
       },
       "keyValueProps" : {
-        "OUTER_JOIN_BASED_COMPARE" : "true",
         "BAD_RECORD_COUNT" : "15"
       }
     }
   },
-  "root" : "dataCompare",
-  "hadoop" : false,
-  "UI_VERSION" : "7_08",
-  "API_APP_BUILD" : "7_08",
-  "parameters" : [ ],
-  "email" : [ ],
-  "flowType" : "CELL BY CELL COMPARE",
-  "flowId" : 6137,
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"0d085758-7614-457a-8f1d-077683f7d288\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"EMPLOYEEDATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"EMPLOYEEID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRSTNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IPADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"JOININGDATE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LASTNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"EMPLOYEEID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRSTNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IPADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"JOININGDATE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LASTNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"2e8cf4fd-d00c-4ad7-adab-50493f53558a\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"EMPLOYEEDATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"EMPLOYEEID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRSTNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IPADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"JOININGDATE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LASTNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"EMPLOYEEID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRSTNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IPADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"JOININGDATE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LASTNAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"test\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"1699409872500\":{\"source\":\"0d085758-7614-457a-8f1d-077683f7d288\",\"target\":\"2e8cf4fd-d00c-4ad7-adab-50493f53558a\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"6e697ce5-3d4b-4712-b4e0-4b0d1b1de2ba\",\"sourceColumnName\":\"LASTNAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"LASTNAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"e83ac64b-ace3-40b7-b3f8-524d4a3c48cb\",\"sourceColumnName\":\"JOININGDATE\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"JOININGDATE\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4f7de92f-3705-49d6-9a92-2d5ff2d718cf\",\"sourceColumnName\":\"IPADDRESS\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"IPADDRESS\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"6b975a85-014a-4cd6-abd2-a313e8c6cd76\",\"sourceColumnName\":\"GENDER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"GENDER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"fea35248-b295-4710-8ef1-366eed72f616\",\"sourceColumnName\":\"FIRSTNAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"FIRSTNAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"d176395b-3168-4cb4-86dc-dd7d17259426\",\"sourceColumnName\":\"EMPLOYEEID\",\"sourceColumnType\":\"number(38,0)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":true,\"targetColumnName\":\"EMPLOYEEID\",\"targetColumnType\":\"number(38,0)\",\"targetActualColumnType\":\"number\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\",\"detectCompareKeys\":true}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1699409872500\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 7806,
   "dmsProjectId" : 18,
   "syncInfo" : {
     "syncId" : "FOLDER",
-    "timestamp" : "2026-02-02T07:19:47.063260460Z",
+    "timestamp" : "2026-02-02T07:19:53.273042288Z",
     "syncType" : "FOLDER",
     "user" : "system"
   }

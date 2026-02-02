@@ -1,0 +1,135 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "API_testing_CLONE",
+  "email" : [ ],
+  "flowDesc" : "API_testing_CLONE",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "API_APP_BUILD" : "7_49",
+  "UI_VERSION" : "7_49",
+  "APP_VERSION" : "7_49",
+  "LicensedName" : "7_49",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "API",
+        "tableNamesList" : {
+          "executedTestcases" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "executedTestcases",
+          "tblSize" : "0",
+          "tblRecordCount" : 20
+        } ],
+        "multiLine" : true,
+        "outputFileFormat" : "JSON",
+        "columns" : [ ],
+        "flattenJson" : false,
+        "datasetPath" : "/my_data/user_files/Aman/api_input.py"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "execution_status" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "execution_status",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 21,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 261016006422,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "executedTestcases" : "execution_status"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "testCaseName" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "\"testCaseName\"",
+          "destColumn" : "\"testCaseName\""
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "\"testCaseName\"",
+          "destColumn" : "\"testCaseName\""
+        }, {
+          "srcColumn" : "\"executionStatus\"",
+          "destColumn" : "\"executionStatus\""
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"2b19d885-447d-4159-b353-901800f7e348\",\"tableName\":\"executedTestcases\",\"filePath\":\"/my_data/user_files/Aman/api_input.py\",\"fileName\":\"api_input.py\",\"columns\":\"\",\"flattenData\":false,\"multiline\":true,\"outputFileFormat\":\"JSON\",\"sampleData\":[{\"executionStatus\":\"FAILED\",\"resultUrl\":\"//http://app.vexdata.io/result/42192\",\"testCaseId\":7362,\"testCaseName\":\"sql_to_xml_count_compare\"},{\"executionStatus\":\"FAILED\",\"resultUrl\":\"//http://app.vexdata.io/result/42193\",\"testCaseId\":7361,\"testCaseName\":\"xml_to_json_compare\"},{\"executionStatus\":\"FAILED\",\"resultUrl\":\"//http://app.vexdata.io/result/42194\",\"testCaseId\":7360,\"testCaseName\":\"tims_db_to_snowflake_NYC_TAXI_DATA\"},{\"executionStatus\":\"CANCELLED\",\"resultUrl\":\"//http://app.vexdata.io/result/42195\",\"testCaseId\":7359,\"testCaseName\":\"tims_db_to_oracle_19C_comapre\"},{\"executionStatus\":\"FAILED\",\"resultUrl\":\"//http://app.vexdata.io/result/42196\",\"testCaseId\":7358,\"testCaseName\":\"sql_server_dub_to_large_data_count_comp\"},{\"executionStatus\":\"CANCELLED\",\"resultUrl\":\"//http://app.vexdata.io/result/42197\",\"testCaseId\":7357,\"testCaseName\":\"snowflake_NYC_TAXI_DATA_to_tims_db_schema_cmp\"},{\"executionStatus\":\"FAILED\",\"resultUrl\":\"//http://app.vexdata.io/result/42198\",\"testCaseId\":7356,\"testCaseName\":\"snowflake_NYC_TAXI_DATA_to_sql_server_4\"},{\"executionStatus\":\"CANCELLED\",\"resultUrl\":\"//http://app.vexdata.io/result/42199\",\"testCaseId\":7355,\"testCaseName\":\"snowflake_NYC_TAXI_DATA_to_snowflake_NYC_TAXI_DATA_schema_cmp\"},{\"executionStatus\":\"FAILED\",\"resultUrl\":\"//http://app.vexdata.io/result/42200\",\"testCaseId\":7354,\"testCaseName\":\"snowflake_NYC_TAXI_DATA_to_postgres\"},{\"executionStatus\":\"CANCELLED\",\"resultUrl\":\"//http://app.vexdata.io/result/42201\",\"testCaseId\":7353,\"testCaseName\":\"postgres_to_snowflake_NYC_TAXI_DATA_compare\"}],\"schema\":[{\"columnName\":\"executionStatus\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"resultUrl\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"testCaseId\",\"columnType\":\"long\",\"nullable\":true},{\"columnName\":\"testCaseName\",\"columnType\":\"string\",\"nullable\":true}],\"count\":20,\"tableSize\":0,\"from\":\"source\",\"type\":\"API\"}],\"target\":[{\"id\":\"e63c0fd7-f67b-45b6-9bec-79d8a33ee9cc\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"execution_status\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"executionStatus\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"testCaseName\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"executionStatus\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"testCaseName\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":21,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"API_testing_CLONE\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"convertNumberToLong\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"261016006422\":{\"source\":\"2b19d885-447d-4159-b353-901800f7e348\",\"target\":\"e63c0fd7-f67b-45b6-9bec-79d8a33ee9cc\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"78f8faf9-6418-45b2-b2cb-95e007f00d2a\",\"sourceColumnName\":\"testCaseName\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"testCaseName\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"fdfb5082-7f46-404c-a91f-b8b1d9968d20\",\"sourceColumnName\":\"executionStatus\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"executionStatus\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"261016006422\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 7451,
+  "dmsProjectId" : 630,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:52.015785Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

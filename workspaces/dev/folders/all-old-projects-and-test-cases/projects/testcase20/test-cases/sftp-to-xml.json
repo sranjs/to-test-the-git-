@@ -1,0 +1,144 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "sftp to  xml",
+  "email" : [ ],
+  "flowDesc" : "sftp to  xml",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "API_APP_BUILD" : "7_60",
+  "UI_VERSION" : "7_60",
+  "APP_VERSION" : "7_60",
+  "LicensedName" : "7_60",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/Aman/sample.csv",
+        "tableProperties" : [ {
+          "tblName" : "samplecsv",
+          "tblSize" : "0",
+          "tblRecordCount" : 10
+        } ],
+        "tableNamesList" : {
+          "samplecsv" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/upload/innovaccer/sample_1.csv",
+        "tableProperties" : [ {
+          "tblName" : "sample",
+          "tblSize" : "0",
+          "tblRecordCount" : 10
+        } ],
+        "tableNamesList" : {
+          "sample" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false,
+          "fileLocation" : "SFTP"
+        },
+        "jdbcData" : {
+          "connectionName" : "sftp",
+          "groupName" : "dev"
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 1106894303301,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "samplecsv" : "sample"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "Last_Name" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "\"Last_Name\"",
+          "destColumn" : "\"last_Name\""
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "\"Age\"",
+          "destColumn" : "age"
+        }, {
+          "srcColumn" : "\"Last_Name\"",
+          "destColumn" : "\"last_Name\""
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"467522f6-c108-4f8d-8754-6507f8baca9d\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"sample.csv\",\"filePath\":\"/my_data/user_files/Aman/sample.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"samplecsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"user\":\"Johnson\",\"First\":\"Smith\",\"Last_Name\":\"Deo\",\"DOB\":\"19850101\",\"Surename\":\"Johnson\",\"user_Id\":\"101\",\"Age\":\"null\"},{\"user\":\"Alice\",\"First\":\"Johnson\",\"Last_Name\":\"Williams\",\"DOB\":\"19861102\",\"Surename\":\"Parker\",\"user_Id\":\"102\",\"Age\":\"null\"},{\"user\":\"Robert\",\"First\":\"Williams\",\"Last_Name\":\"Brown\",\"DOB\":\"19790315\",\"Surename\":\"Smith\",\"user_Id\":\"103\",\"Age\":\"null\"},{\"user\":\"Ajay\",\"First\":\"Brown\",\"Last_Name\":\"Wilson\",\"DOB\":\"19900220\",\"Surename\":\"Adams\",\"user_Id\":\"104\",\"Age\":\"null\"},{\"user\":\"Jessica\",\"First\":\"Wilson\",\"Last_Name\":\"Johnson\",\"DOB\":\"19830410\",\"Surename\":\"Thompson\",\"user_Id\":\"105\",\"Age\":\"null\"},{\"user\":\"John\",\"First\":\"Johnson\",\"Last_Name\":\"Miller\",\"DOB\":\"19950625\",\"Surename\":\"Anderson\",\"user_Id\":\"105\",\"Age\":\"null\"},{\"user\":\"Michael\",\"First\":\"Miller\",\"Last_Name\":\"Davis\",\"DOB\":\"19871205\",\"Surename\":\"Martin\",\"user_Id\":\"107\",\"Age\":\"null\"},{\"user\":\"William\",\"First\":\"Davis\",\"Last_Name\":\"Taylor\",\"DOB\":\"19750228\",\"Surename\":\"Robinson\",\"user_Id\":\"108\",\"Age\":\"null\"},{\"user\":\"Emma\",\"First\":\"Taylor\",\"Last_Name\":\"Anderson\",\"DOB\":\"19911030\",\"Surename\":\"Harris\",\"user_Id\":\"109\",\"Age\":\"null\"},{\"user\":\"John_V\",\"First\":\"Anderson\",\"Last_Name\":\"Martinez\",\"DOB\":\"19801015\",\"Surename\":\"Young\",\"user_Id\":\"110\",\"Age\":\"null\"}],\"schema\":[{\"columnName\":\"user\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"First\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Last_Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"DOB\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Surename\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"user_Id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Age\",\"columnType\":\"string\",\"nullable\":true}],\"count\":10,\"isPrimaryDataset\":true}],\"target\":[{\"id\":\"f3e60a7d-86aa-4cb6-a63d-8d3135aeeffa\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"\",\"filePath\":\"\",\"s3ToHdf\":\"\",\"sftpDataset\":true,\"sftpType\":\"sftp\",\"sftpFilePath\":\"/upload/innovaccer/sample_1.csv\",\"fileLocation\":\"SFTP\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"sample\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"id\":\"1\",\"firstName\":\"John\",\"last_Name\":\"Doe\",\"email\":\"john.doe@example.com\",\"city\":\"Chicago\",\"gender\":\"Male\"},{\"id\":\"2\",\"firstName\":\"Jane\",\"last_Name\":\"Smith\",\"email\":\"jane.smith@example.com\",\"city\":\"Chicago\",\"age\":\"34\",\"gender\":\"Female\"},{\"id\":\"3\",\"firstName\":\"Michael\",\"last_Name\":\"Brown\",\"email\":\"michael.brown@example.com\",\"city\":\"Chicago\",\"age\":\"41\",\"gender\":\"Male\"},{\"id\":\"4\",\"firstName\":\"Emily\",\"last_Name\":\"Wilson\",\"email\":\"emily.wilson@example.com\",\"city\":\"Houston\",\"age\":\"26\",\"gender\":\"Female\"},{\"id\":\"5\",\"firstName\":\"Daniel\",\"last_Name\":\"Johnson\",\"email\":\"daniel.johnson@example.com\",\"city\":\"Houston\",\"age\":\"31\",\"gender\":\"Male\"},{\"id\":\"6\",\"firstName\":\"Sarah\",\"last_Name\":\"Lee\",\"email\":\"sarah.lee@example.com\",\"city\":\"Houston\",\"age\":\"28\",\"gender\":\"Female\"},{\"id\":\"7\",\"firstName\":\"Matthew\",\"last_Name\":\"Garcia\",\"email\":\"matthew.garcia@example.com\",\"city\":\"Houston\",\"age\":\"36\",\"gender\":\"Male\"},{\"id\":\"8\",\"firstName\":\"Olivia\",\"last_Name\":\"Martinez\",\"email\":\"olivia.martinez@example.com\",\"city\":\"Houston\",\"age\":\"23\",\"gender\":\"Female\"},{\"id\":\"9\",\"firstName\":\"David\",\"last_Name\":\"Clark\",\"email\":\"david.clark@example.com\",\"city\":\"Houston\",\"age\":\"39\",\"gender\":\"Male\"},{\"id\":\"10\",\"firstName\":\"Sophia\",\"last_Name\":\"Harris\",\"email\":\"sophia.harris@example.com\",\"city\":\"Chicago\",\"age\":\"27\",\"gender\":\"Female\"}],\"schema\":[{\"columnName\":\"id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"firstName\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"last_Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"email\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"city\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"gender\",\"columnType\":\"string\",\"nullable\":true}],\"count\":10,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"sftp to  xml\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"dimensions\":[],\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"1106894303301\":{\"source\":\"467522f6-c108-4f8d-8754-6507f8baca9d\",\"target\":\"f3e60a7d-86aa-4cb6-a63d-8d3135aeeffa\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"852d3241-3c9a-4c62-a699-6264e57d6ec1\",\"sourceColumnName\":\"Age\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"age\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"d04441a9-1b71-48d8-8db9-439761a3e133\",\"sourceColumnName\":\"Last_Name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"last_Name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1106894303301\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 7776,
+  "dmsProjectId" : 630,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:51.862799260Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
