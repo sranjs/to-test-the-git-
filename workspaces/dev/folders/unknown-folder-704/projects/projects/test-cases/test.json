@@ -1,0 +1,107 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"tablesList\":{\"source\":[{\"id\":\"ff79e24a-8f15-403c-94c6-393283cff315\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"typeTable\":\"TABLE\",\"tableName\":\"salaries\",\"partitionProperties\":{\"numberOfPart\":8,\"column\":\"emp_no\"},\"defaultSchema\":[{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"salary\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"salary\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"from_date\"],\"foreignKeyInfo\":null,\"count\":2837194,\"tableSize\":113.64,\"noOfPartition\":8,\"partitionColumn\":\"emp_no\",\"indexInfo\":null,\"isPrimaryDataset\":true,\"filterCondition\":\" salary<60117\"}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":8,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"test\"},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"0ae6707c-6396-4620-9a26-463d33377489\":{\"ruleName\":\"r1\",\"sql\":\"IApTRUxFQ1QqIApGUk9NIGxhcmdlX2RhdGEuc2FsYXJpZXMgCldIRVJFIHNhbGFyeSA+IDYwMTE3Ow==\",\"keyColumns\":[],\"dqSQLOutputType\":\"DATA_VALIDATION\",\"expectation\":\"\",\"condition\":\">\",\"value\":\"0\",\"dataValidationValue\":\"60117\",\"rulesLevel\":\"Warning\",\"enable\":true,\"id\":\"0ae6707c-6396-4620-9a26-463d33377489\",\"tableName\":\"salaries\",\"ruleType\":\"SQL\",\"unitTestId\":\"1696497825697\"}},\"columnRules\":{\"emp_no\":{\"NOT_NULL\":{\"ruleName\":\"emp_no_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"1196029780501\"},\"NOT_EMPTY\":{\"ruleName\":\"emp_no_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"519683671114\"},\"LEFT_SPACES\":{\"ruleName\":\"emp_no_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"1248410228845\"},\"RIGHT_SPACES\":{\"ruleName\":\"emp_no_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"1453523224727\"},\"UNIQUE_VALUES\":{\"ruleName\":\"emp_no_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"8856108579\"},\"MIN_VALUE\":{\"ruleName\":\"emp_no_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"763743167766\"},\"MAX_VALUE\":{\"ruleName\":\"emp_no_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"705225504653\"},\"MIN_LENGTH\":{\"ruleName\":\"emp_no_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"1125898328502\"},\"MAX_LENGTH\":{\"ruleName\":\"emp_no_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"96568299466\"},\"SQL_RULE\":{\"ruleName\":\"emp_no_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"166132933582\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"emp_no_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"emp_no\",\"tableName\":\"salaries\",\"unitTestId\":\"1304562374822\"}},\"from_date\":{\"NOT_NULL\":{\"ruleName\":\"from_date_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"1589498622962\"},\"NOT_EMPTY\":{\"ruleName\":\"from_date_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"32966734938\"},\"LEFT_SPACES\":{\"ruleName\":\"from_date_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"432976663335\"},\"RIGHT_SPACES\":{\"ruleName\":\"from_date_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"146227142834\"},\"UNIQUE_VALUES\":{\"ruleName\":\"from_date_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"17413408452\"},\"MIN_VALUE\":{\"ruleName\":\"from_date_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"1271214502998\"},\"MAX_VALUE\":{\"ruleName\":\"from_date_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"325983257925\"},\"MIN_LENGTH\":{\"ruleName\":\"from_date_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"665752289338\"},\"MAX_LENGTH\":{\"ruleName\":\"from_date_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"1243933836179\"},\"SQL_RULE\":{\"ruleName\":\"from_date_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"92308118593\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"from_date_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"from_date\",\"tableName\":\"salaries\",\"unitTestId\":\"1089594067195\"}},\"salary\":{\"NOT_NULL\":{\"ruleName\":\"salary_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"437583587843\"},\"NOT_EMPTY\":{\"ruleName\":\"salary_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"31429107034\"},\"LEFT_SPACES\":{\"ruleName\":\"salary_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"606986176918\"},\"RIGHT_SPACES\":{\"ruleName\":\"salary_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"1278755946469\"},\"UNIQUE_VALUES\":{\"ruleName\":\"salary_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"383049258022\"},\"MIN_VALUE\":{\"ruleName\":\"salary_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"768500759231\"},\"MAX_VALUE\":{\"ruleName\":\"salary_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"55259830855\"},\"MIN_LENGTH\":{\"ruleName\":\"salary_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"424147135274\"},\"MAX_LENGTH\":{\"ruleName\":\"salary_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"861575000797\"},\"SQL_RULE\":{\"ruleName\":\"salary_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"612083937320\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"salary_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"salary\",\"tableName\":\"salaries\",\"unitTestId\":\"1482701174985\"}},\"to_date\":{\"NOT_NULL\":{\"ruleName\":\"to_date_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"708667573789\"},\"NOT_EMPTY\":{\"ruleName\":\"to_date_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"1416018350859\"},\"LEFT_SPACES\":{\"ruleName\":\"to_date_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"1499024769500\"},\"RIGHT_SPACES\":{\"ruleName\":\"to_date_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"636292066265\"},\"UNIQUE_VALUES\":{\"ruleName\":\"to_date_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"1056026694561\"},\"MIN_VALUE\":{\"ruleName\":\"to_date_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"131583040496\"},\"MAX_VALUE\":{\"ruleName\":\"to_date_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"490774998375\"},\"MIN_LENGTH\":{\"ruleName\":\"to_date_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"633576018263\"},\"MAX_LENGTH\":{\"ruleName\":\"to_date_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"31729351248\"},\"SQL_RULE\":{\"ruleName\":\"to_date_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"1148595266454\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"to_date_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"to_date\",\"tableName\":\"salaries\",\"unitTestId\":\"1630801259526\"}}},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1696497825697\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "8g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "test",
+  "flowDesc" : "test",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "large_data",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "large_data",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "salaries" : {
+            "numberOfPart" : 8,
+            "column" : "emp_no"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "salaries",
+          "tblSize" : "113.64",
+          "tblRecordCount" : 2837194,
+          "primaryKeys" : [ "emp_no", "from_date" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false,
+          "filterCondition" : " salary<60117"
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "salaries" : {
+            "rules" : [ {
+              "unitTestCaseId" : 1696497825697,
+              "userProvidedTestCaseId" : null,
+              "ruleType" : "SQL",
+              "dqSqlPassCondition" : {
+                "condition" : ">",
+                "conditionValue" : "60117",
+                "dqSQLOutputType" : "DATA_VALIDATION"
+              },
+              "column" : "NA",
+              "sql" : " \nSELECT* \nFROM large_data.salaries \nWHERE salary > 60117;",
+              "creationTime" : 1761922817495,
+              "level" : "Warning",
+              "description" : "r1"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "10"
+      }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "parameters" : [ {
+    "paramName" : "SQL_EXECUTION_TIMEOUT_DQ_-123",
+    "paramValue" : "",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  } ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 11778,
+  "dmsProjectId" : 791,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:23:52.840414240Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
