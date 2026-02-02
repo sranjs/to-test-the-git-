@@ -1,20 +1,15 @@
 {
-  "executorCores" : 2,
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"70c60ef3-f791-4deb-90fb-1f4420cc8a76\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CELLBYCELL_C\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":89,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"fc50ab2a-434e-40fc-8689-1ac90737e658\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":17,\"column\":\"C_CUSTKEY\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"C_CUSTKEY\"],\"foreignKeyInfo\":null,\"count\":3000000,\"tableSize\":328,\"noOfPartition\":17,\"partitionColumn\":\"C_CUSTKEY\",\"indexInfo\":null}],\"target\":[{\"id\":\"015f374e-25bb-477f-ba3f-8bfc9249f9f5\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CELLBYCELL_C\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":89,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"91f5f60e-b22e-41d4-8add-ababf727f323\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":17,\"column\":\"C_CUSTKEY\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"C_CUSTKEY\"],\"foreignKeyInfo\":null,\"count\":3000000,\"tableSize\":328,\"noOfPartition\":17,\"partitionColumn\":\"C_CUSTKEY\",\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":3,\"threads\":2,\"memory\":8,\"test_case_name\":\"oracle_19C_to_oracle_19C_count_compare\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"440769844852\":{\"source\":\"70c60ef3-f791-4deb-90fb-1f4420cc8a76\",\"target\":\"015f374e-25bb-477f-ba3f-8bfc9249f9f5\",\"matchBoth\":\"a=b\",\"columnMapping\":[]},\"812529064337\":{\"source\":\"fc50ab2a-434e-40fc-8689-1ac90737e658\",\"target\":\"91f5f60e-b22e-41d4-8add-ababf727f323\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"440769844852\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"812529064337\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
   "executorMemory" : "2g",
-  "numExecutors" : 3,
+  "executorCores" : 2,
   "executeOn" : "LOCAL",
-  "flowName" : "oracle_19C_to_oracle_19C_count_compare",
-  "email" : [ ],
-  "flowDesc" : "oracle_19C_to_oracle_19C_count_compare",
-  "hadoop" : false,
-  "livy" : false,
-  "root" : "dataCompare",
-  "API_APP_BUILD" : "7_49",
-  "UI_VERSION" : "7_49",
+  "flowName" : "oracle_19c_to_oracle_19c_count_compare",
   "APP_VERSION" : "7_49",
+  "flowDesc" : "oracle_19C_to_oracle_19C_count_compare",
   "LicensedName" : "7_49",
-  "parameters" : [ ],
-  "flowType" : "COUNTS COMPARE",
+  "numExecutors" : 3,
+  "livy" : false,
+  "groupName" : "dev",
   "jobMap" : {
     "source" : {
       "dependentJob" : true,
@@ -161,13 +156,18 @@
       }
     }
   },
-  "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"70c60ef3-f791-4deb-90fb-1f4420cc8a76\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CELLBYCELL_C\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":89,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"fc50ab2a-434e-40fc-8689-1ac90737e658\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":17,\"column\":\"C_CUSTKEY\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"C_CUSTKEY\"],\"foreignKeyInfo\":null,\"count\":3000000,\"tableSize\":328,\"noOfPartition\":17,\"partitionColumn\":\"C_CUSTKEY\",\"indexInfo\":null}],\"target\":[{\"id\":\"015f374e-25bb-477f-ba3f-8bfc9249f9f5\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CELLBYCELL_C\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":89,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"91f5f60e-b22e-41d4-8add-ababf727f323\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":17,\"column\":\"C_CUSTKEY\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"C_CUSTKEY\"],\"foreignKeyInfo\":null,\"count\":3000000,\"tableSize\":328,\"noOfPartition\":17,\"partitionColumn\":\"C_CUSTKEY\",\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":3,\"threads\":2,\"memory\":8,\"test_case_name\":\"oracle_19C_to_oracle_19C_count_compare\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"440769844852\":{\"source\":\"70c60ef3-f791-4deb-90fb-1f4420cc8a76\",\"target\":\"015f374e-25bb-477f-ba3f-8bfc9249f9f5\",\"matchBoth\":\"a=b\",\"columnMapping\":[]},\"812529064337\":{\"source\":\"fc50ab2a-434e-40fc-8689-1ac90737e658\",\"target\":\"91f5f60e-b22e-41d4-8add-ababf727f323\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"440769844852\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"812529064337\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
-  "flowId" : 7221,
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "COUNTS COMPARE",
+  "flowId" : 12167,
   "dmsProjectId" : 627,
   "syncInfo" : {
     "syncId" : "PROJECT",
-    "timestamp" : "2026-02-02T07:40:05.245482275Z",
+    "timestamp" : "2026-02-02T08:23:07.421798168Z",
     "syncType" : "PROJECT",
     "user" : "system"
   }
