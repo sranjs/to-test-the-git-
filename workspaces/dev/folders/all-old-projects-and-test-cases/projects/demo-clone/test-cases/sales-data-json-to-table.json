@@ -1,0 +1,149 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"e6be5baf-a568-421c-83fe-9ed46a0c4a43\",\"from\":\"source\",\"type\":\"JSON\",\"tableSize\":0.1,\"fileName\":\"SalesData.json\",\"filePath\":\"/my_data/user_files/dhiraj/SalesData.json\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"SalesDatajson\",\"multiline\":true,\"flattenJson\":true,\"columns\":\"\",\"sampleData\":[{\"SalesData_CustomerID\":641,\"SalesData_Discount\":0.13,\"SalesData_OrderDate\":\"2023-02-15\",\"SalesData_OrderID\":1,\"SalesData_OrderQuantity\":389,\"SalesData_Price\":66.93,\"SalesData_ProductID\":90,\"SalesData_Quantity\":3},{\"SalesData_CustomerID\":733,\"SalesData_Discount\":0.4,\"SalesData_OrderDate\":\"2023-06-13\",\"SalesData_OrderID\":2,\"SalesData_OrderQuantity\":519,\"SalesData_Price\":94.54,\"SalesData_ProductID\":13,\"SalesData_Quantity\":5},{\"SalesData_CustomerID\":21,\"SalesData_Discount\":0.2,\"SalesData_OrderDate\":\"2023-02-23\",\"SalesData_OrderID\":3,\"SalesData_OrderQuantity\":64,\"SalesData_Price\":75.4,\"SalesData_ProductID\":81,\"SalesData_Quantity\":5},{\"SalesData_CustomerID\":494,\"SalesData_Discount\":0.13,\"SalesData_OrderDate\":\"2022-11-24\",\"SalesData_OrderID\":4,\"SalesData_OrderQuantity\":187,\"SalesData_Price\":75.63,\"SalesData_ProductID\":94,\"SalesData_Quantity\":7},{\"SalesData_CustomerID\":724,\"SalesData_Discount\":0.41,\"SalesData_OrderDate\":\"2022-08-22\",\"SalesData_OrderID\":5,\"SalesData_OrderQuantity\":17,\"SalesData_Price\":65.32,\"SalesData_ProductID\":9,\"SalesData_Quantity\":6},{\"SalesData_CustomerID\":634,\"SalesData_Discount\":0.44,\"SalesData_OrderDate\":\"2023-06-11\",\"SalesData_OrderID\":6,\"SalesData_OrderQuantity\":789,\"SalesData_Price\":0.23,\"SalesData_ProductID\":13,\"SalesData_Quantity\":3},{\"SalesData_CustomerID\":628,\"SalesData_Discount\":0.01,\"SalesData_OrderDate\":\"2022-07-23\",\"SalesData_OrderID\":7,\"SalesData_OrderQuantity\":988,\"SalesData_Price\":84.52,\"SalesData_ProductID\":28,\"SalesData_Quantity\":3},{\"SalesData_CustomerID\":623,\"SalesData_Discount\":0.3,\"SalesData_OrderDate\":\"2023-02-11\",\"SalesData_OrderID\":8,\"SalesData_OrderQuantity\":494,\"SalesData_Price\":36.51,\"SalesData_ProductID\":11,\"SalesData_Quantity\":1},{\"SalesData_CustomerID\":919,\"SalesData_Discount\":0.47,\"SalesData_OrderDate\":\"2023-01-26\",\"SalesData_OrderID\":9,\"SalesData_OrderQuantity\":75,\"SalesData_Price\":73.28,\"SalesData_ProductID\":14,\"SalesData_Quantity\":3},{\"SalesData_CustomerID\":180,\"SalesData_Discount\":0.02,\"SalesData_OrderDate\":\"2022-08-29\",\"SalesData_OrderID\":10,\"SalesData_OrderQuantity\":602,\"SalesData_Price\":29.33,\"SalesData_ProductID\":72,\"SalesData_Quantity\":9}],\"schema\":[{\"columnName\":\"SalesData_CustomerID\",\"columnType\":\"long\",\"nullable\":true},{\"columnName\":\"SalesData_Discount\",\"columnType\":\"double\",\"nullable\":true},{\"columnName\":\"SalesData_OrderDate\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"SalesData_OrderID\",\"columnType\":\"long\",\"nullable\":true},{\"columnName\":\"SalesData_OrderQuantity\",\"columnType\":\"long\",\"nullable\":true},{\"columnName\":\"SalesData_Price\",\"columnType\":\"double\",\"nullable\":true},{\"columnName\":\"SalesData_ProductID\",\"columnType\":\"long\",\"nullable\":true},{\"columnName\":\"SalesData_Quantity\",\"columnType\":\"long\",\"nullable\":true}],\"count\":10000}],\"target\":[{\"id\":\"5930722b-e4b3-4223-9ce5-c27afb348429\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"Sql_Server_DataQ\",\"schemaName\":\"dbo\",\"tableName\":\"SalesData\",\"schema\":[{\"columnName\":\"CustomerID\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"Discount\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"OrderDate\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false},{\"columnName\":\"OrderID\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"OrderQuantity\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"Price\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ProductID\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"Quantity\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"OrderID\"],\"foreignKeyInfo\":null,\"count\":9994,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"sales data json to table\",\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"8198bc09-18f4-48d5-99de-1268e56c00a5\":{\"source\":\"e6be5baf-a568-421c-83fe-9ed46a0c4a43\",\"target\":\"5930722b-e4b3-4223-9ce5-c27afb348429\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"04e93ad6-8d87-4407-be5e-7d0b41c3a0de\",\"sourceColumnName\":\"SalesData_Quantity\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Quantity\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"c16fd1d6-11c7-4673-a63c-3816db3db603\",\"sourceColumnName\":\"SalesData_ProductID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"ProductID\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"7e27423b-2705-47b1-b34b-2c3713828bf2\",\"sourceColumnName\":\"SalesData_Price\",\"sourceColumnType\":\"double\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Price\",\"targetColumnType\":\"double\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"45842a5f-331e-4630-bb46-d1f1f1a230c0\",\"sourceColumnName\":\"SalesData_OrderQuantity\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"OrderQuantity\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"95ea845e-90ef-42ac-b7e8-91a3a96bbeac\",\"sourceColumnName\":\"SalesData_OrderID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"OrderID\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"55f1e9e2-6e22-44e4-ac1b-1dd1383573d2\",\"sourceColumnName\":\"SalesData_OrderDate\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"OrderDate\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"19b61bca-8f7b-4f98-ac5c-ef534d62a4b1\",\"sourceColumnName\":\"SalesData_Discount\",\"sourceColumnType\":\"double\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Discount\",\"targetColumnType\":\"double\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"605a9c18-e055-4a19-b71b-23c7d105a211\",\"sourceColumnName\":\"SalesData_CustomerID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"CustomerID\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"dataStandarizations\":{},\"outputData\":[]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "sales data json to table",
+  "APP_VERSION" : "7_08",
+  "flowDesc" : "sales data json to table",
+  "LicensedName" : "7_08",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JSON",
+        "datasetPath" : "/my_data/user_files/dhiraj/SalesData.json",
+        "tableProperties" : [ {
+          "tblName" : "SalesDatajson",
+          "tblSize" : "0.1",
+          "tblRecordCount" : 10000
+        } ],
+        "tableNamesList" : {
+          "SalesDatajson" : null
+        },
+        "multiLine" : true,
+        "flattenJson" : true,
+        "columns" : [ ],
+        "params" : {
+          "dropRecordsWithAllNulls" : false
+        }
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "dbo",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "Sql_Server_DataQ",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "SalesData" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "SalesData",
+          "tblSize" : "1",
+          "tblRecordCount" : 9994,
+          "primaryKeys" : [ "OrderID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "SalesDatajson" : "SalesData"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "SalesData_OrderID" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "SalesData_OrderID",
+          "destColumn" : "OrderID"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "SalesData_Quantity",
+          "destColumn" : "Quantity"
+        }, {
+          "srcColumn" : "SalesData_ProductID",
+          "destColumn" : "ProductID"
+        }, {
+          "srcColumn" : "SalesData_Price",
+          "destColumn" : "Price"
+        }, {
+          "srcColumn" : "SalesData_OrderQuantity",
+          "destColumn" : "OrderQuantity"
+        }, {
+          "srcColumn" : "SalesData_OrderID",
+          "destColumn" : "OrderID"
+        }, {
+          "srcColumn" : "SalesData_OrderDate",
+          "destColumn" : "OrderDate"
+        }, {
+          "srcColumn" : "SalesData_Discount",
+          "destColumn" : "Discount"
+        }, {
+          "srcColumn" : "SalesData_CustomerID",
+          "destColumn" : "CustomerID"
+        } ]
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_08",
+  "API_APP_BUILD" : "7_08",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 8416,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:43.758048130Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"858e1e6b-5c84-4176-be5f-b229fc308556\",\"from\":\"source\",\"type\":\"JSON\",\"tableSize\":0.1,\"fileName\":\"a.json\",\"filePath\":\"/my_data/user_files/dhiraj/a.json\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"ajson\",\"multiline\":true,\"flattenJson\":false,\"columns\":\"\",\"sampleData\":[{\"CustomerID\":1,\"Email\":\"johndoe@example.com\",\"FirstName\":\"John\",\"LastName\":\"Doe\"},{\"CustomerID\":2,\"Email\":\"janesmith@example.com\",\"FirstName\":\"Jane\",\"LastName\":\"Smith\"},{\"CustomerID\":3,\"Email\":\"alicejohnson@example.com\",\"FirstName\":\"Alice\",\"LastName\":\"Johnson\"}],\"schema\":[{\"columnName\":\"CustomerID\",\"columnType\":\"long\",\"nullable\":true},{\"columnName\":\"Email\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"FirstName\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"LastName\",\"columnType\":\"string\",\"nullable\":true}],\"count\":3}],\"target\":[{\"id\":\"d7cb300d-ac40-4870-8dc6-08d69b9c0bc1\",\"from\":\"target\",\"type\":\"JSON\",\"tableSize\":0.1,\"fileName\":\"a.json\",\"filePath\":\"/my_data/user_files/dhiraj/a.json\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"ajson\",\"multiline\":true,\"flattenJson\":false,\"columns\":\"\",\"sampleData\":[{\"CustomerID\":1,\"Email\":\"johndoe@example.com\",\"FirstName\":\"John\",\"LastName\":\"Doe\"},{\"CustomerID\":2,\"Email\":\"janesmith@example.com\",\"FirstName\":\"Jane\",\"LastName\":\"Smith\"},{\"CustomerID\":3,\"Email\":\"alicejohnson@example.com\",\"FirstName\":\"Alice\",\"LastName\":\"Johnson\"}],\"schema\":[{\"columnName\":\"CustomerID\",\"columnType\":\"long\",\"nullable\":true},{\"columnName\":\"Email\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"FirstName\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"LastName\",\"columnType\":\"string\",\"nullable\":true}],\"count\":3}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"customer\",\"badRecordsCount\":15,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"e0cb3c64-b47d-4555-9245-0b73372a7392\":{\"source\":\"858e1e6b-5c84-4176-be5f-b229fc308556\",\"target\":\"d7cb300d-ac40-4870-8dc6-08d69b9c0bc1\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"fc9548f8-1406-4211-9fbf-2840f0af7057\",\"sourceColumnName\":\"LastName\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"LastName\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false},{\"id\":\"2a0fe000-3b58-4650-99e9-6e3bd2df020f\",\"sourceColumnName\":\"FirstName\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"FirstName\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false},{\"id\":\"b31b629a-4991-4df0-8ff8-c0125c8fda90\",\"sourceColumnName\":\"Email\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Email\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false},{\"id\":\"bf61b0e1-b729-41ca-b4fc-426185649b9c\",\"sourceColumnName\":\"CustomerID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"CustomerID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{}}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "session_id" : "7a287262-3b66-4de6-8a48-53dd1e3e22cd",
+  "executeOn" : "LOCAL",
+  "flowName" : "dataq1686743980131",
+  "APP_VERSION" : "705-493b8a989e",
+  "flowDesc" : "customer",
+  "LicensedName" : "microsoft",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JSON",
+        "datasetPath" : "/my_data/user_files/dhiraj/a.json",
+        "tableProperties" : [ {
+          "tblName" : "ajson",
+          "tblSize" : "0.1",
+          "tblRecordCount" : 3
+        } ],
+        "tableNamesList" : {
+          "ajson" : null
+        },
+        "multiLine" : true,
+        "flattenJson" : false,
+        "columns" : [ ],
+        "params" : {
+          "dropRecordsWithAllNulls" : false
+        }
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JSON",
+        "datasetPath" : "/my_data/user_files/dhiraj/a.json",
+        "tableProperties" : [ {
+          "tblName" : "ajson",
+          "tblSize" : "0.1",
+          "tblRecordCount" : 3
+        } ],
+        "tableNamesList" : {
+          "ajson" : null
+        },
+        "multiLine" : true,
+        "flattenJson" : false,
+        "columns" : [ ],
+        "params" : {
+          "dropRecordsWithAllNulls" : false
+        }
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "ajson" : "ajson"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "CustomerID" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "CustomerID",
+          "destColumn" : "CustomerID"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "LastName",
+          "destColumn" : "LastName"
+        }, {
+          "srcColumn" : "FirstName",
+          "destColumn" : "FirstName"
+        }, {
+          "srcColumn" : "Email",
+          "destColumn" : "Email"
+        }, {
+          "srcColumn" : "CustomerID",
+          "destColumn" : "CustomerID"
+        } ]
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "b412a37a5c-29",
+  "API_APP_BUILD" : "Jun 13, 2023 3:40:48 PM",
+  "parameters" : [ ],
+  "email" : [ ],
+  "session.id" : "7a287262-3b66-4de6-8a48-53dd1e3e22cd",
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 8417,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:44.085021887Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
