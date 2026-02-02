@@ -1,0 +1,112 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"af0e567e-4f87-4f77-a8c3-ca507ae4f788\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_10M__b1\",\"schema\":[{\"columnName\":\"address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"age\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"country\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":9664326,\"tableSize\":2044,\"noOfPartition\":85,\"partitionColumn\":\"id\",\"indexInfo\":null,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"sample dq rules\",\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"1\":{\"id\":1,\"ruleName\":\"r1\",\"ruleType\":\"Column Rule\",\"executeOn\":\"source\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_10M__b1\",\"columnName\":\"age\",\"sqlExpression\":\"age > 0\",\"sql\":\"\",\"rulesLevel\":\"Warning\",\"enable\":true},\"2\":{\"id\":2,\"ruleName\":\"first name length \",\"ruleType\":\"Column Rule\",\"executeOn\":\"source\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_10M__b1\",\"columnName\":\"first_name\",\"sqlExpression\":\"length(first_name) > 10\",\"sql\":\"\",\"rulesLevel\":\"Warning\",\"enable\":true},\"3\":{\"id\":3,\"ruleName\":\"first name should fail\",\"ruleType\":\"Column Rule\",\"executeOn\":\"source\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_10M__b1\",\"columnName\":\"first_name\",\"sqlExpression\":\"length(first_name) < 5\",\"sql\":\"\",\"rulesLevel\":\"Warning\",\"enable\":true}}}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "session_id" : "1c9ee07d-3936-447f-9c85-1394c578820a",
+  "executeOn" : "LOCAL",
+  "flowName" : "dataq1689359791732",
+  "APP_VERSION" : "707-2f842cc875",
+  "flowDesc" : "sample dq rules",
+  "LicensedName" : "microsoft",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "large_data",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "large_data",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "metrics_10M__b1" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "metrics_10M__b1",
+          "tblSize" : "2044",
+          "tblRecordCount" : 9664326,
+          "primaryKeys" : [ "id" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "metrics_10M__b1" : {
+            "rules" : [ {
+              "ruleType" : "SQL_WHERE",
+              "column" : "age",
+              "sql" : "age > 0",
+              "creationTime" : 1689359791732,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "r1",
+              "description" : "r1"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "first_name",
+              "sql" : "length(first_name) > 10",
+              "creationTime" : 1689359791732,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "firstnamelength",
+              "description" : "first name length "
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "first_name",
+              "sql" : "length(first_name) < 5",
+              "creationTime" : 1689359791732,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "firstnameshouldfail",
+              "description" : "first name should fail"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : { }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "UI_VERSION" : "b412a37a5c-29",
+  "API_APP_BUILD" : "Jun 20, 2023 8:09:18 PM",
+  "parameters" : [ ],
+  "email" : [ ],
+  "session.id" : "1c9ee07d-3936-447f-9c85-1394c578820a",
+  "flowType" : "DATA QUALITY",
+  "flowId" : 8405,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:40.470231909Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
