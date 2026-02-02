@@ -1,0 +1,197 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"473616ae-0d18-4c3a-b40f-8a6d444fa671\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"data_withSpecialCharaters.csv\",\"filePath\":\"/my_data/user_files/data_withSpecialCharaters.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"datawithSpecialCharaterscsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"First______Name\":\"Smith\",\"Last_____Name\":\"Deo\",\"DOB\":\"19850101\",\"Age\":\"null\",\"Pincode\":\"12345\",\"gender\":\"M\"},{\"First______Name\":\"Johnson\",\"Last_____Name\":\"Williams\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12345\",\"gender\":\"M\"},{\"First______Name\":\"Williams\",\"Last_____Name\":\"Brown\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12345\",\"gender\":\"M\"},{\"First______Name\":\"Brown\",\"Last_____Name\":\"Wilson\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12346\",\"gender\":\"M\"},{\"First______Name\":\"Wilson\",\"Last_____Name\":\"Johnson\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12346\",\"gender\":\"M\"},{\"First______Name\":\"Johnson\",\"Last_____Name\":\"Miller\",\"DOB\":\"19830410\",\"Age\":\"null\",\"Pincode\":\"12346\",\"gender\":\"M\"},{\"First______Name\":\"Miller\",\"Last_____Name\":\"Davis\",\"DOB\":\"19871205\",\"Age\":\"null\",\"Pincode\":\"12347\",\"gender\":\"M\"},{\"First______Name\":\"Davis\",\"Last_____Name\":\"Taylor\",\"DOB\":\"19801078\",\"Age\":\"null\",\"Pincode\":\"12347\",\"gender\":\"M\"},{\"First______Name\":\"Taylor\",\"Last_____Name\":\"Anderson\",\"DOB\":\"19911030\",\"Age\":\"null\",\"Pincode\":\"12347\",\"gender\":\"M\"},{\"First______Name\":\"Anderson\",\"Last_____Name\":\"Martinez\",\"DOB\":\"19801078\",\"Age\":\"null\",\"Pincode\":\"12348\",\"gender\":\"M\"}],\"schema\":[{\"columnName\":\"First______Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Last_____Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"DOB\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Pincode\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"gender\",\"columnType\":\"string\",\"nullable\":true}],\"count\":13,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"dq_AS\"},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{\"First______Name\":{\"NOT_NULL\":{\"value\":true,\"ruleName\":\"first______name_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1519767136463\"},\"NOT_EMPTY\":{\"ruleName\":\"first______name_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1207984467166\"},\"LEFT_SPACES\":{\"ruleName\":\"first______name_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"120988080970\"},\"RIGHT_SPACES\":{\"ruleName\":\"first______name_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"594115482179\"},\"UNIQUE_VALUES\":{\"ruleName\":\"first______name_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"562900458014\"},\"MIN_VALUE\":{\"ruleName\":\"first______name_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1340380166787\"},\"MAX_VALUE\":{\"ruleName\":\"first______name_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1272406369933\"},\"MIN_LENGTH\":{\"value\":5,\"ruleName\":\"first______name_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"870770715403\"},\"MAX_LENGTH\":{\"value\":8,\"ruleName\":\"first______name_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1322928552902\"},\"SQL_RULE\":{\"ruleName\":\"first______name_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1455438067508\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"first______name_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"First______Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1570217707294\"}},\"Last_____Name\":{\"NOT_NULL\":{\"ruleName\":\"last_____name_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1359758650882\"},\"NOT_EMPTY\":{\"ruleName\":\"last_____name_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"612400205067\"},\"LEFT_SPACES\":{\"ruleName\":\"last_____name_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"312748639584\"},\"RIGHT_SPACES\":{\"ruleName\":\"last_____name_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"477250424696\"},\"UNIQUE_VALUES\":{\"ruleName\":\"last_____name_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1401275675645\"},\"MIN_VALUE\":{\"ruleName\":\"last_____name_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1260494048208\"},\"MAX_VALUE\":{\"ruleName\":\"last_____name_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1667701448391\"},\"MIN_LENGTH\":{\"value\":3,\"ruleName\":\"last_____name_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"756391012649\"},\"MAX_LENGTH\":{\"value\":8,\"ruleName\":\"last_____name_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"940554093826\"},\"SQL_RULE\":{\"ruleName\":\"last_____name_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"110920488748\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"last_____name_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"Last_____Name\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1447560105507\"}},\"DOB\":{\"NOT_NULL\":{\"ruleName\":\"dob_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"949379842434\"},\"NOT_EMPTY\":{\"ruleName\":\"dob_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1183552600761\"},\"LEFT_SPACES\":{\"ruleName\":\"dob_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"324434093787\"},\"RIGHT_SPACES\":{\"ruleName\":\"dob_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1479480624323\"},\"UNIQUE_VALUES\":{\"ruleName\":\"dob_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1729558458011\"},\"MIN_VALUE\":{\"value\":19801078,\"ruleName\":\"dob_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1660837779500\"},\"MAX_VALUE\":{\"value\":19911030,\"ruleName\":\"dob_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1527991886386\"},\"MIN_LENGTH\":{\"ruleName\":\"dob_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"734174335841\"},\"MAX_LENGTH\":{\"ruleName\":\"dob_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"157454095953\"},\"SQL_RULE\":{\"ruleName\":\"dob_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1353396113470\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"dob_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"DOB\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1241713457662\"},\"RULES_LIBRARY\":{\"value\":[],\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"605139482984\"}},\"Age\":{\"NOT_NULL\":{\"ruleName\":\"age_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"668015197126\"},\"NOT_EMPTY\":{\"ruleName\":\"age_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1234055061206\"},\"LEFT_SPACES\":{\"ruleName\":\"age_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1605966302231\"},\"RIGHT_SPACES\":{\"ruleName\":\"age_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"564556412692\"},\"UNIQUE_VALUES\":{\"ruleName\":\"age_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"439565212397\"},\"MIN_VALUE\":{\"ruleName\":\"age_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1704286824180\"},\"MAX_VALUE\":{\"ruleName\":\"age_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1713983833379\"},\"MIN_LENGTH\":{\"value\":4,\"ruleName\":\"age_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1530391616136\"},\"MAX_LENGTH\":{\"value\":4,\"ruleName\":\"age_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1442540778444\"},\"SQL_RULE\":{\"ruleName\":\"age_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"981663320455\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"age_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"Age\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"916108070361\"}},\"Pincode\":{\"NOT_NULL\":{\"ruleName\":\"pincode_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1342900934912\"},\"NOT_EMPTY\":{\"ruleName\":\"pincode_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"281116779463\"},\"LEFT_SPACES\":{\"ruleName\":\"pincode_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"746684299913\"},\"RIGHT_SPACES\":{\"ruleName\":\"pincode_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1595917361704\"},\"UNIQUE_VALUES\":{\"ruleName\":\"pincode_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1110903936370\"},\"MIN_VALUE\":{\"value\":12345,\"ruleName\":\"pincode_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1611925517187\"},\"MAX_VALUE\":{\"value\":12348,\"ruleName\":\"pincode_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"755515381466\"},\"MIN_LENGTH\":{\"ruleName\":\"pincode_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1502157680706\"},\"MAX_LENGTH\":{\"ruleName\":\"pincode_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"917762372519\"},\"SQL_RULE\":{\"ruleName\":\"pincode_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"185689867458\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"pincode_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"Pincode\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"775451891799\"}},\"gender\":{\"NOT_NULL\":{\"ruleName\":\"gender_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1088815512147\"},\"NOT_EMPTY\":{\"ruleName\":\"gender_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1034994478749\"},\"LEFT_SPACES\":{\"ruleName\":\"gender_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"916752725983\"},\"RIGHT_SPACES\":{\"ruleName\":\"gender_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"289220709031\"},\"UNIQUE_VALUES\":{\"ruleName\":\"gender_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1876993801\"},\"MIN_VALUE\":{\"ruleName\":\"gender_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1349331657180\"},\"MAX_VALUE\":{\"ruleName\":\"gender_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1128327140727\"},\"MIN_LENGTH\":{\"value\":1,\"ruleName\":\"gender_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"333121694158\"},\"MAX_LENGTH\":{\"value\":1,\"ruleName\":\"gender_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1681715986776\"},\"SQL_RULE\":{\"ruleName\":\"gender_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"37023614261\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"gender_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"gender\",\"tableName\":\"datawithSpecialCharaterscsv\",\"unitTestId\":\"1695557812912\"}}},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false,\"IgnoreSpecialCharaters\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1322928552902\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"870770715403\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"940554093826\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"756391012649\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1527991886386\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1660837779500\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1442540778444\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1530391616136\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"755515381466\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1611925517187\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1681715986776\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"333121694158\",\"updated\":false},{\"unitTestCaseId\":\"1519767136463\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "dq_as",
+  "flowDesc" : "dq_AS",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/data_withSpecialCharaters.csv",
+        "tableProperties" : [ {
+          "tblName" : "datawithSpecialCharaterscsv",
+          "tblSize" : "0",
+          "tblRecordCount" : 13
+        } ],
+        "tableNamesList" : {
+          "datawithSpecialCharaterscsv" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "datawithSpecialCharaterscsv" : {
+            "rules" : [ {
+              "unitTestCaseId" : 1519767136463,
+              "ruleType" : "NOT_NULLS",
+              "operator" : "=",
+              "column" : "First______Name",
+              "creationTime" : 1752941668764,
+              "expectedPercent" : 100,
+              "level" : "Warning",
+              "description" : "first______name_not_null"
+            }, {
+              "unitTestCaseId" : 870770715403,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "First______Name",
+              "creationTime" : 1752941668764,
+              "ruleValue" : 5,
+              "level" : "Warning",
+              "description" : "first______name_min_length"
+            }, {
+              "unitTestCaseId" : 1322928552902,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "First______Name",
+              "creationTime" : 1752941668764,
+              "ruleValue" : 8,
+              "level" : "Warning",
+              "description" : "first______name_max_length"
+            }, {
+              "unitTestCaseId" : 756391012649,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "Last_____Name",
+              "creationTime" : 1752941668764,
+              "ruleValue" : 3,
+              "level" : "Warning",
+              "description" : "last_____name_min_length"
+            }, {
+              "unitTestCaseId" : 940554093826,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "Last_____Name",
+              "creationTime" : 1752941668765,
+              "ruleValue" : 8,
+              "level" : "Warning",
+              "description" : "last_____name_max_length"
+            }, {
+              "unitTestCaseId" : 1660837779500,
+              "ruleType" : "MIN_VALUE",
+              "operator" : ">=",
+              "column" : "DOB",
+              "creationTime" : 1752941668765,
+              "ruleValue" : 19801078,
+              "level" : "Warning",
+              "description" : "dob_min_value"
+            }, {
+              "unitTestCaseId" : 1527991886386,
+              "ruleType" : "MAX_VALUE",
+              "operator" : "<=",
+              "column" : "DOB",
+              "creationTime" : 1752941668765,
+              "ruleValue" : 19911030,
+              "level" : "Warning",
+              "description" : "dob_max_value"
+            }, {
+              "unitTestCaseId" : 1530391616136,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "Age",
+              "creationTime" : 1752941668765,
+              "ruleValue" : 4,
+              "level" : "Warning",
+              "description" : "age_min_length"
+            }, {
+              "unitTestCaseId" : 1442540778444,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "Age",
+              "creationTime" : 1752941668765,
+              "ruleValue" : 4,
+              "level" : "Warning",
+              "description" : "age_max_length"
+            }, {
+              "unitTestCaseId" : 1611925517187,
+              "ruleType" : "MIN_VALUE",
+              "operator" : ">=",
+              "column" : "Pincode",
+              "creationTime" : 1752941668765,
+              "ruleValue" : 12345,
+              "level" : "Warning",
+              "description" : "pincode_min_value"
+            }, {
+              "unitTestCaseId" : 755515381466,
+              "ruleType" : "MAX_VALUE",
+              "operator" : "<=",
+              "column" : "Pincode",
+              "creationTime" : 1752941668765,
+              "ruleValue" : 12348,
+              "level" : "Warning",
+              "description" : "pincode_max_value"
+            }, {
+              "unitTestCaseId" : 333121694158,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "gender",
+              "creationTime" : 1752941668765,
+              "ruleValue" : 1,
+              "level" : "Warning",
+              "description" : "gender_min_length"
+            }, {
+              "unitTestCaseId" : 1681715986776,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "gender",
+              "creationTime" : 1752941668765,
+              "ruleValue" : 1,
+              "level" : "Warning",
+              "description" : "gender_max_length"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "IN_MEMORY"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 12112,
+  "dmsProjectId" : 627,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:23:27.951732353Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
