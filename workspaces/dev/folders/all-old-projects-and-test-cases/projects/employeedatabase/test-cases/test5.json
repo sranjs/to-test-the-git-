@@ -1,15 +1,20 @@
 {
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"8bc3fd19-12ab-480d-87ab-6b8a1d631fd8\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":20010,\"tableSize\":2.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"3a0d8c64-d419-483b-a74e-e37225245926\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"DENORM_EMP_DEPT\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":6803,\"tableSize\":1.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"2ffd9aff-d29f-4b21-a089-a922c57491d7\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"Detail_Person\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"Person_Name\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"Person_Name\"],\"foreignKeyInfo\":null,\"count\":12,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"Person_Name\",\"indexInfo\":null},{\"id\":\"74389281-d8ac-4118-9801-a5e4f8e7cdcf\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"DENORM_EMP_DEPT\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":6803,\"tableSize\":1.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test5\",\"stopDifferences\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"734294274630\":{\"source\":\"3a0d8c64-d419-483b-a74e-e37225245926\",\"target\":\"74389281-d8ac-4118-9801-a5e4f8e7cdcf\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"734294274630\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
-  "executorMemory" : "2g",
   "executorCores" : 2,
+  "executorMemory" : "2g",
+  "numExecutors" : 2,
   "executeOn" : "LOCAL",
   "flowName" : "test5",
-  "APP_VERSION" : "7_49",
+  "email" : [ ],
   "flowDesc" : "test5",
-  "LicensedName" : "7_49",
-  "numExecutors" : 2,
+  "hadoop" : false,
   "livy" : false,
-  "groupName" : "dev",
+  "root" : "dataCompare",
+  "API_APP_BUILD" : "7_49",
+  "UI_VERSION" : "7_49",
+  "APP_VERSION" : "7_49",
+  "LicensedName" : "7_49",
+  "parameters" : [ ],
+  "flowType" : "COUNTS COMPARE",
   "jobMap" : {
     "source" : {
       "dependentJob" : true,
@@ -24,23 +29,26 @@
           "groupName" : "dev"
         },
         "tableNamesList" : {
-          "CUSTOMER" : null,
-          "DENORM_EMP_DEPT" : null
+          "Person_Details_A" : {
+            "numberOfPart" : 0,
+            "column" : "id"
+          },
+          "Person_Details_b" : null
         },
         "tableProperties" : [ {
-          "tblName" : "CUSTOMER",
-          "tblSize" : "2.52",
-          "tblRecordCount" : 20010,
-          "primaryKeys" : [ ],
+          "tblName" : "Person_Details_A",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 100,
+          "primaryKeys" : [ "id" ],
           "indexKeys" : [ ],
           "foreignKeys" : [ ],
           "primaryKeysEnabled" : true,
           "indexKeysEnabled" : false,
           "foreignKeysEnabled" : false
         }, {
-          "tblName" : "DENORM_EMP_DEPT",
-          "tblSize" : "1.52",
-          "tblRecordCount" : 6803,
+          "tblName" : "Person_Details_b",
+          "tblSize" : "0.05",
+          "tblRecordCount" : 100,
           "primaryKeys" : [ ],
           "indexKeys" : [ ],
           "foreignKeys" : [ ],
@@ -67,26 +75,26 @@
           "groupName" : "dev"
         },
         "tableNamesList" : {
-          "Detail_Person" : {
+          "Person_Details_A" : {
             "numberOfPart" : 0,
-            "column" : "Person_Name"
+            "column" : "id"
           },
-          "DENORM_EMP_DEPT" : null
+          "Person_Details_b" : null
         },
         "tableProperties" : [ {
-          "tblName" : "Detail_Person",
+          "tblName" : "Person_Details_A",
           "tblSize" : "0.02",
-          "tblRecordCount" : 12,
-          "primaryKeys" : [ "Person_Name" ],
+          "tblRecordCount" : 100,
+          "primaryKeys" : [ "id" ],
           "indexKeys" : [ ],
           "foreignKeys" : [ ],
           "primaryKeysEnabled" : true,
           "indexKeysEnabled" : false,
           "foreignKeysEnabled" : false
         }, {
-          "tblName" : "DENORM_EMP_DEPT",
-          "tblSize" : "1.52",
-          "tblRecordCount" : 6803,
+          "tblName" : "Person_Details_b",
+          "tblSize" : "0.05",
+          "tblRecordCount" : 100,
           "primaryKeys" : [ ],
           "indexKeys" : [ ],
           "foreignKeys" : [ ],
@@ -107,13 +115,31 @@
       "id" : "dataCompare",
       "jobTypes" : [ "COUNTS_COMPARE" ],
       "filesCompareList" : [ {
-        "unitTestCaseId" : 734294274630,
+        "unitTestCaseId" : 1186543654101,
         "matchBoth" : true,
         "compareType" : "COUNTS_COMPARE",
         "compareColumns" : false,
         "compareCommonColumnsOnly" : true,
         "srcDestTableMap" : {
-          "DENORM_EMP_DEPT" : "DENORM_EMP_DEPT"
+          "Person_Details_A" : "Person_Details_A"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      }, {
+        "unitTestCaseId" : 1548227787115,
+        "matchBoth" : true,
+        "compareType" : "COUNTS_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "Person_Details_b" : "Person_Details_b"
         },
         "srcDestComponentMap" : {
           "source" : "target"
@@ -135,18 +161,13 @@
       }
     }
   },
-  "root" : "dataCompare",
-  "hadoop" : false,
-  "UI_VERSION" : "7_49",
-  "API_APP_BUILD" : "7_49",
-  "parameters" : [ ],
-  "email" : [ ],
-  "flowType" : "COUNTS COMPARE",
-  "flowId" : 7041,
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"36d0fe46-ed12-478d-8a9c-e9156146148a\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"Person_Details_A\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"id\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"id\",\"indexInfo\":null},{\"id\":\"121de7fd-ca9c-4a93-ace1-7d47bfc21069\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"Person_Details_b\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":0.05,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"eddd383e-1e08-4fff-8a9b-7472ec1be18b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"Person_Details_A\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"id\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"id\",\"indexInfo\":null},{\"id\":\"c2930900-afa4-49bf-805f-35ff8388646e\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"Person_Details_b\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":0.05,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test5\",\"stopDifferences\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"1186543654101\":{\"source\":\"36d0fe46-ed12-478d-8a9c-e9156146148a\",\"target\":\"eddd383e-1e08-4fff-8a9b-7472ec1be18b\",\"matchBoth\":\"a=b\",\"columnMapping\":[]},\"1548227787115\":{\"source\":\"121de7fd-ca9c-4a93-ace1-7d47bfc21069\",\"target\":\"c2930900-afa4-49bf-805f-35ff8388646e\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1186543654101\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1548227787115\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 7042,
   "dmsProjectId" : 625,
   "syncInfo" : {
     "syncId" : "FOLDER",
-    "timestamp" : "2026-02-02T07:19:49.329355016Z",
+    "timestamp" : "2026-02-02T07:19:54.351517522Z",
     "syncType" : "FOLDER",
     "user" : "system"
   }
