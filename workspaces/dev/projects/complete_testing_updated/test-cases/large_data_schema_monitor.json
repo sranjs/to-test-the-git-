@@ -1,0 +1,166 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"schema_time\":1732618166479,\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"2a0628e7-22b2-475e-9181-d12c60818b2c\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${connectionString}\",\"schemaName\":\"${connectionString}\",\"typeTable\":\"TABLE\",\"tableName\":\"ORDERS\",\"partitionProperties\":{\"numberOfPart\":15,\"column\":null},\"defaultSchema\":[{\"columnName\":\"O_CLERK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_COMMENT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":79,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERDATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERPRIORITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERSTATUS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_SHIPPRIORITY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_TOTALPRICE\",\"columnType\":\"decimal(12,0)\",\"actualColumnType\":\"float\",\"nullable\":true,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"O_CLERK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_COMMENT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":79,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERDATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERPRIORITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERSTATUS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_SHIPPRIORITY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_TOTALPRICE\",\"columnType\":\"decimal(12,0)\",\"actualColumnType\":\"float\",\"nullable\":true,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1305112,\"tableSize\":295.84,\"noOfPartition\":15,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"large_data_schema_monitor\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[]}",
+  "executorMemory" : "1g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "large_data_schema_monitor",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "large_data_schema_monitor",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "${connectionString}",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "${connectionString}",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "ORDERS" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "ORDERS",
+          "tblSize" : "295.84",
+          "tblRecordCount" : 1305112,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "schemaMonitoring" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "description" : "schema monitoring component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "schemaMonitoring",
+      "jobType" : "SCHEMA_MONITORING",
+      "editData" : {
+        "schemaMonitoring" : {
+          "schemaCollectedTime" : 1732618166479,
+          "connectionName" : "${connectionString}",
+          "databaseName" : "${connectionString}",
+          "schema" : "${connectionString}",
+          "tableSchemas" : {
+            "ORDERS" : {
+              "schema" : [ {
+                "columnName" : "O_CLERK",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : true,
+                "columnMaxLength" : 15,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "O_COMMENT",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : true,
+                "columnMaxLength" : 79,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "O_CUSTKEY",
+                "columnType" : "long",
+                "actualColumnType" : "bigint",
+                "nullable" : true,
+                "columnMaxLength" : 19,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "O_ORDERDATE",
+                "columnType" : "date",
+                "actualColumnType" : "date",
+                "nullable" : true,
+                "columnMaxLength" : 0,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "O_ORDERKEY",
+                "columnType" : "long",
+                "actualColumnType" : "bigint",
+                "nullable" : true,
+                "columnMaxLength" : 19,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "O_ORDERPRIORITY",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : true,
+                "columnMaxLength" : 15,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "O_ORDERSTATUS",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : true,
+                "columnMaxLength" : 1,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "O_SHIPPRIORITY",
+                "columnType" : "long",
+                "actualColumnType" : "bigint",
+                "nullable" : true,
+                "columnMaxLength" : 19,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "O_TOTALPRICE",
+                "columnType" : "decimal(12,0)",
+                "actualColumnType" : "float",
+                "nullable" : true,
+                "columnMaxLength" : 12,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              } ],
+              "sampleData" : null,
+              "sqlExecution" : null,
+              "primaryKey" : null,
+              "foreignKeyInfo" : null,
+              "count" : 1305112,
+              "tableSize" : 295.84,
+              "noOfPartition" : 15,
+              "indexInfo" : null
+            }
+          }
+        }
+      }
+    }
+  },
+  "root" : "schemaMonitoring",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "SCHEMA MONITORING",
+  "flowId" : 7338,
+  "dmsProjectId" : 627,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:36:20.613993412Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}

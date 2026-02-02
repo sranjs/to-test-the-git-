@@ -1,16 +1,13 @@
 {
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"20fb1ba8-5b72-4f43-b319-456251f1bb49\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${var1}\",\"schemaName\":\"${var2}\",\"typeTable\":\"TABLE\",\"tableName\":\"TEST_METRICS_10K\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"id\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":9694,\"tableSize\":1.52,\"noOfPartition\":0,\"partitionColumn\":\"id\",\"indexInfo\":null}],\"target\":[{\"id\":\"e0ba0149-e957-4f64-a727-5e256a74cbc9\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"${var1}\",\"schemaName\":\"${var2}\",\"typeTable\":\"TABLE\",\"tableName\":\"TEST_METRICS_10K\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"id\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":9694,\"tableSize\":1.52,\"noOfPartition\":0,\"partitionColumn\":\"id\",\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"test_cc\"},\"mapping\":{\"mappings\":{\"160764475022\":{\"source\":\"20fb1ba8-5b72-4f43-b319-456251f1bb49\",\"target\":\"e0ba0149-e957-4f64-a727-5e256a74cbc9\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"160764475022\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
   "executorCores" : 2,
-  "executorMemory" : "8g",
-  "numExecutors" : 2,
   "executeOn" : "LOCAL",
   "flowName" : "test_cc",
-  "email" : [ ],
   "flowDesc" : "test_cc",
-  "hadoop" : false,
+  "numExecutors" : 2,
   "livy" : false,
-  "root" : "dataCompare",
-  "parameters" : [ ],
-  "flowType" : "COUNTS COMPARE",
+  "groupName" : "dev",
   "jobMap" : {
     "source" : {
       "dependentJob" : true,
@@ -25,19 +22,21 @@
           "groupName" : "dev"
         },
         "tableNamesList" : {
-          "ORDERS" : null
+          "TEST_METRICS_10K" : {
+            "numberOfPart" : 0,
+            "column" : "id"
+          }
         },
         "tableProperties" : [ {
-          "tblName" : "ORDERS",
-          "tblSize" : "295.84",
-          "tblRecordCount" : 1305112,
-          "primaryKeys" : [ ],
+          "tblName" : "TEST_METRICS_10K",
+          "tblSize" : "1.52",
+          "tblRecordCount" : 9694,
+          "primaryKeys" : [ "id" ],
           "indexKeys" : [ ],
           "foreignKeys" : [ ],
           "primaryKeysEnabled" : true,
           "indexKeysEnabled" : false,
-          "foreignKeysEnabled" : false,
-          "filterCondition" : "O_ORDERSTATUS like 'F'"
+          "foreignKeysEnabled" : false
         } ]
       } ],
       "position" : {
@@ -58,19 +57,21 @@
           "groupName" : "dev"
         },
         "tableNamesList" : {
-          "ORDERS" : null
+          "TEST_METRICS_10K" : {
+            "numberOfPart" : 0,
+            "column" : "id"
+          }
         },
         "tableProperties" : [ {
-          "tblName" : "ORDERS",
-          "tblSize" : "295.84",
-          "tblRecordCount" : 1305112,
-          "primaryKeys" : [ ],
+          "tblName" : "TEST_METRICS_10K",
+          "tblSize" : "1.52",
+          "tblRecordCount" : 9694,
+          "primaryKeys" : [ "id" ],
           "indexKeys" : [ ],
           "foreignKeys" : [ ],
           "primaryKeysEnabled" : true,
           "indexKeysEnabled" : false,
-          "foreignKeysEnabled" : false,
-          "filterCondition" : "O_ORDERSTATUS like 'O'"
+          "foreignKeysEnabled" : false
         } ]
       } ],
       "position" : {
@@ -85,13 +86,13 @@
       "id" : "dataCompare",
       "jobTypes" : [ "COUNTS_COMPARE" ],
       "filesCompareList" : [ {
-        "unitTestCaseId" : 29274952663,
+        "unitTestCaseId" : 160764475022,
         "matchBoth" : true,
         "compareType" : "COUNTS_COMPARE",
         "compareColumns" : false,
         "compareCommonColumnsOnly" : true,
         "srcDestTableMap" : {
-          "ORDERS" : "ORDERS"
+          "TEST_METRICS_10K" : "TEST_METRICS_10K"
         },
         "srcDestComponentMap" : {
           "source" : "target"
@@ -114,13 +115,16 @@
       }
     }
   },
-  "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"3724df42-a693-4c6c-8165-ef5e63dc63fc\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"${var1}\",\"schemaName\":\"${var2}\",\"typeTable\":\"TABLE\",\"tableName\":\"ORDERS\",\"partitionProperties\":{\"numberOfPart\":15,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1305112,\"tableSize\":295.84,\"noOfPartition\":15,\"partitionColumn\":null,\"indexInfo\":null,\"filterCondition\":\"O_ORDERSTATUS like 'F'\"}],\"target\":[{\"id\":\"fa34e210-db0e-4815-9e95-8b5c7f4cd76f\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"${var1}\",\"schemaName\":\"${var2}\",\"typeTable\":\"TABLE\",\"tableName\":\"ORDERS\",\"partitionProperties\":{\"numberOfPart\":15,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1305112,\"tableSize\":295.84,\"noOfPartition\":15,\"partitionColumn\":null,\"indexInfo\":null,\"filterCondition\":\"O_ORDERSTATUS like 'O'\"}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":8,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"test_cc\"},\"mapping\":{\"mappings\":{\"29274952663\":{\"source\":\"3724df42-a693-4c6c-8165-ef5e63dc63fc\",\"target\":\"fa34e210-db0e-4815-9e95-8b5c7f4cd76f\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"29274952663\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
-  "flowId" : 11348,
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "COUNTS COMPARE",
+  "flowId" : 11213,
   "dmsProjectId" : 627,
   "syncInfo" : {
     "syncId" : "PROJECT",
-    "timestamp" : "2026-02-02T07:27:05.111967712Z",
+    "timestamp" : "2026-02-02T07:28:45.013999131Z",
     "syncType" : "PROJECT",
     "user" : "system"
   }

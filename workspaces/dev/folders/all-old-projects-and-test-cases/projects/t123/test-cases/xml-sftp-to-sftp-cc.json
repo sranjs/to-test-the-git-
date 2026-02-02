@@ -1,0 +1,151 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "xml sftp to sftp cc",
+  "email" : [ ],
+  "flowDesc" : "xml sftp to sftp cc",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "API_APP_BUILD" : "7_49",
+  "UI_VERSION" : "7_49",
+  "APP_VERSION" : "7_49",
+  "LicensedName" : "7_49",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "XML",
+        "datasetPath" : "/upload/xml/People.xml",
+        "tableProperties" : [ {
+          "tblName" : "peopledetails",
+          "tblSize" : "0",
+          "tblRecordCount" : 1
+        } ],
+        "tableNamesList" : {
+          "peopledetails" : null
+        },
+        "params" : {
+          "rowTag" : "Person",
+          "dropRecordsWithAllNulls" : false,
+          "flattenJson" : true,
+          "fileLocation" : "SFTP"
+        },
+        "jdbcData" : {
+          "connectionName" : "sftp",
+          "groupName" : "dev"
+        }
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "XML",
+        "datasetPath" : "/upload/xml/People.xml",
+        "tableProperties" : [ {
+          "tblName" : "persondetails",
+          "tblSize" : "0",
+          "tblRecordCount" : 1
+        } ],
+        "tableNamesList" : {
+          "persondetails" : null
+        },
+        "params" : {
+          "rowTag" : "Person",
+          "dropRecordsWithAllNulls" : false,
+          "flattenJson" : true,
+          "fileLocation" : "SFTP"
+        },
+        "jdbcData" : {
+          "connectionName" : "sftp",
+          "groupName" : "dev"
+        }
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 40093255001,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "peopledetails" : "persondetails"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ ],
+        "compareKeyNew" : [ ],
+        "columnMapping" : [ {
+          "srcColumn" : "\"Address_ZipCode\"",
+          "destColumn" : "\"Address_ZipCode\""
+        }, {
+          "srcColumn" : "\"Address_Street\"",
+          "destColumn" : "\"Address_Street\""
+        }, {
+          "srcColumn" : "\"Address_State\"",
+          "destColumn" : "\"Address_State\""
+        }, {
+          "srcColumn" : "\"Address_Country\"",
+          "destColumn" : "\"Address_Country\""
+        }, {
+          "srcColumn" : "\"Address_City\"",
+          "destColumn" : "\"Address_City\""
+        }, {
+          "srcColumn" : "\"Name\"",
+          "destColumn" : "\"Name\""
+        }, {
+          "srcColumn" : "\"Age\"",
+          "destColumn" : "\"Age\""
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"a89f073d-a3de-4ef1-b44b-626a77809779\",\"from\":\"source\",\"type\":\"XML\",\"tableSize\":0,\"fileName\":\"\",\"filePath\":\"\",\"s3ToHdf\":\"\",\"sftpDataset\":true,\"sftpType\":\"sftp\",\"sftpFilePath\":\"/upload/xml/People.xml\",\"fileLocation\":\"SFTP\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"flattenJson\":true,\"rowTag\":\"Person\",\"tableName\":\"peopledetails\",\"sampleData\":[{\"Age\":35,\"Name\":\"Harry J\",\"Address_City\":\"Raleigh\",\"Address_Country\":\"USA\",\"Address_State\":\"NC\",\"Address_Street\":\"1234 Elm Street\",\"Address_ZipCode\":27601}],\"schema\":[{\"columnName\":\"Age\",\"columnType\":\"long\",\"nullable\":true},{\"columnName\":\"Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_City\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_Country\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_State\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_Street\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_ZipCode\",\"columnType\":\"long\",\"nullable\":true}],\"count\":1,\"isPrimaryDataset\":true}],\"target\":[{\"id\":\"ddc29185-4a5d-496b-b2db-051e5e98fd63\",\"from\":\"target\",\"type\":\"XML\",\"tableSize\":0,\"fileName\":\"\",\"filePath\":\"\",\"s3ToHdf\":\"\",\"sftpDataset\":true,\"sftpType\":\"sftp\",\"sftpFilePath\":\"/upload/xml/People.xml\",\"fileLocation\":\"SFTP\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"flattenJson\":true,\"rowTag\":\"Person\",\"tableName\":\"persondetails\",\"sampleData\":[{\"Age\":35,\"Name\":\"Harry J\",\"Address_City\":\"Raleigh\",\"Address_Country\":\"USA\",\"Address_State\":\"NC\",\"Address_Street\":\"1234 Elm Street\",\"Address_ZipCode\":27601}],\"schema\":[{\"columnName\":\"Age\",\"columnType\":\"long\",\"nullable\":true},{\"columnName\":\"Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_City\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_Country\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_State\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_Street\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Address_ZipCode\",\"columnType\":\"long\",\"nullable\":true}],\"count\":1,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"xml sftp to sftp cc\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"40093255001\":{\"source\":\"a89f073d-a3de-4ef1-b44b-626a77809779\",\"target\":\"ddc29185-4a5d-496b-b2db-051e5e98fd63\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"68eddcd4-fbe1-42da-9b18-d5a6ca4754d3\",\"sourceColumnName\":\"Address_ZipCode\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Address_ZipCode\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8edf007a-9fd9-4f25-a695-6d7c503fd174\",\"sourceColumnName\":\"Address_Street\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Address_Street\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"c1441e66-dee9-48b9-96a4-331dceac6527\",\"sourceColumnName\":\"Address_State\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Address_State\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"e1b6e587-88a4-4aa6-b0c3-26e6e1e3bd15\",\"sourceColumnName\":\"Address_Country\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Address_Country\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"fd44c3c1-f39f-4849-9f30-3940b97bbc89\",\"sourceColumnName\":\"Address_City\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Address_City\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"285296c6-7c9e-4609-9034-2f20a9767276\",\"sourceColumnName\":\"Name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"401bd8f7-7020-4092-bb72-1461fdd56a3d\",\"sourceColumnName\":\"Age\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Age\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\",\"detectCompareKeys\":true}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"40093255001\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 10758,
+  "dmsProjectId" : 685,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:32:48.672459557Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

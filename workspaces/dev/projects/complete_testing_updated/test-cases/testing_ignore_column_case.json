@@ -1,0 +1,126 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Schema\"],\"tablesList\":{\"source\":[{\"id\":\"313d0ee6-dd2b-4a30-9b16-5f3af2af7a33\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"test.csv\",\"filePath\":\"/my_data/user_files/test123/test.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"testcsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"id\":\"1\",\"firstName\":\"John\",\"gender\":\"Male\",\"city\":\"Chicago\",\"lastName\":\"Doe\"},{\"id\":\"2\",\"firstName\":\"Jane\",\"gender\":\"Female\",\"city\":\"Chicago\",\"lastName\":\"Smith\"},{\"id\":\"3\",\"firstName\":\"Michael\",\"gender\":\"Male\",\"city\":\"Chicago\",\"lastName\":\"Brown\"},{\"id\":\"4\",\"firstName\":\"Emily\",\"gender\":\"Female\",\"city\":\"Houston\",\"lastName\":\"Wilson\"},{\"id\":\"5\",\"firstName\":\"Daniel\",\"gender\":\"Male\",\"city\":\"Houston\",\"lastName\":\"Johnson\"},{\"id\":\"6\",\"firstName\":\"Sarah\",\"gender\":\"Female\",\"city\":\"Houston\",\"lastName\":\"Lee\"},{\"id\":\"7\",\"firstName\":\"Matthew\",\"gender\":\"Male\",\"city\":\"Houston\",\"lastName\":\"Garcia\"}],\"schema\":[{\"columnName\":\"id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"firstName\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"gender\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"city\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"lastName\",\"columnType\":\"string\",\"nullable\":true}],\"count\":7,\"isPrimaryDataset\":true}],\"target\":[{\"id\":\"627b286f-aba0-4a5a-8aff-72b973a53a01\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"TEST (3).csv\",\"filePath\":\"/my_data/user_files/test123/TEST (3).csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"TEST3csv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"ID\":\"1\",\"FIRSTNAME\":\"JOHN\",\"GENDER\":\"MALE\",\"CITY\":\"CHICAGO\",\"LASTNAME\":\"DOE\"},{\"ID\":\"2\",\"FIRSTNAME\":\"JANE\",\"GENDER\":\"FEMALE\",\"CITY\":\"CHICAGO\",\"LASTNAME\":\"SMITH\"},{\"ID\":\"3\",\"FIRSTNAME\":\"MICHAEL\",\"GENDER\":\"MALE\",\"CITY\":\"CHICAGO\",\"LASTNAME\":\"BROWN\"},{\"ID\":\"4\",\"FIRSTNAME\":\"EMILY\",\"GENDER\":\"FEMALE\",\"CITY\":\"HOUSTON\",\"LASTNAME\":\"WILSON\"},{\"ID\":\"5\",\"FIRSTNAME\":\"DANIEL\",\"GENDER\":\"MALE\",\"CITY\":\"HOUSTON\",\"LASTNAME\":\"JOHNSON\"},{\"ID\":\"6\",\"FIRSTNAME\":\"SARAH\",\"GENDER\":\"FEMALE\",\"CITY\":\"HOUSTON\",\"LASTNAME\":\"LEE\"},{\"ID\":\"7\",\"FIRSTNAME\":\"MATTHEW\",\"GENDER\":\"MALE\",\"CITY\":\"HOUSTON\",\"LASTNAME\":\"GARCIA\"}],\"schema\":[{\"columnName\":\"ID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"FIRSTNAME\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"CITY\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"LASTNAME\",\"columnType\":\"string\",\"nullable\":true}],\"count\":7,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"testing_ignore_column_case\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":true,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"dimensions\":[],\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"sendOutputAttachments\":false,\"edit\":false}},\"mapping\":{\"mappings\":{\"73762752477\":{\"source\":\"313d0ee6-dd2b-4a30-9b16-5f3af2af7a33\",\"target\":\"627b286f-aba0-4a5a-8aff-72b973a53a01\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"5dcbc6cd-4612-4b30-8033-2613f7ab0b4e\",\"sourceColumnName\":\"lastName\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"LASTNAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"d86db9bb-b921-4f0e-a868-be6afbc79847\",\"sourceColumnName\":\"city\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"CITY\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"77fceb45-d31c-4310-8607-0df9f8dfa7f5\",\"sourceColumnName\":\"gender\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"GENDER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"1e39b02f-780e-4022-8dd6-d311f4302b0e\",\"sourceColumnName\":\"firstName\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"FIRSTNAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"01a4f1eb-6e4b-4c56-a814-343ad6aed343\",\"sourceColumnName\":\"id\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"ID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"73762752477\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "testing_ignore_column_case",
+  "APP_VERSION" : "7_79",
+  "flowDesc" : "testing_ignore_column_case",
+  "LicensedName" : "7_79",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/test123/test.csv",
+        "tableProperties" : [ {
+          "tblName" : "testcsv",
+          "tblSize" : "0",
+          "tblRecordCount" : 7
+        } ],
+        "tableNamesList" : {
+          "testcsv" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/test123/TEST (3).csv",
+        "tableProperties" : [ {
+          "tblName" : "TEST3csv",
+          "tblSize" : "0",
+          "tblRecordCount" : 7
+        } ],
+        "tableNamesList" : {
+          "TEST3csv" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "SCHEMA_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 73762752477,
+        "matchBoth" : true,
+        "compareType" : "SCHEMA_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "testcsv" : "TEST3csv"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5",
+          "IGNORE_COLUMN_CASE_SCHEMA_COMPARE" : "true"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_79",
+  "API_APP_BUILD" : "7_79",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "SCHEMA COMPARE",
+  "flowId" : 8623,
+  "dmsProjectId" : 627,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:32:35.636194816Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
