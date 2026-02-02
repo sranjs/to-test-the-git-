@@ -1,0 +1,298 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "four tbls",
+  "email" : [ ],
+  "flowDesc" : "four tbls",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "API_APP_BUILD" : "6_94",
+  "UI_VERSION" : "6_94",
+  "APP_VERSION" : "6_94",
+  "LicensedName" : "6_94",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "OLTPDB",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "Mysql_oltpdb",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "web_sales" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "web_sales",
+          "tblSize" : "1",
+          "tblRecordCount" : 3003,
+          "primaryKeys" : [ "ws_item_sk", "ws_item_sk", "ws_order_number", "ws_order_number" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "OLTPDB",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "Mysql_oltpdb",
+          "groupName" : "dev"
+        },
+        "transformationSQL" : true,
+        "sqlStatements" : {
+          "Complex_NetAmountWithShipAndTaxes" : [ {
+            "sql" : "SELECT i_item_sk ws_item_sk, word_order_id ws_order_number, ((wlin_sales_price * wlin_quantity)-wlin_coupon_amt + (wlin_ship_cost * wlin_quantity)) * (1 + web_tax_percentage) as WS_NET_PAID_INC_SHIP_TAX FROM s_web_order JOIN s_web_order_lineitem ON (word_order_id = wlin_order_id) LEFT OUTER JOIN item ON (wlin_item_id = i_item_id AND i_rec_end_date IS NULL)  LEFT OUTER JOIN web_site ON (word_web_site_id = web_site_id AND web_rec_end_date IS NULL) order by ws_item_sk, ws_order_number ",
+            "name" : "Complex_NetAmountWithShipAndTaxes"
+          } ],
+          "Medium_TotalDiscountReceived" : [ {
+            "sql" : "SELECT (i_item_sk) as ws_item_sk, (word_order_id)  as ws_order_number, (i_current_price-wlin_sales_price)*wlin_quantity ws_ext_discount_amt FROM s_web_order JOIN s_web_order_lineitem ON (word_order_id = wlin_order_id) LEFT OUTER JOIN item ON (wlin_item_id = i_item_id AND i_rec_end_date IS NULL)  LEFT OUTER JOIN web_site ON (word_web_site_id = web_site_id AND web_rec_end_date IS NULL) order by ws_item_sk, ws_order_number",
+            "name" : "Medium_TotalDiscountReceived"
+          } ],
+          "Medium_NetAmountWithTax" : [ {
+            "sql" : "SELECT (i_item_sk) as ws_item_sk, (word_order_id)  as ws_order_number, ((wlin_sales_price * wlin_quantity)-wlin_coupon_amt)*(1+web_tax_percentage) ws_net_paid_inc_tax FROM s_web_order JOIN s_web_order_lineitem ON (word_order_id = wlin_order_id) LEFT OUTER JOIN item ON (wlin_item_id = i_item_id AND i_rec_end_date IS NULL)  LEFT OUTER JOIN web_site ON (word_web_site_id = web_site_id AND web_rec_end_date IS NULL) order by ws_item_sk, ws_order_number",
+            "name" : "Medium_NetAmountWithTax"
+          } ],
+          "Simple_PassThroughData" : [ {
+            "sql" : "SELECT (i_item_sk) as ws_item_sk, (word_order_id)  as ws_order_number, c1.c_customer_sk ws_bill_customer_sk, c1.c_current_cdemo_sk ws_bill_cdemo_sk, c1.c_current_hdemo_sk ws_bill_hdemo_sk, c1.c_current_addr_sk ws_bill_addr_sk, c2.c_customer_sk ws_ship_customer_sk, c2.c_current_cdemo_sk ws_ship_cdemo_sk, c2.c_current_hdemo_sk ws_ship_hdemo_sk, c2.c_current_addr_sk ws_ship_addr_sk, wp_web_page_sk ws_web_page_sk, web_site_sk ws_web_site_sk, sm_ship_mode_sk ws_ship_mode_sk, w_warehouse_sk ws_warehouse_sk, p_promo_sk ws_promo_sk FROM s_web_order LEFT OUTER JOIN date_dim d1 ON (cast(word_order_date as date) = d1.d_date) LEFT OUTER JOIN time_dim ON (word_order_time = t_time) LEFT OUTER JOIN customer c1 ON (word_bill_customer_id = c1.c_customer_id) LEFT OUTER JOIN customer c2 ON (word_ship_customer_id = c2.c_customer_id) LEFT OUTER JOIN web_site ON (word_web_site_id = web_site_id AND web_rec_end_date IS NULL) LEFT OUTER JOIN ship_mode ON (word_ship_mode_id = sm_ship_mode_id) JOIN s_web_order_lineitem ON (word_order_id = wlin_order_id) LEFT OUTER JOIN item ON (wlin_item_id = i_item_id AND i_rec_end_date IS NULL) LEFT OUTER JOIN date_dim d2 ON (cast(wlin_ship_date as date) = d2.d_date) LEFT OUTER JOIN web_page ON (wlin_web_page_id = wp_web_page_id AND wp_rec_end_date IS NULL) LEFT OUTER JOIN promotion ON (wlin_promotion_id = p_promo_id) LEFT OUTER JOIN warehouse ON (wlin_warehouse_id = w_warehouse_id)",
+            "name" : "Simple_PassThroughData"
+          } ]
+        },
+        "tableNamesList" : {
+          "Complex_NetAmountWithShipAndTaxes" : null,
+          "Medium_TotalDiscountReceived" : null,
+          "Medium_NetAmountWithTax" : null,
+          "Simple_PassThroughData" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "Complex_NetAmountWithShipAndTaxes"
+        }, {
+          "tblName" : "Medium_TotalDiscountReceived"
+        }, {
+          "tblName" : "Medium_NetAmountWithTax"
+        }, {
+          "tblName" : "Simple_PassThroughData"
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "web_sales" : "Complex_NetAmountWithShipAndTaxes"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "ws_order_number", "ws_item_sk" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "ws_order_number",
+          "destColumn" : "ws_order_number"
+        }, {
+          "srcColumn" : "ws_item_sk",
+          "destColumn" : "ws_item_sk"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "ws_order_number",
+          "destColumn" : "ws_order_number"
+        }, {
+          "srcColumn" : "ws_net_paid_inc_ship_tax",
+          "destColumn" : "WS_NET_PAID_INC_SHIP_TAX"
+        }, {
+          "srcColumn" : "ws_item_sk",
+          "destColumn" : "ws_item_sk"
+        } ]
+      }, {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "web_sales" : "Medium_TotalDiscountReceived"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "ws_order_number", "ws_item_sk" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "ws_order_number",
+          "destColumn" : "ws_order_number"
+        }, {
+          "srcColumn" : "ws_item_sk",
+          "destColumn" : "ws_item_sk"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "ws_order_number",
+          "destColumn" : "ws_order_number"
+        }, {
+          "srcColumn" : "ws_item_sk",
+          "destColumn" : "ws_item_sk"
+        }, {
+          "srcColumn" : "ws_ext_discount_amt",
+          "destColumn" : "ws_ext_discount_amt"
+        } ]
+      }, {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "web_sales" : "Medium_NetAmountWithTax"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "ws_order_number", "ws_item_sk" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "ws_order_number",
+          "destColumn" : "ws_order_number"
+        }, {
+          "srcColumn" : "ws_item_sk",
+          "destColumn" : "ws_item_sk"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "ws_order_number",
+          "destColumn" : "ws_order_number"
+        }, {
+          "srcColumn" : "ws_net_paid_inc_tax",
+          "destColumn" : "ws_net_paid_inc_tax"
+        }, {
+          "srcColumn" : "ws_item_sk",
+          "destColumn" : "ws_item_sk"
+        } ]
+      }, {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "web_sales" : "Simple_PassThroughData"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "ws_order_number", "ws_item_sk" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "ws_order_number",
+          "destColumn" : "ws_order_number"
+        }, {
+          "srcColumn" : "ws_item_sk",
+          "destColumn" : "ws_item_sk"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "ws_web_site_sk",
+          "destColumn" : "ws_web_site_sk"
+        }, {
+          "srcColumn" : "ws_web_page_sk",
+          "destColumn" : "ws_web_page_sk"
+        }, {
+          "srcColumn" : "ws_warehouse_sk",
+          "destColumn" : "ws_warehouse_sk"
+        }, {
+          "srcColumn" : "ws_ship_mode_sk",
+          "destColumn" : "ws_ship_mode_sk"
+        }, {
+          "srcColumn" : "ws_ship_hdemo_sk",
+          "destColumn" : "ws_ship_hdemo_sk"
+        }, {
+          "srcColumn" : "ws_ship_customer_sk",
+          "destColumn" : "ws_ship_customer_sk"
+        }, {
+          "srcColumn" : "ws_ship_cdemo_sk",
+          "destColumn" : "ws_ship_cdemo_sk"
+        }, {
+          "srcColumn" : "ws_ship_addr_sk",
+          "destColumn" : "ws_ship_addr_sk"
+        }, {
+          "srcColumn" : "ws_promo_sk",
+          "destColumn" : "ws_promo_sk"
+        }, {
+          "srcColumn" : "ws_order_number",
+          "destColumn" : "ws_order_number"
+        }, {
+          "srcColumn" : "ws_item_sk",
+          "destColumn" : "ws_item_sk"
+        }, {
+          "srcColumn" : "ws_bill_hdemo_sk",
+          "destColumn" : "ws_bill_hdemo_sk"
+        }, {
+          "srcColumn" : "ws_bill_customer_sk",
+          "destColumn" : "ws_bill_customer_sk"
+        }, {
+          "srcColumn" : "ws_bill_cdemo_sk",
+          "destColumn" : "ws_bill_cdemo_sk"
+        }, {
+          "srcColumn" : "ws_bill_addr_sk",
+          "destColumn" : "ws_bill_addr_sk"
+        } ]
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"5bf5f034-1e26-4f17-af4e-001849b39dc1\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"tableName\":\"web_sales\",\"schema\":[{\"columnName\":\"ws_bill_addr_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_bill_cdemo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_bill_customer_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_bill_hdemo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_coupon_amt\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_ext_discount_amt\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_ext_list_price\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_ext_sales_price\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_ext_ship_cost\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_ext_tax\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_ext_wholesale_cost\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_item_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_list_price\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_net_paid\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_net_paid_inc_ship\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_net_paid_inc_ship_tax\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_net_paid_inc_tax\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_net_profit\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_order_number\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_promo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_quantity\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_sales_price\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ws_ship_addr_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_ship_cdemo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_ship_customer_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_ship_date_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_ship_hdemo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_ship_mode_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_sold_date_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_sold_time_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_warehouse_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_web_page_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_web_site_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ws_wholesale_cost\",\"columnType\":\"double\",\"actualColumnType\":\"decimal\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ws_item_sk\",\"ws_item_sk\",\"ws_order_number\",\"ws_order_number\"],\"foreignKeyInfo\":null,\"count\":3003,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":\"ws_item_sk\",\"indexInfo\":null}],\"target\":[{\"id\":\"5333ff85-6bb4-42d7-b162-7cad86a5a448\",\"from\":\"target\",\"type\":\"SQL\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"tableName\":\"Complex_NetAmountWithShipAndTaxes\",\"schema\":[{\"columnName\":\"ws_item_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_order_number\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"WS_NET_PAID_INC_SHIP_TAX\",\"columnType\":\"decimal(25, 4)\",\"actualColumnType\":\"DECIMAL\",\"nullable\":false}],\"sqlQuery\":\"U0VMRUNUIGlfaXRlbV9zayB3c19pdGVtX3NrLCB3b3JkX29yZGVyX2lkIHdzX29yZGVyX251bWJlciwgKCh3bGluX3NhbGVzX3ByaWNlICogd2xpbl9xdWFudGl0eSktd2xpbl9jb3Vwb25fYW10ICsgKHdsaW5fc2hpcF9jb3N0ICogd2xpbl9xdWFudGl0eSkpICogKDEgKyB3ZWJfdGF4X3BlcmNlbnRhZ2UpIGFzIFdTX05FVF9QQUlEX0lOQ19TSElQX1RBWCBGUk9NIHNfd2ViX29yZGVyIEpPSU4gc193ZWJfb3JkZXJfbGluZWl0ZW0gT04gKHdvcmRfb3JkZXJfaWQgPSB3bGluX29yZGVyX2lkKSBMRUZUIE9VVEVSIEpPSU4gaXRlbSBPTiAod2xpbl9pdGVtX2lkID0gaV9pdGVtX2lkIEFORCBpX3JlY19lbmRfZGF0ZSBJUyBOVUxMKSAgTEVGVCBPVVRFUiBKT0lOIHdlYl9zaXRlIE9OICh3b3JkX3dlYl9zaXRlX2lkID0gd2ViX3NpdGVfaWQgQU5EIHdlYl9yZWNfZW5kX2RhdGUgSVMgTlVMTCkgb3JkZXIgYnkgd3NfaXRlbV9zaywgd3Nfb3JkZXJfbnVtYmVyIA==\"},{\"id\":\"79266235-0145-4a8f-a9f9-33445c3e9988\",\"from\":\"target\",\"type\":\"SQL\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"tableName\":\"Medium_TotalDiscountReceived\",\"schema\":[{\"columnName\":\"ws_item_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_order_number\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_ext_discount_amt\",\"columnType\":\"decimal(18, 2)\",\"actualColumnType\":\"DECIMAL\",\"nullable\":false}],\"sqlQuery\":\"U0VMRUNUIChpX2l0ZW1fc2spIGFzIHdzX2l0ZW1fc2ssICh3b3JkX29yZGVyX2lkKSAgYXMgd3Nfb3JkZXJfbnVtYmVyLCAoaV9jdXJyZW50X3ByaWNlLXdsaW5fc2FsZXNfcHJpY2UpKndsaW5fcXVhbnRpdHkgd3NfZXh0X2Rpc2NvdW50X2FtdCBGUk9NIHNfd2ViX29yZGVyIEpPSU4gc193ZWJfb3JkZXJfbGluZWl0ZW0gT04gKHdvcmRfb3JkZXJfaWQgPSB3bGluX29yZGVyX2lkKSBMRUZUIE9VVEVSIEpPSU4gaXRlbSBPTiAod2xpbl9pdGVtX2lkID0gaV9pdGVtX2lkIEFORCBpX3JlY19lbmRfZGF0ZSBJUyBOVUxMKSAgTEVGVCBPVVRFUiBKT0lOIHdlYl9zaXRlIE9OICh3b3JkX3dlYl9zaXRlX2lkID0gd2ViX3NpdGVfaWQgQU5EIHdlYl9yZWNfZW5kX2RhdGUgSVMgTlVMTCkgb3JkZXIgYnkgd3NfaXRlbV9zaywgd3Nfb3JkZXJfbnVtYmVy\"},{\"id\":\"7743dd05-6e38-471e-8b2d-a19666b58469\",\"from\":\"target\",\"type\":\"SQL\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"tableName\":\"Medium_NetAmountWithTax\",\"schema\":[{\"columnName\":\"ws_item_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_order_number\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_net_paid_inc_tax\",\"columnType\":\"decimal(24, 4)\",\"actualColumnType\":\"DECIMAL\",\"nullable\":false}],\"sqlQuery\":\"U0VMRUNUIChpX2l0ZW1fc2spIGFzIHdzX2l0ZW1fc2ssICh3b3JkX29yZGVyX2lkKSAgYXMgd3Nfb3JkZXJfbnVtYmVyLCAoKHdsaW5fc2FsZXNfcHJpY2UgKiB3bGluX3F1YW50aXR5KS13bGluX2NvdXBvbl9hbXQpKigxK3dlYl90YXhfcGVyY2VudGFnZSkgd3NfbmV0X3BhaWRfaW5jX3RheCBGUk9NIHNfd2ViX29yZGVyIEpPSU4gc193ZWJfb3JkZXJfbGluZWl0ZW0gT04gKHdvcmRfb3JkZXJfaWQgPSB3bGluX29yZGVyX2lkKSBMRUZUIE9VVEVSIEpPSU4gaXRlbSBPTiAod2xpbl9pdGVtX2lkID0gaV9pdGVtX2lkIEFORCBpX3JlY19lbmRfZGF0ZSBJUyBOVUxMKSAgTEVGVCBPVVRFUiBKT0lOIHdlYl9zaXRlIE9OICh3b3JkX3dlYl9zaXRlX2lkID0gd2ViX3NpdGVfaWQgQU5EIHdlYl9yZWNfZW5kX2RhdGUgSVMgTlVMTCkgb3JkZXIgYnkgd3NfaXRlbV9zaywgd3Nfb3JkZXJfbnVtYmVy\"},{\"id\":\"e5bafe2c-b050-42ca-b797-84d23321b6fd\",\"from\":\"target\",\"type\":\"SQL\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"tableName\":\"Simple_PassThroughData\",\"schema\":[{\"columnName\":\"ws_item_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_order_number\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_bill_customer_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_bill_cdemo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_bill_hdemo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_bill_addr_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_ship_customer_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_ship_cdemo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_ship_hdemo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_ship_addr_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_web_page_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_web_site_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_ship_mode_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_warehouse_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false},{\"columnName\":\"ws_promo_sk\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false}],\"sqlQuery\":\"U0VMRUNUIChpX2l0ZW1fc2spIGFzIHdzX2l0ZW1fc2ssICh3b3JkX29yZGVyX2lkKSAgYXMgd3Nfb3JkZXJfbnVtYmVyLCBjMS5jX2N1c3RvbWVyX3NrIHdzX2JpbGxfY3VzdG9tZXJfc2ssIGMxLmNfY3VycmVudF9jZGVtb19zayB3c19iaWxsX2NkZW1vX3NrLCBjMS5jX2N1cnJlbnRfaGRlbW9fc2sgd3NfYmlsbF9oZGVtb19zaywgYzEuY19jdXJyZW50X2FkZHJfc2sgd3NfYmlsbF9hZGRyX3NrLCBjMi5jX2N1c3RvbWVyX3NrIHdzX3NoaXBfY3VzdG9tZXJfc2ssIGMyLmNfY3VycmVudF9jZGVtb19zayB3c19zaGlwX2NkZW1vX3NrLCBjMi5jX2N1cnJlbnRfaGRlbW9fc2sgd3Nfc2hpcF9oZGVtb19zaywgYzIuY19jdXJyZW50X2FkZHJfc2sgd3Nfc2hpcF9hZGRyX3NrLCB3cF93ZWJfcGFnZV9zayB3c193ZWJfcGFnZV9zaywgd2ViX3NpdGVfc2sgd3Nfd2ViX3NpdGVfc2ssIHNtX3NoaXBfbW9kZV9zayB3c19zaGlwX21vZGVfc2ssIHdfd2FyZWhvdXNlX3NrIHdzX3dhcmVob3VzZV9zaywgcF9wcm9tb19zayB3c19wcm9tb19zayBGUk9NIHNfd2ViX29yZGVyIExFRlQgT1VURVIgSk9JTiBkYXRlX2RpbSBkMSBPTiAoY2FzdCh3b3JkX29yZGVyX2RhdGUgYXMgZGF0ZSkgPSBkMS5kX2RhdGUpIExFRlQgT1VURVIgSk9JTiB0aW1lX2RpbSBPTiAod29yZF9vcmRlcl90aW1lID0gdF90aW1lKSBMRUZUIE9VVEVSIEpPSU4gY3VzdG9tZXIgYzEgT04gKHdvcmRfYmlsbF9jdXN0b21lcl9pZCA9IGMxLmNfY3VzdG9tZXJfaWQpIExFRlQgT1VURVIgSk9JTiBjdXN0b21lciBjMiBPTiAod29yZF9zaGlwX2N1c3RvbWVyX2lkID0gYzIuY19jdXN0b21lcl9pZCkgTEVGVCBPVVRFUiBKT0lOIHdlYl9zaXRlIE9OICh3b3JkX3dlYl9zaXRlX2lkID0gd2ViX3NpdGVfaWQgQU5EIHdlYl9yZWNfZW5kX2RhdGUgSVMgTlVMTCkgTEVGVCBPVVRFUiBKT0lOIHNoaXBfbW9kZSBPTiAod29yZF9zaGlwX21vZGVfaWQgPSBzbV9zaGlwX21vZGVfaWQpIEpPSU4gc193ZWJfb3JkZXJfbGluZWl0ZW0gT04gKHdvcmRfb3JkZXJfaWQgPSB3bGluX29yZGVyX2lkKSBMRUZUIE9VVEVSIEpPSU4gaXRlbSBPTiAod2xpbl9pdGVtX2lkID0gaV9pdGVtX2lkIEFORCBpX3JlY19lbmRfZGF0ZSBJUyBOVUxMKSBMRUZUIE9VVEVSIEpPSU4gZGF0ZV9kaW0gZDIgT04gKGNhc3Qod2xpbl9zaGlwX2RhdGUgYXMgZGF0ZSkgPSBkMi5kX2RhdGUpIExFRlQgT1VURVIgSk9JTiB3ZWJfcGFnZSBPTiAod2xpbl93ZWJfcGFnZV9pZCA9IHdwX3dlYl9wYWdlX2lkIEFORCB3cF9yZWNfZW5kX2RhdGUgSVMgTlVMTCkgTEVGVCBPVVRFUiBKT0lOIHByb21vdGlvbiBPTiAod2xpbl9wcm9tb3Rpb25faWQgPSBwX3Byb21vX2lkKSBMRUZUIE9VVEVSIEpPSU4gd2FyZWhvdXNlIE9OICh3bGluX3dhcmVob3VzZV9pZCA9IHdfd2FyZWhvdXNlX2lkKQ==\"}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"four tbls\",\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":{},\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"192a21dc-e5ef-48c6-b047-2a8b263d4460\":{\"source\":\"5bf5f034-1e26-4f17-af4e-001849b39dc1\",\"target\":\"5333ff85-6bb4-42d7-b162-7cad86a5a448\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"453e07b6-9bfd-4bdf-8adf-66071a0f0452\",\"sourceColumnName\":\"ws_order_number\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_order_number\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"bfc79281-f320-4612-9781-497272474c14\",\"sourceColumnName\":\"ws_net_paid_inc_ship_tax\",\"sourceColumnType\":\"double\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":false,\"targetColumnName\":\"WS_NET_PAID_INC_SHIP_TAX\",\"targetColumnType\":\"decimal(25, 4)\",\"targetActualColumnType\":\"DECIMAL\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"3b749afb-1b76-4ed1-9ce7-8ffbddb94f5e\",\"sourceColumnName\":\"ws_item_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_item_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"9de5c87d-3521-4e37-94db-1441f06e6214\":{\"source\":\"5bf5f034-1e26-4f17-af4e-001849b39dc1\",\"target\":\"79266235-0145-4a8f-a9f9-33445c3e9988\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"06584d55-73ed-4fc8-a011-c0e869e2525b\",\"sourceColumnName\":\"ws_order_number\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_order_number\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"3e0d1b9e-5a61-4412-ae0f-b73a5a06e252\",\"sourceColumnName\":\"ws_item_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_item_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"da34f5fc-408a-4dd8-b21b-df0a33596731\",\"sourceColumnName\":\"ws_ext_discount_amt\",\"sourceColumnType\":\"double\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":false,\"targetColumnName\":\"ws_ext_discount_amt\",\"targetColumnType\":\"decimal(18, 2)\",\"targetActualColumnType\":\"DECIMAL\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"90e7de5a-694a-4f3c-93bf-e6ae68ed484c\":{\"source\":\"5bf5f034-1e26-4f17-af4e-001849b39dc1\",\"target\":\"7743dd05-6e38-471e-8b2d-a19666b58469\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"cad822ad-a51c-442e-baa6-c00ac22b1274\",\"sourceColumnName\":\"ws_order_number\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_order_number\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"2aa0b4e1-b0be-4a0a-a743-d35c4f92b36b\",\"sourceColumnName\":\"ws_net_paid_inc_tax\",\"sourceColumnType\":\"double\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":false,\"targetColumnName\":\"ws_net_paid_inc_tax\",\"targetColumnType\":\"decimal(24, 4)\",\"targetActualColumnType\":\"DECIMAL\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"d97d0dd6-0b8e-4951-a12b-f2885ba15a7d\",\"sourceColumnName\":\"ws_item_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_item_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"},\"c428199e-0153-4e8d-9f42-35490037d138\":{\"source\":\"5bf5f034-1e26-4f17-af4e-001849b39dc1\",\"target\":\"e5bafe2c-b050-42ca-b797-84d23321b6fd\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"ed1d536a-184a-4c84-8f30-bee583ecc77f\",\"sourceColumnName\":\"ws_web_site_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_web_site_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"1f0a8419-780b-44ff-9435-26c5f72ee1a8\",\"sourceColumnName\":\"ws_web_page_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_web_page_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"596d83d3-fc1a-45d6-8cf5-9287b884e142\",\"sourceColumnName\":\"ws_warehouse_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_warehouse_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"b0067bb2-97d7-438a-9735-c0d491c51727\",\"sourceColumnName\":\"ws_ship_mode_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_ship_mode_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"17242850-d0f9-402f-bcb5-cf430d87da54\",\"sourceColumnName\":\"ws_ship_hdemo_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_ship_hdemo_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"7334920d-ce20-4d58-841b-9763889b3d35\",\"sourceColumnName\":\"ws_ship_customer_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_ship_customer_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"bf3e9633-d489-4098-ab0d-439905f4510b\",\"sourceColumnName\":\"ws_ship_cdemo_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_ship_cdemo_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"1d5c992f-483c-4a43-a84f-4d67b8fe835c\",\"sourceColumnName\":\"ws_ship_addr_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_ship_addr_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"e2ed48be-3843-4609-ab78-6e5b9d09b807\",\"sourceColumnName\":\"ws_promo_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_promo_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"92efeaea-9178-48b9-906a-309b5941c25e\",\"sourceColumnName\":\"ws_order_number\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_order_number\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"307a791c-557b-44d8-bb3b-1b5ef0b2e2d4\",\"sourceColumnName\":\"ws_item_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_item_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"id\":\"26fec7bf-e465-405b-98e3-c2bcb1977783\",\"sourceColumnName\":\"ws_bill_hdemo_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_bill_hdemo_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"d17ab590-bdc3-4e79-90c2-29b59572f955\",\"sourceColumnName\":\"ws_bill_customer_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_bill_customer_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"00ca249b-8c08-4a26-be5c-c86735970b59\",\"sourceColumnName\":\"ws_bill_cdemo_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_bill_cdemo_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"4838ab83-9a99-4028-a0df-ee81e413665e\",\"sourceColumnName\":\"ws_bill_addr_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"ws_bill_addr_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"INT\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{}}",
+  "flowId" : 8380,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:32.550699477Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
