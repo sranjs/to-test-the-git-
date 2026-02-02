@@ -1,0 +1,176 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "djshfahsdjhfjk",
+  "email" : [ ],
+  "flowDesc" : "djshfahsdjhfjk",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "snowflake_NYC_TAXI_DATA",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "ALL_DATATYPES_B" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "ALL_DATATYPES_B",
+          "tblSize" : "1",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 411516519995,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : { },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ ],
+        "compareKeyNew" : [ ],
+        "columnMapping" : [ {
+          "srcColumn" : "VARIANT_COL",
+          "destColumn" : "VARIANT_COL"
+        }, {
+          "srcColumn" : "VARCHAR_COL",
+          "destColumn" : "VARCHAR_COL"
+        }, {
+          "srcColumn" : "VARCHAR2_COL",
+          "destColumn" : "VARCHAR2_COL"
+        }, {
+          "srcColumn" : "TIME_COL",
+          "destColumn" : "TIME_COL"
+        }, {
+          "srcColumn" : "TIMESTAMP_TZ_COL",
+          "destColumn" : "TIMESTAMP_TZ_COL"
+        }, {
+          "srcColumn" : "TIMESTAMP_NTZ_COL",
+          "destColumn" : "TIMESTAMP_NTZ_COL"
+        }, {
+          "srcColumn" : "TIMESTAMP_LTZ_COL",
+          "destColumn" : "TIMESTAMP_LTZ_COL"
+        }, {
+          "srcColumn" : "TIMESTAMP_COL",
+          "destColumn" : "TIMESTAMP_COL"
+        }, {
+          "srcColumn" : "TEXT_COL",
+          "destColumn" : "TEXT_COL"
+        }, {
+          "srcColumn" : "SMALLINT_COL",
+          "destColumn" : "SMALLINT_COL"
+        }, {
+          "srcColumn" : "OBJECT_COL",
+          "destColumn" : "OBJECT_COL"
+        }, {
+          "srcColumn" : "NVARCHAR2_COL",
+          "destColumn" : "NVARCHAR2_COL"
+        }, {
+          "srcColumn" : "NCHAR_COL",
+          "destColumn" : "NCHAR_COL"
+        }, {
+          "srcColumn" : "INTERVAL_YEAR_COL",
+          "destColumn" : "INTERVAL_YEAR_COL"
+        }, {
+          "srcColumn" : "INTERVAL_DAY_COL",
+          "destColumn" : "INTERVAL_DAY_COL"
+        }, {
+          "srcColumn" : "INTEGER_COL",
+          "destColumn" : "INTEGER_COL"
+        }, {
+          "srcColumn" : "ID",
+          "destColumn" : "ID"
+        }, {
+          "srcColumn" : "GEOSPATIAL_COL",
+          "destColumn" : "GEOSPATIAL_COL"
+        }, {
+          "srcColumn" : "FLOAT_COL",
+          "destColumn" : "FLOAT_COL"
+        }, {
+          "srcColumn" : "DOUBLE_COL",
+          "destColumn" : "DOUBLE_COL"
+        }, {
+          "srcColumn" : "DECIMAL_COL",
+          "destColumn" : "DECIMAL_COL"
+        }, {
+          "srcColumn" : "DATE_COL",
+          "destColumn" : "DATE_COL"
+        }, {
+          "srcColumn" : "CHAR_COL",
+          "destColumn" : "CHAR_COL"
+        }, {
+          "srcColumn" : "BINARY_FLOAT_COL",
+          "destColumn" : "BINARY_FLOAT_COL"
+        }, {
+          "srcColumn" : "BINARY_DOUBLE_COL",
+          "destColumn" : "BINARY_DOUBLE_COL"
+        }, {
+          "srcColumn" : "BIGINT_COL",
+          "destColumn" : "BIGINT_COL"
+        }, {
+          "srcColumn" : "ARRAY_COL",
+          "destColumn" : "ARRAY_COL"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "10"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"359c4877-6bcd-4e49-8fe2-c09d06a2a107\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ALL_DATATYPES_B\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"ARRAY_COL\",\"columnType\":\"ARRAY\",\"actualColumnType\":\"array\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"BIGINT_COL\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"BINARY_DOUBLE_COL\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"BINARY_FLOAT_COL\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CHAR_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DATE_COL\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DECIMAL_COL\",\"columnType\":\"number(10,2)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DOUBLE_COL\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FLOAT_COL\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"GEOSPATIAL_COL\",\"columnType\":\"GEOGRAPHY\",\"actualColumnType\":\"geography\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"INTEGER_COL\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"INTERVAL_DAY_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":11,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"INTERVAL_YEAR_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"NCHAR_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"NVARCHAR2_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OBJECT_COL\",\"columnType\":\"OBJECT\",\"actualColumnType\":\"object\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SMALLINT_COL\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEXT_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIMESTAMP_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_ntz\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIMESTAMP_LTZ_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_ltz\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIMESTAMP_NTZ_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_ntz\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIMESTAMP_TZ_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIME_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"time\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARCHAR2_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARCHAR_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARIANT_COL\",\"columnType\":\"VARIANT\",\"actualColumnType\":\"variant\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"ARRAY_COL\",\"columnType\":\"ARRAY\",\"actualColumnType\":\"array\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"BIGINT_COL\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"BINARY_DOUBLE_COL\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"BINARY_FLOAT_COL\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CHAR_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DATE_COL\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DECIMAL_COL\",\"columnType\":\"number(10,2)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DOUBLE_COL\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FLOAT_COL\",\"columnType\":\"DOUBLE\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"GEOSPATIAL_COL\",\"columnType\":\"GEOGRAPHY\",\"actualColumnType\":\"geography\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"INTEGER_COL\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"INTERVAL_DAY_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":11,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"INTERVAL_YEAR_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":5,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"NCHAR_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"NVARCHAR2_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OBJECT_COL\",\"columnType\":\"OBJECT\",\"actualColumnType\":\"object\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SMALLINT_COL\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TEXT_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIMESTAMP_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_ntz\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIMESTAMP_LTZ_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_ltz\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIMESTAMP_NTZ_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_ntz\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIMESTAMP_TZ_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp_tz\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TIME_COL\",\"columnType\":\"timestamp\",\"actualColumnType\":\"time\",\"nullable\":false,\"columnMaxLength\":9,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARCHAR2_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARCHAR_COL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARIANT_COL\",\"columnType\":\"VARIANT\",\"actualColumnType\":\"variant\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"djshfahsdjhfjk\",\"data_monitoring\":false,\"dimensions\":[],\"aggregations\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\"},\"mapping\":{\"mappings\":{\"411516519995\":{\"source\":\"359c4877-6bcd-4e49-8fe2-c09d06a2a107\",\"target\":\"4a7765d3-935c-4dfa-8b65-1658e219f0aa\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"12133681-1b43-4248-b3c5-de9afdff6111\",\"sourceColumnName\":\"VARIANT_COL\",\"sourceColumnType\":\"VARIANT\",\"sourceActualColumnType\":\"variant\",\"sourceNullable\":false,\"targetColumnName\":\"VARIANT_COL\",\"targetColumnType\":\"VARIANT\",\"targetActualColumnType\":\"variant\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"bc1622ff-b837-4a4f-9403-0d5555957f89\",\"sourceColumnName\":\"VARCHAR_COL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"VARCHAR_COL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"62b69117-5916-4d4d-9eff-9e355f82cce3\",\"sourceColumnName\":\"VARCHAR2_COL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"VARCHAR2_COL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"66e49cde-590b-4d24-8e6d-fa7c5ca9cfae\",\"sourceColumnName\":\"TIME_COL\",\"sourceColumnType\":\"timestamp\",\"sourceActualColumnType\":\"time\",\"sourceNullable\":false,\"targetColumnName\":\"TIME_COL\",\"targetColumnType\":\"timestamp\",\"targetActualColumnType\":\"time\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"faacf1cf-889f-4635-8e3b-84ede9e64d46\",\"sourceColumnName\":\"TIMESTAMP_TZ_COL\",\"sourceColumnType\":\"timestamp\",\"sourceActualColumnType\":\"timestamp_tz\",\"sourceNullable\":false,\"targetColumnName\":\"TIMESTAMP_TZ_COL\",\"targetColumnType\":\"timestamp\",\"targetActualColumnType\":\"timestamp_tz\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"1868a83d-4981-4b33-b9a3-0b993b7d1aff\",\"sourceColumnName\":\"TIMESTAMP_NTZ_COL\",\"sourceColumnType\":\"timestamp\",\"sourceActualColumnType\":\"timestamp_ntz\",\"sourceNullable\":false,\"targetColumnName\":\"TIMESTAMP_NTZ_COL\",\"targetColumnType\":\"timestamp\",\"targetActualColumnType\":\"timestamp_ntz\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"e1e2fc8c-661e-4eda-8642-a9ea6b9ba182\",\"sourceColumnName\":\"TIMESTAMP_LTZ_COL\",\"sourceColumnType\":\"timestamp\",\"sourceActualColumnType\":\"timestamp_ltz\",\"sourceNullable\":false,\"targetColumnName\":\"TIMESTAMP_LTZ_COL\",\"targetColumnType\":\"timestamp\",\"targetActualColumnType\":\"timestamp_ltz\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"fe437452-f842-482b-94b0-3b55810c3d63\",\"sourceColumnName\":\"TIMESTAMP_COL\",\"sourceColumnType\":\"timestamp\",\"sourceActualColumnType\":\"timestamp_ntz\",\"sourceNullable\":false,\"targetColumnName\":\"TIMESTAMP_COL\",\"targetColumnType\":\"timestamp\",\"targetActualColumnType\":\"timestamp_ntz\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"3b07d608-fc7c-477e-88b2-818266a28ae4\",\"sourceColumnName\":\"TEXT_COL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"TEXT_COL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"89247fd0-7a98-4469-897f-a34a79dd6f15\",\"sourceColumnName\":\"SMALLINT_COL\",\"sourceColumnType\":\"number(38,0)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"SMALLINT_COL\",\"targetColumnType\":\"number(38,0)\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"dbd28cfc-cde4-47c5-acaa-423b8e9f5eeb\",\"sourceColumnName\":\"OBJECT_COL\",\"sourceColumnType\":\"OBJECT\",\"sourceActualColumnType\":\"object\",\"sourceNullable\":false,\"targetColumnName\":\"OBJECT_COL\",\"targetColumnType\":\"OBJECT\",\"targetActualColumnType\":\"object\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4ab2539a-0d37-4014-878b-280706600fa3\",\"sourceColumnName\":\"NVARCHAR2_COL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"NVARCHAR2_COL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4a68f530-8d5c-40a5-9cd9-5459991c40ec\",\"sourceColumnName\":\"NCHAR_COL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"NCHAR_COL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"c7726f0f-9b03-4818-b325-950ff5988c4d\",\"sourceColumnName\":\"INTERVAL_YEAR_COL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"INTERVAL_YEAR_COL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"5bc9a0a9-3b12-4a98-af8b-2395f0266ae7\",\"sourceColumnName\":\"INTERVAL_DAY_COL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"INTERVAL_DAY_COL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"b1951d14-98fa-4bff-8577-719dee82aad3\",\"sourceColumnName\":\"INTEGER_COL\",\"sourceColumnType\":\"number(38,0)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"INTEGER_COL\",\"targetColumnType\":\"number(38,0)\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"7d8d3096-ba9d-4495-9333-87f2be8b1a4b\",\"sourceColumnName\":\"ID\",\"sourceColumnType\":\"number(38,0)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"ID\",\"targetColumnType\":\"number(38,0)\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"b05a3b05-9266-49f7-ad69-0cbe2acb3725\",\"sourceColumnName\":\"GEOSPATIAL_COL\",\"sourceColumnType\":\"GEOGRAPHY\",\"sourceActualColumnType\":\"geography\",\"sourceNullable\":false,\"targetColumnName\":\"GEOSPATIAL_COL\",\"targetColumnType\":\"GEOGRAPHY\",\"targetActualColumnType\":\"geography\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"f908ee33-484a-4fb3-9a04-10143f6a73e3\",\"sourceColumnName\":\"FLOAT_COL\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"double\",\"sourceNullable\":false,\"targetColumnName\":\"FLOAT_COL\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"double\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"71d5987d-0bfe-46d7-89e8-7993fb4596fc\",\"sourceColumnName\":\"DOUBLE_COL\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"double\",\"sourceNullable\":false,\"targetColumnName\":\"DOUBLE_COL\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"double\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"71eabbda-5c3e-411b-832e-6c45406a98f8\",\"sourceColumnName\":\"DECIMAL_COL\",\"sourceColumnType\":\"number(10,2)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"DECIMAL_COL\",\"targetColumnType\":\"number(10,2)\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"a5c4f5b0-169d-4678-9bc0-5e3d5484daa5\",\"sourceColumnName\":\"DATE_COL\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"DATE_COL\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"c6038902-0833-464e-8c6f-58dee69809b8\",\"sourceColumnName\":\"CHAR_COL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"CHAR_COL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"dfc2de34-1791-4234-9cb9-88c1f7546edd\",\"sourceColumnName\":\"BINARY_FLOAT_COL\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"double\",\"sourceNullable\":false,\"targetColumnName\":\"BINARY_FLOAT_COL\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"double\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"84ac2778-4194-426e-895e-9429edc99622\",\"sourceColumnName\":\"BINARY_DOUBLE_COL\",\"sourceColumnType\":\"DOUBLE\",\"sourceActualColumnType\":\"double\",\"sourceNullable\":false,\"targetColumnName\":\"BINARY_DOUBLE_COL\",\"targetColumnType\":\"DOUBLE\",\"targetActualColumnType\":\"double\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"d7f4f766-7ea9-446d-b085-3f664f14116a\",\"sourceColumnName\":\"BIGINT_COL\",\"sourceColumnType\":\"number(38,0)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"BIGINT_COL\",\"targetColumnType\":\"number(38,0)\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"e0925f7d-d1b8-4fbb-a7dd-1f74ffa282b1\",\"sourceColumnName\":\"ARRAY_COL\",\"sourceColumnType\":\"ARRAY\",\"sourceActualColumnType\":\"array\",\"sourceNullable\":false,\"targetColumnName\":\"ARRAY_COL\",\"targetColumnType\":\"ARRAY\",\"targetActualColumnType\":\"array\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\",\"detectCompareKeys\":true}}},\"dataQualityState\":{},\"columnRules\":{},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"411516519995\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 12594,
+  "dmsProjectId" : 913,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:30.032782769Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"643b4665-8493-44db-9ed2-13cd4b22c33d\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"sampledb_src\",\"schemaName\":\"sampledb_src\",\"tableName\":\"Jan_2020_ontime\",\"schema\":[{\"columnName\":\"ARR_DEL15\",\"columnType\":\"long\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"ARR_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"CANCELLED\",\"columnType\":\"long\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"DAY_OF_MONTH\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false},{\"columnName\":\"DAY_OF_WEEK\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false},{\"columnName\":\"DEP_DEL15\",\"columnType\":\"long\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"DEP_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"DEP_TIME_BLK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"DEST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"DEST_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false},{\"columnName\":\"DEST_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false},{\"columnName\":\"DISTANCE\",\"columnType\":\"long\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"DIVERTED\",\"columnType\":\"long\",\"actualColumnType\":\"decimal\",\"nullable\":false},{\"columnName\":\"OP_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"OP_CARRIER_AIRLINE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false},{\"columnName\":\"OP_CARRIER_FL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"OP_UNIQUE_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"ORIGIN\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"ORIGIN_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false},{\"columnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false},{\"columnName\":\"TAIL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":49518,\"tableSize\":10.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"dq3\",\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"1\":{\"id\":1,\"ruleName\":\"r1\",\"ruleType\":\"Table Metadata Rules\",\"executeOn\":\"source\",\"connectionName\":\"sampledb_src\",\"schemaName\":\"sampledb_src\",\"tableName\":\"Jan_2020_ontime\",\"columnName\":\"\",\"sqlExpression\":\"\",\"sql\":\"\",\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"Jan_2020_ontime\",\"foreignLookUpTable\":\"\",\"foreignLookUpTableColumn\":\"\",\"foreignMainTableColumn\":\"\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":true,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true}},\"dataStandarizations\":[],\"outputData\":[]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "dq3",
+  "APP_VERSION" : "6_94",
+  "flowDesc" : "dq3",
+  "LicensedName" : "6_94",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "sampledb_src",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "sampledb_src",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "Jan_2020_ontime" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "Jan_2020_ontime",
+          "tblSize" : "10.52",
+          "tblRecordCount" : 49518,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "Jan_2020_ontime" : {
+            "rules" : [ {
+              "tblMetadataInfo" : {
+                "schema" : [ {
+                  "name" : "ARR_DEL15",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "ARR_TIME",
+                  "dataType" : "string",
+                  "nullable" : false
+                }, {
+                  "name" : "CANCELLED",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "DAY_OF_MONTH",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "DAY_OF_WEEK",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "DEP_DEL15",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "DEP_TIME",
+                  "dataType" : "string",
+                  "nullable" : false
+                }, {
+                  "name" : "DEP_TIME_BLK",
+                  "dataType" : "string",
+                  "nullable" : false
+                }, {
+                  "name" : "DEST",
+                  "dataType" : "string",
+                  "nullable" : false
+                }, {
+                  "name" : "DEST_AIRPORT_ID",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "DEST_AIRPORT_SEQ_ID",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "DISTANCE",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "DIVERTED",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "OP_CARRIER",
+                  "dataType" : "string",
+                  "nullable" : false
+                }, {
+                  "name" : "OP_CARRIER_AIRLINE_ID",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "OP_CARRIER_FL_NUM",
+                  "dataType" : "string",
+                  "nullable" : false
+                }, {
+                  "name" : "OP_UNIQUE_CARRIER",
+                  "dataType" : "string",
+                  "nullable" : false
+                }, {
+                  "name" : "ORIGIN",
+                  "dataType" : "string",
+                  "nullable" : false
+                }, {
+                  "name" : "ORIGIN_AIRPORT_ID",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "ORIGIN_AIRPORT_SEQ_ID",
+                  "dataType" : "long",
+                  "nullable" : false
+                }, {
+                  "name" : "TAIL_NUM",
+                  "dataType" : "string",
+                  "nullable" : false
+                } ],
+                "count" : 0
+              },
+              "ruleType" : "COLUMN_NAMES",
+              "operator" : "=",
+              "tblName" : "Jan_2020_ontime",
+              "creationTime" : 1699022998192,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : ""
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : { }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "UI_VERSION" : "6_94",
+  "API_APP_BUILD" : "6_94",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 8369,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:29.597816097Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

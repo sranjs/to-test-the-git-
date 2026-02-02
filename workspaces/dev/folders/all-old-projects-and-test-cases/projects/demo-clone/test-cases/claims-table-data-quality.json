@@ -1,0 +1,119 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"fd9bfcb4-1e3d-4d6a-b9d8-0ca3644f2b7e\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"tableName\":\"HEALTH_DATA\",\"schema\":[{\"columnName\":\"CITY\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"COUNTRYCODE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"DOB\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true},{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"HOSPITAL_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ICD9\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ID\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"NHS_NUMBER\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PATIENT_INCOME\",\"columnType\":\"decimal(5, 2)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"PATIENT_START_DATETIME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PROVIDER_NUMBER\",\"columnType\":\"decimal(38, 0)\",\"actualColumnType\":\"number\",\"nullable\":true},{\"columnName\":\"P_FNAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"P_LNAME\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ZIPCODE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":35555,\"tableSize\":3,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null,\"isPrimaryDataset\":true},{\"id\":\"4bc86aa2-365b-49f4-b8c4-20530ef0ce12\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"tableName\":\"ICD_LOOKUP_TABLE\",\"schema\":[{\"columnName\":\"DOB\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ICD10_CODE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ICD10_DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ICD9_CODE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"ICD9_DESCRIPTION\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"NHS_NUMBER\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PATIENT_DATE\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true},{\"columnName\":\"PATIENT_ID\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":true}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":26,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null,\"isPrimaryDataset\":false}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"claims table data quality\",\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":true,\"slack\":false,\"template\":\"default\",\"mailingList\":\"vidya.bhushan@dataq.io\",\"notifyOn\":\"ALWAYS\",\"edit\":true}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"1\":{\"id\":1,\"ruleName\":\"foreign key validation\",\"ruleType\":\"Foreign Key Validation\",\"executeOn\":\"source\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"tableName\":\"HEALTH_DATA\",\"columnName\":\"\",\"keyColumns\":[],\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"HEALTH_DATA\",\"foreignLookUpTable\":\"ICD_LOOKUP_TABLE\",\"foreignLookUpTableColumn\":\"ICD9_CODE\",\"foreignMainTableColumn\":\"ICD9\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":false,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true},\"2\":{\"id\":2,\"ruleName\":\"sql validation\",\"ruleType\":\"Column Rule\",\"executeOn\":\"source\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"tableName\":\"HEALTH_DATA\",\"columnName\":\"CITY\",\"sqlExpression\":\"bGVuZ3RoKGNpdHkpID4gMw==\",\"keyColumns\":[],\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"HEALTH_DATA\",\"foreignLookUpTable\":\"\",\"foreignLookUpTableColumn\":\"\",\"foreignMainTableColumn\":\"\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":false,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true}},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "claims table data quality",
+  "APP_VERSION" : "7_08",
+  "flowDesc" : "claims table data quality",
+  "LicensedName" : "7_08",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "snowflake_NYC_TAXI_DATA",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "HEALTH_DATA" : null,
+          "ICD_LOOKUP_TABLE" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "HEALTH_DATA",
+          "tblSize" : "3",
+          "tblRecordCount" : 35555,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ICD_LOOKUP_TABLE",
+          "tblSize" : "0",
+          "tblRecordCount" : 26,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "HEALTH_DATA" : {
+            "rules" : [ {
+              "ruleType" : "FOREIGN_KEY_VALIDATION",
+              "column" : "NA",
+              "level" : "Warning",
+              "creationTime" : 1700580897212,
+              "operator" : "=",
+              "expectedPercent" : 100,
+              "description" : "foreign key validation",
+              "name" : "foreignkeyvalidation",
+              "foreignKeyValidate" : {
+                "condition" : "exist",
+                "mainTable" : "HEALTH_DATA",
+                "mainTblCol" : "ICD9",
+                "lookupTbl" : "ICD_LOOKUP_TABLE",
+                "lookupCol" : "ICD9_CODE"
+              }
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "CITY",
+              "sql" : "length(city) > 3",
+              "creationTime" : 1700580897213,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "sqlvalidation",
+              "description" : "sql validation"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : { }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "UI_VERSION" : "7_08",
+  "API_APP_BUILD" : "7_08",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 8364,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:29.022788352Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
