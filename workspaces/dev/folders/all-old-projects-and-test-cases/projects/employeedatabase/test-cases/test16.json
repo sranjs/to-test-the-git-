@@ -1,0 +1,128 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"1c003863-5ef1-4d09-8ab9-03d9dd4a4751\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":20010,\"tableSize\":2.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"eebf0363-ace6-4c6b-b592-ab82d6aaba10\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":20010,\"tableSize\":2.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test16\",\"stopDifferences\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"933314113594\":{\"source\":\"1c003863-5ef1-4d09-8ab9-03d9dd4a4751\",\"target\":\"eebf0363-ace6-4c6b-b592-ab82d6aaba10\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"933314113594\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "test16",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "test16",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "CUSTOMER" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "CUSTOMER",
+          "tblSize" : "2.52",
+          "tblRecordCount" : 20010,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "CUSTOMER" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "CUSTOMER",
+          "tblSize" : "2.52",
+          "tblRecordCount" : 20010,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "COUNTS_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 933314113594,
+        "matchBoth" : true,
+        "compareType" : "COUNTS_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "CUSTOMER" : "CUSTOMER"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "COUNTS_COMPARE_TOLERANCE" : "0",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "COUNTS COMPARE",
+  "flowId" : 7053,
+  "dmsProjectId" : 625,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:48.393813213Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

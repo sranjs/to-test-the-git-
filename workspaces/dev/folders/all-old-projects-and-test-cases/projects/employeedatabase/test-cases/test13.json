@@ -1,0 +1,130 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Schema\"],\"tablesList\":{\"source\":[{\"id\":\"ce01b7ac-5721-4bcb-9d5e-3584bfb2185b\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"Person_Details_b\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":[{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"gender\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income\",\"columnType\":\"decimal(7,2)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":7,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_interest\",\"columnType\":\"decimal(6,2)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":6,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"language\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"person_address_id\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":40,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"person_card_id\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"gender\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income\",\"columnType\":\"decimal(7,2)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":7,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_interest\",\"columnType\":\"decimal(6,2)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":6,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"language\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"person_address_id\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":40,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"person_card_id\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":[{\"keyName\":\"Person_Details_b_id_IDX\",\"keyType\":\"BTREE\",\"ordinalPosition\":1,\"columnName\":\"id\"},{\"keyName\":\"Person_Details_b_id_IDX\",\"keyType\":\"BTREE\",\"ordinalPosition\":2,\"columnName\":\"first_name\"}]}],\"target\":[{\"id\":\"c3a47e5e-a8b5-469d-b30d-a9167d362411\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"assessment_report\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":\"student_ID\"},\"defaultSchema\":[{\"columnName\":\"Academic_Year\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Anaesthisiology\",\"columnType\":\"int\",\"actualColumnType\":\"tinyint\",\"nullable\":true,\"columnMaxLength\":3,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Anatomy_decimal\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Blood_Group\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"COMMENTS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Clinical_medicine_tolerance_diff\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":false,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Community_medicine_grtr_100\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":true,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Dentistry\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":true,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DermatologY_lower\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Email_Address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Forensic_sCiencE\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Gender\",\"columnType\":\"int\",\"actualColumnType\":\"tinyint\",\"nullable\":true,\"columnMaxLength\":3,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Geriatics_column_diff_name\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Gyneacology_exam_fee\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Histology_decimal\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Microbiology_examDate\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Mother_Tongue\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Neuroscience_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OMT_timestamp\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Obstretrics\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Opthalmology\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OrthoPaedic\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Parasitology\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Pediatrics_unique\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Pharmacology_diff_name\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":true,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Phsyciatry_not_nulls\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":false,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Physiology_tolerance_diff\",\"columnType\":\"decimal(12,0)\",\"actualColumnType\":\"float\",\"nullable\":false,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Primary_Contact_Number\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":true,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RadioLogy\",\"columnType\":\"int\",\"actualColumnType\":\"tinyint\",\"nullable\":true,\"columnMaxLength\":3,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Surgery\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"biochemistry_zeroRecords\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"community_Medicine_UPPER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"eNT_remove_dup\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"enrollment_No\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":95,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"general_medicine\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"genetics_int\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"heamotology\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"last_Name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"opthamoLogy_grtr_twenty\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"pathoLogy_diff_case\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"physical_Diagnosis_no_data\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"public_Health_medicine\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"student_ID\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"student_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"Academic_Year\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Anaesthisiology\",\"columnType\":\"int\",\"actualColumnType\":\"tinyint\",\"nullable\":true,\"columnMaxLength\":3,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Anatomy_decimal\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Blood_Group\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"COMMENTS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Clinical_medicine_tolerance_diff\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":false,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Community_medicine_grtr_100\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":true,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Dentistry\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":true,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DermatologY_lower\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Email_Address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Forensic_sCiencE\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Gender\",\"columnType\":\"int\",\"actualColumnType\":\"tinyint\",\"nullable\":true,\"columnMaxLength\":3,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Geriatics_column_diff_name\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Gyneacology_exam_fee\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Histology_decimal\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Microbiology_examDate\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Mother_Tongue\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Neuroscience_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OMT_timestamp\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Obstretrics\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Opthalmology\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OrthoPaedic\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Parasitology\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Pediatrics_unique\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Pharmacology_diff_name\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":true,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Phsyciatry_not_nulls\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":false,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Physiology_tolerance_diff\",\"columnType\":\"decimal(12,0)\",\"actualColumnType\":\"float\",\"nullable\":false,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Primary_Contact_Number\",\"columnType\":\"binary\",\"actualColumnType\":\"mediumblob\",\"nullable\":true,\"columnMaxLength\":16777215,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"RadioLogy\",\"columnType\":\"int\",\"actualColumnType\":\"tinyint\",\"nullable\":true,\"columnMaxLength\":3,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Surgery\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"biochemistry_zeroRecords\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"community_Medicine_UPPER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"eNT_remove_dup\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"enrollment_No\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":95,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"general_medicine\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"genetics_int\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"heamotology\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"last_Name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"opthamoLogy_grtr_twenty\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"pathoLogy_diff_case\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"physical_Diagnosis_no_data\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"public_Health_medicine\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"student_ID\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"student_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"student_ID\"],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":\"student_ID\",\"indexInfo\":[{\"keyName\":\"PRIMARY\",\"keyType\":\"BTREE\",\"ordinalPosition\":1,\"columnName\":\"student_ID\"}]}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test15\",\"stopDifferences\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"458062148102\":{\"source\":\"ce01b7ac-5721-4bcb-9d5e-3584bfb2185b\",\"target\":\"c3a47e5e-a8b5-469d-b30d-a9167d362411\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"e50a6f6c-b6c2-474b-9c53-041618470890\",\"sourceColumnName\":\"last_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"last_Name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"673ccb03-28fe-416b-9061-cbac1264d92c\",\"sourceColumnName\":\"gender\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"Gender\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"tinyint\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"458062148102\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "test13",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "test13",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "Person_Details_b" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "Person_Details_b",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ "id", "first_name" ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "assessment_report" : {
+            "numberOfPart" : null,
+            "column" : "student_ID"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "assessment_report",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ "student_ID" ],
+          "indexKeys" : [ "student_ID" ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "SCHEMA_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 458062148102,
+        "matchBoth" : true,
+        "compareType" : "SCHEMA_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "Person_Details_b" : "assessment_report"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "SCHEMA COMPARE",
+  "flowId" : 7050,
+  "dmsProjectId" : 625,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:48.635182509Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

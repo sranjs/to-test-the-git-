@@ -1,0 +1,94 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"b3c26a54-cf2d-4799-97d1-e9948ca3a639\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"C_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_MKTSEGMENT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NATION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_PHONE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_REGION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"C_ADDRESS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_MKTSEGMENT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_NATION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_PHONE\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"C_REGION\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":20010,\"tableSize\":2.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"test16\",\"stopDifferences\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"1\":{\"ruleName\":\"Rule1\",\"columns\":[\"C_REGION\"],\"rulesLevel\":\"Warning\",\"enable\":true,\"id\":1,\"tableName\":\"CUSTOMER\",\"ruleType\":\"Duplicates\",\"unitTestId\":\"255650218060\"}},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"255650218060\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "test17",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "test17",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "CUSTOMER" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "CUSTOMER",
+          "tblSize" : "2.52",
+          "tblRecordCount" : 20010,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "CUSTOMER" : {
+            "rules" : [ {
+              "unitTestCaseId" : 255650218060,
+              "ruleType" : "DUPLICATES",
+              "columnsList" : [ "C_REGION" ],
+              "operator" : "=",
+              "level" : "Warning",
+              "creationTime" : 1730695492904,
+              "description" : "Rule1",
+              "name" : "Rule1"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 7054,
+  "dmsProjectId" : 625,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:48.293904772Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
