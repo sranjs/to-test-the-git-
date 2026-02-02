@@ -1,112 +1,1334 @@
 {
   "executorCores" : 2,
-  "executorMemory" : "5g",
-  "numExecutors" : 2,
+  "executorMemory" : "2g",
+  "numExecutors" : 100,
   "executeOn" : "LOCAL",
   "flowName" : "my new test",
   "email" : [ ],
   "flowDesc" : "my new test",
   "hadoop" : false,
   "livy" : false,
-  "root" : "dataQuality",
-  "parameters" : [ {
-    "paramName" : "a1",
-    "paramValue" : "129",
-    "param_type" : "string",
-    "code" : null,
-    "codeConnectionSource" : null,
-    "codeLanguage" : null,
-    "codeSchema" : null
-  }, {
-    "paramName" : "${${${a2}}}",
-    "paramValue" : "my_super",
-    "param_type" : "string",
-    "code" : null,
-    "codeConnectionSource" : null,
-    "codeLanguage" : null,
-    "codeSchema" : null
-  }, {
-    "paramName" : "SQL_EXECUTION_TIMEOUT_DQ_-123",
-    "paramValue" : "20",
-    "param_type" : "string",
-    "code" : null,
-    "codeConnectionSource" : null,
-    "codeLanguage" : null,
-    "codeSchema" : null
-  } ],
-  "flowType" : "DATA QUALITY",
+  "root" : "dataCompare",
+  "parameters" : [ ],
+  "flowType" : "COUNTS COMPARE",
   "jobMap" : {
     "source" : {
       "dependentJob" : true,
       "description" : "source component",
       "id" : "source",
       "sourceData" : [ {
-        "datasetFormat" : "CSV",
-        "datasetPath" : "/my_data/user_files/com_data.csv",
-        "tableProperties" : [ {
-          "tblName" : "comdatacsv",
-          "tblSize" : "0",
-          "tblRecordCount" : 10
-        } ],
+        "datasetFormat" : "JDBC",
+        "databaseName" : "public",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "redshift",
+          "groupName" : "dev"
+        },
         "tableNamesList" : {
-          "comdatacsv" : null
+          "observations" : null,
+          "customers" : null
         },
-        "params" : {
-          "dropBadRecords" : true,
-          "dropRecordsWithAllNulls" : false
-        },
-        "columns" : [ ],
-        "datasetDelimiter" : ",",
-        "header" : true,
-        "inferSchema" : false,
-        "multiLine" : false,
-        "startingPosition" : "1"
+        "tableProperties" : [ {
+          "tblName" : "observations",
+          "tblSize" : "320",
+          "tblRecordCount" : 14582060,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "customers",
+          "tblSize" : "10",
+          "tblRecordCount" : 10,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
       } ],
       "position" : {
         "x" : 610,
         "y" : 103
       }
     },
-    "dataQuality" : {
+    "target" : {
       "dependentJob" : true,
-      "dependsOn" : [ "source" ],
-      "jobType" : "DATA_QUALITY",
-      "editData" : {
-        "dqRules" : {
-          "comdatacsv" : {
-            "rules" : [ {
-              "unitTestCaseId" : 273934654173,
-              "ruleType" : "NOT_NULLS",
-              "operator" : "=",
-              "column" : "id",
-              "creationTime" : 1764733393847,
-              "expectedPercent" : 100,
-              "level" : "Warning",
-              "description" : "id_not_null"
-            } ],
-            "dqSplitType" : "DATA_QUALITY",
-            "executeRulesOn" : "IN_MEMORY"
-          }
-        }
-      },
-      "description" : "data quality component",
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "new_snowflake_rsa_encrypted",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "PERSON_CLEANED" : null,
+          "STRESS_TEST_DQ_RULES_TEMP" : null,
+          "GOOD_DATA" : null,
+          "CARILION_ACCOUNT1_GOOD" : null,
+          "SF_BAD_DATA_10P" : null,
+          "CUSTOMER_ORACLE" : null,
+          "SF_BAD_DATA_50P" : null,
+          "HEALTH_DATA_DOMAIN" : null,
+          "HOSPITAL_DATA_STATS" : null,
+          "CLAIM_SETTLEMENTS_FOR_CITY_OF_AUSTIN" : null,
+          "HEALTH_DATA_NEW" : null,
+          "COUNTRIES" : null,
+          "PERSON" : null,
+          "HOSPITAL_DATA" : null,
+          "EXAMPLE_TIME" : null,
+          "COMMON_D" : null,
+          "TAXITRIPWITHOUTSPACES" : null,
+          "CARILION_ACCOUNT1_CLEANED" : null,
+          "SALES_CUST_TBL" : null,
+          "USERS" : null,
+          "HOSPITAL_INFO" : null,
+          "PATIENTS_5M" : null,
+          "PERSON_STATS" : null,
+          "CLIAREFERENCE1" : null,
+          "HOSPITAL_DATA2" : null,
+          "HOSPITAL_DATA1" : null,
+          "HOSPITAL_DATA_STATS1" : null,
+          "SF_GOOD_DATA" : null,
+          "AQIDATASET" : null,
+          "SALES_DATA_5M_B_NEW_ONE" : null,
+          "STRESS_TEST_DATA" : null,
+          "HEALTH_DATA_DOMAIN_BKP" : null,
+          "IOT_CSV" : null,
+          "CUSTOMER_NEW_TBL" : null,
+          "REGIONS" : null,
+          "TEST_DATA_WITH_SQL" : null,
+          "PERSON_DETAILS" : null,
+          "EMPLOYEES_ORACLE" : null,
+          "CUSTOMER_TBL" : null,
+          "DQ_RULES_TEMPLATE" : null,
+          "SALES_DATA_5M_COPY" : null,
+          "ALL_DATATYPES_SF" : null,
+          "ANALYTICS_CLOSED_ENCOUNTERS" : null,
+          "RES_EMP_2M_PK" : null,
+          "SAMPLE_EXT" : null,
+          "CUSTOMERS_ABOVE_30" : null,
+          "SALES_DATA_2M" : null,
+          "ALL_DATATYPES_B" : null,
+          "TAXIDATA" : null,
+          "EMPLOYEEDATA" : null,
+          "WALMART_RAW" : null,
+          "HCPHLOINCTABLE" : null,
+          "ICD_CODES" : null,
+          "ENROLL_DETAIL_SNAPSHOT" : null,
+          "ICD_LOOKUP_TABLE" : null,
+          "RES_EMP_2M" : null,
+          "SALES_CUST_TBL1" : null,
+          "CELLBYCELL_C" : null,
+          "SALES_DATA_2M_B" : null,
+          "PERSON_DETAILS_B" : null,
+          "PERSON_DETAILS_A" : null,
+          "CLAIM_SETTLEMENTS_FOR_CITY_OF_AUSTIN1" : null,
+          "CARILION_ACCOUNT" : null,
+          "LINEITEM" : null,
+          "PRODUCT1" : null,
+          "EMP_HASH" : null,
+          "HOSPITAL_DATA_GOOD" : null,
+          "ORDERS_BAD" : null,
+          "ORDERS" : null,
+          "MVW_USERS_CUR" : null,
+          "SALES_DATA_5M_B" : null,
+          "SALES_CUST_TBL_TEMP" : null,
+          "SALES_DATA_5M_B_NEW" : null,
+          "SALES_DATA_5M_B_NEWONE" : null,
+          "ALPHADERA_DUMMY_ERROR1" : null,
+          "CARILION_ACCOUNT1_STATS" : null,
+          "ITEM_DETAILS" : null,
+          "HEALTH_DATA_MAIN_CSV" : null,
+          "HOSPITAL_DATA_CLEANED" : null,
+          "KW_STAFF_D" : null,
+          "CUSTOMER_DETAILS" : null,
+          "TEST" : null,
+          "HEALTH_DATA" : null,
+          "HOSPITAL_DELME" : null,
+          "LOOKUP_DATA" : null,
+          "CARILION_ACCOUNT1" : null,
+          "MEDICATION" : null,
+          "SAMPLETABLE_UNIQUEIDENTIFIER" : null,
+          "HIST_ATHENA_ORDER_DESCRIPTIONS_VALUE_SETS" : null,
+          "MY_TABLE" : null,
+          "PERSONS" : null,
+          "SAMPLETABLE_BIT" : null,
+          "RECIPES" : null,
+          "DEPARTMENTS" : null,
+          "SALES_DATA_5M" : null,
+          "PARTSUPP" : null,
+          "PERSON_GOOD" : null,
+          "TBL_ITEMTRANSACTIONS1" : null,
+          "PART" : null,
+          "STRESS_TEST_DQ_RULES_CV" : null,
+          "BRANCH" : null,
+          "MONTHLY_SALES" : null,
+          "TAXITRIP" : null,
+          "TEST_DATA_DQ_RULES_ACT_DQ" : null,
+          "AVHANA_TABLE" : null,
+          "STRESS_TEST_DQ_RULES" : null,
+          "SALES_TBL" : null,
+          "HIST_RULES" : null,
+          "PERSON_DESCRIPTION" : null,
+          "MASS_TEST_CAMEL_CASE" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "PERSON_CLEANED",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "STRESS_TEST_DQ_RULES_TEMP",
+          "tblSize" : "1",
+          "tblRecordCount" : 254,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "GOOD_DATA",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CARILION_ACCOUNT1_GOOD",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SF_BAD_DATA_10P",
+          "tblSize" : "25444",
+          "tblRecordCount" : 1106599457,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER_ORACLE",
+          "tblSize" : "2",
+          "tblRecordCount" : 43838,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SF_BAD_DATA_50P",
+          "tblSize" : "14623",
+          "tblRecordCount" : 919396188,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HEALTH_DATA_DOMAIN",
+          "tblSize" : "3",
+          "tblRecordCount" : 35398,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HOSPITAL_DATA_STATS",
+          "tblSize" : "1",
+          "tblRecordCount" : 100,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CLAIM_SETTLEMENTS_FOR_CITY_OF_AUSTIN",
+          "tblSize" : "1",
+          "tblRecordCount" : 161,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HEALTH_DATA_NEW",
+          "tblSize" : "1",
+          "tblRecordCount" : 99,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "COUNTRIES",
+          "tblSize" : "1",
+          "tblRecordCount" : 25,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PERSON",
+          "tblSize" : "1",
+          "tblRecordCount" : 15,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HOSPITAL_DATA",
+          "tblSize" : "1",
+          "tblRecordCount" : 99,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EXAMPLE_TIME",
+          "tblSize" : "1",
+          "tblRecordCount" : 8,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "COMMON_D",
+          "tblSize" : "1",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "TAXITRIPWITHOUTSPACES",
+          "tblSize" : "1",
+          "tblRecordCount" : 10,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CARILION_ACCOUNT1_CLEANED",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_CUST_TBL",
+          "tblSize" : "1",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "USERS",
+          "tblSize" : "1",
+          "tblRecordCount" : 3,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HOSPITAL_INFO",
+          "tblSize" : "1",
+          "tblRecordCount" : 100,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PATIENTS_5M",
+          "tblSize" : "89",
+          "tblRecordCount" : 5000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PERSON_STATS",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CLIAREFERENCE1",
+          "tblSize" : "1",
+          "tblRecordCount" : 7,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HOSPITAL_DATA2",
+          "tblSize" : "1",
+          "tblRecordCount" : 101,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HOSPITAL_DATA1",
+          "tblSize" : "1",
+          "tblRecordCount" : 101,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HOSPITAL_DATA_STATS1",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SF_GOOD_DATA",
+          "tblSize" : "23997",
+          "tblRecordCount" : 1106599457,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "AQIDATASET",
+          "tblSize" : "1",
+          "tblRecordCount" : 10924,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_DATA_5M_B_NEW_ONE",
+          "tblSize" : "106",
+          "tblRecordCount" : 5000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "STRESS_TEST_DATA",
+          "tblSize" : "10",
+          "tblRecordCount" : 2000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HEALTH_DATA_DOMAIN_BKP",
+          "tblSize" : "5",
+          "tblRecordCount" : 70796,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "IOT_CSV",
+          "tblSize" : "1",
+          "tblRecordCount" : 3942,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER_NEW_TBL",
+          "tblSize" : "122",
+          "tblRecordCount" : 3000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "REGIONS",
+          "tblSize" : "1",
+          "tblRecordCount" : 4,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "TEST_DATA_WITH_SQL",
+          "tblSize" : "1",
+          "tblRecordCount" : 59,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PERSON_DETAILS",
+          "tblSize" : "1",
+          "tblRecordCount" : 99,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEES_ORACLE",
+          "tblSize" : "1",
+          "tblRecordCount" : 4,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER_TBL",
+          "tblSize" : "1",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "DQ_RULES_TEMPLATE",
+          "tblSize" : "1",
+          "tblRecordCount" : 24,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_DATA_5M_COPY",
+          "tblSize" : "119",
+          "tblRecordCount" : 5000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ALL_DATATYPES_SF",
+          "tblSize" : "1",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ANALYTICS_CLOSED_ENCOUNTERS",
+          "tblSize" : "1",
+          "tblRecordCount" : 3,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "RES_EMP_2M_PK",
+          "tblSize" : "37",
+          "tblRecordCount" : 2000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SAMPLE_EXT",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMERS_ABOVE_30",
+          "tblSize" : "1",
+          "tblRecordCount" : 164,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_DATA_2M",
+          "tblSize" : "57",
+          "tblRecordCount" : 2162874,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ALL_DATATYPES_B",
+          "tblSize" : "1",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "TAXIDATA",
+          "tblSize" : "1",
+          "tblRecordCount" : 5,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEEDATA",
+          "tblSize" : "1",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "WALMART_RAW",
+          "tblSize" : "1",
+          "tblRecordCount" : 9,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HCPHLOINCTABLE",
+          "tblSize" : "1",
+          "tblRecordCount" : 164,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ICD_CODES",
+          "tblSize" : "4",
+          "tblRecordCount" : 100000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ENROLL_DETAIL_SNAPSHOT",
+          "tblSize" : "1",
+          "tblRecordCount" : 1,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ICD_LOOKUP_TABLE",
+          "tblSize" : "1",
+          "tblRecordCount" : 26,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "RES_EMP_2M",
+          "tblSize" : "146",
+          "tblRecordCount" : 8000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_CUST_TBL1",
+          "tblSize" : "1",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CELLBYCELL_C",
+          "tblSize" : "1",
+          "tblRecordCount" : 89,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_DATA_2M_B",
+          "tblSize" : "50",
+          "tblRecordCount" : 2000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PERSON_DETAILS_B",
+          "tblSize" : "1",
+          "tblRecordCount" : 100,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PERSON_DETAILS_A",
+          "tblSize" : "1",
+          "tblRecordCount" : 99,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CLAIM_SETTLEMENTS_FOR_CITY_OF_AUSTIN1",
+          "tblSize" : "1",
+          "tblRecordCount" : 157,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CARILION_ACCOUNT",
+          "tblSize" : "1",
+          "tblRecordCount" : 5,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "LINEITEM",
+          "tblSize" : "158",
+          "tblRecordCount" : 6001215,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PRODUCT1",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMP_HASH",
+          "tblSize" : "1",
+          "tblRecordCount" : 20000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HOSPITAL_DATA_GOOD",
+          "tblSize" : "1",
+          "tblRecordCount" : 100,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ORDERS_BAD",
+          "tblSize" : "31",
+          "tblRecordCount" : 1499983,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ORDERS",
+          "tblSize" : "39",
+          "tblRecordCount" : 1499983,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "MVW_USERS_CUR",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_DATA_5M_B",
+          "tblSize" : "187",
+          "tblRecordCount" : 5000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_CUST_TBL_TEMP",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_DATA_5M_B_NEW",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_DATA_5M_B_NEWONE",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ALPHADERA_DUMMY_ERROR1",
+          "tblSize" : "1",
+          "tblRecordCount" : 30,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CARILION_ACCOUNT1_STATS",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ITEM_DETAILS",
+          "tblSize" : "1",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HEALTH_DATA_MAIN_CSV",
+          "tblSize" : "1",
+          "tblRecordCount" : 4020,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HOSPITAL_DATA_CLEANED",
+          "tblSize" : "1",
+          "tblRecordCount" : 100,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "KW_STAFF_D",
+          "tblSize" : "1",
+          "tblRecordCount" : 4,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER_DETAILS",
+          "tblSize" : "1",
+          "tblRecordCount" : 17427,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "TEST",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HEALTH_DATA",
+          "tblSize" : "3",
+          "tblRecordCount" : 35555,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HOSPITAL_DELME",
+          "tblSize" : "1",
+          "tblRecordCount" : 100,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "LOOKUP_DATA",
+          "tblSize" : "1",
+          "tblRecordCount" : 17,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CARILION_ACCOUNT1",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "MEDICATION",
+          "tblSize" : "1",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SAMPLETABLE_UNIQUEIDENTIFIER",
+          "tblSize" : "1",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HIST_ATHENA_ORDER_DESCRIPTIONS_VALUE_SETS",
+          "tblSize" : "1",
+          "tblRecordCount" : 10,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "MY_TABLE",
+          "tblSize" : "1",
+          "tblRecordCount" : 1,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PERSONS",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SAMPLETABLE_BIT",
+          "tblSize" : "1",
+          "tblRecordCount" : 1000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "RECIPES",
+          "tblSize" : "1",
+          "tblRecordCount" : 3,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "DEPARTMENTS",
+          "tblSize" : "1",
+          "tblRecordCount" : 27,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_DATA_5M",
+          "tblSize" : "265",
+          "tblRecordCount" : 5000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PARTSUPP",
+          "tblSize" : "35",
+          "tblRecordCount" : 800000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PERSON_GOOD",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "TBL_ITEMTRANSACTIONS1",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PART",
+          "tblSize" : "5",
+          "tblRecordCount" : 200000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "STRESS_TEST_DQ_RULES_CV",
+          "tblSize" : "1",
+          "tblRecordCount" : 18,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "BRANCH",
+          "tblSize" : "1",
+          "tblRecordCount" : 2,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "MONTHLY_SALES",
+          "tblSize" : "1",
+          "tblRecordCount" : 16,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "TAXITRIP",
+          "tblSize" : "1",
+          "tblRecordCount" : 10,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "TEST_DATA_DQ_RULES_ACT_DQ",
+          "tblSize" : "1",
+          "tblRecordCount" : 25,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "AVHANA_TABLE",
+          "tblSize" : "1",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "STRESS_TEST_DQ_RULES",
+          "tblSize" : "1",
+          "tblRecordCount" : 254,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SALES_TBL",
+          "tblSize" : "1",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "HIST_RULES",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "PERSON_DESCRIPTION",
+          "tblSize" : "1",
+          "tblRecordCount" : 89,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "MASS_TEST_CAMEL_CASE",
+          "tblSize" : "1",
+          "tblRecordCount" : 4,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
       "position" : {
-        "x" : 289,
-        "y" : 165
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "COUNTS_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 663636513620,
+        "matchBoth" : true,
+        "compareType" : "COUNTS_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "customers" : "CUSTOMER_TBL"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5",
+          "COMPARISON_OPERATOR" : "="
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
       },
-      "id" : "dataQuality",
       "keyValueProps" : {
+        "COUNTS_COMPARE_TOLERANCE" : "0",
         "BAD_RECORD_COUNT" : "10"
       }
     }
   },
   "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"512d1aec-4fe8-4f27-aac9-736a205ecab2\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"com_data.csv\",\"filePath\":\"/my_data/user_files/com_data.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"comdatacsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"id\":\"1\",\"full_name\":\"John Smith\",\"email\":\"john.smith@example.com\",\"age\":\"28\",\"salary\":\"75000.50\",\"hire_date\":\"2020-03-15\",\"is_active\":\"true\",\"department\":\"Engineering\",\"phone\":\"(555) 123-4567\",\"ssn\":\"123-45-6789\",\"credit_score\":\"750\",\"product_code\":\"PROD-001\",\"status\":\"ACTIVE\",\"rating\":\"4.5\",\"comments\":\"Great employee with excellent skills\",\"ip_address\":\"192.168.1.100\",\"created_timestamp\":\"2020-03-15 09:30:00\",\"country_code\":\"US\",\"postal_code\":\"10001\",\"website_url\":\"https://example.com/john\"},{\"id\":\"2\",\"full_name\":\"Jane Doe\",\"email\":\"jane.doe@company.org\",\"age\":\"35\",\"salary\":\"95000.00\",\"hire_date\":\"2018-06-20\",\"is_active\":\"true\",\"department\":\"Marketing\",\"phone\":\"555-987-6543\",\"ssn\":\"987-65-4321\",\"credit_score\":\"820\",\"product_code\":\"PROD-002\",\"status\":\"ACTIVE\",\"rating\":\"4.8\",\"comments\":\"Outstanding performance consistently\",\"ip_address\":\"10.0.0.50\",\"created_timestamp\":\"2018-06-20 14:15:30\",\"country_code\":\"US\",\"postal_code\":\"90210\",\"website_url\":\"https://company.org/jane\"},{\"id\":\"3\",\"full_name\":\"Bob Johnson\",\"email\":\"bob.j@email.net\",\"age\":\"42\",\"salary\":\"120000.75\",\"hire_date\":\"2015-01-10\",\"is_active\":\"false\",\"department\":\"Sales\",\"phone\":\"555.246.8135\",\"ssn\":\"456-78-9012\",\"credit_score\":\"680\",\"product_code\":\"PROD-001\",\"status\":\"INACTIVE\",\"rating\":\"3.2\",\"comments\":\"Left for another opportunity\",\"ip_address\":\"172.16.0.25\",\"created_timestamp\":\"2015-01-10 08:00:00\",\"country_code\":\"CA\",\"postal_code\":\"M4B 1B3\",\"website_url\":\"http://profile.net/bob\"},{\"id\":\"4\",\"full_name\":\"Alice Williams\",\"age\":\"29\",\"salary\":\"82000.00\",\"hire_date\":\"2019-11-05\",\"is_active\":\"true\",\"department\":\"Engineering\",\"phone\":\"555-369-2580\",\"ssn\":\"789-01-2345\",\"credit_score\":\"790\",\"product_code\":\"PROD-003\",\"status\":\"ACTIVE\",\"rating\":\"4.6\",\"ip_address\":\"192.168.2.75\",\"created_timestamp\":\"2019-11-05 10:45:15\",\"country_code\":\"US\",\"postal_code\":\"60601\"},{\"id\":\"5\",\"full_name\":\"Charlie Brown\",\"email\":\"charlie@test.com\",\"age\":\"31\",\"hire_date\":\"2021-02-28\",\"is_active\":\"true\",\"department\":\"HR\",\"phone\":\"(555) 147-2583\",\"ssn\":\"234-56-7890\",\"credit_score\":\"710\",\"product_code\":\"PROD-002\",\"status\":\"ACTIVE\",\"rating\":\"4.1\",\"comments\":\"Good team player\",\"ip_address\":\"10.10.10.10\",\"created_timestamp\":\"2021-02-28 11:30:00\",\"country_code\":\"UK\",\"postal_code\":\"SW1A 1AA\",\"website_url\":\"https://test.com/charlie\"},{\"id\":\"6\",\"full_name\":\"Diana Prince\",\"email\":\"diana.prince@amazon.com\",\"age\":\"33\",\"salary\":\"105000.25\",\"hire_date\":\"2017-09-12\",\"is_active\":\"true\",\"department\":\"Engineering\",\"phone\":\"555-789-0123\",\"ssn\":\"345-67-8901\",\"credit_score\":\"805\",\"product_code\":\"PROD-001\",\"status\":\"ACTIVE\",\"rating\":\"4.9\",\"comments\":\"Exceptional leader and mentor\",\"ip_address\":\"172.31.0.100\",\"created_timestamp\":\"2017-09-12 09:00:00\",\"country_code\":\"US\",\"postal_code\":\"98101\",\"website_url\":\"https://amazon.com/diana\"},{\"id\":\"7\",\"full_name\":\"Eve Anderson\",\"email\":\"eve@startup.io\",\"age\":\"27\",\"salary\":\"68000.00\",\"hire_date\":\"2022-04-01\",\"is_active\":\"true\",\"department\":\"Marketing\",\"phone\":\"555.123.7890\",\"ssn\":\"567-89-0123\",\"credit_score\":\"695\",\"product_code\":\"PROD-004\",\"status\":\"ACTIVE\",\"rating\":\"3.8\",\"comments\":\"Shows great potential\",\"ip_address\":\"192.168.3.200\",\"created_timestamp\":\"2022-04-01 08:30:45\",\"country_code\":\"US\",\"postal_code\":\"94105\",\"website_url\":\"http://startup.io/eve\"},{\"id\":\"8\",\"full_name\":\"Frank Miller\",\"email\":\"frank.miller@corp.com\",\"age\":\"45\",\"salary\":\"135000.00\",\"hire_date\":\"2014-07-15\",\"is_active\":\"false\",\"department\":\"Sales\",\"phone\":\"555-456-7890\",\"ssn\":\"678-90-1234\",\"credit_score\":\"760\",\"product_code\":\"PROD-002\",\"status\":\"INACTIVE\",\"rating\":\"3.5\",\"comments\":\"Retired early\",\"ip_address\":\"10.20.30.40\",\"created_timestamp\":\"2014-07-15 13:20:10\",\"country_code\":\"CA\",\"postal_code\":\"V6B 4Y8\",\"website_url\":\"https://corp.com/frank\"},{\"id\":\"9\",\"full_name\":\"Grace Lee\",\"email\":\"grace.lee@tech.com\",\"age\":\"30\",\"salary\":\"88000.50\",\"hire_date\":\"2020-08-20\",\"is_active\":\"true\",\"department\":\"Engineering\",\"phone\":\"(555) 987-1234\",\"ssn\":\"890-12-3456\",\"credit_score\":\"780\",\"product_code\":\"PROD-001\",\"status\":\"ACTIVE\",\"rating\":\"4.7\",\"comments\":\"Consistently delivers quality work\",\"ip_address\":\"192.168.4.50\",\"created_timestamp\":\"2020-08-20 10:00:00\",\"country_code\":\"US\",\"postal_code\":\"02134\",\"website_url\":\"https://tech.com/grace\"},{\"id\":\"10\",\"full_name\":\"Henry Wilson\",\"age\":\"38\",\"salary\":\"98000.00\",\"hire_date\":\"2016-05-10\",\"is_active\":\"true\",\"department\":\"HR\",\"phone\":\"555-654-3210\",\"ssn\":\"901-23-4567\",\"credit_score\":\"725\",\"product_code\":\"PROD-003\",\"status\":\"ACTIVE\",\"rating\":\"4.2\",\"comments\":\"Reliable and dedicated\",\"ip_address\":\"172.16.1.100\",\"created_timestamp\":\"2016-05-10 09:15:30\",\"country_code\":\"UK\",\"postal_code\":\"EC1A 1BB\"}],\"schema\":[{\"columnName\":\"id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"full_name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"email\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"salary\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"hire_date\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"is_active\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"department\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"phone\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"ssn\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"credit_score\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"product_code\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"status\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"rating\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"comments\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"ip_address\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"created_timestamp\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"country_code\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"postal_code\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"website_url\",\"columnType\":\"string\",\"nullable\":true}],\"count\":10,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"my new test\",\"data_monitoring\":false,\"dimensions\":[],\"aggregations\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\"},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{\"id\":{\"NOT_NULL\":{\"value\":true,\"ruleName\":\"id_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"273934654173\"},\"NOT_EMPTY\":{\"ruleName\":\"id_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"124174327607\"},\"LEFT_SPACES\":{\"ruleName\":\"id_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"873325912562\"},\"RIGHT_SPACES\":{\"ruleName\":\"id_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1192212750156\"},\"UNIQUE_VALUES\":{\"ruleName\":\"id_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"701353191955\"},\"MIN_VALUE\":{\"ruleName\":\"id_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"288696065621\"},\"MAX_VALUE\":{\"ruleName\":\"id_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"722282382521\"},\"MIN_LENGTH\":{\"ruleName\":\"id_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"254419083727\"},\"MAX_LENGTH\":{\"ruleName\":\"id_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"733503320664\"},\"SQL_RULE\":{\"ruleName\":\"id_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"658058865806\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"id_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"506523188538\"}},\"full_name\":{\"NOT_NULL\":{\"ruleName\":\"full_name_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1147726379466\"},\"NOT_EMPTY\":{\"ruleName\":\"full_name_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1728548311027\"},\"LEFT_SPACES\":{\"ruleName\":\"full_name_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1701070717569\"},\"RIGHT_SPACES\":{\"ruleName\":\"full_name_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1247386960493\"},\"UNIQUE_VALUES\":{\"ruleName\":\"full_name_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"800539274413\"},\"MIN_VALUE\":{\"ruleName\":\"full_name_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"796250349468\"},\"MAX_VALUE\":{\"ruleName\":\"full_name_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"630510527277\"},\"MIN_LENGTH\":{\"ruleName\":\"full_name_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1424920313306\"},\"MAX_LENGTH\":{\"ruleName\":\"full_name_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"987653668305\"},\"SQL_RULE\":{\"ruleName\":\"full_name_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1491935364457\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"full_name_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"963921122977\"}},\"email\":{\"NOT_NULL\":{\"ruleName\":\"email_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"423605127034\"},\"NOT_EMPTY\":{\"ruleName\":\"email_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1489484936958\"},\"LEFT_SPACES\":{\"ruleName\":\"email_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"319433660463\"},\"RIGHT_SPACES\":{\"ruleName\":\"email_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"113761668656\"},\"UNIQUE_VALUES\":{\"ruleName\":\"email_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"873528490343\"},\"MIN_VALUE\":{\"ruleName\":\"email_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1754389447473\"},\"MAX_VALUE\":{\"ruleName\":\"email_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1438494117902\"},\"MIN_LENGTH\":{\"ruleName\":\"email_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1146661242232\"},\"MAX_LENGTH\":{\"ruleName\":\"email_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1240670059895\"},\"SQL_RULE\":{\"ruleName\":\"email_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"325680485061\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"email_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"788807500101\"}},\"age\":{\"NOT_NULL\":{\"ruleName\":\"age_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1210181563438\"},\"NOT_EMPTY\":{\"ruleName\":\"age_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1484136823226\"},\"LEFT_SPACES\":{\"ruleName\":\"age_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"79146207517\"},\"RIGHT_SPACES\":{\"ruleName\":\"age_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1674176256964\"},\"UNIQUE_VALUES\":{\"ruleName\":\"age_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"453809511549\"},\"MIN_VALUE\":{\"ruleName\":\"age_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"599530891356\"},\"MAX_VALUE\":{\"ruleName\":\"age_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"340035290373\"},\"MIN_LENGTH\":{\"ruleName\":\"age_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"574045656884\"},\"MAX_LENGTH\":{\"ruleName\":\"age_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1299126072405\"},\"SQL_RULE\":{\"ruleName\":\"age_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"924394989326\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"age_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1722369460091\"}},\"salary\":{\"NOT_NULL\":{\"ruleName\":\"salary_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"733111176888\"},\"NOT_EMPTY\":{\"ruleName\":\"salary_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"388922912929\"},\"LEFT_SPACES\":{\"ruleName\":\"salary_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"2133812358\"},\"RIGHT_SPACES\":{\"ruleName\":\"salary_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"491864257078\"},\"UNIQUE_VALUES\":{\"ruleName\":\"salary_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"723429961315\"},\"MIN_VALUE\":{\"ruleName\":\"salary_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1717115269267\"},\"MAX_VALUE\":{\"ruleName\":\"salary_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"727926789408\"},\"MIN_LENGTH\":{\"ruleName\":\"salary_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1325642279863\"},\"MAX_LENGTH\":{\"ruleName\":\"salary_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"348035765836\"},\"SQL_RULE\":{\"ruleName\":\"salary_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"521260724126\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"salary_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"514762698587\"}},\"hire_date\":{\"NOT_NULL\":{\"ruleName\":\"hire_date_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1255804712674\"},\"NOT_EMPTY\":{\"ruleName\":\"hire_date_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1120402166327\"},\"LEFT_SPACES\":{\"ruleName\":\"hire_date_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"232979163759\"},\"RIGHT_SPACES\":{\"ruleName\":\"hire_date_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1116863268669\"},\"UNIQUE_VALUES\":{\"ruleName\":\"hire_date_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"401291851509\"},\"MIN_VALUE\":{\"ruleName\":\"hire_date_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1464373437220\"},\"MAX_VALUE\":{\"ruleName\":\"hire_date_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1171417345234\"},\"MIN_LENGTH\":{\"ruleName\":\"hire_date_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"811994105231\"},\"MAX_LENGTH\":{\"ruleName\":\"hire_date_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"942059969492\"},\"SQL_RULE\":{\"ruleName\":\"hire_date_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1596719190415\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"hire_date_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"461135750730\"}},\"is_active\":{\"NOT_NULL\":{\"ruleName\":\"is_active_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"695279180705\"},\"NOT_EMPTY\":{\"ruleName\":\"is_active_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1119015858179\"},\"LEFT_SPACES\":{\"ruleName\":\"is_active_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"315016753791\"},\"RIGHT_SPACES\":{\"ruleName\":\"is_active_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1384284230906\"},\"UNIQUE_VALUES\":{\"ruleName\":\"is_active_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"35378774019\"},\"MIN_VALUE\":{\"ruleName\":\"is_active_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1080724440405\"},\"MAX_VALUE\":{\"ruleName\":\"is_active_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"451532911368\"},\"MIN_LENGTH\":{\"ruleName\":\"is_active_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"257714022247\"},\"MAX_LENGTH\":{\"ruleName\":\"is_active_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"822802725786\"},\"SQL_RULE\":{\"ruleName\":\"is_active_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"95026407501\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"is_active_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"597804651108\"}},\"department\":{\"NOT_NULL\":{\"ruleName\":\"department_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1196706092440\"},\"NOT_EMPTY\":{\"ruleName\":\"department_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1496821535089\"},\"LEFT_SPACES\":{\"ruleName\":\"department_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1745250959589\"},\"RIGHT_SPACES\":{\"ruleName\":\"department_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"914121184804\"},\"UNIQUE_VALUES\":{\"ruleName\":\"department_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"719069593276\"},\"MIN_VALUE\":{\"ruleName\":\"department_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1667778884274\"},\"MAX_VALUE\":{\"ruleName\":\"department_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"58062508803\"},\"MIN_LENGTH\":{\"ruleName\":\"department_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1586842733727\"},\"MAX_LENGTH\":{\"ruleName\":\"department_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1294077916632\"},\"SQL_RULE\":{\"ruleName\":\"department_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1597598879366\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"department_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"402690744456\"}},\"phone\":{\"NOT_NULL\":{\"ruleName\":\"phone_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"171176090056\"},\"NOT_EMPTY\":{\"ruleName\":\"phone_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"129506256654\"},\"LEFT_SPACES\":{\"ruleName\":\"phone_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"630295729935\"},\"RIGHT_SPACES\":{\"ruleName\":\"phone_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"677723663519\"},\"UNIQUE_VALUES\":{\"ruleName\":\"phone_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"473665886743\"},\"MIN_VALUE\":{\"ruleName\":\"phone_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1262704404226\"},\"MAX_VALUE\":{\"ruleName\":\"phone_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1388050268211\"},\"MIN_LENGTH\":{\"ruleName\":\"phone_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1076203493488\"},\"MAX_LENGTH\":{\"ruleName\":\"phone_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"467106038133\"},\"SQL_RULE\":{\"ruleName\":\"phone_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"823387046256\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"phone_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"745009140076\"}},\"ssn\":{\"NOT_NULL\":{\"ruleName\":\"ssn_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"471217783675\"},\"NOT_EMPTY\":{\"ruleName\":\"ssn_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1611080040020\"},\"LEFT_SPACES\":{\"ruleName\":\"ssn_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"462053544188\"},\"RIGHT_SPACES\":{\"ruleName\":\"ssn_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1694538240014\"},\"UNIQUE_VALUES\":{\"ruleName\":\"ssn_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"671159202035\"},\"MIN_VALUE\":{\"ruleName\":\"ssn_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1258570537785\"},\"MAX_VALUE\":{\"ruleName\":\"ssn_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"704323403969\"},\"MIN_LENGTH\":{\"ruleName\":\"ssn_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"294218304565\"},\"MAX_LENGTH\":{\"ruleName\":\"ssn_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1751720298078\"},\"SQL_RULE\":{\"ruleName\":\"ssn_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"723007232582\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"ssn_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"259063280316\"}},\"credit_score\":{\"NOT_NULL\":{\"ruleName\":\"credit_score_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"17224044759\"},\"NOT_EMPTY\":{\"ruleName\":\"credit_score_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"833063255744\"},\"LEFT_SPACES\":{\"ruleName\":\"credit_score_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"586545640231\"},\"RIGHT_SPACES\":{\"ruleName\":\"credit_score_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"651398204454\"},\"UNIQUE_VALUES\":{\"ruleName\":\"credit_score_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"125358578494\"},\"MIN_VALUE\":{\"ruleName\":\"credit_score_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1039374605082\"},\"MAX_VALUE\":{\"ruleName\":\"credit_score_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"30478541981\"},\"MIN_LENGTH\":{\"ruleName\":\"credit_score_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1439663764671\"},\"MAX_LENGTH\":{\"ruleName\":\"credit_score_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"618421221880\"},\"SQL_RULE\":{\"ruleName\":\"credit_score_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"378192155023\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"credit_score_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"643539560973\"}},\"product_code\":{\"NOT_NULL\":{\"ruleName\":\"product_code_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"226422152657\"},\"NOT_EMPTY\":{\"ruleName\":\"product_code_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"216272650690\"},\"LEFT_SPACES\":{\"ruleName\":\"product_code_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"680111195502\"},\"RIGHT_SPACES\":{\"ruleName\":\"product_code_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1676519228778\"},\"UNIQUE_VALUES\":{\"ruleName\":\"product_code_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"238201286810\"},\"MIN_VALUE\":{\"ruleName\":\"product_code_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"691184946097\"},\"MAX_VALUE\":{\"ruleName\":\"product_code_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1210107294859\"},\"MIN_LENGTH\":{\"ruleName\":\"product_code_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"379999495843\"},\"MAX_LENGTH\":{\"ruleName\":\"product_code_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1360963659551\"},\"SQL_RULE\":{\"ruleName\":\"product_code_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"940311403181\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"product_code_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1346133020161\"}},\"status\":{\"NOT_NULL\":{\"ruleName\":\"status_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1118060229047\"},\"NOT_EMPTY\":{\"ruleName\":\"status_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"49580977187\"},\"LEFT_SPACES\":{\"ruleName\":\"status_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"957228893878\"},\"RIGHT_SPACES\":{\"ruleName\":\"status_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"962326340467\"},\"UNIQUE_VALUES\":{\"ruleName\":\"status_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"981558918339\"},\"MIN_VALUE\":{\"ruleName\":\"status_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1396411554484\"},\"MAX_VALUE\":{\"ruleName\":\"status_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"587569908227\"},\"MIN_LENGTH\":{\"ruleName\":\"status_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1031564229205\"},\"MAX_LENGTH\":{\"ruleName\":\"status_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1185865391380\"},\"SQL_RULE\":{\"ruleName\":\"status_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1288883492708\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"status_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"390584313679\"}},\"rating\":{\"NOT_NULL\":{\"ruleName\":\"rating_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"508384188802\"},\"NOT_EMPTY\":{\"ruleName\":\"rating_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"118767106885\"},\"LEFT_SPACES\":{\"ruleName\":\"rating_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"968489305557\"},\"RIGHT_SPACES\":{\"ruleName\":\"rating_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1470229719622\"},\"UNIQUE_VALUES\":{\"ruleName\":\"rating_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1497632379512\"},\"MIN_VALUE\":{\"ruleName\":\"rating_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"923529973994\"},\"MAX_VALUE\":{\"ruleName\":\"rating_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"681551995796\"},\"MIN_LENGTH\":{\"ruleName\":\"rating_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"965850334710\"},\"MAX_LENGTH\":{\"ruleName\":\"rating_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"384154068022\"},\"SQL_RULE\":{\"ruleName\":\"rating_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"323472093118\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"rating_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1553138868728\"}},\"comments\":{\"NOT_NULL\":{\"ruleName\":\"comments_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"866403975732\"},\"NOT_EMPTY\":{\"ruleName\":\"comments_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"450707843584\"},\"LEFT_SPACES\":{\"ruleName\":\"comments_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1255784060056\"},\"RIGHT_SPACES\":{\"ruleName\":\"comments_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1360640705444\"},\"UNIQUE_VALUES\":{\"ruleName\":\"comments_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"246809134179\"},\"MIN_VALUE\":{\"ruleName\":\"comments_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"800066017508\"},\"MAX_VALUE\":{\"ruleName\":\"comments_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1181864478702\"},\"MIN_LENGTH\":{\"ruleName\":\"comments_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"562142142757\"},\"MAX_LENGTH\":{\"ruleName\":\"comments_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1229179326370\"},\"SQL_RULE\":{\"ruleName\":\"comments_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1045807221512\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"comments_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"795510821978\"}},\"ip_address\":{\"NOT_NULL\":{\"ruleName\":\"ip_address_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"989997469230\"},\"NOT_EMPTY\":{\"ruleName\":\"ip_address_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"26813576158\"},\"LEFT_SPACES\":{\"ruleName\":\"ip_address_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"243646716532\"},\"RIGHT_SPACES\":{\"ruleName\":\"ip_address_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1173321460956\"},\"UNIQUE_VALUES\":{\"ruleName\":\"ip_address_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"475401086053\"},\"MIN_VALUE\":{\"ruleName\":\"ip_address_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"535970842606\"},\"MAX_VALUE\":{\"ruleName\":\"ip_address_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1211875402034\"},\"MIN_LENGTH\":{\"ruleName\":\"ip_address_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"901432021905\"},\"MAX_LENGTH\":{\"ruleName\":\"ip_address_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1128729500814\"},\"SQL_RULE\":{\"ruleName\":\"ip_address_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"603698925606\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"ip_address_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"136544372771\"}},\"created_timestamp\":{\"NOT_NULL\":{\"ruleName\":\"created_timestamp_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1183242813882\"},\"NOT_EMPTY\":{\"ruleName\":\"created_timestamp_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1463378412226\"},\"LEFT_SPACES\":{\"ruleName\":\"created_timestamp_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1073713132368\"},\"RIGHT_SPACES\":{\"ruleName\":\"created_timestamp_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"662285017354\"},\"UNIQUE_VALUES\":{\"ruleName\":\"created_timestamp_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"681788316169\"},\"MIN_VALUE\":{\"ruleName\":\"created_timestamp_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"426153933376\"},\"MAX_VALUE\":{\"ruleName\":\"created_timestamp_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"378162001605\"},\"MIN_LENGTH\":{\"ruleName\":\"created_timestamp_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"784836667153\"},\"MAX_LENGTH\":{\"ruleName\":\"created_timestamp_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1116555659526\"},\"SQL_RULE\":{\"ruleName\":\"created_timestamp_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"750277944481\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"created_timestamp_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1352688256909\"}},\"country_code\":{\"NOT_NULL\":{\"ruleName\":\"country_code_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"337579942597\"},\"NOT_EMPTY\":{\"ruleName\":\"country_code_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"848779131261\"},\"LEFT_SPACES\":{\"ruleName\":\"country_code_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1200434890550\"},\"RIGHT_SPACES\":{\"ruleName\":\"country_code_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"799097910448\"},\"UNIQUE_VALUES\":{\"ruleName\":\"country_code_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1536285068190\"},\"MIN_VALUE\":{\"ruleName\":\"country_code_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"620143818441\"},\"MAX_VALUE\":{\"ruleName\":\"country_code_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"936762147616\"},\"MIN_LENGTH\":{\"ruleName\":\"country_code_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1441853255752\"},\"MAX_LENGTH\":{\"ruleName\":\"country_code_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1144481051074\"},\"SQL_RULE\":{\"ruleName\":\"country_code_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"931792347920\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"country_code_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"114410301603\"}},\"postal_code\":{\"NOT_NULL\":{\"ruleName\":\"postal_code_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"629810296958\"},\"NOT_EMPTY\":{\"ruleName\":\"postal_code_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"529809602089\"},\"LEFT_SPACES\":{\"ruleName\":\"postal_code_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1390343227483\"},\"RIGHT_SPACES\":{\"ruleName\":\"postal_code_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1084268921200\"},\"UNIQUE_VALUES\":{\"ruleName\":\"postal_code_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"829973004545\"},\"MIN_VALUE\":{\"ruleName\":\"postal_code_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1449930242754\"},\"MAX_VALUE\":{\"ruleName\":\"postal_code_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"190917845467\"},\"MIN_LENGTH\":{\"ruleName\":\"postal_code_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1337563061723\"},\"MAX_LENGTH\":{\"ruleName\":\"postal_code_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1080632919715\"},\"SQL_RULE\":{\"ruleName\":\"postal_code_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1517880304149\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"postal_code_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"581361464872\"}},\"website_url\":{\"NOT_NULL\":{\"ruleName\":\"website_url_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"759975414187\"},\"NOT_EMPTY\":{\"ruleName\":\"website_url_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1035035891784\"},\"LEFT_SPACES\":{\"ruleName\":\"website_url_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"392838130198\"},\"RIGHT_SPACES\":{\"ruleName\":\"website_url_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1493115301923\"},\"UNIQUE_VALUES\":{\"ruleName\":\"website_url_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"570332095002\"},\"MIN_VALUE\":{\"ruleName\":\"website_url_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"878511467851\"},\"MAX_VALUE\":{\"ruleName\":\"website_url_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"578044854747\"},\"MIN_LENGTH\":{\"ruleName\":\"website_url_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"551332654283\"},\"MAX_LENGTH\":{\"ruleName\":\"website_url_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"108370337690\"},\"SQL_RULE\":{\"ruleName\":\"website_url_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"313855617494\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"website_url_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1435336593687\"}}},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"273934654173\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
-  "flowId" : 11902,
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"a54e4a10-3f96-4489-abaf-6bb632c517bf\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"redshift\",\"schemaName\":\"public\",\"typeTable\":\"TABLE\",\"tableName\":\"observations\",\"partitionProperties\":{\"numberOfPart\":16,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":14582060,\"tableSize\":320,\"noOfPartition\":16,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"b5ae2bbc-4389-44a3-80a2-a17a830afe76\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"redshift\",\"schemaName\":\"public\",\"typeTable\":\"TABLE\",\"tableName\":\"customers\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10,\"tableSize\":10,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"8a41be3b-9cb8-4c3d-96a6-eb7bc59e4483\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PERSON_CLEANED\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"256df862-6d30-47fe-a0c3-daa35fe861f2\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"STRESS_TEST_DQ_RULES_TEMP\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":254,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"d08fb5fc-ef28-4722-a777-321369a5319d\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"GOOD_DATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"0c84a990-b70c-4a5a-acd5-80286a634b87\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CARILION_ACCOUNT1_GOOD\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"0aeb5ea5-2362-4ea2-a7ee-a2aba30c52d0\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SF_BAD_DATA_10P\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1106599457,\"tableSize\":25444,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"acdf2a56-2b8e-4d83-a5a6-9b086896a6fb\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER_ORACLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":43838,\"tableSize\":2,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"1604a890-c0fd-4dec-a659-f09eed48d198\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SF_BAD_DATA_50P\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":919396188,\"tableSize\":14623,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"26491e4e-2453-4b55-88d1-09137d7bffea\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HEALTH_DATA_DOMAIN\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":35398,\"tableSize\":3,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"de701275-89a3-4a4d-95d6-1c6cbab8f06b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HOSPITAL_DATA_STATS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"853f06cc-4481-49bc-bf53-2ac19ce4e1c3\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CLAIM_SETTLEMENTS_FOR_CITY_OF_AUSTIN\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":161,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"9ed7a2df-11c4-4366-88a7-9b903a9302da\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HEALTH_DATA_NEW\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":99,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"eee449b0-4fbd-4743-a11a-ea785850333b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"COUNTRIES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":25,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"3b50ea3c-64c1-4e11-98a1-75ddff427c8e\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PERSON\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":15,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"a1dd7aa5-cdcf-48cf-878b-157a4acccff5\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HOSPITAL_DATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":99,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"f9ed15f5-3b2c-4dc2-ae24-d035f57739cc\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"EXAMPLE_TIME\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":8,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"5d923fbc-ec46-4306-a6c6-f060524f62cc\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"COMMON_D\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"e283f8e2-ca04-4ba6-ad19-2a4b6480073d\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"TAXITRIPWITHOUTSPACES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"a37562db-f656-4a77-94ce-41d7ad1402e2\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CARILION_ACCOUNT1_CLEANED\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"fa66b10a-b332-4e3f-8e2b-a14ad010fa77\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_CUST_TBL\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"19e3790d-a490-41a2-9702-5b5f19acd111\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"USERS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":3,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"fb9b9f54-ede8-4fa4-800a-a0bddf26f5a9\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HOSPITAL_INFO\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"292b4fe0-4c2f-4e3d-a7cd-b44748ee4847\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PATIENTS_5M\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":5000000,\"tableSize\":89,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"afc529f0-b10f-4a3b-986c-3b2961617432\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PERSON_STATS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"99eb9546-264b-4d98-982f-f90694cbb705\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CLIAREFERENCE1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":7,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"87c948f5-e9b9-4155-ac44-965dd514655b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HOSPITAL_DATA2\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":101,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"05f182fe-2550-4d00-b321-680c94247212\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HOSPITAL_DATA1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":101,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"2848fc39-8f29-4122-aa53-407c79dd34d1\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HOSPITAL_DATA_STATS1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"05d185e5-0fa5-4cbb-8f1f-213a41743b32\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SF_GOOD_DATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1106599457,\"tableSize\":23997,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"e42188ea-796e-4227-b36f-4d2fef9c50d7\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"AQIDATASET\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10924,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"8b8006fa-2b28-44d4-a602-315771b72f5a\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_5M_B_NEW_ONE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":5000000,\"tableSize\":106,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"b6599d04-922f-482a-835b-2ea6bee0a0de\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"STRESS_TEST_DATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":2000000,\"tableSize\":10,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"eebca945-4fd3-48c1-9376-4718d1ff094d\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HEALTH_DATA_DOMAIN_BKP\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":70796,\"tableSize\":5,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"681946ca-a0a6-46fc-95b5-5062ea73971a\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"IOT_CSV\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":3942,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"ba5ace6c-2299-4967-908f-60e840c1af48\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER_NEW_TBL\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":3000000,\"tableSize\":122,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"0e3b4dd9-2bf3-44f8-bee1-b720feb0f10a\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"REGIONS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":4,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"0ea8f243-59e4-4308-9b04-0b8d25c98eda\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"TEST_DATA_WITH_SQL\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":59,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"9a310cef-9cd7-4aa0-8638-57229a504a61\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PERSON_DETAILS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":99,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"82cfb660-01ba-4b6d-a3a5-1ddb072ad3a6\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEES_ORACLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":4,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"e797ab54-6ecc-48ed-8aaa-8a340809c090\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER_TBL\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"4173df71-49d3-449d-8fcf-bc92c42ead8f\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"DQ_RULES_TEMPLATE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":24,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"816bf161-b99c-4495-9c5a-65c91a89ff87\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_5M_COPY\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":5000000,\"tableSize\":119,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"ff48a114-5b2b-4dc0-8721-1bad0aa911d8\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ALL_DATATYPES_SF\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"bede7f82-aaeb-46b6-bf3e-1e44f16bfcb7\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ANALYTICS_CLOSED_ENCOUNTERS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":3,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"c0461a3f-2c81-45c4-ab6c-29f24be89f5e\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"RES_EMP_2M_PK\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":2000000,\"tableSize\":37,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"0843ec48-6a87-4e85-9b53-5d050888b7b8\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SAMPLE_EXT\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"b3bb23cd-8088-4b71-b219-adc59e2e924d\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMERS_ABOVE_30\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":164,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"bc3a1c39-c4de-4f9f-bfad-d42f2a2d4abe\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_2M\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":2162874,\"tableSize\":57,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"ee53a332-c76a-4833-8152-9e34f3de9c40\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ALL_DATATYPES_B\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"3484d8df-9080-451e-bf0f-2287369f8042\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"TAXIDATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":5,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"5291004f-b2f5-47e3-92d6-da14634adfae\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEEDATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"b5b61f34-44c6-4ee5-a3d7-671ca65ea8a8\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"WALMART_RAW\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":9,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"5660238c-44db-4bb3-bf6b-2efb2534d76d\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HCPHLOINCTABLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":164,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"0248af11-84ed-457a-8520-6c3c71626b50\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ICD_CODES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100000,\"tableSize\":4,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"64553f0a-6ce7-4387-a7f3-638d8ad2211c\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ENROLL_DETAIL_SNAPSHOT\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"8192e9a6-be78-41b9-af35-76f71b621287\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ICD_LOOKUP_TABLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":26,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"f8fd1ccc-c5eb-4243-949d-c461b7d8ff5d\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"RES_EMP_2M\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":8000000,\"tableSize\":146,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"d66738b8-8c0d-42c0-a41b-29639a4eda9c\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_CUST_TBL1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"541e2be9-1a7a-49fb-b77d-9d6a7100f96e\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CELLBYCELL_C\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":89,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"ab647681-b7c7-4927-ad9d-ddb633b7c99b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_2M_B\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":2000000,\"tableSize\":50,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"6c14f8d5-013c-4293-bc93-956c781662e4\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PERSON_DETAILS_B\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"c1dbe7ab-4297-498f-8931-e3c4bae3f3ac\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PERSON_DETAILS_A\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":99,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"84610b82-6958-4703-acb1-15e0998fa7e0\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CLAIM_SETTLEMENTS_FOR_CITY_OF_AUSTIN1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":157,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"3aafb7b1-41b2-46f8-8914-3aee044ff1b2\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CARILION_ACCOUNT\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":5,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"c5e458df-c3b2-4862-b711-a3c24d70ae68\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"LINEITEM\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":6001215,\"tableSize\":158,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"bd0b53a1-6003-4960-b061-aaeae8ebd04b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PRODUCT1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"f82b3664-3977-4e84-8e21-5eb9bd6749dc\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"EMP_HASH\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":20000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"93fea77b-9bcc-4db4-b977-c5e399c000bc\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HOSPITAL_DATA_GOOD\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"03ee137a-f5b5-4a4a-bbeb-cf18350b32f6\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ORDERS_BAD\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1499983,\"tableSize\":31,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"c9f6657a-4733-42ba-9b85-882402bcae69\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ORDERS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1499983,\"tableSize\":39,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"af4e1299-1b19-4885-9c34-1edb59dce82b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"MVW_USERS_CUR\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"64930568-3a54-4f6a-8670-6028fbfdb3e2\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_5M_B\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":5000000,\"tableSize\":187,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"65b167df-1b8d-427c-808e-82c4457a3a4a\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_CUST_TBL_TEMP\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"cbcaed5a-81af-451a-8845-089767664405\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_5M_B_NEW\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"abf177eb-c0d2-46f8-9446-77bad5eab92d\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_5M_B_NEWONE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"c9753951-08ee-4160-b3c8-7eea12fef267\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ALPHADERA_DUMMY_ERROR1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":30,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"3d8e1643-2922-460a-84d8-f44bd1d20699\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CARILION_ACCOUNT1_STATS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"eb6da1fb-375c-4903-acf2-d69d1b1154db\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"ITEM_DETAILS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"295826a6-a076-48ab-a821-402c697d1ba9\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HEALTH_DATA_MAIN_CSV\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":4020,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"8190f621-c01f-4c98-b8c7-1c6fba4c9aa3\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HOSPITAL_DATA_CLEANED\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"0ea05338-d179-4649-938f-564573d55ba6\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"KW_STAFF_D\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":4,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"860a6da7-c50f-4e47-8111-64333230734f\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER_DETAILS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":17427,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"9cfe6c51-7d3a-4938-a0b9-3645251ef09b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"TEST\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"d6fd8a1c-4985-4fb5-b2f8-2cbe19adfb7b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HEALTH_DATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":35555,\"tableSize\":3,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"541b04bf-61c1-4150-9d02-106785aae5e2\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HOSPITAL_DELME\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":100,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"2d39b9b2-a22b-4ebe-8af7-e329b38c55b1\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"LOOKUP_DATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":17,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"215a1f44-b5c0-4385-8f90-69a3ba92bd5b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"CARILION_ACCOUNT1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"854cc56d-a616-4642-83fe-4db5dd43c219\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"MEDICATION\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"5f7c0d07-7331-4755-b521-fc318aed449f\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SAMPLETABLE_UNIQUEIDENTIFIER\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"f029828f-7a2a-4b16-9f59-86a1f918fa49\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HIST_ATHENA_ORDER_DESCRIPTIONS_VALUE_SETS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"9433b876-c9a4-47e8-8fef-ad0aa827bf60\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"MY_TABLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"8488923b-2fd6-461b-b3cd-205cff279a42\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PERSONS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"58164191-cc4a-4a29-9e3a-328ca9eb4bbf\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SAMPLETABLE_BIT\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"bb7fb407-f0ff-47db-a743-577053721f0f\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"RECIPES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":3,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"f01ab941-3da0-4fc5-ad56-8b476c703b35\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"DEPARTMENTS\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":27,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"9f47945b-0b77-4d76-8f96-c4bd91e62c53\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_5M\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":5000000,\"tableSize\":265,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"72c960c2-8ccc-4cda-bd70-1c225e28d339\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PARTSUPP\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":800000,\"tableSize\":35,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"7a055f9a-4f75-40c8-8b68-6537224a1580\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PERSON_GOOD\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"4be9026b-3fc0-46c0-987e-1c3205357a33\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"TBL_ITEMTRANSACTIONS1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"f6446e72-dde2-4228-8ca8-8e79d8e2961b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PART\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":200000,\"tableSize\":5,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"9aacd4bd-6ed1-44e0-90ac-869e6fa2b48c\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"STRESS_TEST_DQ_RULES_CV\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":18,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"58478d13-a061-4ca6-89db-0202c2702d1f\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"BRANCH\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":2,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"ce4b5345-dd33-41e6-aa8d-c29a9a2e455f\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"MONTHLY_SALES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":16,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"a65b3fa2-eda0-4491-97dd-8bd738fb4c76\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"TAXITRIP\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"7ee3f5da-0d62-43ef-8d44-b81daa668fdd\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"TEST_DATA_DQ_RULES_ACT_DQ\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":25,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"11b10d6b-593b-40c2-b219-398d68432b78\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"AVHANA_TABLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"5d6712ab-99df-44d1-9f58-c19823a2ef8a\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"STRESS_TEST_DQ_RULES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":254,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"de25d327-36d3-45da-80e8-85aa68effe9e\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_TBL\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"b65964ea-2c1e-43c6-aad8-d5ecb5b1c42a\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"HIST_RULES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"01c1e69f-9ecf-4068-adaf-1827a92a7643\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"PERSON_DESCRIPTION\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":89,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"64f2052d-071c-438c-b978-f243cf91ba2f\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"new_snowflake_rsa_encrypted\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"TABLE\",\"tableName\":\"MASS_TEST_CAMEL_CASE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":4,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":100,\"threads\":2,\"memory\":2,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"my new test\"},\"mapping\":{\"mappings\":{\"663636513620\":{\"source\":\"b5ae2bbc-4389-44a3-80a2-a17a830afe76\",\"target\":\"e797ab54-6ecc-48ed-8aaa-8a340809c090\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"663636513620\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 11804,
   "dmsProjectId" : 781,
   "syncInfo" : {
     "syncId" : "PROJECT",
-    "timestamp" : "2026-02-02T07:23:56.688580507Z",
+    "timestamp" : "2026-02-02T07:24:11.429048827Z",
     "syncType" : "PROJECT",
     "user" : "system"
   }

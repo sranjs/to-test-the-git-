@@ -1,0 +1,119 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"d7919ec8-161d-4a60-9ed5-92d6676c269a\",\"from\":\"source\",\"type\":\"EXCEL\",\"tableSize\":0,\"fileName\":\"Untitled spreadsheet.xlsx\",\"filePath\":\"${input_file_path}\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":true,\"startingPosition\":\"A1\",\"header\":true,\"inferSchema\":false,\"tableName\":\"${file_name}\",\"sampleData\":[{\"id\":\"11\",\"name\":\"Rao\",\"age\":\"23\"},{\"id\":\"13\",\"name\":\"Aye\",\"age\":\"24\"},{\"id\":\"14\",\"name\":\"Bod\",\"age\":\"25\"},{\"id\":\"                      \",\"name\":\"                     \",\"age\":\"                     \"},{\"id\":\"15\",\"name\":\"jhon\",\"age\":\"23\"}],\"schema\":[{\"columnName\":\"id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"age\",\"columnType\":\"string\",\"nullable\":true}],\"count\":5,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"copy of DQ_tests_EXCEL\"},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{\"id\":{\"NOT_NULL\":{\"value\":true,\"ruleName\":\"id_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"298670695917\"},\"NOT_EMPTY\":{\"ruleName\":\"id_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"276824017339\"},\"LEFT_SPACES\":{\"ruleName\":\"id_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1651585678137\"},\"RIGHT_SPACES\":{\"ruleName\":\"id_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"352481294338\"},\"UNIQUE_VALUES\":{\"ruleName\":\"id_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"623377445959\"},\"MIN_VALUE\":{\"ruleName\":\"id_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"697044995876\"},\"MAX_VALUE\":{\"ruleName\":\"id_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1023169892089\"},\"MIN_LENGTH\":{\"ruleName\":\"id_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"517068584841\"},\"MAX_LENGTH\":{\"ruleName\":\"id_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1138217246008\"},\"SQL_RULE\":{\"ruleName\":\"id_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1311781851943\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"id_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"id\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1000746547734\"}},\"name\":{\"NOT_NULL\":{\"value\":true,\"ruleName\":\"name_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"170198330985\"},\"NOT_EMPTY\":{\"ruleName\":\"name_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"940226778033\"},\"LEFT_SPACES\":{\"ruleName\":\"name_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1433023351626\"},\"RIGHT_SPACES\":{\"ruleName\":\"name_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"747460985011\"},\"UNIQUE_VALUES\":{\"ruleName\":\"name_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"583621128653\"},\"MIN_VALUE\":{\"ruleName\":\"name_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1064536245779\"},\"MAX_VALUE\":{\"ruleName\":\"name_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"192185479181\"},\"MIN_LENGTH\":{\"ruleName\":\"name_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1185869475955\"},\"MAX_LENGTH\":{\"ruleName\":\"name_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"741250929607\"},\"SQL_RULE\":{\"ruleName\":\"name_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"90458333563\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"name_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"name\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1679472556882\"}},\"age\":{\"NOT_NULL\":{\"value\":true,\"ruleName\":\"age_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1154680091887\"},\"NOT_EMPTY\":{\"ruleName\":\"age_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1285800524817\"},\"LEFT_SPACES\":{\"ruleName\":\"age_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1476974912943\"},\"RIGHT_SPACES\":{\"ruleName\":\"age_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1563096387181\"},\"UNIQUE_VALUES\":{\"ruleName\":\"age_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"270275308633\"},\"MIN_VALUE\":{\"ruleName\":\"age_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"851654827421\"},\"MAX_VALUE\":{\"ruleName\":\"age_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1476344157456\"},\"MIN_LENGTH\":{\"ruleName\":\"age_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1403868381069\"},\"MAX_LENGTH\":{\"ruleName\":\"age_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1454412911867\"},\"SQL_RULE\":{\"ruleName\":\"age_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1550162337566\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"age_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"age\",\"tableName\":\"Untitledspreadsheetxlsx\",\"unitTestId\":\"1530889806205\"}}},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"298670695917\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"170198330985\",\"deleted\":false,\"saved\":true,\"updated\":false},{\"unitTestCaseId\":\"1154680091887\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "copy of dq_tests_excel",
+  "flowDesc" : "copy of DQ_tests_EXCEL",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "EXCEL",
+        "datasetPath" : "${input_file_path}",
+        "tableProperties" : [ {
+          "tblName" : "${file_name}",
+          "tblSize" : "0",
+          "tblRecordCount" : 5
+        } ],
+        "tableNamesList" : {
+          "${file_name}" : null
+        },
+        "params" : {
+          "dropRecordsWithAllNulls" : true
+        },
+        "header" : true,
+        "inferSchema" : false,
+        "startingPosition" : "A1"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "Untitledspreadsheetxlsx" : {
+            "rules" : [ {
+              "unitTestCaseId" : 298670695917,
+              "ruleType" : "NOT_NULLS",
+              "operator" : "=",
+              "column" : "id",
+              "creationTime" : 1752664232664,
+              "expectedPercent" : 100,
+              "level" : "Warning",
+              "description" : "id_not_null"
+            }, {
+              "unitTestCaseId" : 170198330985,
+              "ruleType" : "NOT_NULLS",
+              "operator" : "=",
+              "column" : "name",
+              "creationTime" : 1752664232664,
+              "expectedPercent" : 100,
+              "level" : "Warning",
+              "description" : "name_not_null"
+            }, {
+              "unitTestCaseId" : 1154680091887,
+              "ruleType" : "NOT_NULLS",
+              "operator" : "=",
+              "column" : "age",
+              "creationTime" : 1752664232664,
+              "expectedPercent" : 100,
+              "level" : "Warning",
+              "description" : "age_not_null"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "IN_MEMORY"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "parameters" : [ {
+    "paramName" : "file_name",
+    "paramValue" : "Untitledspreadsheetxlsx",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  }, {
+    "paramName" : "input_file_path",
+    "paramValue" : "/my_data/user_files/Untitled spreadsheet.xlsx",
+    "param_type" : "string",
+    "code" : null,
+    "codeConnectionSource" : null,
+    "codeLanguage" : null,
+    "codeSchema" : null
+  } ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 12095,
+  "dmsProjectId" : 627,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:24:10.873551867Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
