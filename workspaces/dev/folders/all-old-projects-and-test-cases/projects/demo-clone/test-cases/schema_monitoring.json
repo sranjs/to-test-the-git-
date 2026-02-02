@@ -1,0 +1,157 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_time\":1703740619824,\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"0fc79450-7643-480c-8df7-427ad77d94b9\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"custum_query\",\"partitionProperties\":{\"numberOfPart\":12,\"column\":null},\"schema\":[{\"columnName\":\"address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100},{\"columnName\":\"age\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50},{\"columnName\":\"country\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":20},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":50}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":988465,\"tableSize\":213.77,\"noOfPartition\":12,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"schema_monitoring_email_notification_check\",\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":true,\"slack\":false,\"mailingList\":\"ragini.ramagiri@dataq.io\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[]}",
+  "executorMemory" : "1g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "schema_monitoring",
+  "APP_VERSION" : "7_08",
+  "flowDesc" : "schema_monitoring",
+  "LicensedName" : "7_08",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "large_data",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "large_data"
+        },
+        "tableNamesList" : {
+          "custum_query" : {
+            "numberOfPart" : 12,
+            "column" : null
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "custum_query",
+          "tblSize" : "213.77",
+          "tblRecordCount" : 988465,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "schemaMonitoring" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "description" : "schema monitoring component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "schemaMonitoring",
+      "jobType" : "SCHEMA_MONITORING",
+      "editData" : {
+        "schemaMonitoring" : {
+          "schemaCollectedTime" : 1703740619824,
+          "connectionName" : "large_data",
+          "databaseName" : "large_data",
+          "schema" : "large_data",
+          "tableSchemas" : {
+            "custum_query" : {
+              "schema" : [ {
+                "columnName" : "address",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 100
+              }, {
+                "columnName" : "age",
+                "columnType" : "int",
+                "actualColumnType" : "int",
+                "nullable" : false,
+                "columnMaxLength" : 10
+              }, {
+                "columnName" : "city",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 50
+              }, {
+                "columnName" : "country",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 50
+              }, {
+                "columnName" : "email",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 100
+              }, {
+                "columnName" : "first_name",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 50
+              }, {
+                "columnName" : "id",
+                "columnType" : "int",
+                "actualColumnType" : "int",
+                "nullable" : false,
+                "columnMaxLength" : 10
+              }, {
+                "columnName" : "last_name",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 50
+              }, {
+                "columnName" : "phone",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 20
+              }, {
+                "columnName" : "state",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 50
+              } ],
+              "sampleData" : null,
+              "sqlExecution" : null,
+              "primaryKey" : null,
+              "foreignKeyInfo" : null,
+              "count" : 988465,
+              "tableSize" : 213.77,
+              "noOfPartition" : 12,
+              "partitionColumn" : null,
+              "indexInfo" : null
+            }
+          }
+        }
+      }
+    }
+  },
+  "root" : "schemaMonitoring",
+  "hadoop" : false,
+  "UI_VERSION" : "7_08",
+  "API_APP_BUILD" : "7_08",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "SCHEMA MONITORING",
+  "flowId" : 8353,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:25.520657498Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
