@@ -1,0 +1,142 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"59e657b2-4843-4482-8741-3ef4381381a7\",\"tableName\":\"api_dataset\",\"filePath\":\"/my_data/user_files/dhiraj/sample.py\",\"fileName\":\"sample.py\",\"columns\":\"id,first_name,last_name,email,gender,ip_address\",\"flattenData\":false,\"sampleData\":[],\"schema\":[{\"columnName\":\"id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"email\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"gender\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"ip_address\",\"columnType\":\"string\",\"nullable\":true}],\"count\":0,\"tableSize\":0.1,\"from\":\"source\",\"type\":\"API\"}],\"target\":[{\"id\":\"0ce487b3-56c1-4318-b1b0-bfa89e105832\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"Sql_Server_DataQ\",\"schemaName\":\"dbo\",\"tableName\":\"emp_hash\",\"schema\":[{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"gender\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"ip_address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":\"id\",\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"API compare to table\",\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"ac53bc14-818f-4e0f-91b0-13b75afe28bf\":{\"source\":\"59e657b2-4843-4482-8741-3ef4381381a7\",\"target\":\"0ce487b3-56c1-4318-b1b0-bfa89e105832\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"746620f6-d50d-40c1-99ce-d62a30d0ec8a\",\"sourceColumnName\":\"ip_address\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"ip_address\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"edb63a45-5ef5-453a-a332-500afc5fa7df\",\"sourceColumnName\":\"gender\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"gender\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"eefa60b0-9de8-4bdc-9e2f-b69f20f090a6\",\"sourceColumnName\":\"email\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"email\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"a19485b2-cdd2-4dd7-848a-7607d73994d0\",\"sourceColumnName\":\"last_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"last_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"b0a8d05a-6c11-4c6b-b264-59e4297248e8\",\"sourceColumnName\":\"first_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"first_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"86f96d78-23e8-4ad0-bd80-6ffeceeea0ee\",\"sourceColumnName\":\"id\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"id\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{}}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "session_id" : "c8f203d3-d8b1-4a97-8d48-1f58342002a5",
+  "executeOn" : "LOCAL",
+  "flowName" : "dataq1689934988392",
+  "APP_VERSION" : "708-d95654eb91",
+  "flowDesc" : "API compare to table",
+  "LicensedName" : "microsoft",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "API",
+        "tableNamesList" : {
+          "api_dataset" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "api_dataset",
+          "tblSize" : "0.1",
+          "tblRecordCount" : 0
+        } ],
+        "columns" : [ "id", "first_name", "last_name", "email", "gender", "ip_address" ],
+        "multiLine" : true,
+        "flattenJson" : false,
+        "datasetPath" : "/my_data/user_files/dhiraj/sample.py"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "dbo",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "Sql_Server_DataQ",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "emp_hash" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "emp_hash",
+          "tblSize" : "1",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ "id" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "api_dataset" : "emp_hash"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "id" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "id",
+          "destColumn" : "id"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "ip_address",
+          "destColumn" : "ip_address"
+        }, {
+          "srcColumn" : "gender",
+          "destColumn" : "gender"
+        }, {
+          "srcColumn" : "email",
+          "destColumn" : "email"
+        }, {
+          "srcColumn" : "last_name",
+          "destColumn" : "last_name"
+        }, {
+          "srcColumn" : "first_name",
+          "destColumn" : "first_name"
+        }, {
+          "srcColumn" : "id",
+          "destColumn" : "id"
+        } ]
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "b412a37a5c-29",
+  "API_APP_BUILD" : "Jun 20, 2023 8:09:18 PM",
+  "parameters" : [ ],
+  "email" : [ ],
+  "session.id" : "c8f203d3-d8b1-4a97-8d48-1f58342002a5",
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 8401,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:38.554496035Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
