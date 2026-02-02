@@ -1,0 +1,169 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"c83ccdc0-dd72-4512-b81d-bcd7e09fe2c6\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"postgres_demo_db\",\"schemaName\":\"dataq_demo\",\"typeTable\":\"TABLE\",\"tableName\":\"metrics_10m__g\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":\"id\"},\"defaultSchema\":[{\"columnName\":\"address\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"age\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"country\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"address\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"age\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"country\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"text\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":10000000,\"tableSize\":1303,\"noOfPartition\":null,\"partitionColumn\":\"id\",\"indexInfo\":[{\"keyName\":\"metrics_10m__g_pk\",\"keyType\":\"btree\",\"ordinalPosition\":1,\"columnName\":\"id\"}]}],\"target\":[{\"id\":\"49390586-307e-427e-b64e-f090f04898b4\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"typeTable\":\"TABLE\",\"tableName\":\"metrics_10M__b5\",\"partitionProperties\":{\"numberOfPart\":84,\"column\":\"id\"},\"defaultSchema\":[{\"columnName\":\"address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"age\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"country\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"age\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"country\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":9371576,\"tableSize\":2003,\"noOfPartition\":84,\"partitionColumn\":\"id\",\"indexInfo\":[{\"keyName\":\"PRIMARY\",\"keyType\":\"BTREE\",\"ordinalPosition\":1,\"columnName\":\"id\"}]}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":20,\"threads\":2,\"memory\":8,\"test_case_name\":\"10M 5perDiff postgres to mysql no chunk\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"dimensions\":[],\"chunks\":false,\"convertNumberToLong\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"128262208823\":{\"source\":\"c83ccdc0-dd72-4512-b81d-bcd7e09fe2c6\",\"target\":\"49390586-307e-427e-b64e-f090f04898b4\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"25e4fc3e-4b4a-45d0-8d46-49e9ede35967\",\"sourceColumnName\":\"state\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"text\",\"sourceNullable\":false,\"targetColumnName\":\"state\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"f07647dd-92b7-4627-a749-c8271c21e736\",\"sourceColumnName\":\"phone\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"text\",\"sourceNullable\":false,\"targetColumnName\":\"phone\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"61bf2465-d80e-4ed6-9692-3192bb1e0dbc\",\"sourceColumnName\":\"last_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"text\",\"sourceNullable\":false,\"targetColumnName\":\"last_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"ea9fcbc3-5008-4824-a09a-e98438581135\",\"sourceColumnName\":\"id\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int4\",\"sourceNullable\":false,\"targetColumnName\":\"id\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true},{\"id\":\"618f076d-af3c-428c-9cee-4096b9bf63ca\",\"sourceColumnName\":\"first_name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"text\",\"sourceNullable\":false,\"targetColumnName\":\"first_name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"9a6e3c9d-e777-4074-987a-016b94f36090\",\"sourceColumnName\":\"email\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"text\",\"sourceNullable\":false,\"targetColumnName\":\"email\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"f75cf196-d2bc-42bb-8443-8b4eef6a86d1\",\"sourceColumnName\":\"country\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"text\",\"sourceNullable\":false,\"targetColumnName\":\"country\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"9efdc958-ed77-4bdf-b13e-9c50fbc7cd4e\",\"sourceColumnName\":\"city\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"text\",\"sourceNullable\":false,\"targetColumnName\":\"city\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"6222c64b-a0c4-4db8-be62-174e1b8f5c70\",\"sourceColumnName\":\"age\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int4\",\"sourceNullable\":false,\"targetColumnName\":\"age\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"795fe141-913e-4cf4-8776-d6ca64147f41\",\"sourceColumnName\":\"address\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"text\",\"sourceNullable\":false,\"targetColumnName\":\"address\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"128262208823\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "8g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "10m 5perdiff postgres to mysql no chunk",
+  "APP_VERSION" : "7_60",
+  "flowDesc" : "10M 5perDiff postgres to mysql no chunk",
+  "LicensedName" : "7_60",
+  "numExecutors" : 20,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "dataq_demo",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "postgres_demo_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "metrics_10m__g" : {
+            "numberOfPart" : null,
+            "column" : "id"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "metrics_10m__g",
+          "tblSize" : "1303",
+          "tblRecordCount" : 10000000,
+          "primaryKeys" : [ "id" ],
+          "indexKeys" : [ "id" ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "large_data",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "large_data",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "metrics_10M__b5" : {
+            "numberOfPart" : 84,
+            "column" : "id"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "metrics_10M__b5",
+          "tblSize" : "2003",
+          "tblRecordCount" : 9371576,
+          "primaryKeys" : [ "id" ],
+          "indexKeys" : [ "id" ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 128262208823,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "metrics_10m__g" : "metrics_10M__b5"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "id" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "id",
+          "destColumn" : "id"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "state",
+          "destColumn" : "state"
+        }, {
+          "srcColumn" : "phone",
+          "destColumn" : "phone"
+        }, {
+          "srcColumn" : "last_name",
+          "destColumn" : "last_name"
+        }, {
+          "srcColumn" : "id",
+          "destColumn" : "id"
+        }, {
+          "srcColumn" : "first_name",
+          "destColumn" : "first_name"
+        }, {
+          "srcColumn" : "email",
+          "destColumn" : "email"
+        }, {
+          "srcColumn" : "country",
+          "destColumn" : "country"
+        }, {
+          "srcColumn" : "city",
+          "destColumn" : "city"
+        }, {
+          "srcColumn" : "age",
+          "destColumn" : "age"
+        }, {
+          "srcColumn" : "address",
+          "destColumn" : "address"
+        } ],
+        "keyValueProperties" : { }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_60",
+  "API_APP_BUILD" : "7_60",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 12364,
+  "dmsProjectId" : 637,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:57.594233419Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
