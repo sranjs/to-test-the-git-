@@ -1,0 +1,130 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"0b9dc761-2350-4a23-bf8f-4db4d6781217\",\"from\":\"source\",\"type\":\"EXCEL\",\"tableSize\":0.1,\"fileName\":\"Untitled spreadsheet (3).xlsx\",\"filePath\":\"/my_data/user_files/admin/Untitled spreadsheet (3).xlsx\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"dropRecordsWithAllNulls\":false,\"startingPosition\":\"A1\",\"header\":true,\"inferSchema\":false,\"tableName\":\"Untitledspreadsheet3xlsx\",\"sampleData\":[{\"name\":\"dsklfhslakdf\",\"age\":\"123\",\"zip\":\"12345\"},{\"name\":\"sdfasdsad\",\"age\":\"12\",\"zip\":\"12\"}],\"schema\":[{\"columnName\":\"name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"zip\",\"columnType\":\"string\",\"nullable\":true}],\"count\":2}],\"target\":[{\"id\":\"def1746f-c70f-4364-8346-1cc5abc5e3fc\",\"from\":\"target\",\"type\":\"EXCEL\",\"tableSize\":0.1,\"fileName\":\"Untitled spreadsheet (3).xlsx\",\"filePath\":\"/my_data/user_files/admin/Untitled spreadsheet (3).xlsx\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"dropRecordsWithAllNulls\":false,\"startingPosition\":\"A1\",\"header\":true,\"inferSchema\":false,\"tableName\":\"Untitledspreadsheet3xlsx\",\"sampleData\":[{\"name\":\"dsklfhslakdf\",\"age\":\"123\",\"zip\":\"12345\"},{\"name\":\"sdfasdsad\",\"age\":\"12\",\"zip\":\"12\"}],\"schema\":[{\"columnName\":\"name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"zip\",\"columnType\":\"string\",\"nullable\":true}],\"count\":2}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"excel files-1\",\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"3b440594-c4e7-4640-8461-c56f84c73dd0\":{\"source\":\"0b9dc761-2350-4a23-bf8f-4db4d6781217\",\"target\":\"def1746f-c70f-4364-8346-1cc5abc5e3fc\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"98c554a7-7a0c-4b6a-adb5-1c3692d57dee\",\"sourceColumnName\":\"zip\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"zip\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false},{\"id\":\"22d54558-10ee-4995-ba9f-158e0876f400\",\"sourceColumnName\":\"age\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"age\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false},{\"id\":\"83c6efec-b4a8-49d9-bb13-d40e49b556ce\",\"sourceColumnName\":\"name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"dataStandarizations\":[],\"outputData\":[]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "excel files 1",
+  "APP_VERSION" : "6_94",
+  "flowDesc" : "excel files-1",
+  "LicensedName" : "6_94",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "EXCEL",
+        "datasetPath" : "/my_data/user_files/admin/Untitled spreadsheet (3).xlsx",
+        "tableProperties" : [ {
+          "tblName" : "Untitledspreadsheet3xlsx",
+          "tblSize" : "0.1",
+          "tblRecordCount" : 2
+        } ],
+        "tableNamesList" : {
+          "Untitledspreadsheet3xlsx" : null
+        },
+        "header" : true,
+        "inferSchema" : false,
+        "startingPosition" : "A1",
+        "params" : {
+          "dropRecordsWithAllNulls" : false
+        }
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "EXCEL",
+        "datasetPath" : "/my_data/user_files/admin/Untitled spreadsheet (3).xlsx",
+        "tableProperties" : [ {
+          "tblName" : "Untitledspreadsheet3xlsx",
+          "tblSize" : "0.1",
+          "tblRecordCount" : 2
+        } ],
+        "tableNamesList" : {
+          "Untitledspreadsheet3xlsx" : null
+        },
+        "header" : true,
+        "inferSchema" : false,
+        "startingPosition" : "A1",
+        "params" : {
+          "dropRecordsWithAllNulls" : false
+        }
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "Untitledspreadsheet3xlsx" : "Untitledspreadsheet3xlsx"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "name" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "name",
+          "destColumn" : "name"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "zip",
+          "destColumn" : "zip"
+        }, {
+          "srcColumn" : "age",
+          "destColumn" : "age"
+        }, {
+          "srcColumn" : "name",
+          "destColumn" : "name"
+        } ]
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "6_94",
+  "API_APP_BUILD" : "6_94",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 12446,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:08.489263696Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
