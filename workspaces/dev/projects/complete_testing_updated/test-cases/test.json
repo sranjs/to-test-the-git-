@@ -17,26 +17,27 @@
       "description" : "source component",
       "id" : "source",
       "sourceData" : [ {
-        "datasetFormat" : "CSV",
-        "datasetPath" : "/my_data/user_files/customersdata_330.csv",
-        "tableProperties" : [ {
-          "tblName" : "customersdata330csv",
-          "tblSize" : "0.03",
-          "tblRecordCount" : 330
-        } ],
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "snowflake_NYC_TAXI_DATA",
+          "groupName" : "dev"
+        },
         "tableNamesList" : {
-          "customersdata330csv" : null
+          "AVHANA_TABLE" : null
         },
-        "params" : {
-          "dropBadRecords" : true,
-          "dropRecordsWithAllNulls" : false
-        },
-        "columns" : [ ],
-        "datasetDelimiter" : ",",
-        "header" : true,
-        "inferSchema" : false,
-        "multiLine" : false,
-        "startingPosition" : "1"
+        "tableProperties" : [ {
+          "tblName" : "AVHANA_TABLE",
+          "tblSize" : "0",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
       } ],
       "position" : {
         "x" : 610,
@@ -48,26 +49,27 @@
       "description" : "target component",
       "id" : "target",
       "sourceData" : [ {
-        "datasetFormat" : "CSV",
-        "datasetPath" : "/my_data/user_files/customersdata_330.csv",
-        "tableProperties" : [ {
-          "tblName" : "customersdata330csv",
-          "tblSize" : "0.03",
-          "tblRecordCount" : 330
-        } ],
+        "datasetFormat" : "JDBC",
+        "databaseName" : "PUBLIC",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "snowflake_NYC_TAXI_DATA",
+          "groupName" : "dev"
+        },
         "tableNamesList" : {
-          "customersdata330csv" : null
+          "AVHANA_TABLE" : null
         },
-        "params" : {
-          "dropBadRecords" : true,
-          "dropRecordsWithAllNulls" : false
-        },
-        "columns" : [ ],
-        "datasetDelimiter" : ",",
-        "header" : true,
-        "inferSchema" : false,
-        "multiLine" : false,
-        "startingPosition" : "1"
+        "tableProperties" : [ {
+          "tblName" : "AVHANA_TABLE",
+          "tblSize" : "0",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
       } ],
       "position" : {
         "x" : 599,
@@ -81,13 +83,13 @@
       "id" : "dataCompare",
       "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
       "filesCompareList" : [ {
-        "unitTestCaseId" : 1634017971684,
+        "unitTestCaseId" : 1439444027925,
         "matchBoth" : true,
         "compareType" : "CELL_BY_CELL_COMPARE",
         "compareColumns" : false,
         "compareCommonColumnsOnly" : true,
         "srcDestTableMap" : {
-          "customersdata330csv" : "customersdata330csv"
+          "AVHANA_TABLE" : "AVHANA_TABLE"
         },
         "srcDestComponentMap" : {
           "source" : "target"
@@ -96,47 +98,20 @@
         "validateRowsCount" : false,
         "tolerance" : [ ],
         "sqlTransform" : [ ],
-        "compareKey" : [ ],
-        "compareKeyNew" : [ ],
+        "compareKey" : [ "ID" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "ID",
+          "destColumn" : "ID"
+        } ],
         "columnMapping" : [ {
-          "srcColumn" : "\"Websites\"",
-          "destColumn" : "\"Websites\""
+          "srcColumn" : "VARIANT1",
+          "destColumn" : "VARIANT1"
         }, {
-          "srcColumn" : "\"Subscriptions_Date\"",
-          "destColumn" : "\"Subscriptions_Date\""
-        }, {
-          "srcColumn" : "\"Gmail\"",
-          "destColumn" : "\"Gmail\""
-        }, {
-          "srcColumn" : "\"Phone_Cells\"",
-          "destColumn" : "\"Phone_Cells\""
-        }, {
-          "srcColumn" : "\"Phone\"",
-          "destColumn" : "\"Phone\""
-        }, {
-          "srcColumn" : "\"Country_Name\"",
-          "destColumn" : "\"Country_Name\""
-        }, {
-          "srcColumn" : "\"Town\"",
-          "destColumn" : "\"Town\""
-        }, {
-          "srcColumn" : "\"Company_Name\"",
-          "destColumn" : "\"Company_Name\""
-        }, {
-          "srcColumn" : "\"Last\"",
-          "destColumn" : "\"Last\""
-        }, {
-          "srcColumn" : "\"First\"",
-          "destColumn" : "\"First\""
-        }, {
-          "srcColumn" : "\"Customers_Id_Num\"",
-          "destColumn" : "\"Customers_Id_Num\""
-        }, {
-          "srcColumn" : "\"Age\"",
-          "destColumn" : "\"Age\""
+          "srcColumn" : "ID",
+          "destColumn" : "ID"
         } ],
         "keyValueProperties" : {
-          "DETECT_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS" : "false",
           "DETECT_COMPARE_KEYS_LIMIT" : "5"
         }
       } ],
@@ -145,17 +120,18 @@
         "y" : 181
       },
       "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
         "BAD_RECORD_COUNT" : "15"
       }
     }
   },
   "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"a57cd02d-5ebf-4fba-a8e4-30b40ef13bd5\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0.03,\"fileName\":\"customersdata_330.csv\",\"filePath\":\"/my_data/user_files/customersdata_330.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"customersdata330csv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"Age\":\"1\",\"Customers_Id_Num\":\"EB54EF1154C3A78\",\"First\":\"Heather\",\"Last\":\"Callahan\",\"Company_Name\":\"Mosley-David\",\"Town\":\"Lake Jeffborough\",\"Country_Name\":\"Norway\",\"Phone\":\"043-797-5229\",\"Phone_Cells\":\"915.112.1727\",\"Gmail\":\"urangel@espinoza-francis.net\",\"Subscriptions_Date\":\"8/26/2020\",\"Websites\":\"http://www.escobar.org/\"},{\"Age\":\"2\",\"Customers_Id_Num\":\"10dAcafEBbA5FcA\",\"First\":\"Kristina\",\"Last\":\"Ferrell\",\"Company_Name\":\"Horn, Shepard and Watson\",\"Town\":\"Aaronville\",\"Country_Name\":\"Andorra\",\"Phone\":\"932-062-1802\",\"Phone_Cells\":\"(209)172-7124x3651\",\"Gmail\":\"xreese@hall-donovan.com\",\"Subscriptions_Date\":\"4/27/2020\",\"Websites\":\"https://tyler-pugh.info/\"},{\"Age\":\"3\",\"Customers_Id_Num\":\"67DAB15Ebe4BE4a\",\"First\":\"Briana\",\"Last\":\"Andersen\",\"Company_Name\":\"Irwin-Oneal\",\"Town\":\"East Jordan\",\"Country_Name\":\"Nepal\",\"Phone\":\"8352752061\",\"Phone_Cells\":\"(567)135-1918\",\"Gmail\":\"haleybraun@blevins-sexton.com\",\"Subscriptions_Date\":\"3/22/2022\",\"Websites\":\"https://www.mack-bell.net/\"},{\"Age\":\"4\",\"Customers_Id_Num\":\"6d350C5E5eDB4EE\",\"First\":\"Patty\",\"Last\":\"Ponce\",\"Company_Name\":\"Richardson Group\",\"Town\":\"East Kristintown\",\"Country_Name\":\"Northern Mariana Islands\",\"Phone\":\"302.398.3833\",\"Phone_Cells\":\"196-189-7767x770\",\"Gmail\":\"hohailey@anthony.com\",\"Subscriptions_Date\":\"7/2/2020\",\"Websites\":\"https://delacruz-freeman.org/\"},{\"Age\":\"5\",\"Customers_Id_Num\":\"5820deAdCF23EFe\",\"First\":\"Kathleen\",\"Last\":\"Mccormick\",\"Company_Name\":\"Carson-Burch\",\"Town\":\"Andresmouth\",\"Country_Name\":\"Macao\",\"Phone\":\"001-184-153-9683x1497\",\"Phone_Cells\":\"552.051.2979x342\",\"Gmail\":\"alvaradojesse@rangel-shields.com\",\"Subscriptions_Date\":\"1/17/2021\",\"Websites\":\"https://welch.info/\"},{\"Age\":\"6\",\"Customers_Id_Num\":\"E1CDEaC63fDd5aA\",\"First\":\"Trevor\",\"Last\":\"Lee\",\"Company_Name\":\"Maddox Group\",\"Town\":\"Lake Madelineburgh\",\"Country_Name\":\"Senegal\",\"Phone\":\"+1-134-348-0265x9132\",\"Phone_Cells\":\"-5361\",\"Gmail\":\"briangriffin@chang.org\",\"Subscriptions_Date\":\"8/13/2021\",\"Websites\":\"https://www.roberts.com/\"},{\"Age\":\"7\",\"Customers_Id_Num\":\"3e1187fCcebC8d2\",\"First\":\"Mathew\",\"Last\":\"Hoffman\",\"Company_Name\":\"Bender, Pittman and Kidd\",\"Town\":\"West Ralph\",\"Country_Name\":\"Uzbekistan\",\"Phone\":\"842.380.1168\",\"Phone_Cells\":\"(178)178-5447x32603\",\"Gmail\":\"bauergerald@morrison.com\",\"Subscriptions_Date\":\"4/9/2020\",\"Websites\":\"http://www.holt.com/\"},{\"Age\":\"8\",\"Customers_Id_Num\":\"47C5cEE243c9A7b\",\"First\":\"Glenn\",\"Last\":\"Wiggins\",\"Company_Name\":\"Glenn-Harvey\",\"Town\":\"Ambershire\",\"Country_Name\":\"Falkland Islands (Malvinas)\",\"Phone\":\"245-207-5608x563\",\"Phone_Cells\":\"8806867785\",\"Gmail\":\"changkellie@howell.com\",\"Subscriptions_Date\":\"4/2/2021\",\"Websites\":\"http://carlson.com/\"},{\"Age\":\"9\",\"Customers_Id_Num\":\"cacaD68a5e4BF4b\",\"First\":\"Bruce\",\"Last\":\"Payne\",\"Company_Name\":\"Arroyo, Cain and Hudson\",\"Town\":\"Barrettview\",\"Country_Name\":\"Zimbabwe\",\"Phone\":\"391.313.4649x42910\",\"Phone_Cells\":\"166.227.5055\",\"Gmail\":\"mayerjerome@hurst-graham.net\",\"Subscriptions_Date\":\"11/26/2020\",\"Websites\":\"https://www.glenn-snow.com/\"},{\"Age\":\"10\",\"Customers_Id_Num\":\"436b9c41cfb1fa3\",\"First\":\"Brendan\",\"Last\":\"Franco\",\"Company_Name\":\"Schaefer, Blair and Shaffer\",\"Town\":\"New Rickey\",\"Country_Name\":\"Ukraine\",\"Phone\":\"001-315-224-3556\",\"Phone_Cells\":\"254-621-7128x7573\",\"Gmail\":\"kentryan@stone-oneill.com\",\"Subscriptions_Date\":\"6/29/2021\",\"Websites\":\"http://ruiz.com/\"}],\"schema\":[{\"columnName\":\"Age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Customers_Id_Num\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"First\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Last\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Company_Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Town\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Country_Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Phone\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Phone_Cells\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Gmail\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Subscriptions_Date\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Websites\",\"columnType\":\"string\",\"nullable\":true}],\"count\":330,\"isPrimaryDataset\":true}],\"target\":[{\"id\":\"494de60f-b17c-4e74-8315-27190c90fd7c\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0.03,\"fileName\":\"customersdata_330.csv\",\"filePath\":\"/my_data/user_files/customersdata_330.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"customersdata330csv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"Age\":\"1\",\"Customers_Id_Num\":\"EB54EF1154C3A78\",\"First\":\"Heather\",\"Last\":\"Callahan\",\"Company_Name\":\"Mosley-David\",\"Town\":\"Lake Jeffborough\",\"Country_Name\":\"Norway\",\"Phone\":\"043-797-5229\",\"Phone_Cells\":\"915.112.1727\",\"Gmail\":\"urangel@espinoza-francis.net\",\"Subscriptions_Date\":\"8/26/2020\",\"Websites\":\"http://www.escobar.org/\"},{\"Age\":\"2\",\"Customers_Id_Num\":\"10dAcafEBbA5FcA\",\"First\":\"Kristina\",\"Last\":\"Ferrell\",\"Company_Name\":\"Horn, Shepard and Watson\",\"Town\":\"Aaronville\",\"Country_Name\":\"Andorra\",\"Phone\":\"932-062-1802\",\"Phone_Cells\":\"(209)172-7124x3651\",\"Gmail\":\"xreese@hall-donovan.com\",\"Subscriptions_Date\":\"4/27/2020\",\"Websites\":\"https://tyler-pugh.info/\"},{\"Age\":\"3\",\"Customers_Id_Num\":\"67DAB15Ebe4BE4a\",\"First\":\"Briana\",\"Last\":\"Andersen\",\"Company_Name\":\"Irwin-Oneal\",\"Town\":\"East Jordan\",\"Country_Name\":\"Nepal\",\"Phone\":\"8352752061\",\"Phone_Cells\":\"(567)135-1918\",\"Gmail\":\"haleybraun@blevins-sexton.com\",\"Subscriptions_Date\":\"3/22/2022\",\"Websites\":\"https://www.mack-bell.net/\"},{\"Age\":\"4\",\"Customers_Id_Num\":\"6d350C5E5eDB4EE\",\"First\":\"Patty\",\"Last\":\"Ponce\",\"Company_Name\":\"Richardson Group\",\"Town\":\"East Kristintown\",\"Country_Name\":\"Northern Mariana Islands\",\"Phone\":\"302.398.3833\",\"Phone_Cells\":\"196-189-7767x770\",\"Gmail\":\"hohailey@anthony.com\",\"Subscriptions_Date\":\"7/2/2020\",\"Websites\":\"https://delacruz-freeman.org/\"},{\"Age\":\"5\",\"Customers_Id_Num\":\"5820deAdCF23EFe\",\"First\":\"Kathleen\",\"Last\":\"Mccormick\",\"Company_Name\":\"Carson-Burch\",\"Town\":\"Andresmouth\",\"Country_Name\":\"Macao\",\"Phone\":\"001-184-153-9683x1497\",\"Phone_Cells\":\"552.051.2979x342\",\"Gmail\":\"alvaradojesse@rangel-shields.com\",\"Subscriptions_Date\":\"1/17/2021\",\"Websites\":\"https://welch.info/\"},{\"Age\":\"6\",\"Customers_Id_Num\":\"E1CDEaC63fDd5aA\",\"First\":\"Trevor\",\"Last\":\"Lee\",\"Company_Name\":\"Maddox Group\",\"Town\":\"Lake Madelineburgh\",\"Country_Name\":\"Senegal\",\"Phone\":\"+1-134-348-0265x9132\",\"Phone_Cells\":\"-5361\",\"Gmail\":\"briangriffin@chang.org\",\"Subscriptions_Date\":\"8/13/2021\",\"Websites\":\"https://www.roberts.com/\"},{\"Age\":\"7\",\"Customers_Id_Num\":\"3e1187fCcebC8d2\",\"First\":\"Mathew\",\"Last\":\"Hoffman\",\"Company_Name\":\"Bender, Pittman and Kidd\",\"Town\":\"West Ralph\",\"Country_Name\":\"Uzbekistan\",\"Phone\":\"842.380.1168\",\"Phone_Cells\":\"(178)178-5447x32603\",\"Gmail\":\"bauergerald@morrison.com\",\"Subscriptions_Date\":\"4/9/2020\",\"Websites\":\"http://www.holt.com/\"},{\"Age\":\"8\",\"Customers_Id_Num\":\"47C5cEE243c9A7b\",\"First\":\"Glenn\",\"Last\":\"Wiggins\",\"Company_Name\":\"Glenn-Harvey\",\"Town\":\"Ambershire\",\"Country_Name\":\"Falkland Islands (Malvinas)\",\"Phone\":\"245-207-5608x563\",\"Phone_Cells\":\"8806867785\",\"Gmail\":\"changkellie@howell.com\",\"Subscriptions_Date\":\"4/2/2021\",\"Websites\":\"http://carlson.com/\"},{\"Age\":\"9\",\"Customers_Id_Num\":\"cacaD68a5e4BF4b\",\"First\":\"Bruce\",\"Last\":\"Payne\",\"Company_Name\":\"Arroyo, Cain and Hudson\",\"Town\":\"Barrettview\",\"Country_Name\":\"Zimbabwe\",\"Phone\":\"391.313.4649x42910\",\"Phone_Cells\":\"166.227.5055\",\"Gmail\":\"mayerjerome@hurst-graham.net\",\"Subscriptions_Date\":\"11/26/2020\",\"Websites\":\"https://www.glenn-snow.com/\"},{\"Age\":\"10\",\"Customers_Id_Num\":\"436b9c41cfb1fa3\",\"First\":\"Brendan\",\"Last\":\"Franco\",\"Company_Name\":\"Schaefer, Blair and Shaffer\",\"Town\":\"New Rickey\",\"Country_Name\":\"Ukraine\",\"Phone\":\"001-315-224-3556\",\"Phone_Cells\":\"254-621-7128x7573\",\"Gmail\":\"kentryan@stone-oneill.com\",\"Subscriptions_Date\":\"6/29/2021\",\"Websites\":\"http://ruiz.com/\"}],\"schema\":[{\"columnName\":\"Age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Customers_Id_Num\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"First\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Last\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Company_Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Town\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Country_Name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Phone\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Phone_Cells\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Gmail\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Subscriptions_Date\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"Websites\",\"columnType\":\"string\",\"nullable\":true}],\"count\":330,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"test\"},\"mapping\":{\"mappings\":{\"1634017971684\":{\"source\":\"a57cd02d-5ebf-4fba-a8e4-30b40ef13bd5\",\"target\":\"494de60f-b17c-4e74-8315-27190c90fd7c\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"1bb15ac5-f550-402b-b717-b35d7c234951\",\"sourceColumnName\":\"Websites\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Websites\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"0b71abd3-f6c6-4e11-9ab1-4b18daf89833\",\"sourceColumnName\":\"Subscriptions_Date\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Subscriptions_Date\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4843fac5-25cc-4b45-a471-1db2ab582f8a\",\"sourceColumnName\":\"Gmail\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Gmail\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"76e93bb5-cbe7-438f-bc28-85e7abeef6b9\",\"sourceColumnName\":\"Phone_Cells\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Phone_Cells\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8b11d524-0aa1-45f7-891e-c156689804d0\",\"sourceColumnName\":\"Phone\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Phone\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"59cbd83f-6bb4-48dc-9499-c3a3aef72fb1\",\"sourceColumnName\":\"Country_Name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Country_Name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"540136f8-0f46-4244-986a-93a0d596b8ce\",\"sourceColumnName\":\"Town\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Town\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"a4d6f3c3-1609-448e-8e27-9c60f31e95a7\",\"sourceColumnName\":\"Company_Name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Company_Name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8f52b1dd-5a11-4f58-8187-fa1103f114ee\",\"sourceColumnName\":\"Last\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Last\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"084ce043-6561-4f65-a661-cef81ba975b4\",\"sourceColumnName\":\"First\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"First\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"0ea1086b-e3af-4afb-a87f-5263f1e5fd30\",\"sourceColumnName\":\"Customers_Id_Num\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Customers_Id_Num\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"535f20c0-c8a5-4b5d-89fd-f84726355d4f\",\"sourceColumnName\":\"Age\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"Age\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\",\"detectCompareKeys\":true}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1634017971684\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
-  "flowId" : 11568,
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"accd0763-c338-4d5f-8d88-7e2ca823db18\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"AVHANA_TABLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARIANT1\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARIANT1\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"48ef38d7-8770-446c-9c4c-448e13bac12f\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"AVHANA_TABLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARIANT1\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"ID\",\"columnType\":\"number(38,0)\",\"actualColumnType\":\"number\",\"nullable\":false,\"columnMaxLength\":38,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"VARIANT1\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":16777216,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"test\"},\"mapping\":{\"mappings\":{\"1439444027925\":{\"source\":\"accd0763-c338-4d5f-8d88-7e2ca823db18\",\"target\":\"48ef38d7-8770-446c-9c4c-448e13bac12f\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"0a2e3a7b-3277-4ac8-b1d9-5d200e8a8df3\",\"sourceColumnName\":\"VARIANT1\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"VARIANT1\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"f399d2ce-fd9d-41bd-be15-68656493a923\",\"sourceColumnName\":\"ID\",\"sourceColumnType\":\"number(38,0)\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"ID\",\"targetColumnType\":\"number(38,0)\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1439444027925\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 11490,
   "dmsProjectId" : 627,
   "syncInfo" : {
     "syncId" : "PROJECT",
-    "timestamp" : "2026-02-02T07:25:46.153569156Z",
+    "timestamp" : "2026-02-02T07:25:59.627356215Z",
     "syncType" : "PROJECT",
     "user" : "system"
   }
