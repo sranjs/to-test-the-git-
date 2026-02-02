@@ -1,0 +1,141 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"e9ce4a01-5cbc-4a7a-b74f-f8bb7a5f9398\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"postgres_demo_db\",\"schemaName\":\"FundDB\",\"typeTable\":\"TABLE\",\"tableName\":\"inventory\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":[{\"columnName\":\"inv_date_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_item_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_quantity_on_hand\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_warehouse_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"inv_date_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_item_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_quantity_on_hand\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_warehouse_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"95b5f8b8-2e0c-4083-923c-780a16541937\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres_demo_db\",\"schemaName\":\"FundDB\",\"typeTable\":\"TABLE\",\"tableName\":\"inventory\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":[{\"columnName\":\"inv_date_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_item_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_quantity_on_hand\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_warehouse_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"inv_date_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_item_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_quantity_on_hand\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"inv_warehouse_sk\",\"columnType\":\"int\",\"actualColumnType\":\"int4\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"memory\":5,\"threads\":2,\"comparisonType\":\"default\",\"chunks\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"comparisonTypeSelectedByUser\":false,\"convertNumberToLong\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"sdf \"},\"mapping\":{\"mappings\":{\"1486268895933\":{\"source\":\"e9ce4a01-5cbc-4a7a-b74f-f8bb7a5f9398\",\"target\":\"95b5f8b8-2e0c-4083-923c-780a16541937\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"2f7774ba-c007-4bc4-bf5f-8539ca753c3f\",\"sourceColumnName\":\"inv_warehouse_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int4\",\"sourceNullable\":false,\"targetColumnName\":\"inv_warehouse_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int4\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"8ea754ad-03d0-43a7-a4df-ed548eee260a\",\"sourceColumnName\":\"inv_quantity_on_hand\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int4\",\"sourceNullable\":false,\"targetColumnName\":\"inv_quantity_on_hand\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int4\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"48eb160a-3c01-461c-a175-f2350dbc7108\",\"sourceColumnName\":\"inv_item_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int4\",\"sourceNullable\":false,\"targetColumnName\":\"inv_item_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int4\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"b40b199f-4cbf-4600-836b-cd1987eb89cb\",\"sourceColumnName\":\"inv_date_sk\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int4\",\"sourceNullable\":false,\"targetColumnName\":\"inv_date_sk\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int4\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\",\"detectCompareKeys\":true}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false,\"IgnoreSpecialCharaters\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1486268895933\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "sdf n n",
+  "flowDesc" : "sdf \n\n",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "FundDB",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "postgres_demo_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "inventory" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "inventory",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "FundDB",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "postgres_demo_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "inventory" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "inventory",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 1486268895933,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "inventory" : "inventory"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ ],
+        "compareKeyNew" : [ ],
+        "columnMapping" : [ {
+          "srcColumn" : "inv_warehouse_sk",
+          "destColumn" : "inv_warehouse_sk"
+        }, {
+          "srcColumn" : "inv_quantity_on_hand",
+          "destColumn" : "inv_quantity_on_hand"
+        }, {
+          "srcColumn" : "inv_item_sk",
+          "destColumn" : "inv_item_sk"
+        }, {
+          "srcColumn" : "inv_date_sk",
+          "destColumn" : "inv_date_sk"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "true",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 12000,
+  "dmsProjectId" : 685,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:53.514086262Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
