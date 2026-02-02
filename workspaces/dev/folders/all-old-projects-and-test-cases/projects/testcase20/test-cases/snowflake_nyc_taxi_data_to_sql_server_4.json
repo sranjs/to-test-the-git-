@@ -1,20 +1,15 @@
 {
-  "executorCores" : 2,
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"3fa790b4-4ec0-4fc7-aae1-6ea16e112154\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"SALES_DATA_5M_B\",\"partitionProperties\":{\"numberOfPart\":11,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":5000000,\"tableSize\":187,\"noOfPartition\":11,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"8f0ac06a-5a6d-48b6-b694-0726ad20813b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"sql_server_4\",\"schemaName\":\"dbo\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_5M_COPY\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":8,\"test_case_name\":\"snowflake_NYC_TAXI_DATA_to_sql_server_4\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"convertNumberToLong\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"487262120078\":{\"source\":\"3fa790b4-4ec0-4fc7-aae1-6ea16e112154\",\"target\":\"8f0ac06a-5a6d-48b6-b694-0726ad20813b\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"487262120078\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
   "executorMemory" : "2g",
-  "numExecutors" : 2,
+  "executorCores" : 2,
   "executeOn" : "LOCAL",
-  "flowName" : "snowflake_NYC_TAXI_DATA_to_sql_server_4",
-  "email" : [ ],
-  "flowDesc" : "snowflake_NYC_TAXI_DATA_to_sql_server_4",
-  "hadoop" : false,
-  "livy" : false,
-  "root" : "dataCompare",
-  "API_APP_BUILD" : "7_49",
-  "UI_VERSION" : "7_49",
+  "flowName" : "snowflake_nyc_taxi_data_to_sql_server_4",
   "APP_VERSION" : "7_49",
+  "flowDesc" : "snowflake_NYC_TAXI_DATA_to_sql_server_4",
   "LicensedName" : "7_49",
-  "parameters" : [ ],
-  "flowType" : "COUNTS COMPARE",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
   "jobMap" : {
     "source" : {
       "dependentJob" : true,
@@ -115,13 +110,18 @@
       }
     }
   },
-  "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"3fa790b4-4ec0-4fc7-aae1-6ea16e112154\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"snowflake_NYC_TAXI_DATA\",\"schemaName\":\"PUBLIC\",\"typeTable\":\"BASE TABLE\",\"tableName\":\"SALES_DATA_5M_B\",\"partitionProperties\":{\"numberOfPart\":11,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":5000000,\"tableSize\":187,\"noOfPartition\":11,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"8f0ac06a-5a6d-48b6-b694-0726ad20813b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"sql_server_4\",\"schemaName\":\"dbo\",\"typeTable\":\"TABLE\",\"tableName\":\"SALES_DATA_5M_COPY\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":8,\"test_case_name\":\"snowflake_NYC_TAXI_DATA_to_sql_server_4\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"convertNumberToLong\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"487262120078\":{\"source\":\"3fa790b4-4ec0-4fc7-aae1-6ea16e112154\",\"target\":\"8f0ac06a-5a6d-48b6-b694-0726ad20813b\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"487262120078\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
-  "flowId" : 7356,
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "COUNTS COMPARE",
+  "flowId" : 12301,
   "dmsProjectId" : 630,
   "syncInfo" : {
     "syncId" : "FOLDER",
-    "timestamp" : "2026-02-02T07:19:52.418935108Z",
+    "timestamp" : "2026-02-02T07:19:56.385357237Z",
     "syncType" : "FOLDER",
     "user" : "system"
   }
