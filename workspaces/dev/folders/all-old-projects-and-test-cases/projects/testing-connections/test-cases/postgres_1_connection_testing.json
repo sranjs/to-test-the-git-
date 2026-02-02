@@ -1,0 +1,142 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"f2c2d2dd-1022-4ca3-85da-49512876823c\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"postgres_1\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"entity_rule\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":[{\"columnName\":\"rule_description\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"rule_id\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"rule_description\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"rule_id\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"556a7b2c-ada2-4e5e-88b6-b97abce833b3\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres_1\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"entity_rule\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":[{\"columnName\":\"rule_description\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"rule_id\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"rule_description\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":1000,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"rule_id\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"postgres_1_connection_testing\",\"stopDifferences\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"1337380405863\":{\"source\":\"f2c2d2dd-1022-4ca3-85da-49512876823c\",\"target\":\"556a7b2c-ada2-4e5e-88b6-b97abce833b3\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"a3b9279f-97a1-412d-acf5-e9c0035e9cef\",\"sourceColumnName\":\"rule_id\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"numeric\",\"sourceNullable\":false,\"targetColumnName\":\"rule_id\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"numeric\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"fdd5829c-d201-4c3c-87be-9085525ac439\",\"sourceColumnName\":\"rule_description\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"rule_description\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1337380405863\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "postgres_1_connection_testing",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "postgres_1_connection_testing",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DataQ_Demo1",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "postgres_1",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "entity_rule" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "entity_rule",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DataQ_Demo1",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "postgres_1",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "entity_rule" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "entity_rule",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 1337380405863,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "entity_rule" : "entity_rule"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "rule_id" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "rule_id",
+          "destColumn" : "rule_id"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "rule_id",
+          "destColumn" : "rule_id"
+        }, {
+          "srcColumn" : "rule_description",
+          "destColumn" : "rule_description"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 7091,
+  "dmsProjectId" : 626,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:49.903160087Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

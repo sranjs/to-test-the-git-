@@ -1,0 +1,154 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"b0c66790-9144-4ff6-b109-db0cfaaf4cec\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_1\",\"schemaName\":\"VEXDATA\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMPLOYEE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"HIRE_DATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":7,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SALARY\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMPLOYEE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"HIRE_DATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":7,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SALARY\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":4,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"4ecd699c-e799-4c49-b5c1-a66b84ac4943\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_1\",\"schemaName\":\"VEXDATA\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMPLOYEE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"HIRE_DATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":7,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SALARY\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"EMAIL\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"EMPLOYEE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"HIRE_DATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":7,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":true,\"columnMaxLength\":50,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"SALARY\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":true,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":4,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"oracle_1_connection_testing\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"1519172004794\":{\"source\":\"b0c66790-9144-4ff6-b109-db0cfaaf4cec\",\"target\":\"4ecd699c-e799-4c49-b5c1-a66b84ac4943\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"0557325f-6406-465e-b640-83a9aaf0aeb6\",\"sourceColumnName\":\"SALARY\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":true,\"targetColumnName\":\"SALARY\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"843e5169-4a20-4bd5-af2f-cb016cb59cb6\",\"sourceColumnName\":\"LAST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":true,\"targetColumnName\":\"LAST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"54edf39a-b375-42ff-a6d5-871aa26e651e\",\"sourceColumnName\":\"HIRE_DATE\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":true,\"targetColumnName\":\"HIRE_DATE\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"a12df84a-bac3-4839-9747-7d5f0b39d029\",\"sourceColumnName\":\"FIRST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":true,\"targetColumnName\":\"FIRST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"a5e255c8-379f-47ca-86a3-921411dc910c\",\"sourceColumnName\":\"EMPLOYEE_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":true,\"targetColumnName\":\"EMPLOYEE_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"f1967198-795e-46fa-9b74-136dfe5ca880\",\"sourceColumnName\":\"EMAIL\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":true,\"targetColumnName\":\"EMAIL\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1519172004794\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "oracle_1_connection_testing",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "oracle_1_connection_testing",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "VEXDATA",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "oracle_1",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "EMPLOYEES" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "EMPLOYEES",
+          "tblSize" : "0.06",
+          "tblRecordCount" : 4,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "VEXDATA",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "oracle_1",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "EMPLOYEES" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "EMPLOYEES",
+          "tblSize" : "0.06",
+          "tblRecordCount" : 4,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 1519172004794,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "EMPLOYEES" : "EMPLOYEES"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "EMPLOYEE_ID" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "EMPLOYEE_ID",
+          "destColumn" : "EMPLOYEE_ID"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "SALARY",
+          "destColumn" : "SALARY"
+        }, {
+          "srcColumn" : "LAST_NAME",
+          "destColumn" : "LAST_NAME"
+        }, {
+          "srcColumn" : "HIRE_DATE",
+          "destColumn" : "HIRE_DATE"
+        }, {
+          "srcColumn" : "FIRST_NAME",
+          "destColumn" : "FIRST_NAME"
+        }, {
+          "srcColumn" : "EMPLOYEE_ID",
+          "destColumn" : "EMPLOYEE_ID"
+        }, {
+          "srcColumn" : "EMAIL",
+          "destColumn" : "EMAIL"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 7108,
+  "dmsProjectId" : 626,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:49.740144644Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

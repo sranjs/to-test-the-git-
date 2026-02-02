@@ -1,0 +1,162 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"cfb20dc4-38af-41c4-920e-dc870f44ead7\",\"from\":\"source\",\"type\":\"SQL\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"ORDERS\",\"partitionProperties\":{},\"defaultSchema\":[{\"columnName\":\"O_ORDERKEY\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERSTATUS\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_TOTALPRICE\",\"columnType\":\"double\",\"actualColumnType\":\"FLOAT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERDATE\",\"columnType\":\"date\",\"actualColumnType\":\"DATE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERPRIORITY\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_CLERK\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_SHIPPRIORITY\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_COMMENT\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"O_ORDERKEY\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERSTATUS\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_TOTALPRICE\",\"columnType\":\"double\",\"actualColumnType\":\"FLOAT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERDATE\",\"columnType\":\"date\",\"actualColumnType\":\"DATE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERPRIORITY\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_CLERK\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_SHIPPRIORITY\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_COMMENT\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sqlQuery\":\"c2VsZWN0ICogIApmcm9tIE9SREVSUyAKd2hlcmUgT19PUkRFUlNUQVRVUyBsaWtlICdPJzs=\",\"prompt\":\"\",\"aiHelp\":false,\"tables\":[]}],\"target\":[{\"id\":\"cd491f4d-6c9e-43ec-9e5d-21eda3c0905b\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"typeTable\":\"TABLE\",\"tableName\":\"ORDERS\",\"partitionProperties\":{\"numberOfPart\":15,\"column\":null},\"defaultSchema\":[{\"columnName\":\"O_CLERK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_COMMENT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":79,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERDATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERPRIORITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERSTATUS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_SHIPPRIORITY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_TOTALPRICE\",\"columnType\":\"decimal(12,0)\",\"actualColumnType\":\"float\",\"nullable\":true,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"O_CLERK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_COMMENT\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":79,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_CUSTKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERDATE\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":true,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERKEY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERPRIORITY\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":15,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_ORDERSTATUS\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":1,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_SHIPPRIORITY\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":true,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"O_TOTALPRICE\",\"columnType\":\"decimal(12,0)\",\"actualColumnType\":\"float\",\"nullable\":true,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1305112,\"tableSize\":295.84,\"noOfPartition\":15,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":8,\"test_case_name\":\"sql to database compare large_data\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"1419740796451\":{\"source\":\"cfb20dc4-38af-41c4-920e-dc870f44ead7\",\"target\":\"cd491f4d-6c9e-43ec-9e5d-21eda3c0905b\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"a7ab139f-4aa6-4316-8981-3bff2e0d1e46\",\"sourceColumnName\":\"O_COMMENT\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"VARCHAR\",\"sourceNullable\":false,\"targetColumnName\":\"O_COMMENT\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"0dbd8791-880c-4234-9dd1-87cf19ce52d2\",\"sourceColumnName\":\"O_SHIPPRIORITY\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"BIGINT\",\"sourceNullable\":false,\"targetColumnName\":\"O_SHIPPRIORITY\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"622402c6-d529-4633-97e2-fd3637026f3d\",\"sourceColumnName\":\"O_CLERK\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"VARCHAR\",\"sourceNullable\":false,\"targetColumnName\":\"O_CLERK\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"20ef5603-65e6-47b9-9f1c-acd30d690faa\",\"sourceColumnName\":\"O_ORDERPRIORITY\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"VARCHAR\",\"sourceNullable\":false,\"targetColumnName\":\"O_ORDERPRIORITY\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"acde7bef-5110-45f8-b63d-1e6a30e8d7bd\",\"sourceColumnName\":\"O_ORDERDATE\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"DATE\",\"sourceNullable\":false,\"targetColumnName\":\"O_ORDERDATE\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"ea0bd44c-b985-4436-9b20-14b100c8d01a\",\"sourceColumnName\":\"O_TOTALPRICE\",\"sourceColumnType\":\"double\",\"sourceActualColumnType\":\"FLOAT\",\"sourceNullable\":false,\"targetColumnName\":\"O_TOTALPRICE\",\"targetColumnType\":\"decimal(12,0)\",\"targetActualColumnType\":\"float\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"f6b02223-207c-4293-97a2-f7409a5d9313\",\"sourceColumnName\":\"O_ORDERSTATUS\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"VARCHAR\",\"sourceNullable\":false,\"targetColumnName\":\"O_ORDERSTATUS\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"e5fb3d4e-93a6-4b28-a3f6-490a3c8dea0c\",\"sourceColumnName\":\"O_CUSTKEY\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"BIGINT\",\"sourceNullable\":false,\"targetColumnName\":\"O_CUSTKEY\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"5eae741a-1c37-4ae0-b534-3c31bf59b2d7\",\"sourceColumnName\":\"O_ORDERKEY\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"BIGINT\",\"sourceNullable\":false,\"targetColumnName\":\"O_ORDERKEY\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1419740796451\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "8g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "sql to database compare large_data",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "sql to database compare large_data",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "large_data",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "large_data",
+          "groupName" : "dev"
+        },
+        "transformationSQL" : true,
+        "sqlStatements" : {
+          "ORDERS" : [ {
+            "sql" : "select *  \nfrom ORDERS \nwhere O_ORDERSTATUS like 'O';",
+            "name" : "ORDERS"
+          } ]
+        },
+        "tableNamesList" : {
+          "ORDERS" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "ORDERS"
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "large_data",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "large_data",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "ORDERS" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "ORDERS",
+          "tblSize" : "295.84",
+          "tblRecordCount" : 1305112,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 1419740796451,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "ORDERS" : "ORDERS"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "O_ORDERKEY" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "O_ORDERKEY",
+          "destColumn" : "O_ORDERKEY"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "O_COMMENT",
+          "destColumn" : "O_COMMENT"
+        }, {
+          "srcColumn" : "O_SHIPPRIORITY",
+          "destColumn" : "O_SHIPPRIORITY"
+        }, {
+          "srcColumn" : "O_CLERK",
+          "destColumn" : "O_CLERK"
+        }, {
+          "srcColumn" : "O_ORDERPRIORITY",
+          "destColumn" : "O_ORDERPRIORITY"
+        }, {
+          "srcColumn" : "O_ORDERDATE",
+          "destColumn" : "O_ORDERDATE"
+        }, {
+          "srcColumn" : "O_TOTALPRICE",
+          "destColumn" : "O_TOTALPRICE"
+        }, {
+          "srcColumn" : "O_ORDERSTATUS",
+          "destColumn" : "O_ORDERSTATUS"
+        }, {
+          "srcColumn" : "O_CUSTKEY",
+          "destColumn" : "O_CUSTKEY"
+        }, {
+          "srcColumn" : "O_ORDERKEY",
+          "destColumn" : "O_ORDERKEY"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 7110,
+  "dmsProjectId" : 626,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:49.723879061Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

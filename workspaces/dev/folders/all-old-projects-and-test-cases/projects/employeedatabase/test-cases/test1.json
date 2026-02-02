@@ -1,0 +1,164 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"f0425d0a-ec51-4dc4-9a8b-cdd6d61127aa\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"Detail_Person\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"Person_Name\"},\"defaultSchema\":[{\"columnName\":\"Person_Age\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_ID\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Salary\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_SalaryCode\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_ZipCode\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"Person_Age\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_ID\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Salary\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_SalaryCode\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_ZipCode\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"Person_Name\"],\"foreignKeyInfo\":null,\"count\":12,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"Person_Name\",\"indexInfo\":[{\"keyName\":\"Detail_Person_UN\",\"keyType\":\"BTREE\",\"ordinalPosition\":1,\"columnName\":\"Person_ID\"},{\"keyName\":\"Detail_Person_UN\",\"keyType\":\"BTREE\",\"ordinalPosition\":2,\"columnName\":\"Person_Name\"}]}],\"target\":[{\"id\":\"c460b3f0-eaed-45a7-9377-b8c0cff4f970\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"typeTable\":\"TABLE\",\"tableName\":\"Person_Detail\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"Person_ID\"},\"defaultSchema\":[{\"columnName\":\"Person_Age\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":40,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_ID\",\"columnType\":\"decimal(10,2)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Salary\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_SalaryCode\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_ZipCode\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"Person_Age\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":40,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_ID\",\"columnType\":\"decimal(10,2)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_Salary\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_SalaryCode\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Person_ZipCode\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":200,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"Person_ID\"],\"foreignKeyInfo\":null,\"count\":13,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"Person_ID\",\"indexInfo\":[{\"keyName\":\"Person_Detail_Person_Name_IDX\",\"keyType\":\"BTREE\",\"ordinalPosition\":1,\"columnName\":\"Person_Name\"},{\"keyName\":\"Person_Detail_Person_Name_IDX\",\"keyType\":\"BTREE\",\"ordinalPosition\":2,\"columnName\":\"Person_Age\"},{\"keyName\":\"PRIMARY\",\"keyType\":\"BTREE\",\"ordinalPosition\":1,\"columnName\":\"Person_ID\"}]}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test1\",\"stopDifferences\":false,\"chunks\":false,\"convertNumberToLong\":false,\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"1433329553849\":{\"source\":\"f0425d0a-ec51-4dc4-9a8b-cdd6d61127aa\",\"target\":\"c460b3f0-eaed-45a7-9377-b8c0cff4f970\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"02d8d4af-5e1e-4191-ada8-af5678476f73\",\"sourceColumnName\":\"Person_ZipCode\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"Person_ZipCode\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"b0e6740e-94a0-4a7f-bfde-34ecf6b257a4\",\"sourceColumnName\":\"Person_SalaryCode\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"Person_SalaryCode\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"35cfe3d5-73a0-4fee-ba0d-1001a1fc56fb\",\"sourceColumnName\":\"Person_Salary\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":true,\"targetColumnName\":\"Person_Salary\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"99cda558-299b-4388-addf-76531d0fa234\",\"sourceColumnName\":\"Person_Name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"Person_Name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true},{\"id\":\"55aa3dc4-eb2c-4574-b17d-ae6f574c681d\",\"sourceColumnName\":\"Person_ID\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":true,\"targetColumnName\":\"Person_ID\",\"targetColumnType\":\"decimal(10,2)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true},{\"id\":\"95bbe1a5-6b96-43b5-9104-800366904bf7\",\"sourceColumnName\":\"Person_Email\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"Person_Email\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"08cae732-d531-40c0-8c7f-d84f3917c9ce\",\"sourceColumnName\":\"Person_Age\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"Person_Age\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1433329553849\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "test1",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "test1",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "Detail_Person" : {
+            "numberOfPart" : 0,
+            "column" : "Person_Name"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "Detail_Person",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 12,
+          "primaryKeys" : [ "Person_Name" ],
+          "indexKeys" : [ "Person_ID", "Person_Name" ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "Person_Detail" : {
+            "numberOfPart" : 0,
+            "column" : "Person_ID"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "Person_Detail",
+          "tblSize" : "0.03",
+          "tblRecordCount" : 13,
+          "primaryKeys" : [ "Person_ID" ],
+          "indexKeys" : [ "Person_Name", "Person_Age", "Person_ID" ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 1433329553849,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "Detail_Person" : "Person_Detail"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "Person_Name", "Person_ID" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "\"Person_Name\"",
+          "destColumn" : "\"Person_Name\""
+        }, {
+          "srcColumn" : "\"Person_ID\"",
+          "destColumn" : "\"Person_ID\""
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "\"Person_ZipCode\"",
+          "destColumn" : "\"Person_ZipCode\""
+        }, {
+          "srcColumn" : "\"Person_SalaryCode\"",
+          "destColumn" : "\"Person_SalaryCode\""
+        }, {
+          "srcColumn" : "\"Person_Salary\"",
+          "destColumn" : "\"Person_Salary\""
+        }, {
+          "srcColumn" : "\"Person_Name\"",
+          "destColumn" : "\"Person_Name\""
+        }, {
+          "srcColumn" : "\"Person_ID\"",
+          "destColumn" : "\"Person_ID\""
+        }, {
+          "srcColumn" : "\"Person_Email\"",
+          "destColumn" : "\"Person_Email\""
+        }, {
+          "srcColumn" : "\"Person_Age\"",
+          "destColumn" : "\"Person_Age\""
+        } ],
+        "keyValueProperties" : { }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 7037,
+  "dmsProjectId" : 625,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:49.686814638Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
