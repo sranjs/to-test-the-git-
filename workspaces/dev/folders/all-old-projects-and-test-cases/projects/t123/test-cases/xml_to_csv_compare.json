@@ -21,21 +21,26 @@
       "description" : "source component",
       "id" : "source",
       "sourceData" : [ {
-        "datasetFormat" : "XML",
-        "datasetPath" : "/my_data/user_files/Aman/EMPLOYEEDATA_202411132334.xml",
-        "tableProperties" : [ {
-          "tblName" : "EMPLOYEEDATA202411132334xml",
-          "tblSize" : "0.24",
-          "tblRecordCount" : 1000
-        } ],
-        "tableNamesList" : {
-          "EMPLOYEEDATA202411132334xml" : null
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
         },
-        "params" : {
-          "rowTag" : "DATA_RECORD",
-          "dropRecordsWithAllNulls" : false,
-          "flattenJson" : false
-        }
+        "transformationSQL" : true,
+        "sqlStatements" : {
+          "EmployeeData" : [ {
+            "sql" : "select * from EmployeeData",
+            "name" : "EmployeeData"
+          } ]
+        },
+        "tableNamesList" : {
+          "EmployeeData" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "EmployeeData"
+        } ]
       } ],
       "position" : {
         "x" : 610,
@@ -58,7 +63,7 @@
           "employeedatacsv" : null
         },
         "params" : {
-          "dropBadRecords" : false,
+          "dropBadRecords" : true,
           "dropRecordsWithAllNulls" : false
         },
         "columns" : [ ],
@@ -80,13 +85,13 @@
       "id" : "dataCompare",
       "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
       "filesCompareList" : [ {
-        "unitTestCaseId" : 1598173841118,
+        "unitTestCaseId" : 159202532521,
         "matchBoth" : true,
         "compareType" : "CELL_BY_CELL_COMPARE",
         "compareColumns" : false,
         "compareCommonColumnsOnly" : true,
         "srcDestTableMap" : {
-          "EMPLOYEEDATA202411132334xml" : "employeedatacsv"
+          "EmployeeData" : "employeedatacsv"
         },
         "srcDestComponentMap" : {
           "source" : "target"
@@ -95,28 +100,28 @@
         "validateRowsCount" : false,
         "tolerance" : [ ],
         "sqlTransform" : [ ],
-        "compareKey" : [ "EMPLOYEEID" ],
+        "compareKey" : [ "EmployeeID" ],
         "compareKeyNew" : [ {
-          "srcColumn" : "EMPLOYEEID",
+          "srcColumn" : "\"EmployeeID\"",
           "destColumn" : "EMPLOYEEID"
         } ],
         "columnMapping" : [ {
-          "srcColumn" : "LASTNAME",
-          "destColumn" : "LASTNAME"
-        }, {
-          "srcColumn" : "JOININGDATE",
-          "destColumn" : "JOININGDATE"
-        }, {
-          "srcColumn" : "IPADDRESS",
+          "srcColumn" : "\"IpAddress\"",
           "destColumn" : "IPADDRESS"
         }, {
-          "srcColumn" : "GENDER",
+          "srcColumn" : "\"Gender\"",
           "destColumn" : "GENDER"
         }, {
-          "srcColumn" : "FIRSTNAME",
+          "srcColumn" : "\"JoiningDate\"",
+          "destColumn" : "JOININGDATE"
+        }, {
+          "srcColumn" : "\"LastName\"",
+          "destColumn" : "LASTNAME"
+        }, {
+          "srcColumn" : "\"FirstName\"",
           "destColumn" : "FIRSTNAME"
         }, {
-          "srcColumn" : "EMPLOYEEID",
+          "srcColumn" : "\"EmployeeID\"",
           "destColumn" : "EMPLOYEEID"
         } ],
         "keyValueProperties" : {
@@ -134,12 +139,12 @@
     }
   },
   "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"09b41240-fa7b-4741-ba78-61d20bd585de\",\"from\":\"source\",\"type\":\"XML\",\"tableSize\":0.24,\"fileName\":\"EMPLOYEEDATA_202411132334.xml\",\"filePath\":\"/my_data/user_files/Aman/EMPLOYEEDATA_202411132334.xml\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"flattenJson\":false,\"rowTag\":\"DATA_RECORD\",\"tableName\":\"EMPLOYEEDATA202411132334xml\",\"sampleData\":[{\"EMPLOYEEID\":\"1\",\"FIRSTNAME\":\"Isacco\",\"GENDER\":\"Male\",\"IPADDRESS\":\"69.144.174.122\",\"JOININGDATE\":\"iswindin0@washington.edu\",\"LASTNAME\":\"Swindin\"},{\"EMPLOYEEID\":\"2\",\"FIRSTNAME\":\"Caitlin\",\"GENDER\":\"Polygender\",\"IPADDRESS\":\"99.71.18.187\",\"JOININGDATE\":\"clain1@51.la\",\"LASTNAME\":\"Lain\"},{\"EMPLOYEEID\":\"3\",\"FIRSTNAME\":\"Almeria\",\"GENDER\":\"Female\",\"IPADDRESS\":\"188.80.157.91\",\"JOININGDATE\":\"athaine2@sakura.ne.jp\",\"LASTNAME\":\"Thaine\"},{\"EMPLOYEEID\":\"4\",\"FIRSTNAME\":\"Darleen\",\"GENDER\":\"Female\",\"IPADDRESS\":\"6.53.94.76\",\"JOININGDATE\":\"dlammert3@list-manage.com\",\"LASTNAME\":\"Lammert\"},{\"EMPLOYEEID\":\"5\",\"FIRSTNAME\":\"Roosevelt\",\"GENDER\":\"Male\",\"IPADDRESS\":\"176.93.42.183\",\"JOININGDATE\":\"rhouson4@sciencedaily.com\",\"LASTNAME\":\"Houson\"},{\"EMPLOYEEID\":\"6\",\"FIRSTNAME\":\"Bernie\",\"GENDER\":\"Male\",\"IPADDRESS\":\"15.244.152.191\",\"JOININGDATE\":\"bjacqueme5@cam.ac.uk\",\"LASTNAME\":\"Jacqueme\"},{\"EMPLOYEEID\":\"7\",\"FIRSTNAME\":\"Chad\",\"GENDER\":\"Female\",\"IPADDRESS\":\"134.93.25.168\",\"JOININGDATE\":\"cflorio6@google.es\",\"LASTNAME\":\"Florio\"},{\"EMPLOYEEID\":\"8\",\"FIRSTNAME\":\"Lothaire\",\"GENDER\":\"Male\",\"IPADDRESS\":\"63.242.74.229\",\"JOININGDATE\":\"ltoppin7@yahoo.com\",\"LASTNAME\":\"Toppin\"},{\"EMPLOYEEID\":\"9\",\"FIRSTNAME\":\"Gina\",\"GENDER\":\"Female\",\"IPADDRESS\":\"92.232.141.166\",\"JOININGDATE\":\"gsans8@reddit.com\",\"LASTNAME\":\"Sans\"},{\"EMPLOYEEID\":\"10\",\"FIRSTNAME\":\"Ileane\",\"GENDER\":\"Female\",\"IPADDRESS\":\"164.98.204.191\",\"JOININGDATE\":\"imcfadin9@mail.ru\",\"LASTNAME\":\"McFadin\"}],\"schema\":[{\"columnName\":\"EMPLOYEEID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"FIRSTNAME\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"IPADDRESS\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"JOININGDATE\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"LASTNAME\",\"columnType\":\"string\",\"nullable\":true}],\"count\":1000,\"isPrimaryDataset\":true}],\"target\":[{\"id\":\"653b8779-871b-446c-a8da-2c9d87828d0f\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"employee_data.csv\",\"filePath\":\"/my_data/user_files/Aman/employee_data.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"employeedatacsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":false,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"EMPLOYEEID\":\"1\",\"FIRSTNAME\":\"Isacco\",\"LASTNAME\":\"Swindin\",\"JOININGDATE\":\"iswindin0@washington.edu\",\"GENDER\":\"Male\",\"IPADDRESS\":\"69.144.174.122\"},{\"EMPLOYEEID\":\"2\",\"FIRSTNAME\":\"Caitlin\",\"LASTNAME\":\"Lain\",\"JOININGDATE\":\"clain1@51.la\",\"GENDER\":\"Polygender\",\"IPADDRESS\":\"99.71.18.187\"},{\"EMPLOYEEID\":\"3\",\"FIRSTNAME\":\"Almeria\",\"LASTNAME\":\"Thaine\",\"JOININGDATE\":\"athaine2@sakura.ne.jp\",\"GENDER\":\"Female\",\"IPADDRESS\":\"188.80.157.91\"},{\"EMPLOYEEID\":\"4\",\"FIRSTNAME\":\"Darleen\",\"LASTNAME\":\"Lammert\",\"JOININGDATE\":\"dlammert3@list-manage.com\",\"GENDER\":\"Female\",\"IPADDRESS\":\"6.53.94.76\"},{\"EMPLOYEEID\":\"5\",\"FIRSTNAME\":\"Roosevelt\",\"LASTNAME\":\"Houson\",\"JOININGDATE\":\"rhouson4@sciencedaily.com\",\"GENDER\":\"Male\",\"IPADDRESS\":\"176.93.42.183\"},{\"EMPLOYEEID\":\"6\",\"FIRSTNAME\":\"Bernie\",\"LASTNAME\":\"Jacqueme\",\"JOININGDATE\":\"bjacqueme5@cam.ac.uk\",\"GENDER\":\"Male\",\"IPADDRESS\":\"15.244.152.191\"},{\"EMPLOYEEID\":\"7\",\"FIRSTNAME\":\"Chad\",\"LASTNAME\":\"Florio\",\"JOININGDATE\":\"cflorio6@google.es\",\"GENDER\":\"Female\",\"IPADDRESS\":\"134.93.25.168\"},{\"EMPLOYEEID\":\"8\",\"FIRSTNAME\":\"Lothaire\",\"LASTNAME\":\"Toppin\",\"JOININGDATE\":\"ltoppin7@yahoo.com\",\"GENDER\":\"Male\",\"IPADDRESS\":\"63.242.74.229\"},{\"EMPLOYEEID\":\"9\",\"FIRSTNAME\":\"Gina\",\"LASTNAME\":\"Sans\",\"JOININGDATE\":\"gsans8@reddit.com\",\"GENDER\":\"Female\",\"IPADDRESS\":\"92.232.141.166\"},{\"EMPLOYEEID\":\"10\",\"FIRSTNAME\":\"Ileane\",\"LASTNAME\":\"McFadin\",\"JOININGDATE\":\"imcfadin9@mail.ru\",\"GENDER\":\"Female\",\"IPADDRESS\":\"164.98.204.191\"}],\"schema\":[{\"columnName\":\"EMPLOYEEID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"FIRSTNAME\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"LASTNAME\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"JOININGDATE\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"IPADDRESS\",\"columnType\":\"string\",\"nullable\":true}],\"count\":35}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"xml_to_csv_compare\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"1598173841118\":{\"source\":\"09b41240-fa7b-4741-ba78-61d20bd585de\",\"target\":\"653b8779-871b-446c-a8da-2c9d87828d0f\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"797c0143-c6f4-4553-9756-ece0fa3b573d\",\"sourceColumnName\":\"LASTNAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"LASTNAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4c97462f-c786-48b4-bd85-2500c47eae07\",\"sourceColumnName\":\"JOININGDATE\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"JOININGDATE\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"2cad8e10-4248-48db-b982-0fa689268af1\",\"sourceColumnName\":\"IPADDRESS\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"IPADDRESS\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"3eee01a1-d360-4599-8745-f2e402722fc5\",\"sourceColumnName\":\"GENDER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"GENDER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"0a15999a-ec42-4f18-ad1d-93b9487acc2f\",\"sourceColumnName\":\"FIRSTNAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"FIRSTNAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"af995473-44fd-4ab7-b40e-be3f1830b0d0\",\"sourceColumnName\":\"EMPLOYEEID\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"EMPLOYEEID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"1598173841118\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
-  "flowId" : 10409,
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"dc145777-55c6-4b26-97f8-f064f37ca9a0\",\"from\":\"source\",\"type\":\"SQL\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"tableName\":\"EmployeeData\",\"partitionProperties\":{},\"defaultSchema\":[{\"columnName\":\"EmployeeID\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FirstName\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LastName\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"JoiningDate\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Gender\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IpAddress\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"EmployeeID\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"FirstName\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"LastName\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"JoiningDate\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"Gender\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"IpAddress\",\"columnType\":\"string\",\"actualColumnType\":\"VARCHAR\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sqlQuery\":\"c2VsZWN0ICogZnJvbSBFbXBsb3llZURhdGE=\",\"prompt\":\"\",\"aiHelp\":false,\"tables\":[]}],\"target\":[{\"id\":\"7852b8ab-f023-457a-aaff-cb0cb67d0d68\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"employee_data.csv\",\"filePath\":\"/my_data/user_files/Aman/employee_data.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"employeedatacsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"EMPLOYEEID\":\"1\",\"FIRSTNAME\":\"Isacco\",\"LASTNAME\":\"Swindin\",\"JOININGDATE\":\"iswindin0@washington.edu\",\"GENDER\":\"Male\",\"IPADDRESS\":\"69.144.174.122\"},{\"EMPLOYEEID\":\"2\",\"FIRSTNAME\":\"Caitlin\",\"LASTNAME\":\"Lain\",\"JOININGDATE\":\"clain1@51.la\",\"GENDER\":\"Polygender\",\"IPADDRESS\":\"99.71.18.187\"},{\"EMPLOYEEID\":\"3\",\"FIRSTNAME\":\"Almeria\",\"LASTNAME\":\"Thaine\",\"JOININGDATE\":\"athaine2@sakura.ne.jp\",\"GENDER\":\"Female\",\"IPADDRESS\":\"188.80.157.91\"},{\"EMPLOYEEID\":\"4\",\"FIRSTNAME\":\"Darleen\",\"LASTNAME\":\"Lammert\",\"JOININGDATE\":\"dlammert3@list-manage.com\",\"GENDER\":\"Female\",\"IPADDRESS\":\"6.53.94.76\"},{\"EMPLOYEEID\":\"5\",\"FIRSTNAME\":\"Roosevelt\",\"LASTNAME\":\"Houson\",\"JOININGDATE\":\"rhouson4@sciencedaily.com\",\"GENDER\":\"Male\",\"IPADDRESS\":\"176.93.42.183\"},{\"EMPLOYEEID\":\"6\",\"FIRSTNAME\":\"Bernie\",\"LASTNAME\":\"Jacqueme\",\"JOININGDATE\":\"bjacqueme5@cam.ac.uk\",\"GENDER\":\"Male\",\"IPADDRESS\":\"15.244.152.191\"},{\"EMPLOYEEID\":\"7\",\"FIRSTNAME\":\"Chad\",\"LASTNAME\":\"Florio\",\"JOININGDATE\":\"cflorio6@google.es\",\"GENDER\":\"Female\",\"IPADDRESS\":\"134.93.25.168\"},{\"EMPLOYEEID\":\"8\",\"FIRSTNAME\":\"Lothaire\",\"LASTNAME\":\"Toppin\",\"JOININGDATE\":\"ltoppin7@yahoo.com\",\"GENDER\":\"Male\",\"IPADDRESS\":\"63.242.74.229\"},{\"EMPLOYEEID\":\"9\",\"FIRSTNAME\":\"Gina\",\"LASTNAME\":\"Sans\",\"JOININGDATE\":\"gsans8@reddit.com\",\"GENDER\":\"Female\",\"IPADDRESS\":\"92.232.141.166\"},{\"EMPLOYEEID\":\"10\",\"FIRSTNAME\":\"Ileane\",\"LASTNAME\":\"McFadin\",\"JOININGDATE\":\"imcfadin9@mail.ru\",\"GENDER\":\"Female\",\"IPADDRESS\":\"164.98.204.191\"}],\"schema\":[{\"columnName\":\"EMPLOYEEID\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"FIRSTNAME\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"LASTNAME\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"JOININGDATE\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"GENDER\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"IPADDRESS\",\"columnType\":\"string\",\"nullable\":true}],\"count\":35,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"xml_to_csv_compare\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"159202532521\":{\"source\":\"dc145777-55c6-4b26-97f8-f064f37ca9a0\",\"target\":\"7852b8ab-f023-457a-aaff-cb0cb67d0d68\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"88115677-1061-4212-982f-feacb3f09269\",\"sourceColumnName\":\"IpAddress\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"VARCHAR\",\"sourceNullable\":false,\"targetColumnName\":\"IPADDRESS\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"160f12bd-7982-4df3-bca6-ca1e5718fa21\",\"sourceColumnName\":\"Gender\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"VARCHAR\",\"sourceNullable\":false,\"targetColumnName\":\"GENDER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"29c741a3-b1d1-4fbe-81da-00b51747906c\",\"sourceColumnName\":\"JoiningDate\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"VARCHAR\",\"sourceNullable\":false,\"targetColumnName\":\"JOININGDATE\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"232c6f1d-4999-4cf9-896a-a5be1481317c\",\"sourceColumnName\":\"LastName\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"VARCHAR\",\"sourceNullable\":false,\"targetColumnName\":\"LASTNAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"dd38038e-085d-46b2-b806-5135214f481f\",\"sourceColumnName\":\"FirstName\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"VARCHAR\",\"sourceNullable\":false,\"targetColumnName\":\"FIRSTNAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"999eedec-d2c7-418b-8762-22deb5796ec5\",\"sourceColumnName\":\"EmployeeID\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"INT\",\"sourceNullable\":false,\"targetColumnName\":\"EMPLOYEEID\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"159202532521\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 9996,
   "dmsProjectId" : 685,
   "syncInfo" : {
     "syncId" : "FOLDER",
-    "timestamp" : "2026-02-02T07:54:33.216935553Z",
+    "timestamp" : "2026-02-02T08:15:27.109757736Z",
     "syncType" : "FOLDER",
     "user" : "system"
   }
