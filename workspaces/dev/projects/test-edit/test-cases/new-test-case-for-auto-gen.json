@@ -1,0 +1,775 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"tablesList\":{\"source\":[{\"id\":\"e18c2490-e3cd-4010-8578-f79a2a7f948d\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"com_data.csv\",\"filePath\":\"/my_data/user_files/com_data.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"comdatacsv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"id\":\"1\",\"full_name\":\"John Smith\",\"email\":\"john.smith@example.com\",\"age\":\"28\",\"salary\":\"75000.50\",\"hire_date\":\"2020-03-15\",\"is_active\":\"true\",\"department\":\"Engineering\",\"phone\":\"(555) 123-4567\",\"ssn\":\"123-45-6789\",\"credit_score\":\"750\",\"product_code\":\"PROD-001\",\"status\":\"ACTIVE\",\"rating\":\"4.5\",\"comments\":\"Great employee with excellent skills\",\"ip_address\":\"192.168.1.100\",\"created_timestamp\":\"2020-03-15 09:30:00\",\"country_code\":\"US\",\"postal_code\":\"10001\",\"website_url\":\"https://example.com/john\"},{\"id\":\"2\",\"full_name\":\"Jane Doe\",\"email\":\"jane.doe@company.org\",\"age\":\"35\",\"salary\":\"95000.00\",\"hire_date\":\"2018-06-20\",\"is_active\":\"true\",\"department\":\"Marketing\",\"phone\":\"555-987-6543\",\"ssn\":\"987-65-4321\",\"credit_score\":\"820\",\"product_code\":\"PROD-002\",\"status\":\"ACTIVE\",\"rating\":\"4.8\",\"comments\":\"Outstanding performance consistently\",\"ip_address\":\"10.0.0.50\",\"created_timestamp\":\"2018-06-20 14:15:30\",\"country_code\":\"US\",\"postal_code\":\"90210\",\"website_url\":\"https://company.org/jane\"},{\"id\":\"3\",\"full_name\":\"Bob Johnson\",\"email\":\"bob.j@email.net\",\"age\":\"42\",\"salary\":\"120000.75\",\"hire_date\":\"2015-01-10\",\"is_active\":\"false\",\"department\":\"Sales\",\"phone\":\"555.246.8135\",\"ssn\":\"456-78-9012\",\"credit_score\":\"680\",\"product_code\":\"PROD-001\",\"status\":\"INACTIVE\",\"rating\":\"3.2\",\"comments\":\"Left for another opportunity\",\"ip_address\":\"172.16.0.25\",\"created_timestamp\":\"2015-01-10 08:00:00\",\"country_code\":\"CA\",\"postal_code\":\"M4B 1B3\",\"website_url\":\"http://profile.net/bob\"},{\"id\":\"4\",\"full_name\":\"Alice Williams\",\"age\":\"29\",\"salary\":\"82000.00\",\"hire_date\":\"2019-11-05\",\"is_active\":\"true\",\"department\":\"Engineering\",\"phone\":\"555-369-2580\",\"ssn\":\"789-01-2345\",\"credit_score\":\"790\",\"product_code\":\"PROD-003\",\"status\":\"ACTIVE\",\"rating\":\"4.6\",\"ip_address\":\"192.168.2.75\",\"created_timestamp\":\"2019-11-05 10:45:15\",\"country_code\":\"US\",\"postal_code\":\"60601\"},{\"id\":\"5\",\"full_name\":\"Charlie Brown\",\"email\":\"charlie@test.com\",\"age\":\"31\",\"hire_date\":\"2021-02-28\",\"is_active\":\"true\",\"department\":\"HR\",\"phone\":\"(555) 147-2583\",\"ssn\":\"234-56-7890\",\"credit_score\":\"710\",\"product_code\":\"PROD-002\",\"status\":\"ACTIVE\",\"rating\":\"4.1\",\"comments\":\"Good team player\",\"ip_address\":\"10.10.10.10\",\"created_timestamp\":\"2021-02-28 11:30:00\",\"country_code\":\"UK\",\"postal_code\":\"SW1A 1AA\",\"website_url\":\"https://test.com/charlie\"},{\"id\":\"6\",\"full_name\":\"Diana Prince\",\"email\":\"diana.prince@amazon.com\",\"age\":\"33\",\"salary\":\"105000.25\",\"hire_date\":\"2017-09-12\",\"is_active\":\"true\",\"department\":\"Engineering\",\"phone\":\"555-789-0123\",\"ssn\":\"345-67-8901\",\"credit_score\":\"805\",\"product_code\":\"PROD-001\",\"status\":\"ACTIVE\",\"rating\":\"4.9\",\"comments\":\"Exceptional leader and mentor\",\"ip_address\":\"172.31.0.100\",\"created_timestamp\":\"2017-09-12 09:00:00\",\"country_code\":\"US\",\"postal_code\":\"98101\",\"website_url\":\"https://amazon.com/diana\"},{\"id\":\"7\",\"full_name\":\"Eve Anderson\",\"email\":\"eve@startup.io\",\"age\":\"27\",\"salary\":\"68000.00\",\"hire_date\":\"2022-04-01\",\"is_active\":\"true\",\"department\":\"Marketing\",\"phone\":\"555.123.7890\",\"ssn\":\"567-89-0123\",\"credit_score\":\"695\",\"product_code\":\"PROD-004\",\"status\":\"ACTIVE\",\"rating\":\"3.8\",\"comments\":\"Shows great potential\",\"ip_address\":\"192.168.3.200\",\"created_timestamp\":\"2022-04-01 08:30:45\",\"country_code\":\"US\",\"postal_code\":\"94105\",\"website_url\":\"http://startup.io/eve\"},{\"id\":\"8\",\"full_name\":\"Frank Miller\",\"email\":\"frank.miller@corp.com\",\"age\":\"45\",\"salary\":\"135000.00\",\"hire_date\":\"2014-07-15\",\"is_active\":\"false\",\"department\":\"Sales\",\"phone\":\"555-456-7890\",\"ssn\":\"678-90-1234\",\"credit_score\":\"760\",\"product_code\":\"PROD-002\",\"status\":\"INACTIVE\",\"rating\":\"3.5\",\"comments\":\"Retired early\",\"ip_address\":\"10.20.30.40\",\"created_timestamp\":\"2014-07-15 13:20:10\",\"country_code\":\"CA\",\"postal_code\":\"V6B 4Y8\",\"website_url\":\"https://corp.com/frank\"},{\"id\":\"9\",\"full_name\":\"Grace Lee\",\"email\":\"grace.lee@tech.com\",\"age\":\"30\",\"salary\":\"88000.50\",\"hire_date\":\"2020-08-20\",\"is_active\":\"true\",\"department\":\"Engineering\",\"phone\":\"(555) 987-1234\",\"ssn\":\"890-12-3456\",\"credit_score\":\"780\",\"product_code\":\"PROD-001\",\"status\":\"ACTIVE\",\"rating\":\"4.7\",\"comments\":\"Consistently delivers quality work\",\"ip_address\":\"192.168.4.50\",\"created_timestamp\":\"2020-08-20 10:00:00\",\"country_code\":\"US\",\"postal_code\":\"02134\",\"website_url\":\"https://tech.com/grace\"},{\"id\":\"10\",\"full_name\":\"Henry Wilson\",\"age\":\"38\",\"salary\":\"98000.00\",\"hire_date\":\"2016-05-10\",\"is_active\":\"true\",\"department\":\"HR\",\"phone\":\"555-654-3210\",\"ssn\":\"901-23-4567\",\"credit_score\":\"725\",\"product_code\":\"PROD-003\",\"status\":\"ACTIVE\",\"rating\":\"4.2\",\"comments\":\"Reliable and dedicated\",\"ip_address\":\"172.16.1.100\",\"created_timestamp\":\"2016-05-10 09:15:30\",\"country_code\":\"UK\",\"postal_code\":\"EC1A 1BB\"}],\"schema\":[{\"columnName\":\"id\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"full_name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"email\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"salary\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"hire_date\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"is_active\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"department\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"phone\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"ssn\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"credit_score\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"product_code\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"status\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"rating\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"comments\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"ip_address\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"created_timestamp\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"country_code\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"postal_code\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"website_url\",\"columnType\":\"string\",\"nullable\":true}],\"count\":10,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":15,\"countsCompareTolerance\":0,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"new test case for auto gen\"},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{\"id\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"id_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1429342637329\"},\"NOT_EMPTY\":{\"ruleName\":\"id_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"203827250352\"},\"LEFT_SPACES\":{\"ruleName\":\"id_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"42293589472\"},\"RIGHT_SPACES\":{\"ruleName\":\"id_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"648386489251\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"id_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"217361227584\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"id_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1044782654723\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"id_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1289327734667\"},\"MIN_LENGTH\":{\"value\":1,\"ruleName\":\"id_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1403103489312\"},\"MAX_LENGTH\":{\"value\":2,\"ruleName\":\"id_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"348065640300\"},\"SQL_RULE\":{\"ruleName\":\"id_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1739137421285\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"id_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"id\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"767307633764\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1473736778663\"}},\"full_name\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"full_name_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"567502971199\"},\"NOT_EMPTY\":{\"ruleName\":\"full_name_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1002026100462\"},\"LEFT_SPACES\":{\"ruleName\":\"full_name_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1288150719751\"},\"RIGHT_SPACES\":{\"ruleName\":\"full_name_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"677633493223\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"full_name_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"249774091450\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"full_name_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"941031605183\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"full_name_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1689193649174\"},\"MIN_LENGTH\":{\"value\":8,\"ruleName\":\"full_name_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"688549781119\"},\"MAX_LENGTH\":{\"value\":14,\"ruleName\":\"full_name_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"241338342429\"},\"SQL_RULE\":{\"ruleName\":\"full_name_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1216204058883\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"full_name_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"full_name\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1318657465376\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1659832625705\"}},\"email\":{\"NOT_NULL\":{\"value\":true,\"ruleName\":\"email_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1174056656151\"},\"NOT_EMPTY\":{\"ruleName\":\"email_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"143515626194\"},\"LEFT_SPACES\":{\"ruleName\":\"email_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"687863162142\"},\"RIGHT_SPACES\":{\"ruleName\":\"email_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"133226175426\"},\"UNIQUE_VALUES\":{\"value\":false,\"ruleName\":\"email_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"482814702313\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"email_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1204743321686\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"email_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1259694829082\"},\"MIN_LENGTH\":{\"value\":14,\"ruleName\":\"email_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"991642246946\"},\"MAX_LENGTH\":{\"value\":23,\"ruleName\":\"email_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"519325886049\"},\"SQL_RULE\":{\"ruleName\":\"email_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"188689669606\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"email_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"email\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1021689657859\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34238,\"ruleName\":\"DQ_postal_code_us_with_nulls\",\"dataType\":\"Same as postal_code_us but allows null values. Validates US ZIP code format or accepts null.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL IS NULL OR $COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"896227628235\"}},\"age\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"age_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"164826335901\"},\"NOT_EMPTY\":{\"ruleName\":\"age_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"395066290632\"},\"LEFT_SPACES\":{\"ruleName\":\"age_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"270543453510\"},\"RIGHT_SPACES\":{\"ruleName\":\"age_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1190064468398\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"age_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"954877203849\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"age_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1609939869456\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"age_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1000017314644\"},\"MIN_LENGTH\":{\"value\":2,\"ruleName\":\"age_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"624007746178\"},\"MAX_LENGTH\":{\"value\":2,\"ruleName\":\"age_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1748799573996\"},\"SQL_RULE\":{\"ruleName\":\"age_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"326013856875\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"age_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"age\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1446109202247\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1380489344773\"}},\"salary\":{\"NOT_NULL\":{\"value\":true,\"ruleName\":\"salary_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1569706792884\"},\"NOT_EMPTY\":{\"ruleName\":\"salary_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"622731297136\"},\"LEFT_SPACES\":{\"ruleName\":\"salary_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"516006965741\"},\"RIGHT_SPACES\":{\"ruleName\":\"salary_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"342753266423\"},\"UNIQUE_VALUES\":{\"value\":false,\"ruleName\":\"salary_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1049387000829\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"salary_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"68595576348\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"salary_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"383586285964\"},\"MIN_LENGTH\":{\"value\":8,\"ruleName\":\"salary_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"985032939374\"},\"MAX_LENGTH\":{\"value\":9,\"ruleName\":\"salary_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1340421742748\"},\"SQL_RULE\":{\"ruleName\":\"salary_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1375775039782\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"salary_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"salary\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"385716104418\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34238,\"ruleName\":\"DQ_postal_code_us_with_nulls\",\"dataType\":\"Same as postal_code_us but allows null values. Validates US ZIP code format or accepts null.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL IS NULL OR $COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1170112220559\"}},\"hire_date\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"hire_date_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"398098096443\"},\"NOT_EMPTY\":{\"ruleName\":\"hire_date_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1629242361019\"},\"LEFT_SPACES\":{\"ruleName\":\"hire_date_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"847039798019\"},\"RIGHT_SPACES\":{\"ruleName\":\"hire_date_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"325453411751\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"hire_date_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"990400065434\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"hire_date_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"964652931402\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"hire_date_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1457653206407\"},\"MIN_LENGTH\":{\"value\":10,\"ruleName\":\"hire_date_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1048905871173\"},\"MAX_LENGTH\":{\"value\":10,\"ruleName\":\"hire_date_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"558728540346\"},\"SQL_RULE\":{\"ruleName\":\"hire_date_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1729698139844\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"hire_date_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"hire_date\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"70565136868\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1240013065125\"}},\"is_active\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"is_active_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"688070134621\"},\"NOT_EMPTY\":{\"ruleName\":\"is_active_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1421606995863\"},\"LEFT_SPACES\":{\"ruleName\":\"is_active_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"301873127396\"},\"RIGHT_SPACES\":{\"ruleName\":\"is_active_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"884709661851\"},\"UNIQUE_VALUES\":{\"value\":false,\"ruleName\":\"is_active_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1151038031819\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"is_active_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1718967972661\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"is_active_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1253625318494\"},\"MIN_LENGTH\":{\"value\":4,\"ruleName\":\"is_active_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"4773091823\"},\"MAX_LENGTH\":{\"value\":5,\"ruleName\":\"is_active_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1119503141402\"},\"SQL_RULE\":{\"ruleName\":\"is_active_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1173935098803\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"is_active_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"is_active\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1751577107327\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1416835675175\"}},\"department\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"department_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1617084596422\"},\"NOT_EMPTY\":{\"ruleName\":\"department_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"9008038369\"},\"LEFT_SPACES\":{\"ruleName\":\"department_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"835449421551\"},\"RIGHT_SPACES\":{\"ruleName\":\"department_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"995231338276\"},\"UNIQUE_VALUES\":{\"value\":false,\"ruleName\":\"department_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"873685948395\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"department_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1603386415700\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"department_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"901108777216\"},\"MIN_LENGTH\":{\"value\":2,\"ruleName\":\"department_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"560034562959\"},\"MAX_LENGTH\":{\"value\":11,\"ruleName\":\"department_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1181470537123\"},\"SQL_RULE\":{\"ruleName\":\"department_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1690706764362\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"department_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"department\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"552463623882\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"483551294778\"}},\"phone\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"phone_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"960992909411\"},\"NOT_EMPTY\":{\"ruleName\":\"phone_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1200520416642\"},\"LEFT_SPACES\":{\"ruleName\":\"phone_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1460222052253\"},\"RIGHT_SPACES\":{\"ruleName\":\"phone_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1101996898636\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"phone_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"573125853422\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"phone_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1166732486169\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"phone_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1410945758807\"},\"MIN_LENGTH\":{\"value\":12,\"ruleName\":\"phone_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"895148749047\"},\"MAX_LENGTH\":{\"value\":14,\"ruleName\":\"phone_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"114346556657\"},\"SQL_RULE\":{\"ruleName\":\"phone_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"39185075766\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"phone_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"phone\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"128098556100\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1627983778398\"}},\"ssn\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"ssn_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"308792340180\"},\"NOT_EMPTY\":{\"ruleName\":\"ssn_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1583738756817\"},\"LEFT_SPACES\":{\"ruleName\":\"ssn_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"501638555282\"},\"RIGHT_SPACES\":{\"ruleName\":\"ssn_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1289667981632\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"ssn_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"638598775627\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"ssn_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1693947909976\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"ssn_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1580119331317\"},\"MIN_LENGTH\":{\"value\":11,\"ruleName\":\"ssn_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"748893989140\"},\"MAX_LENGTH\":{\"value\":11,\"ruleName\":\"ssn_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"399975508384\"},\"SQL_RULE\":{\"ruleName\":\"ssn_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"749341218331\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"ssn_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"ssn\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1751391682183\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1076269522471\"}},\"credit_score\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"credit_score_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1173848995352\"},\"NOT_EMPTY\":{\"ruleName\":\"credit_score_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1197339182140\"},\"LEFT_SPACES\":{\"ruleName\":\"credit_score_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"341200407284\"},\"RIGHT_SPACES\":{\"ruleName\":\"credit_score_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1609857338810\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"credit_score_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1467547248877\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"credit_score_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1001677972548\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"credit_score_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1334524964811\"},\"MIN_LENGTH\":{\"value\":3,\"ruleName\":\"credit_score_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1340812641452\"},\"MAX_LENGTH\":{\"value\":3,\"ruleName\":\"credit_score_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1041110461620\"},\"SQL_RULE\":{\"ruleName\":\"credit_score_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"815318235660\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"credit_score_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"credit_score\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"690444690226\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1083564628799\"}},\"product_code\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"product_code_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"357157004452\"},\"NOT_EMPTY\":{\"ruleName\":\"product_code_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1500497999052\"},\"LEFT_SPACES\":{\"ruleName\":\"product_code_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"821073278673\"},\"RIGHT_SPACES\":{\"ruleName\":\"product_code_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1278037729592\"},\"UNIQUE_VALUES\":{\"value\":false,\"ruleName\":\"product_code_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"821393012800\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"product_code_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"924307084610\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"product_code_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"325866039180\"},\"MIN_LENGTH\":{\"value\":8,\"ruleName\":\"product_code_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"619890609765\"},\"MAX_LENGTH\":{\"value\":8,\"ruleName\":\"product_code_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"520462892355\"},\"SQL_RULE\":{\"ruleName\":\"product_code_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"173491766452\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"product_code_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"product_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1376666444349\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"436950520794\"}},\"status\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"status_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1278087431339\"},\"NOT_EMPTY\":{\"ruleName\":\"status_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1247316649905\"},\"LEFT_SPACES\":{\"ruleName\":\"status_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1330469701014\"},\"RIGHT_SPACES\":{\"ruleName\":\"status_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"225012029676\"},\"UNIQUE_VALUES\":{\"value\":false,\"ruleName\":\"status_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1690460503632\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"status_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"763087280665\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"status_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"302081782002\"},\"MIN_LENGTH\":{\"value\":6,\"ruleName\":\"status_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"771669136930\"},\"MAX_LENGTH\":{\"value\":8,\"ruleName\":\"status_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1231772930416\"},\"SQL_RULE\":{\"ruleName\":\"status_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"803000416114\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"status_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"status\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"717784250488\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"476432465581\"}},\"rating\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"rating_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1134427660209\"},\"NOT_EMPTY\":{\"ruleName\":\"rating_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"20279655171\"},\"LEFT_SPACES\":{\"ruleName\":\"rating_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1685372706291\"},\"RIGHT_SPACES\":{\"ruleName\":\"rating_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1671931540205\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"rating_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1006361386399\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"rating_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"346689319017\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"rating_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"923794706175\"},\"MIN_LENGTH\":{\"value\":3,\"ruleName\":\"rating_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1736351358957\"},\"MAX_LENGTH\":{\"value\":3,\"ruleName\":\"rating_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"370597158243\"},\"SQL_RULE\":{\"ruleName\":\"rating_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1470773377546\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"rating_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"rating\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1717285755027\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1225731319138\"}},\"comments\":{\"NOT_NULL\":{\"value\":true,\"ruleName\":\"comments_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1591717984469\"},\"NOT_EMPTY\":{\"ruleName\":\"comments_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"937582791459\"},\"LEFT_SPACES\":{\"ruleName\":\"comments_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"713871296284\"},\"RIGHT_SPACES\":{\"ruleName\":\"comments_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"387932635991\"},\"UNIQUE_VALUES\":{\"value\":false,\"ruleName\":\"comments_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1526195203920\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"comments_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1705548639437\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"comments_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"495452977503\"},\"MIN_LENGTH\":{\"value\":13,\"ruleName\":\"comments_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1005281034378\"},\"MAX_LENGTH\":{\"value\":36,\"ruleName\":\"comments_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1004240119371\"},\"SQL_RULE\":{\"ruleName\":\"comments_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"549147079119\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"comments_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"comments\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"535598473906\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34238,\"ruleName\":\"DQ_postal_code_us_with_nulls\",\"dataType\":\"Same as postal_code_us but allows null values. Validates US ZIP code format or accepts null.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL IS NULL OR $COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"258858057663\"}},\"ip_address\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"ip_address_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"212713908287\"},\"NOT_EMPTY\":{\"ruleName\":\"ip_address_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1378828359319\"},\"LEFT_SPACES\":{\"ruleName\":\"ip_address_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1318356424204\"},\"RIGHT_SPACES\":{\"ruleName\":\"ip_address_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1245115939670\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"ip_address_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1744948944021\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"ip_address_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1374181650415\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"ip_address_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1069061660500\"},\"MIN_LENGTH\":{\"value\":9,\"ruleName\":\"ip_address_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1514550438610\"},\"MAX_LENGTH\":{\"value\":13,\"ruleName\":\"ip_address_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1487441455255\"},\"SQL_RULE\":{\"ruleName\":\"ip_address_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"578751694683\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"ip_address_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"ip_address\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"361807009144\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"130184160908\"}},\"created_timestamp\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"created_timestamp_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1459521877233\"},\"NOT_EMPTY\":{\"ruleName\":\"created_timestamp_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"601128344686\"},\"LEFT_SPACES\":{\"ruleName\":\"created_timestamp_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"982141470380\"},\"RIGHT_SPACES\":{\"ruleName\":\"created_timestamp_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"521889765844\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"created_timestamp_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"372348357492\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"created_timestamp_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1388312069846\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"created_timestamp_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"748144047476\"},\"MIN_LENGTH\":{\"value\":19,\"ruleName\":\"created_timestamp_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1255187138542\"},\"MAX_LENGTH\":{\"value\":19,\"ruleName\":\"created_timestamp_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"480184023103\"},\"SQL_RULE\":{\"ruleName\":\"created_timestamp_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"3067937442\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"created_timestamp_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"created_timestamp\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"33770528431\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"107536369384\"}},\"country_code\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"country_code_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1742434839774\"},\"NOT_EMPTY\":{\"ruleName\":\"country_code_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"469865407675\"},\"LEFT_SPACES\":{\"ruleName\":\"country_code_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1486117450211\"},\"RIGHT_SPACES\":{\"ruleName\":\"country_code_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"159575431148\"},\"UNIQUE_VALUES\":{\"value\":false,\"ruleName\":\"country_code_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"48355708373\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"country_code_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1502375531032\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"country_code_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"646449094382\"},\"MIN_LENGTH\":{\"value\":2,\"ruleName\":\"country_code_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1400597711881\"},\"MAX_LENGTH\":{\"value\":2,\"ruleName\":\"country_code_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"947878431160\"},\"SQL_RULE\":{\"ruleName\":\"country_code_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1504584727849\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"country_code_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"country_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1007619451455\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34237,\"ruleName\":\"DQ_postal_code_us\",\"dataType\":\"Validates US ZIP code format. Examples: 12345, 12345-6789. Supports both 5-digit and 9-digit (ZIP+4) formats.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"1253627804478\"}},\"postal_code\":{\"NOT_NULL\":{\"value\":false,\"ruleName\":\"postal_code_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"629197134485\"},\"NOT_EMPTY\":{\"ruleName\":\"postal_code_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1116772278133\"},\"LEFT_SPACES\":{\"ruleName\":\"postal_code_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"249889132917\"},\"RIGHT_SPACES\":{\"ruleName\":\"postal_code_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"62953311539\"},\"UNIQUE_VALUES\":{\"value\":true,\"ruleName\":\"postal_code_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"728330077961\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"postal_code_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1558664045403\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"postal_code_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1160464974180\"},\"MIN_LENGTH\":{\"value\":5,\"ruleName\":\"postal_code_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"724628888900\"},\"MAX_LENGTH\":{\"value\":8,\"ruleName\":\"postal_code_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1041462975346\"},\"SQL_RULE\":{\"ruleName\":\"postal_code_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"419674017021\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"postal_code_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"postal_code\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"970134350796\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34245,\"ruleName\":\"DQ_password_strong\",\"dataType\":\"Validates strong password format. Must contain: uppercase letter, lowercase letter, digit, special character (@#$%^&+=!), no spaces, minimum 8 characters. Examples: Welcome123!, A1b2c3D4@\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL RLIKE '^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\\\\\\\S+$).{8,}$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"13415627578\"}},\"website_url\":{\"NOT_NULL\":{\"value\":true,\"ruleName\":\"website_url_not_null\",\"type\":\"checkbox\",\"typeName\":\"NOT_NULL\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1527036475728\"},\"NOT_EMPTY\":{\"ruleName\":\"website_url_not_empty\",\"type\":\"checkbox\",\"typeName\":\"NOT_EMPTY\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1188067875493\"},\"LEFT_SPACES\":{\"ruleName\":\"website_url_left_spaces\",\"type\":\"checkbox\",\"typeName\":\"LEFT_SPACES\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1453841807566\"},\"RIGHT_SPACES\":{\"ruleName\":\"website_url_right_spaces\",\"type\":\"checkbox\",\"typeName\":\"RIGHT_SPACES\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"368466065345\"},\"UNIQUE_VALUES\":{\"value\":false,\"ruleName\":\"website_url_unique_values\",\"type\":\"checkbox\",\"typeName\":\"UNIQUE_VALUES\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"218406416462\"},\"MIN_VALUE\":{\"value\":0,\"ruleName\":\"website_url_min_value\",\"type\":\"numeric\",\"typeName\":\"MIN_VALUE\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"826637817833\"},\"MAX_VALUE\":{\"value\":0,\"ruleName\":\"website_url_max_value\",\"type\":\"numeric\",\"typeName\":\"MAX_VALUE\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1475671937690\"},\"MIN_LENGTH\":{\"value\":21,\"ruleName\":\"website_url_min_length\",\"type\":\"numeric\",\"typeName\":\"MIN_LENGTH\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1522700658608\"},\"MAX_LENGTH\":{\"value\":24,\"ruleName\":\"website_url_max_length\",\"type\":\"numeric\",\"typeName\":\"MAX_LENGTH\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1584637709815\"},\"SQL_RULE\":{\"ruleName\":\"website_url_sql_rule\",\"type\":\"sql\",\"typeName\":\"SQL_RULE\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"1425934862957\"},\"REGULAR_EXPRESSION\":{\"ruleName\":\"website_url_regular_expression\",\"type\":\"regex\",\"typeName\":\"REGULAR_EXPRESSION\",\"columnName\":\"website_url\",\"tableName\":\"comdatacsv\",\"unitTestId\":\"756437944051\"},\"RULES_LIBRARY\":{\"value\":[{\"id\":34238,\"ruleName\":\"DQ_postal_code_us_with_nulls\",\"dataType\":\"Same as postal_code_us but allows null values. Validates US ZIP code format or accepts null.\",\"userId\":\"SYSTEM\",\"star\":null,\"ruleDescription\":\"NOT ($COL IS NULL OR $COL RLIKE '^[0-9]{5}(-[0-9]{4})?$')\",\"ruleType\":\"SQL_WHERE\",\"accessType\":\"private\"}],\"tableName\":\"comdatacsv\",\"unitTestId\":\"763046704875\"}}},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1429342637329\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1044782654723\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1289327734667\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1403103489312\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"348065640300\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"217361227584\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"567502971199\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"941031605183\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1689193649174\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"688549781119\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"241338342429\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"249774091450\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1174056656151\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1204743321686\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1259694829082\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"991642246946\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"519325886049\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"482814702313\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"164826335901\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1609939869456\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1000017314644\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"624007746178\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1748799573996\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"954877203849\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1569706792884\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"68595576348\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"383586285964\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"985032939374\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1340421742748\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1049387000829\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"398098096443\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"964652931402\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1457653206407\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1048905871173\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"558728540346\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"990400065434\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"688070134621\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1718967972661\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1253625318494\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"4773091823\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1119503141402\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1151038031819\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1617084596422\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1603386415700\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"901108777216\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"560034562959\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1181470537123\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"873685948395\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"960992909411\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1166732486169\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1410945758807\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"895148749047\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"114346556657\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"573125853422\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"308792340180\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1693947909976\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1580119331317\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"748893989140\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"399975508384\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"638598775627\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1173848995352\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1001677972548\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1334524964811\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1340812641452\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1041110461620\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1467547248877\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"357157004452\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"924307084610\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"325866039180\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"619890609765\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"520462892355\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"821393012800\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1278087431339\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"763087280665\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"302081782002\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"771669136930\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1231772930416\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1690460503632\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1134427660209\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"346689319017\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"923794706175\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1736351358957\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"370597158243\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1006361386399\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1591717984469\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1705548639437\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"495452977503\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1005281034378\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1004240119371\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1526195203920\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"212713908287\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1374181650415\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1069061660500\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1514550438610\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1487441455255\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1744948944021\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1459521877233\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1388312069846\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"748144047476\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1255187138542\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"480184023103\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"372348357492\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1742434839774\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1502375531032\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"646449094382\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1400597711881\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"947878431160\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"48355708373\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"629197134485\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1558664045403\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1160464974180\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"724628888900\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1041462975346\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"728330077961\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1527036475728\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"826637817833\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1475671937690\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1522700658608\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"1584637709815\",\"updated\":false},{\"deleted\":false,\"saved\":true,\"unitTestCaseId\":\"218406416462\",\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "new test case for auto gen",
+  "flowDesc" : "new test case for auto gen",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/com_data.csv",
+        "tableProperties" : [ {
+          "tblName" : "comdatacsv",
+          "tblSize" : "0",
+          "tblRecordCount" : 10
+        } ],
+        "tableNamesList" : {
+          "comdatacsv" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "comdatacsv" : {
+            "rules" : [ {
+              "unitTestCaseId" : 217361227584,
+              "ruleType" : "UNIQUE",
+              "column" : "id",
+              "operator" : "=",
+              "creationTime" : 1756253656141,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "id_unique_values"
+            }, {
+              "unitTestCaseId" : 1403103489312,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "id",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 1,
+              "level" : "Warning",
+              "description" : "id_min_length"
+            }, {
+              "unitTestCaseId" : 348065640300,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "id",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 2,
+              "level" : "Warning",
+              "description" : "id_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "id",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (id RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656141,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 249774091450,
+              "ruleType" : "UNIQUE",
+              "column" : "full_name",
+              "operator" : "=",
+              "creationTime" : 1756253656141,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "full_name_unique_values"
+            }, {
+              "unitTestCaseId" : 688549781119,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "full_name",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 8,
+              "level" : "Warning",
+              "description" : "full_name_min_length"
+            }, {
+              "unitTestCaseId" : 241338342429,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "full_name",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 14,
+              "level" : "Warning",
+              "description" : "full_name_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "full_name",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (full_name RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656141,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 1174056656151,
+              "ruleType" : "NOT_NULLS",
+              "operator" : "=",
+              "column" : "email",
+              "creationTime" : 1756253656141,
+              "expectedPercent" : 100,
+              "level" : "Warning",
+              "description" : "email_not_null"
+            }, {
+              "unitTestCaseId" : 991642246946,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "email",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 14,
+              "level" : "Warning",
+              "description" : "email_min_length"
+            }, {
+              "unitTestCaseId" : 519325886049,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "email",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 23,
+              "level" : "Warning",
+              "description" : "email_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "email",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (email IS NULL OR email RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656141,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us_with_nulls",
+              "description" : "DQ_postal_code_us_with_nulls"
+            }, {
+              "unitTestCaseId" : 954877203849,
+              "ruleType" : "UNIQUE",
+              "column" : "age",
+              "operator" : "=",
+              "creationTime" : 1756253656141,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "age_unique_values"
+            }, {
+              "unitTestCaseId" : 624007746178,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "age",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 2,
+              "level" : "Warning",
+              "description" : "age_min_length"
+            }, {
+              "unitTestCaseId" : 1748799573996,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "age",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 2,
+              "level" : "Warning",
+              "description" : "age_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "age",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (age RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656141,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 1569706792884,
+              "ruleType" : "NOT_NULLS",
+              "operator" : "=",
+              "column" : "salary",
+              "creationTime" : 1756253656141,
+              "expectedPercent" : 100,
+              "level" : "Warning",
+              "description" : "salary_not_null"
+            }, {
+              "unitTestCaseId" : 985032939374,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "salary",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 8,
+              "level" : "Warning",
+              "description" : "salary_min_length"
+            }, {
+              "unitTestCaseId" : 1340421742748,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "salary",
+              "creationTime" : 1756253656141,
+              "ruleValue" : 9,
+              "level" : "Warning",
+              "description" : "salary_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "salary",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (salary IS NULL OR salary RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us_with_nulls",
+              "description" : "DQ_postal_code_us_with_nulls"
+            }, {
+              "unitTestCaseId" : 990400065434,
+              "ruleType" : "UNIQUE",
+              "column" : "hire_date",
+              "operator" : "=",
+              "creationTime" : 1756253656142,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "hire_date_unique_values"
+            }, {
+              "unitTestCaseId" : 1048905871173,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "hire_date",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 10,
+              "level" : "Warning",
+              "description" : "hire_date_min_length"
+            }, {
+              "unitTestCaseId" : 558728540346,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "hire_date",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 10,
+              "level" : "Warning",
+              "description" : "hire_date_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "hire_date",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (hire_date RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 4773091823,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "is_active",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 4,
+              "level" : "Warning",
+              "description" : "is_active_min_length"
+            }, {
+              "unitTestCaseId" : 1119503141402,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "is_active",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 5,
+              "level" : "Warning",
+              "description" : "is_active_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "is_active",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (is_active RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 560034562959,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "department",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 2,
+              "level" : "Warning",
+              "description" : "department_min_length"
+            }, {
+              "unitTestCaseId" : 1181470537123,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "department",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 11,
+              "level" : "Warning",
+              "description" : "department_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "department",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (department RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 573125853422,
+              "ruleType" : "UNIQUE",
+              "column" : "phone",
+              "operator" : "=",
+              "creationTime" : 1756253656142,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "phone_unique_values"
+            }, {
+              "unitTestCaseId" : 895148749047,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "phone",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 12,
+              "level" : "Warning",
+              "description" : "phone_min_length"
+            }, {
+              "unitTestCaseId" : 114346556657,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "phone",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 14,
+              "level" : "Warning",
+              "description" : "phone_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "phone",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (phone RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 638598775627,
+              "ruleType" : "UNIQUE",
+              "column" : "ssn",
+              "operator" : "=",
+              "creationTime" : 1756253656142,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "ssn_unique_values"
+            }, {
+              "unitTestCaseId" : 748893989140,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "ssn",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 11,
+              "level" : "Warning",
+              "description" : "ssn_min_length"
+            }, {
+              "unitTestCaseId" : 399975508384,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "ssn",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 11,
+              "level" : "Warning",
+              "description" : "ssn_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "ssn",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (ssn RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 1467547248877,
+              "ruleType" : "UNIQUE",
+              "column" : "credit_score",
+              "operator" : "=",
+              "creationTime" : 1756253656142,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "credit_score_unique_values"
+            }, {
+              "unitTestCaseId" : 1340812641452,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "credit_score",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 3,
+              "level" : "Warning",
+              "description" : "credit_score_min_length"
+            }, {
+              "unitTestCaseId" : 1041110461620,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "credit_score",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 3,
+              "level" : "Warning",
+              "description" : "credit_score_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "credit_score",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (credit_score RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 619890609765,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "product_code",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 8,
+              "level" : "Warning",
+              "description" : "product_code_min_length"
+            }, {
+              "unitTestCaseId" : 520462892355,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "product_code",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 8,
+              "level" : "Warning",
+              "description" : "product_code_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "product_code",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (product_code RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 771669136930,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "status",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 6,
+              "level" : "Warning",
+              "description" : "status_min_length"
+            }, {
+              "unitTestCaseId" : 1231772930416,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "status",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 8,
+              "level" : "Warning",
+              "description" : "status_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "status",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (status RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 1006361386399,
+              "ruleType" : "UNIQUE",
+              "column" : "rating",
+              "operator" : "=",
+              "creationTime" : 1756253656142,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "rating_unique_values"
+            }, {
+              "unitTestCaseId" : 1736351358957,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "rating",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 3,
+              "level" : "Warning",
+              "description" : "rating_min_length"
+            }, {
+              "unitTestCaseId" : 370597158243,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "rating",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 3,
+              "level" : "Warning",
+              "description" : "rating_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "rating",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (rating RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 1591717984469,
+              "ruleType" : "NOT_NULLS",
+              "operator" : "=",
+              "column" : "comments",
+              "creationTime" : 1756253656142,
+              "expectedPercent" : 100,
+              "level" : "Warning",
+              "description" : "comments_not_null"
+            }, {
+              "unitTestCaseId" : 1005281034378,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "comments",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 13,
+              "level" : "Warning",
+              "description" : "comments_min_length"
+            }, {
+              "unitTestCaseId" : 1004240119371,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "comments",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 36,
+              "level" : "Warning",
+              "description" : "comments_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "comments",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (comments IS NULL OR comments RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us_with_nulls",
+              "description" : "DQ_postal_code_us_with_nulls"
+            }, {
+              "unitTestCaseId" : 1744948944021,
+              "ruleType" : "UNIQUE",
+              "column" : "ip_address",
+              "operator" : "=",
+              "creationTime" : 1756253656142,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "ip_address_unique_values"
+            }, {
+              "unitTestCaseId" : 1514550438610,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "ip_address",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 9,
+              "level" : "Warning",
+              "description" : "ip_address_min_length"
+            }, {
+              "unitTestCaseId" : 1487441455255,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "ip_address",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 13,
+              "level" : "Warning",
+              "description" : "ip_address_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "ip_address",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (ip_address RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 372348357492,
+              "ruleType" : "UNIQUE",
+              "column" : "created_timestamp",
+              "operator" : "=",
+              "creationTime" : 1756253656142,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "created_timestamp_unique_values"
+            }, {
+              "unitTestCaseId" : 1255187138542,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "created_timestamp",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 19,
+              "level" : "Warning",
+              "description" : "created_timestamp_min_length"
+            }, {
+              "unitTestCaseId" : 480184023103,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "created_timestamp",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 19,
+              "level" : "Warning",
+              "description" : "created_timestamp_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "created_timestamp",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (created_timestamp RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 1400597711881,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "country_code",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 2,
+              "level" : "Warning",
+              "description" : "country_code_min_length"
+            }, {
+              "unitTestCaseId" : 947878431160,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "country_code",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 2,
+              "level" : "Warning",
+              "description" : "country_code_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "country_code",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (country_code RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us",
+              "description" : "DQ_postal_code_us"
+            }, {
+              "unitTestCaseId" : 728330077961,
+              "ruleType" : "UNIQUE",
+              "column" : "postal_code",
+              "operator" : "=",
+              "creationTime" : 1756253656142,
+              "level" : "Warning",
+              "expectedPercent" : 100,
+              "description" : "postal_code_unique_values"
+            }, {
+              "unitTestCaseId" : 724628888900,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "postal_code",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 5,
+              "level" : "Warning",
+              "description" : "postal_code_min_length"
+            }, {
+              "unitTestCaseId" : 1041462975346,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "postal_code",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 8,
+              "level" : "Warning",
+              "description" : "postal_code_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "postal_code",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (postal_code RLIKE '^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\\\S+$).{8,}$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_password_strong",
+              "description" : "DQ_password_strong"
+            }, {
+              "unitTestCaseId" : 1527036475728,
+              "ruleType" : "NOT_NULLS",
+              "operator" : "=",
+              "column" : "website_url",
+              "creationTime" : 1756253656142,
+              "expectedPercent" : 100,
+              "level" : "Warning",
+              "description" : "website_url_not_null"
+            }, {
+              "unitTestCaseId" : 1522700658608,
+              "ruleType" : "MIN_LENGTH",
+              "operator" : ">=",
+              "column" : "website_url",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 21,
+              "level" : "Warning",
+              "description" : "website_url_min_length"
+            }, {
+              "unitTestCaseId" : 1584637709815,
+              "ruleType" : "MAX_LENGTH",
+              "operator" : "<=",
+              "column" : "website_url",
+              "creationTime" : 1756253656142,
+              "ruleValue" : 24,
+              "level" : "Warning",
+              "description" : "website_url_max_length"
+            }, {
+              "ruleType" : "SQL_WHERE",
+              "column" : "website_url",
+              "unitTestCaseId" : null,
+              "sql" : "NOT (website_url IS NULL OR website_url RLIKE '^[0-9]{5}(-[0-9]{4})?$')",
+              "creationTime" : 1756253656142,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "DQ_postal_code_us_with_nulls",
+              "description" : "DQ_postal_code_us_with_nulls"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "IN_MEMORY"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 11594,
+  "dmsProjectId" : 774,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:23:23.568406873Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
