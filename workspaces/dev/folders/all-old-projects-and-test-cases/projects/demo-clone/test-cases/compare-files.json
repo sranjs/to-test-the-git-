@@ -1,0 +1,138 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"2ef85358-baa5-4d26-8ab5-0a663730f455\",\"from\":\"source\",\"type\":\"CSV\",\"tableSize\":0.05,\"fileName\":\"Untitled spreadsheet - Sheet1.csv\",\"filePath\":\"/my_data/user_files/dhiraj/Untitled spreadsheet - Sheet1.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"UntitledspreadsheetSheet1csv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"name\":\"dsklfhslakdf\",\"age\":\"123\",\"zip\":\"12345\"},{\"name\":\"sdfasdsad\",\"age\":\"12\",\"zip\":\"12\"}],\"schema\":[{\"columnName\":\"name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"zip\",\"columnType\":\"string\",\"nullable\":true}],\"count\":2}],\"target\":[{\"id\":\"fbe4812d-5363-4a79-9801-ca07f746ad9e\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0.05,\"fileName\":\"Untitled spreadsheet - Sheet1.csv\",\"filePath\":\"/my_data/user_files/dhiraj/Untitled spreadsheet - Sheet1.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"UntitledspreadsheetSheet1csv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"name\":\"dsklfhslakdf\",\"age\":\"123\",\"zip\":\"12345\"},{\"name\":\"sdfasdsad\",\"age\":\"12\",\"zip\":\"12\"}],\"schema\":[{\"columnName\":\"name\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"age\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"zip\",\"columnType\":\"string\",\"nullable\":true}],\"count\":2}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"compare files\",\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":{},\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"0025cf6e-9db0-4a27-a414-98b9a9e45e16\":{\"source\":\"2ef85358-baa5-4d26-8ab5-0a663730f455\",\"target\":\"fbe4812d-5363-4a79-9801-ca07f746ad9e\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"d8e804e4-8842-4dd6-a6e1-bcc2eb47b641\",\"sourceColumnName\":\"zip\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"zip\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false},{\"id\":\"84b1d728-f17c-4104-8a02-e3b5abbf96ee\",\"sourceColumnName\":\"age\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"age\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false},{\"id\":\"4af4917d-b766-4854-ac22-86019a5c5d14\",\"sourceColumnName\":\"name\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"\",\"sourceNullable\":true,\"targetColumnName\":\"name\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{}}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "compare files",
+  "APP_VERSION" : "6_94",
+  "flowDesc" : "compare files",
+  "LicensedName" : "6_94",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/dhiraj/Untitled spreadsheet - Sheet1.csv",
+        "tableProperties" : [ {
+          "tblName" : "UntitledspreadsheetSheet1csv",
+          "tblSize" : "0.05",
+          "tblRecordCount" : 2
+        } ],
+        "tableNamesList" : {
+          "UntitledspreadsheetSheet1csv" : null
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1",
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        }
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/dhiraj/Untitled spreadsheet - Sheet1.csv",
+        "tableProperties" : [ {
+          "tblName" : "UntitledspreadsheetSheet1csv",
+          "tblSize" : "0.05",
+          "tblRecordCount" : 2
+        } ],
+        "tableNamesList" : {
+          "UntitledspreadsheetSheet1csv" : null
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1",
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        }
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "UntitledspreadsheetSheet1csv" : "UntitledspreadsheetSheet1csv"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "name" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "name",
+          "destColumn" : "name"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "zip",
+          "destColumn" : "zip"
+        }, {
+          "srcColumn" : "age",
+          "destColumn" : "age"
+        }, {
+          "srcColumn" : "name",
+          "destColumn" : "name"
+        } ]
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "6_94",
+  "API_APP_BUILD" : "6_94",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 8374,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:31.375504379Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
