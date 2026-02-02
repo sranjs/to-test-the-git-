@@ -1,0 +1,710 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"schema_time\":1714931274570,\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"a53895cd-bd39-4d6e-85fb-5352631be57a\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"dataops\",\"typeTable\":\"TABLE\",\"tableName\":\"ot_family\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"schema\":[{\"columnName\":\"create_date\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"current_flag\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"econ_disadvantage\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"email_address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"family_id\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"family_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"farm_id\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"farm_qualified\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_amount\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_frequency\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_isreviewed\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_modified_date\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"modify_date\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ods_date_created\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ods_date_modified\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"phone_number\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"source_key\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"status_code\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"total_members\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"family_id\",\"source_key\"],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":[{\"keyName\":\"ot_family_pk1\",\"keyType\":\"btree\",\"ordinalPosition\":1,\"columnName\":\"family_id\"},{\"keyName\":\"ot_family_pk1\",\"keyType\":\"btree\",\"ordinalPosition\":2,\"columnName\":\"source_key\"}]},{\"id\":\"9692b090-f33d-4bee-af06-c56279a02e87\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"dataops\",\"typeTable\":\"TABLE\",\"tableName\":\"ot_family_2\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"schema\":[{\"columnName\":\"create_date\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"current_flag\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"econ_disadvantage\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"email_address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"family_id\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"family_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"farm_id\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"farm_qualified\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_amount\",\"columnType\":\"decimal(17,17)\",\"actualColumnType\":\"float8\",\"nullable\":false,\"columnMaxLength\":17,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_frequency\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_isreviewed\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_modified_date\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"modify_date\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ods_date_created\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ods_date_modified\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"phone_number\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"source_key\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"status_code\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"total_members\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"family_id\",\"source_key\"],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":[{\"keyName\":\"ot_family_pk_2\",\"keyType\":\"btree\",\"ordinalPosition\":1,\"columnName\":\"family_id\"},{\"keyName\":\"ot_family_pk_2\",\"keyType\":\"btree\",\"ordinalPosition\":2,\"columnName\":\"source_key\"}]},{\"id\":\"5588e739-7a5d-4ced-b752-d8d86ea12195\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"dataops\",\"typeTable\":\"TABLE\",\"tableName\":\"ot_family_1\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"schema\":[{\"columnName\":\"create_date\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"current_flag\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"econ_disadvantage\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"email_address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"family_id\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"family_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"farm_id\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"farm_qualified\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_amount\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_frequency\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_isreviewed\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"income_modified_date\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"modify_date\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ods_date_created\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ods_date_modified\",\"columnType\":\"timestamp\",\"actualColumnType\":\"timestamp\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"phone_number\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"source_key\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":255,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"status_code\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"total_members\",\"columnType\":\"decimal(131089,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":131089,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"family_id\",\"source_key\"],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":[{\"keyName\":\"ot_family_pk_1\",\"keyType\":\"btree\",\"ordinalPosition\":1,\"columnName\":\"family_id\"},{\"keyName\":\"ot_family_pk_1\",\"keyType\":\"btree\",\"ordinalPosition\":2,\"columnName\":\"source_key\"}]},{\"id\":\"ff23841d-899f-4e26-bb7f-5bad693a5c67\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"dataops\",\"typeTable\":\"TABLE\",\"tableName\":\"branch\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"schema\":[{\"columnName\":\"address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":30,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"branch_id\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"numeric\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":20,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"only_source_column2\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"only_src_column1\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":2147483647,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"zip_code\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":12,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"four tables\",\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[]}",
+  "executorMemory" : "1g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "four tables",
+  "APP_VERSION" : "7_08",
+  "flowDesc" : "four tables",
+  "LicensedName" : "7_08",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "dataops",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "postgres",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "ot_family" : null,
+          "ot_family_2" : null,
+          "ot_family_1" : null,
+          "branch" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "ot_family",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ "family_id", "source_key" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ot_family_2",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ "family_id", "source_key" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ot_family_1",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ "family_id", "source_key" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "branch",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "schemaMonitoring" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "description" : "schema monitoring component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "schemaMonitoring",
+      "jobType" : "SCHEMA_MONITORING",
+      "editData" : {
+        "schemaMonitoring" : {
+          "schemaCollectedTime" : 1714931274570,
+          "connectionName" : "postgres",
+          "databaseName" : "dataops",
+          "schema" : "dataops",
+          "tableSchemas" : {
+            "ot_family" : {
+              "schema" : [ {
+                "columnName" : "create_date",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "current_flag",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "econ_disadvantage",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "email_address",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "family_id",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "family_name",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "farm_id",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "farm_qualified",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_amount",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_frequency",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_isreviewed",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_modified_date",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "modify_date",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "ods_date_created",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "ods_date_modified",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "phone_number",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "source_key",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "status_code",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "total_members",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              } ],
+              "sampleData" : null,
+              "sqlExecution" : null,
+              "primaryKey" : [ "family_id", "source_key" ],
+              "foreignKeyInfo" : null,
+              "count" : 0,
+              "tableSize" : 0,
+              "noOfPartition" : 0,
+              "indexInfo" : [ {
+                "keyName" : "ot_family_pk1",
+                "keyType" : "btree",
+                "ordinalPosition" : 1,
+                "columnName" : "family_id"
+              }, {
+                "keyName" : "ot_family_pk1",
+                "keyType" : "btree",
+                "ordinalPosition" : 2,
+                "columnName" : "source_key"
+              } ]
+            },
+            "ot_family_2" : {
+              "schema" : [ {
+                "columnName" : "create_date",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "current_flag",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "econ_disadvantage",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "email_address",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "family_id",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "family_name",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "farm_id",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "farm_qualified",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_amount",
+                "columnType" : "decimal(17,17)",
+                "actualColumnType" : "float8",
+                "nullable" : false,
+                "columnMaxLength" : 17,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_frequency",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_isreviewed",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_modified_date",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "modify_date",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "ods_date_created",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "ods_date_modified",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "phone_number",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "source_key",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "status_code",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "total_members",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              } ],
+              "sampleData" : null,
+              "sqlExecution" : null,
+              "primaryKey" : [ "family_id", "source_key" ],
+              "foreignKeyInfo" : null,
+              "count" : 0,
+              "tableSize" : 0,
+              "noOfPartition" : 0,
+              "indexInfo" : [ {
+                "keyName" : "ot_family_pk_2",
+                "keyType" : "btree",
+                "ordinalPosition" : 1,
+                "columnName" : "family_id"
+              }, {
+                "keyName" : "ot_family_pk_2",
+                "keyType" : "btree",
+                "ordinalPosition" : 2,
+                "columnName" : "source_key"
+              } ]
+            },
+            "ot_family_1" : {
+              "schema" : [ {
+                "columnName" : "create_date",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "current_flag",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "econ_disadvantage",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "email_address",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "family_id",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "family_name",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "farm_id",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "farm_qualified",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_amount",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_frequency",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_isreviewed",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "income_modified_date",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "modify_date",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "ods_date_created",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "ods_date_modified",
+                "columnType" : "timestamp",
+                "actualColumnType" : "timestamp",
+                "nullable" : false,
+                "columnMaxLength" : 22,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "phone_number",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "source_key",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 255,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "status_code",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "total_members",
+                "columnType" : "decimal(131089,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 131089,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              } ],
+              "sampleData" : null,
+              "sqlExecution" : null,
+              "primaryKey" : [ "family_id", "source_key" ],
+              "foreignKeyInfo" : null,
+              "count" : 0,
+              "tableSize" : 0,
+              "noOfPartition" : 0,
+              "indexInfo" : [ {
+                "keyName" : "ot_family_pk_1",
+                "keyType" : "btree",
+                "ordinalPosition" : 1,
+                "columnName" : "family_id"
+              }, {
+                "keyName" : "ot_family_pk_1",
+                "keyType" : "btree",
+                "ordinalPosition" : 2,
+                "columnName" : "source_key"
+              } ]
+            },
+            "branch" : {
+              "schema" : [ {
+                "columnName" : "address",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 30,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "branch_id",
+                "columnType" : "decimal(10,0)",
+                "actualColumnType" : "numeric",
+                "nullable" : false,
+                "columnMaxLength" : 10,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "city",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 20,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "name",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 20,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "only_source_column2",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 2147483647,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "only_src_column1",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 2147483647,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "state",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 10,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              }, {
+                "columnName" : "zip_code",
+                "columnType" : "string",
+                "actualColumnType" : "varchar",
+                "nullable" : false,
+                "columnMaxLength" : 12,
+                "uniqueKey" : false,
+                "primaryKey" : false
+              } ],
+              "sampleData" : null,
+              "sqlExecution" : null,
+              "primaryKey" : null,
+              "foreignKeyInfo" : null,
+              "count" : 0,
+              "tableSize" : 0,
+              "noOfPartition" : 0,
+              "indexInfo" : null
+            }
+          }
+        }
+      }
+    }
+  },
+  "root" : "schemaMonitoring",
+  "hadoop" : false,
+  "UI_VERSION" : "7_08",
+  "API_APP_BUILD" : "7_08",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "SCHEMA MONITORING",
+  "flowId" : 8347,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:24.400709393Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
