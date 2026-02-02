@@ -1,16 +1,13 @@
 {
-  "executorCores" : 2,
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"tablesList\":{\"source\":[],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"DQTests\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[]}",
   "executorMemory" : "2g",
-  "numExecutors" : 2,
+  "executorCores" : 2,
   "executeOn" : "LOCAL",
-  "flowName" : "DQTests",
-  "email" : [ ],
+  "flowName" : "dqtests",
   "flowDesc" : "DQTests",
-  "hadoop" : false,
+  "numExecutors" : 2,
   "livy" : false,
-  "root" : "dataQuality",
-  "parameters" : [ ],
-  "flowType" : "DATA QUALITY",
+  "groupName" : "dev",
   "jobMap" : {
     "dataQuality" : {
       "dependentJob" : true,
@@ -30,13 +27,16 @@
       }
     }
   },
-  "groupName" : "dev",
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"tablesList\":{\"source\":[],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"DQTests\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"dimensions\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[]}",
-  "flowId" : 11687,
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 12564,
   "dmsProjectId" : 781,
   "syncInfo" : {
     "syncId" : "PROJECT",
-    "timestamp" : "2026-02-02T07:24:44.478577228Z",
+    "timestamp" : "2026-02-02T08:20:09.023960704Z",
     "syncType" : "PROJECT",
     "user" : "system"
   }
