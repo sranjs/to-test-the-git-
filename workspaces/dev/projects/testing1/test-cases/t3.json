@@ -1,0 +1,153 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"380b4e61-2ab9-427d-942c-a7a5e0552978\",\"from\":\"source\",\"type\":\"SQL\",\"connectionName\":\"sampledb_src\",\"schemaName\":\"sampledb_src\",\"tableName\":\"tolerance\",\"partitionProperties\":{},\"defaultSchema\":[{\"columnName\":\"subject1_double\",\"columnType\":\"double\",\"actualColumnType\":\"DOUBLE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"subject2_double\",\"columnType\":\"double\",\"actualColumnType\":\"DOUBLE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"total_marks_int\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"subject1_double\",\"columnType\":\"double\",\"actualColumnType\":\"DOUBLE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"subject2_double\",\"columnType\":\"double\",\"actualColumnType\":\"DOUBLE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"total_marks_int\",\"columnType\":\"int\",\"actualColumnType\":\"INT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sqlQuery\":\"IApTRUxFQ1Qgc3ViamVjdDFfZG91YmxlLCBzdWJqZWN0Ml9kb3VibGUsIHRvdGFsX21hcmtzX2ludCAgCkZST00gc2FtcGxlZGJfc3JjLnRvbGVyYW5jZTs=\",\"prompt\":\"select any three columns from tolerance\",\"aiHelp\":true,\"tables\":[{\"tableType\":\"TABLE\",\"tableValue\":\"tolerance\",\"columns\":null,\"flattenData\":false}]}],\"target\":[{\"id\":\"bf822532-8c76-43d1-959c-fd4128df05f7\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"sampledb_src\",\"schemaName\":\"sampledb_src\",\"typeTable\":\"TABLE\",\"tableName\":\"tolerance\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"student_id_bigint_pk\"},\"defaultSchema\":[{\"columnName\":\"gradePoints_int\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"obtained_marks_double\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"percentage_double\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"student_id_bigint_pk\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"subject1_double\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"subject2_double\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"total_marks_int\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"gradePoints_int\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"obtained_marks_double\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"percentage_double\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"student_id_bigint_pk\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"subject1_double\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"subject2_double\",\"columnType\":\"decimal(22,0)\",\"actualColumnType\":\"double\",\"nullable\":false,\"columnMaxLength\":22,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"total_marks_int\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"student_id_bigint_pk\"],\"foreignKeyInfo\":null,\"count\":20,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"student_id_bigint_pk\",\"indexInfo\":[{\"keyName\":\"PRIMARY\",\"keyType\":\"BTREE\",\"ordinalPosition\":1,\"columnName\":\"student_id_bigint_pk\"}]}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"t3\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"dimensions\":[],\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"sendOutputAttachments\":false,\"edit\":false},\"jira\":{\"edit\":false,\"assignee\":\"\",\"jiraNotificationDisabled\":true,\"projectKey\":\"DTQ\"}},\"mapping\":{\"mappings\":{\"699835710226\":{\"source\":\"380b4e61-2ab9-427d-942c-a7a5e0552978\",\"target\":\"bf822532-8c76-43d1-959c-fd4128df05f7\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"b56bcdde-49d5-4c2e-be7c-ea6bab178d12\",\"sourceColumnName\":\"total_marks_int\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"INT\",\"sourceNullable\":false,\"targetColumnName\":\"total_marks_int\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"385f355d-f348-41fe-8543-3506b9582dbc\",\"sourceColumnName\":\"subject2_double\",\"sourceColumnType\":\"double\",\"sourceActualColumnType\":\"DOUBLE\",\"sourceNullable\":false,\"targetColumnName\":\"subject2_double\",\"targetColumnType\":\"decimal(22,0)\",\"targetActualColumnType\":\"double\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"049658bc-0ac0-4999-a046-57f6e984f9e0\",\"sourceColumnName\":\"subject1_double\",\"sourceColumnType\":\"double\",\"sourceActualColumnType\":\"DOUBLE\",\"sourceNullable\":false,\"targetColumnName\":\"subject1_double\",\"targetColumnType\":\"decimal(22,0)\",\"targetActualColumnType\":\"double\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false,\"IgnoreSpecialCharaters\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"699835710226\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "t3",
+  "APP_VERSION" : "7_91",
+  "flowDesc" : "t3",
+  "LicensedName" : "7_91",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "sampledb_src",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "sampledb_src",
+          "groupName" : "dev"
+        },
+        "transformationSQL" : true,
+        "sqlStatements" : {
+          "tolerance" : [ {
+            "sql" : " \nSELECT subject1_double, subject2_double, total_marks_int  \nFROM sampledb_src.tolerance;",
+            "name" : "tolerance"
+          } ]
+        },
+        "tableNamesList" : {
+          "tolerance" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "tolerance"
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "sampledb_src",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "sampledb_src",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "tolerance" : {
+            "numberOfPart" : 0,
+            "column" : "student_id_bigint_pk"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "tolerance",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 20,
+          "primaryKeys" : [ "student_id_bigint_pk" ],
+          "indexKeys" : [ "student_id_bigint_pk" ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 699835710226,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "tolerance" : "tolerance"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "total_marks_int", "subject2_double", "subject1_double" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "total_marks_int",
+          "destColumn" : "total_marks_int"
+        }, {
+          "srcColumn" : "subject2_double",
+          "destColumn" : "subject2_double"
+        }, {
+          "srcColumn" : "subject1_double",
+          "destColumn" : "subject1_double"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "total_marks_int",
+          "destColumn" : "total_marks_int"
+        }, {
+          "srcColumn" : "subject2_double",
+          "destColumn" : "subject2_double"
+        }, {
+          "srcColumn" : "subject1_double",
+          "destColumn" : "subject1_double"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_91",
+  "API_APP_BUILD" : "7_91",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 11241,
+  "dmsProjectId" : 742,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:22:39.166124435Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}

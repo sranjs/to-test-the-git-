@@ -1,0 +1,148 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"7698c7f2-515e-4e16-a03c-68b5d7afbc58\",\"from\":\"source\",\"type\":\"SQL\",\"connectionName\":\"sampledb_src\",\"schemaName\":\"sampledb_src\",\"tableName\":\"joining_details\",\"partitionProperties\":{},\"defaultSchema\":[{\"columnName\":\"joining_details_bigint_pk\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"student_id_bigint\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"joining_date\",\"columnType\":\"date\",\"actualColumnType\":\"DATE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"enrollment_date\",\"columnType\":\"date\",\"actualColumnType\":\"DATE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"startdate_timestamp\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"joining_details_bigint_pk\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"student_id_bigint\",\"columnType\":\"long\",\"actualColumnType\":\"BIGINT\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"joining_date\",\"columnType\":\"date\",\"actualColumnType\":\"DATE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"enrollment_date\",\"columnType\":\"date\",\"actualColumnType\":\"DATE\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"startdate_timestamp\",\"columnType\":\"timestamp\",\"actualColumnType\":\"TIMESTAMP\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sqlQuery\":\"IApTRUxFQ1QgKiBGUk9NIHNhbXBsZWRiX3NyYy5qb2luaW5nX2RldGFpbHM7\",\"prompt\":\"select everything from the  joining_details\",\"aiHelp\":true,\"tables\":[{\"tableType\":\"TABLE\",\"tableValue\":\"joining_details\",\"columns\":null,\"flattenData\":false}]}],\"target\":[{\"id\":\"66bfbf81-e257-42ee-b878-91b0ea9bfc4e\",\"from\":\"target\",\"type\":\"CSV\",\"tableSize\":0,\"fileName\":\"joining_details_202508041224.csv\",\"filePath\":\"/my_data/user_files/joining_details_202508041224.csv\",\"s3ToHdf\":\"\",\"sftpDataset\":false,\"sftpType\":\"\",\"sftpFilePath\":\"\",\"fileLocation\":\"File\",\"azureDataset\":false,\"azureType\":\"\",\"azureFilePath\":\"\",\"googleDataset\":false,\"googleType\":\"\",\"googleFilePath\":\"\",\"s3Url\":\"\",\"dropRecordsWithAllNulls\":false,\"tableName\":\"joiningdetails202508041224csv\",\"delimiter\":\",\",\"startingPosition\":\"1\",\"multiline\":false,\"dropBadRecords\":true,\"header\":true,\"inferSchema\":false,\"sampleData\":[{\"joining_details_bigint_pk\":\"20\",\"student_id_bigint\":\"1\",\"joining_date\":\"2015-06-30\",\"enrollment_date\":\"2015-06-20\",\"startdate_timestamp\":\"2015-06-10 00:00:00\"},{\"joining_details_bigint_pk\":\"21\",\"student_id_bigint\":\"2\",\"joining_date\":\"2015-06-29\",\"enrollment_date\":\"2015-06-19\",\"startdate_timestamp\":\"2015-06-09 00:00:00\"},{\"joining_details_bigint_pk\":\"22\",\"student_id_bigint\":\"3\",\"joining_date\":\"2015-06-28\",\"enrollment_date\":\"2015-06-18\",\"startdate_timestamp\":\"2015-06-08 00:00:00\"},{\"joining_details_bigint_pk\":\"23\",\"student_id_bigint\":\"4\",\"joining_date\":\"2015-06-27\",\"enrollment_date\":\"2015-06-17\",\"startdate_timestamp\":\"2015-06-07 00:00:00\"},{\"joining_details_bigint_pk\":\"24\",\"student_id_bigint\":\"5\",\"joining_date\":\"2015-06-26\",\"enrollment_date\":\"2015-06-16\",\"startdate_timestamp\":\"2015-06-06 00:00:00\"},{\"joining_details_bigint_pk\":\"25\",\"student_id_bigint\":\"6\",\"joining_date\":\"2015-06-25\",\"enrollment_date\":\"2015-06-15\",\"startdate_timestamp\":\"2015-06-05 00:00:00\"},{\"joining_details_bigint_pk\":\"26\",\"student_id_bigint\":\"7\",\"joining_date\":\"2015-06-24\",\"enrollment_date\":\"2015-06-14\",\"startdate_timestamp\":\"2015-06-05 00:00:00\"},{\"joining_details_bigint_pk\":\"27\",\"student_id_bigint\":\"8\",\"joining_date\":\"2015-06-23\",\"enrollment_date\":\"2015-06-13\",\"startdate_timestamp\":\"2015-06-30 00:00:00\"},{\"joining_details_bigint_pk\":\"28\",\"student_id_bigint\":\"9\",\"joining_date\":\"2015-06-22\",\"enrollment_date\":\"2015-06-12\",\"startdate_timestamp\":\"2015-06-29 00:00:00\"},{\"joining_details_bigint_pk\":\"29\",\"student_id_bigint\":\"10\",\"joining_date\":\"2015-06-21\",\"enrollment_date\":\"2015-06-11\",\"startdate_timestamp\":\"2015-06-28 00:00:00\"}],\"schema\":[{\"columnName\":\"joining_details_bigint_pk\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"student_id_bigint\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"joining_date\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"enrollment_date\",\"columnType\":\"string\",\"nullable\":true},{\"columnName\":\"startdate_timestamp\",\"columnType\":\"string\",\"nullable\":true}],\"count\":10,\"isPrimaryDataset\":true}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"t2\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"data_monitoring\":false,\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\",\"dimensions\":[],\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"sendOutputAttachments\":false,\"edit\":false},\"jira\":{\"edit\":false,\"assignee\":\"\",\"jiraNotificationDisabled\":true,\"projectKey\":\"DTQ\"}},\"mapping\":{\"mappings\":{\"855471876002\":{\"source\":\"7698c7f2-515e-4e16-a03c-68b5d7afbc58\",\"target\":\"66bfbf81-e257-42ee-b878-91b0ea9bfc4e\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"71f5bf20-8187-4a40-be27-84663e0e991d\",\"sourceColumnName\":\"startdate_timestamp\",\"sourceColumnType\":\"timestamp\",\"sourceActualColumnType\":\"TIMESTAMP\",\"sourceNullable\":false,\"targetColumnName\":\"startdate_timestamp\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":false},{\"id\":\"352536d6-fe7f-4d02-bc23-3cf2917dc353\",\"sourceColumnName\":\"enrollment_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"DATE\",\"sourceNullable\":false,\"targetColumnName\":\"enrollment_date\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"25c66ade-ab76-463a-bda0-c37b278feca1\",\"sourceColumnName\":\"joining_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"DATE\",\"sourceNullable\":false,\"targetColumnName\":\"joining_date\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"056c7105-b0d4-4f75-9602-4e3f1396a24f\",\"sourceColumnName\":\"student_id_bigint\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"BIGINT\",\"sourceNullable\":false,\"targetColumnName\":\"student_id_bigint\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"5d03c555-357a-4aa1-8843-458a4cab6344\",\"sourceColumnName\":\"joining_details_bigint_pk\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"BIGINT\",\"sourceNullable\":false,\"targetColumnName\":\"joining_details_bigint_pk\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false,\"IgnoreSpecialCharaters\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"855471876002\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "t2",
+  "APP_VERSION" : "7_91",
+  "flowDesc" : "t2",
+  "LicensedName" : "7_91",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "sampledb_src",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "sampledb_src",
+          "groupName" : "dev"
+        },
+        "transformationSQL" : true,
+        "sqlStatements" : {
+          "joining_details" : [ {
+            "sql" : " \nSELECT * FROM sampledb_src.joining_details;",
+            "name" : "joining_details"
+          } ]
+        },
+        "tableNamesList" : {
+          "joining_details" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "joining_details"
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "CSV",
+        "datasetPath" : "/my_data/user_files/joining_details_202508041224.csv",
+        "tableProperties" : [ {
+          "tblName" : "joiningdetails202508041224csv",
+          "tblSize" : "0",
+          "tblRecordCount" : 10
+        } ],
+        "tableNamesList" : {
+          "joiningdetails202508041224csv" : null
+        },
+        "params" : {
+          "dropBadRecords" : true,
+          "dropRecordsWithAllNulls" : false
+        },
+        "columns" : [ ],
+        "datasetDelimiter" : ",",
+        "header" : true,
+        "inferSchema" : false,
+        "multiLine" : false,
+        "startingPosition" : "1"
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 855471876002,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "joining_details" : "joiningdetails202508041224csv"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "startdate_timestamp" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "startdate_timestamp",
+          "destColumn" : "startdate_timestamp"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "startdate_timestamp",
+          "destColumn" : "startdate_timestamp"
+        }, {
+          "srcColumn" : "enrollment_date",
+          "destColumn" : "enrollment_date"
+        }, {
+          "srcColumn" : "joining_date",
+          "destColumn" : "joining_date"
+        }, {
+          "srcColumn" : "student_id_bigint",
+          "destColumn" : "student_id_bigint"
+        }, {
+          "srcColumn" : "joining_details_bigint_pk",
+          "destColumn" : "joining_details_bigint_pk"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_91",
+  "API_APP_BUILD" : "7_91",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 11240,
+  "dmsProjectId" : 742,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-02-02T07:22:39.169247631Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
