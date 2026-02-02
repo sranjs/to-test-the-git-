@@ -1,0 +1,103 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"5b13b3de-8254-419b-b15d-c15cd12ab952\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"tableName\":\"dept_emp\",\"schema\":[{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false},{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null,\"isPrimaryDataset\":false},{\"id\":\"2ba1c042-d31b-49e9-88af-a22c567266ca\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"tableName\":\"departments\",\"schema\":[{\"columnName\":\"dept_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"dept_no\"],\"foreignKeyInfo\":null,\"count\":9,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"dept_no\",\"indexInfo\":null,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"test1\",\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"1\":{\"id\":1,\"ruleName\":\"r1\",\"ruleType\":\"Column Rule\",\"executeOn\":\"source\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"tableName\":\"departments\",\"columnName\":\"dept_no\",\"sqlExpression\":\"ZGVwdF9ubyA+IDEy\",\"sql\":\"\",\"keyColumns\":[],\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"departments\",\"foreignLookUpTable\":\"\",\"foreignLookUpTableColumn\":\"\",\"foreignMainTableColumn\":\"\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":false,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true}},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "test1",
+  "APP_VERSION" : "7_08",
+  "flowDesc" : "test1",
+  "LicensedName" : "7_08",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "employee",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "demo_conn",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "dept_emp" : null,
+          "departments" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "dept_emp",
+          "tblSize" : "17.03",
+          "tblRecordCount" : 331570,
+          "primaryKeys" : [ "emp_no", "dept_no" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "departments",
+          "tblSize" : "0.03",
+          "tblRecordCount" : 9,
+          "primaryKeys" : [ "dept_no" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "dataQuality" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source" ],
+      "jobType" : "DATA_QUALITY",
+      "editData" : {
+        "dqRules" : {
+          "departments" : {
+            "rules" : [ {
+              "ruleType" : "SQL_WHERE",
+              "column" : "dept_no",
+              "sql" : "dept_no > 12",
+              "creationTime" : 1701100752151,
+              "operator" : "=",
+              "level" : "Warning",
+              "name" : "r1",
+              "description" : "r1"
+            } ],
+            "dqSplitType" : "DATA_QUALITY",
+            "executeRulesOn" : "SOURCE"
+          }
+        }
+      },
+      "description" : "data quality component",
+      "position" : {
+        "x" : 289,
+        "y" : 165
+      },
+      "id" : "dataQuality",
+      "keyValueProps" : { }
+    }
+  },
+  "root" : "dataQuality",
+  "hadoop" : false,
+  "UI_VERSION" : "7_08",
+  "API_APP_BUILD" : "7_08",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "DATA QUALITY",
+  "flowId" : 8357,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:27.043080506Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
