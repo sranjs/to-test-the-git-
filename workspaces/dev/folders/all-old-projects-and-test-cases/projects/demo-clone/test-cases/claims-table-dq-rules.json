@@ -1,15 +1,20 @@
 {
-  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"fa06b986-9ac7-41bc-aa9b-be72502c7489\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_1M__b5\",\"schema\":[{\"columnName\":\"address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"age\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"country\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":984684,\"tableSize\":207.73,\"noOfPartition\":12,\"partitionColumn\":\"id\",\"indexInfo\":null,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"claims table DQ rules\",\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"1\":{\"id\":1,\"ruleName\":\"r1\",\"ruleType\":\"Column Rule\",\"executeOn\":\"source\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_1M__b5\",\"columnName\":\"age\",\"sqlExpression\":\"YWdlIDwgMTA=\",\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"metrics_1M__b5\",\"foreignLookUpTable\":\"\",\"foreignLookUpTableColumn\":\"\",\"foreignMainTableColumn\":\"\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":false,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true},\"2\":{\"id\":2,\"ruleName\":\"r2\",\"ruleType\":\"SQL\",\"executeOn\":\"source\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_1M__b5\",\"columnName\":\"\",\"sql\":\"c2VsZWN0ICogZnJvbSBtZXRyaWNzXzFNX19iNQ==\",\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"metrics_1M__b5\",\"foreignLookUpTable\":\"\",\"foreignLookUpTableColumn\":\"\",\"foreignMainTableColumn\":\"\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":false,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true},\"3\":{\"id\":3,\"ruleName\":\"should pass\",\"ruleType\":\"SQL\",\"executeOn\":\"source\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_1M__b5\",\"columnName\":\"\",\"sql\":\"c2VsZWN0ICogZnJvbSBtZXRyaWNzXzFNX19iNSB3aGVyZSBhZ2UgPiAxMDAw\",\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"metrics_1M__b5\",\"foreignLookUpTable\":\"\",\"foreignLookUpTableColumn\":\"\",\"foreignMainTableColumn\":\"\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":false,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true}},\"dataStandarizations\":[],\"outputData\":[]}",
-  "executorMemory" : "2g",
   "executorCores" : 2,
-  "executeOn" : "LOCAL",
-  "flowName" : "claims table dq rules",
-  "APP_VERSION" : "7_08",
-  "flowDesc" : "claims table DQ rules",
-  "LicensedName" : "7_08",
+  "executorMemory" : "2g",
   "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "claims table DQ rules",
+  "email" : [ ],
+  "flowDesc" : "claims table DQ rules",
+  "hadoop" : false,
   "livy" : false,
-  "groupName" : "dev",
+  "root" : "dataQuality",
+  "API_APP_BUILD" : "7_08",
+  "UI_VERSION" : "7_08",
+  "APP_VERSION" : "7_08",
+  "LicensedName" : "7_08",
+  "parameters" : [ ],
+  "flowType" : "DATA QUALITY",
   "jobMap" : {
     "source" : {
       "dependentJob" : true,
@@ -88,18 +93,13 @@
       "keyValueProps" : { }
     }
   },
-  "root" : "dataQuality",
-  "hadoop" : false,
-  "UI_VERSION" : "7_08",
-  "API_APP_BUILD" : "7_08",
-  "parameters" : [ ],
-  "email" : [ ],
-  "flowType" : "DATA QUALITY",
-  "flowId" : 12447,
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[],\"tablesList\":{\"source\":[{\"id\":\"fa06b986-9ac7-41bc-aa9b-be72502c7489\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_1M__b5\",\"schema\":[{\"columnName\":\"address\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"age\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"city\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"country\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"email\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"first_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"id\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"last_name\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"phone\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"state\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":984684,\"tableSize\":207.73,\"noOfPartition\":12,\"partitionColumn\":\"id\",\"indexInfo\":null,\"isPrimaryDataset\":true}],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"test_case_name\":\"claims table DQ rules\",\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{\"1\":{\"id\":1,\"ruleName\":\"r1\",\"ruleType\":\"Column Rule\",\"executeOn\":\"source\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_1M__b5\",\"columnName\":\"age\",\"sqlExpression\":\"YWdlIDwgMTA=\",\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"metrics_1M__b5\",\"foreignLookUpTable\":\"\",\"foreignLookUpTableColumn\":\"\",\"foreignMainTableColumn\":\"\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":false,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true},\"2\":{\"id\":2,\"ruleName\":\"r2\",\"ruleType\":\"SQL\",\"executeOn\":\"source\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_1M__b5\",\"columnName\":\"\",\"sql\":\"c2VsZWN0ICogZnJvbSBtZXRyaWNzXzFNX19iNQ==\",\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"metrics_1M__b5\",\"foreignLookUpTable\":\"\",\"foreignLookUpTableColumn\":\"\",\"foreignMainTableColumn\":\"\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":false,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true},\"3\":{\"id\":3,\"ruleName\":\"should pass\",\"ruleType\":\"SQL\",\"executeOn\":\"source\",\"connectionName\":\"large_data\",\"schemaName\":\"large_data\",\"tableName\":\"metrics_1M__b5\",\"columnName\":\"\",\"sql\":\"c2VsZWN0ICogZnJvbSBtZXRyaWNzXzFNX19iNSB3aGVyZSBhZ2UgPiAxMDAw\",\"rulesLevel\":\"Warning\",\"foreignMainTable\":\"metrics_1M__b5\",\"foreignLookUpTable\":\"\",\"foreignLookUpTableColumn\":\"\",\"foreignMainTableColumn\":\"\",\"foreignCondition\":\"exist\",\"metadataColumnNames\":false,\"metadataDataTypes\":false,\"metadataNewColumns\":false,\"metadataRemovedColumns\":false,\"enable\":true}},\"dataStandarizations\":[],\"outputData\":[]}",
+  "flowId" : 8377,
   "dmsProjectId" : 663,
   "syncInfo" : {
     "syncId" : "FOLDER",
-    "timestamp" : "2026-02-02T08:12:21.976106108Z",
+    "timestamp" : "2026-02-02T08:12:38.132551615Z",
     "syncType" : "FOLDER",
     "user" : "system"
   }
