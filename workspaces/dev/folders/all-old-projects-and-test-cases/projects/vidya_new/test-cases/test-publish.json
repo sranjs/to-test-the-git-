@@ -1,0 +1,155 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"5f66dba2-7666-492f-bac4-ce4c15f5c7cf\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"dept_emp\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"schema\":[{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":[{\"keyName\":\"PRIMARY\",\"keyType\":\"BTREE\",\"ordinalPosition\":2,\"columnName\":\"dept_no\"},{\"keyName\":\"PRIMARY\",\"keyType\":\"BTREE\",\"ordinalPosition\":1,\"columnName\":\"emp_no\"}]}],\"target\":[{\"id\":\"d6b44b06-a80e-4b7b-981c-b86e8c70dc92\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"dept_emp\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"schema\":[{\"columnName\":\"dept_no\",\"columnType\":\"string\",\"actualColumnType\":\"char\",\"nullable\":false,\"columnMaxLength\":4,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"emp_no\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"from_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"to_date\",\"columnType\":\"date\",\"actualColumnType\":\"date\",\"nullable\":false,\"columnMaxLength\":0,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":[{\"keyName\":\"PRIMARY\",\"keyType\":\"BTREE\",\"ordinalPosition\":2,\"columnName\":\"dept_no\"},{\"keyName\":\"PRIMARY\",\"keyType\":\"BTREE\",\"ordinalPosition\":1,\"columnName\":\"emp_no\"}]}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test publish\",\"badRecordsCount\":15,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"e34259fb-9377-4bef-887a-631e67d8f70c\":{\"source\":\"5f66dba2-7666-492f-bac4-ce4c15f5c7cf\",\"target\":\"d6b44b06-a80e-4b7b-981c-b86e8c70dc92\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"ebef032a-e79d-4d2f-a0ed-bee3558e8d94\",\"sourceColumnName\":\"to_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"to_date\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"13609d0e-64bf-40ef-94e5-4b3b7c4558e0\",\"sourceColumnName\":\"from_date\",\"sourceColumnType\":\"date\",\"sourceActualColumnType\":\"date\",\"sourceNullable\":false,\"targetColumnName\":\"from_date\",\"targetColumnType\":\"date\",\"targetActualColumnType\":\"date\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"51b6fc83-f898-4f18-b030-388b4cf42ec4\",\"sourceColumnName\":\"emp_no\",\"sourceColumnType\":\"int\",\"sourceActualColumnType\":\"int\",\"sourceNullable\":false,\"targetColumnName\":\"emp_no\",\"targetColumnType\":\"int\",\"targetActualColumnType\":\"int\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true},{\"id\":\"1e15d692-f093-4c0c-be0a-6f023756856d\",\"sourceColumnName\":\"dept_no\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"char\",\"sourceNullable\":false,\"targetColumnName\":\"dept_no\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"char\",\"targetNullable\":false,\"isPrimaryKey\":true,\"isBackendPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{}},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[]}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "test publish",
+  "APP_VERSION" : "7_08",
+  "flowDesc" : "test publish",
+  "LicensedName" : "7_08",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "employee",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "demo_conn",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "dept_emp" : {
+            "numberOfPart" : 0,
+            "column" : "emp_no"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "dept_emp",
+          "tblSize" : "17.03",
+          "tblRecordCount" : 331570,
+          "primaryKeys" : [ "emp_no", "dept_no" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "employee",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "demo_conn",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "dept_emp" : {
+            "numberOfPart" : 0,
+            "column" : "emp_no"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "dept_emp",
+          "tblSize" : "17.03",
+          "tblRecordCount" : 331570,
+          "primaryKeys" : [ "emp_no", "dept_no" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "dept_emp" : "dept_emp"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "emp_no", "dept_no" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "emp_no",
+          "destColumn" : "emp_no"
+        }, {
+          "srcColumn" : "dept_no",
+          "destColumn" : "dept_no"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "to_date",
+          "destColumn" : "to_date"
+        }, {
+          "srcColumn" : "from_date",
+          "destColumn" : "from_date"
+        }, {
+          "srcColumn" : "emp_no",
+          "destColumn" : "emp_no"
+        }, {
+          "srcColumn" : "dept_no",
+          "destColumn" : "dept_no"
+        } ],
+        "keyValueProperties" : {
+          "VALIDATE_COMPARE_KEYS" : "true"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_08",
+  "API_APP_BUILD" : "7_08",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 6486,
+  "dmsProjectId" : 18,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:46.696683319Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

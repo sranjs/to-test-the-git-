@@ -1,0 +1,139 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"b5c4bd5a-89ad-424f-895b-7224e3f44823\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"hims_db\",\"schemaName\":\"hims_db\",\"tableName\":\"courses_info\",\"schema\":[{\"columnName\":\"Code\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"Courses\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"Courses_ID\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"Courses_ID\",\"code\",\"code\"],\"foreignKeyInfo\":null,\"count\":32,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":\"Courses_ID\",\"indexInfo\":null}],\"target\":[{\"id\":\"c9337932-7165-4ebd-bfa7-51a4aeade063\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"tims_db\",\"schemaName\":\"tims_db\",\"tableName\":\"courses_info\",\"schema\":[{\"columnName\":\"Courseid\",\"columnType\":\"int\",\"actualColumnType\":\"int\",\"nullable\":false},{\"columnName\":\"code\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false},{\"columnName\":\"courses\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"Courses_ID\",\"code\",\"code\"],\"foreignKeyInfo\":null,\"count\":32,\"tableSize\":1,\"noOfPartition\":0,\"partitionColumn\":\"Courses_ID\",\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"hims_to_tims_test\",\"badRecordsCount\":15,\"comparisonType\":\"ENABLE_SOURCE_COMPARE\",\"countsCompareTolerance\":0,\"notification\":{\"email\":true,\"slack\":false,\"template\":\"default\",\"mailingList\":\"vidya.bhushan@dataq.io\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"19bbf07b-6be9-454b-ad08-2c3541e52593\":{\"source\":\"b5c4bd5a-89ad-424f-895b-7224e3f44823\",\"target\":\"c9337932-7165-4ebd-bfa7-51a4aeade063\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"ccf4cd14-a90d-4d44-85a6-9faa38617e76\",\"sourceColumnName\":\"Courses\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"courses\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"id\":\"08193770-11e3-4ea9-8102-3805f442f921\",\"sourceColumnName\":\"Code\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"code\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":true}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{}}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "session_id" : "c5e01190-fe6d-48e1-ac4b-2c6443bacb25",
+  "executeOn" : "LOCAL",
+  "flowName" : "dataq1695038118762",
+  "APP_VERSION" : "6_94",
+  "flowDesc" : "hims_to_tims_test",
+  "LicensedName" : "6_94",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "hims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "hims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "courses_info" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "courses_info",
+          "tblSize" : "1",
+          "tblRecordCount" : 32,
+          "primaryKeys" : [ "Courses_ID", "code", "code" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "tims_db",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "tims_db",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "courses_info" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "courses_info",
+          "tblSize" : "1",
+          "tblRecordCount" : 32,
+          "primaryKeys" : [ "Courses_ID", "code", "code" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "courses_info" : "courses_info"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "Code" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "Code",
+          "destColumn" : "code"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "Courses",
+          "destColumn" : "courses"
+        }, {
+          "srcColumn" : "Code",
+          "destColumn" : "code"
+        } ]
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "ENABLE_SOURCE_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "6_94",
+  "API_APP_BUILD" : "6_94",
+  "parameters" : [ ],
+  "email" : [ ],
+  "session.id" : "c5e01190-fe6d-48e1-ac4b-2c6443bacb25",
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 2599,
+  "dmsProjectId" : 18,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:19:47.117293836Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
