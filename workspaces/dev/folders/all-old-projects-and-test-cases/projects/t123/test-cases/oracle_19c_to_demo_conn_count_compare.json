@@ -1,0 +1,484 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"2f8d59d6-4b28-44e4-a158-81843221f8a4\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_1M_ORACLE_BAD\",\"partitionProperties\":{\"numberOfPart\":14,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1000000,\"tableSize\":262,\"noOfPartition\":14,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"736e7056-b980-42db-9208-71b8277cb3e9\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CELLBYCELL_C\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":89,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"69a9d086-0bab-4341-95d5-792751342341\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_50K_ORACLE_5K_BAD\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":50000,\"tableSize\":14,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"323c4bcc-7a16-4089-9eb1-4e9ceab5cca0\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"METRICS_20M__B1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"EMP_ID\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":\"EMP_ID\",\"indexInfo\":null},{\"id\":\"b6e0cd55-6cc5-4174-a09e-49ec0f34f0c6\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_1M_ORACLE_dup\",\"partitionProperties\":{\"numberOfPart\":14,\"column\":\"ID\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ID\"],\"foreignKeyInfo\":null,\"count\":1000000,\"tableSize\":264,\"noOfPartition\":14,\"partitionColumn\":\"ID\",\"indexInfo\":null},{\"id\":\"2644e7b7-d698-4945-a55f-af08fec7f4c0\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_ORACLE\",\"partitionProperties\":{\"numberOfPart\":58,\"column\":\"ID\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ID\"],\"foreignKeyInfo\":null,\"count\":5000000,\"tableSize\":1351,\"noOfPartition\":58,\"partitionColumn\":\"ID\",\"indexInfo\":null},{\"id\":\"a7a37d1b-49bf-4385-8791-dd45997d93cc\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"SAP_EMPLOYEES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"EMP_ID\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"EMP_ID\"],\"foreignKeyInfo\":null,\"count\":10,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":\"EMP_ID\",\"indexInfo\":null},{\"id\":\"6ae657fb-6b28-4489-a817-59484218e0c2\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_50K_ORACLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":50000,\"tableSize\":14,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"a17eec5a-7f2d-422e-b568-0d1f3be75988\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPTY_TAB\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"d56533f4-1ad8-4aaf-9472-cfda3ccf5720\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"ERP_EMPLOYEES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"EMP_ID\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"EMP_ID\"],\"foreignKeyInfo\":null,\"count\":8,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":\"EMP_ID\",\"indexInfo\":null},{\"id\":\"7f873845-854d-4b16-bd35-1e70486b816f\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_10K_ORACLE\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":3,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"5ef83232-0de5-4b39-85fd-d73949ed9f50\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_1M_ORACLE\",\"partitionProperties\":{\"numberOfPart\":14,\"column\":\"ID\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ID\"],\"foreignKeyInfo\":null,\"count\":1000000,\"tableSize\":262,\"noOfPartition\":14,\"partitionColumn\":\"ID\",\"indexInfo\":null},{\"id\":\"8a08d329-3148-408a-83e1-d914206e8c3d\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_ORACLE_dup\",\"partitionProperties\":{\"numberOfPart\":17,\"column\":\"ID\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ID\"],\"foreignKeyInfo\":null,\"count\":1287547,\"tableSize\":344,\"noOfPartition\":17,\"partitionColumn\":\"ID\",\"indexInfo\":null},{\"id\":\"16198b23-c009-4541-950f-10fb4ef1f90f\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEES\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"EMPLOYEE_ID\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"EMPLOYEE_ID\"],\"foreignKeyInfo\":null,\"count\":4,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":\"EMPLOYEE_ID\",\"indexInfo\":null},{\"id\":\"b4a0408a-586d-48a5-8087-d890bf1097af\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"IOT_CSV\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":462,\"tableSize\":0.13,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"44d6c3c8-0ea1-4197-b573-ad2a0ceefa99\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"CUSTOMER\",\"partitionProperties\":{\"numberOfPart\":17,\"column\":\"C_CUSTKEY\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"C_CUSTKEY\"],\"foreignKeyInfo\":null,\"count\":3000000,\"tableSize\":328,\"noOfPartition\":17,\"partitionColumn\":\"C_CUSTKEY\",\"indexInfo\":null},{\"id\":\"25907c94-f67c-46a2-9b8e-7531a6c40a77\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEEDATA\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":999,\"tableSize\":0.13,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"60542dd3-3859-470f-a78b-a2df3a2ebfe6\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_19C\",\"schemaName\":\"DATAQ\",\"typeTable\":\"TABLE\",\"tableName\":\"EMPLOYEE_10K_ORACLE_1K_BAD\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10000,\"tableSize\":3,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"6435ce3d-9931-40e5-995b-d32776f88f39\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"EmployeeAccountFreezeStatus_Fail_1\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":40,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"58097b6b-c2e3-4a2f-a85d-76782debd00c\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"salaries\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"from_date\"],\"foreignKeyInfo\":null,\"count\":40162,\"tableSize\":1.52,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"46cd59a4-dc4e-4d6c-9637-ad511ad1be66\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"EmployeeAccountFreezeStatus_Pass\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[],\"foreignKeyInfo\":null,\"count\":30,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"\",\"indexInfo\":null},{\"id\":\"3f43172c-5646-4b8b-af50-9fbb0694d362\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"dept_emp\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":331570,\"tableSize\":17.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"6f4cc953-9979-4758-a7d8-6f0d4a47ee84\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"dept_manager\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"dept_no\"],\"foreignKeyInfo\":null,\"count\":24,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"02faae77-61c5-42da-8f93-11df9bba1cdb\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"VIEW\",\"tableName\":\"dept_emp_latest_date\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"50ec4497-fb61-4953-85e0-1b32a4068edd\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"departments\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"dept_no\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"dept_no\"],\"foreignKeyInfo\":null,\"count\":9,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"dept_no\",\"indexInfo\":null},{\"id\":\"9aaeb385-aa6e-477c-9d18-87d2d806d2f1\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"titles\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\",\"title\",\"from_date\"],\"foreignKeyInfo\":null,\"count\":430477,\"tableSize\":19.56,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"6dd2ddc6-ab06-47bb-a4f8-bc5e6b24c0b9\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"employees\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"emp_no\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"emp_no\"],\"foreignKeyInfo\":null,\"count\":299433,\"tableSize\":14.52,\"noOfPartition\":0,\"partitionColumn\":\"emp_no\",\"indexInfo\":null},{\"id\":\"481de9ed-7652-45f9-8043-57d95bef154d\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"EmployeeAccountFreezeStatus_Fail\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":30,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"9cc2feab-544b-48e4-9b4a-1e8a7f783be2\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"emp_hash\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"id\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"id\"],\"foreignKeyInfo\":null,\"count\":10015,\"tableSize\":1.52,\"noOfPartition\":0,\"partitionColumn\":\"id\",\"indexInfo\":null},{\"id\":\"159c7a35-edb8-4d59-b871-9bb376aa226d\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"demo_conn\",\"schemaName\":\"employee\",\"typeTable\":\"TABLE\",\"tableName\":\"EmployeeAccountFreezeStatus_Fail_2\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":29,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":13,\"threads\":2,\"memory\":8,\"test_case_name\":\"oracle_19C_to_demo_conn_count_compare\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"428468698952\":{\"source\":\"16198b23-c009-4541-950f-10fb4ef1f90f\",\"target\":\"6dd2ddc6-ab06-47bb-a4f8-bc5e6b24c0b9\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"428468698952\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "oracle_19c_to_demo_conn_count_compare",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "oracle_19C_to_demo_conn_count_compare",
+  "LicensedName" : "7_49",
+  "numExecutors" : 13,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DATAQ",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "oracle_19C",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "EMPLOYEE_1M_ORACLE_BAD" : null,
+          "CELLBYCELL_C" : null,
+          "EMPLOYEE_50K_ORACLE_5K_BAD" : null,
+          "METRICS_20M__B1" : {
+            "numberOfPart" : 0,
+            "column" : "EMP_ID"
+          },
+          "EMPLOYEE_1M_ORACLE_dup" : {
+            "numberOfPart" : 14,
+            "column" : "ID"
+          },
+          "EMPLOYEE_ORACLE" : {
+            "numberOfPart" : 58,
+            "column" : "ID"
+          },
+          "SAP_EMPLOYEES" : {
+            "numberOfPart" : 0,
+            "column" : "EMP_ID"
+          },
+          "EMPLOYEE_50K_ORACLE" : null,
+          "EMPTY_TAB" : null,
+          "ERP_EMPLOYEES" : {
+            "numberOfPart" : 0,
+            "column" : "EMP_ID"
+          },
+          "EMPLOYEE_10K_ORACLE" : null,
+          "EMPLOYEE_1M_ORACLE" : {
+            "numberOfPart" : 14,
+            "column" : "ID"
+          },
+          "EMPLOYEE_ORACLE_dup" : {
+            "numberOfPart" : 17,
+            "column" : "ID"
+          },
+          "EMPLOYEES" : {
+            "numberOfPart" : 0,
+            "column" : "EMPLOYEE_ID"
+          },
+          "IOT_CSV" : null,
+          "CUSTOMER" : {
+            "numberOfPart" : 17,
+            "column" : "C_CUSTKEY"
+          },
+          "EMPLOYEEDATA" : null,
+          "EMPLOYEE_10K_ORACLE_1K_BAD" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "EMPLOYEE_1M_ORACLE_BAD",
+          "tblSize" : "262",
+          "tblRecordCount" : 1000000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CELLBYCELL_C",
+          "tblSize" : "0.06",
+          "tblRecordCount" : 89,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEE_50K_ORACLE_5K_BAD",
+          "tblSize" : "14",
+          "tblRecordCount" : 50000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "METRICS_20M__B1",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEE_1M_ORACLE_dup",
+          "tblSize" : "264",
+          "tblRecordCount" : 1000000,
+          "primaryKeys" : [ "ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEE_ORACLE",
+          "tblSize" : "1351",
+          "tblRecordCount" : 5000000,
+          "primaryKeys" : [ "ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "SAP_EMPLOYEES",
+          "tblSize" : "0.06",
+          "tblRecordCount" : 10,
+          "primaryKeys" : [ "EMP_ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEE_50K_ORACLE",
+          "tblSize" : "14",
+          "tblRecordCount" : 50000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPTY_TAB",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ERP_EMPLOYEES",
+          "tblSize" : "0.06",
+          "tblRecordCount" : 8,
+          "primaryKeys" : [ "EMP_ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEE_10K_ORACLE",
+          "tblSize" : "3",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEE_1M_ORACLE",
+          "tblSize" : "262",
+          "tblRecordCount" : 1000000,
+          "primaryKeys" : [ "ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEE_ORACLE_dup",
+          "tblSize" : "344",
+          "tblRecordCount" : 1287547,
+          "primaryKeys" : [ "ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEES",
+          "tblSize" : "0.06",
+          "tblRecordCount" : 4,
+          "primaryKeys" : [ "EMPLOYEE_ID" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "IOT_CSV",
+          "tblSize" : "0.13",
+          "tblRecordCount" : 462,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "CUSTOMER",
+          "tblSize" : "328",
+          "tblRecordCount" : 3000000,
+          "primaryKeys" : [ "C_CUSTKEY" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEEDATA",
+          "tblSize" : "0.13",
+          "tblRecordCount" : 999,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EMPLOYEE_10K_ORACLE_1K_BAD",
+          "tblSize" : "3",
+          "tblRecordCount" : 10000,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "employee",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "demo_conn",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "EmployeeAccountFreezeStatus_Fail_1" : null,
+          "salaries" : {
+            "numberOfPart" : 0,
+            "column" : "emp_no"
+          },
+          "EmployeeAccountFreezeStatus_Pass" : null,
+          "dept_emp" : {
+            "numberOfPart" : 0,
+            "column" : "emp_no"
+          },
+          "dept_manager" : {
+            "numberOfPart" : 0,
+            "column" : "emp_no"
+          },
+          "dept_emp_latest_date" : null,
+          "departments" : {
+            "numberOfPart" : 0,
+            "column" : "dept_no"
+          },
+          "titles" : {
+            "numberOfPart" : 0,
+            "column" : "emp_no"
+          },
+          "employees" : {
+            "numberOfPart" : 0,
+            "column" : "emp_no"
+          },
+          "EmployeeAccountFreezeStatus_Fail" : null,
+          "emp_hash" : {
+            "numberOfPart" : 0,
+            "column" : "id"
+          },
+          "EmployeeAccountFreezeStatus_Fail_2" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "EmployeeAccountFreezeStatus_Fail_1",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 40,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "salaries",
+          "tblSize" : "1.52",
+          "tblRecordCount" : 40162,
+          "primaryKeys" : [ "emp_no", "from_date" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EmployeeAccountFreezeStatus_Pass",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 30,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "dept_emp",
+          "tblSize" : "17.03",
+          "tblRecordCount" : 331570,
+          "primaryKeys" : [ "emp_no", "dept_no" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "dept_manager",
+          "tblSize" : "0.03",
+          "tblRecordCount" : 24,
+          "primaryKeys" : [ "emp_no", "dept_no" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "dept_emp_latest_date",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "departments",
+          "tblSize" : "0.03",
+          "tblRecordCount" : 9,
+          "primaryKeys" : [ "dept_no" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "titles",
+          "tblSize" : "19.56",
+          "tblRecordCount" : 430477,
+          "primaryKeys" : [ "emp_no", "title", "from_date" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "employees",
+          "tblSize" : "14.52",
+          "tblRecordCount" : 299433,
+          "primaryKeys" : [ "emp_no" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EmployeeAccountFreezeStatus_Fail",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 30,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "emp_hash",
+          "tblSize" : "1.52",
+          "tblRecordCount" : 10015,
+          "primaryKeys" : [ "id" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "EmployeeAccountFreezeStatus_Fail_2",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 29,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "COUNTS_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 428468698952,
+        "matchBoth" : true,
+        "compareType" : "COUNTS_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "EMPLOYEES" : "employees"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "COUNTS_COMPARE_TOLERANCE" : "0",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "COUNTS COMPARE",
+  "flowId" : 12063,
+  "dmsProjectId" : 685,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:45.214507304Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

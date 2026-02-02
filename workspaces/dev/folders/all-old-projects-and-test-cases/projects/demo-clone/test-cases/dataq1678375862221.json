@@ -1,0 +1,137 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"active\":3,\"type\":\"data_compare\",\"steps\":{\"data_compare\":[\"Source Datasets\",\"Target Datasets\",\"Mappings\",\"Configuration\",\"Results\"]},\"reports\":[\"Cell By Cell\"],\"tablesList\":{\"source\":[{\"id\":\"ae115e3d-6c3a-460d-abb7-c9de9d4f5e2d\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"oracle_delme\",\"schemaName\":\"DATAQ\",\"tableName\":\"PERSONS\",\"schema\":[{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"PERSON_ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":null,\"tableSize\":null,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"c1421cc3-322f-4886-afbf-e230b9d7b445\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"oracle_delme\",\"schemaName\":\"DATAQ\",\"tableName\":\"PERSONS\",\"schema\":[{\"columnName\":\"FIRST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"LAST_NAME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar2\",\"nullable\":false},{\"columnName\":\"PERSON_ID\",\"columnType\":\"long\",\"actualColumnType\":\"number\",\"nullable\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":null,\"tableSize\":null,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}]},\"reRender\":2,\"output\":{\"version\":\"3.51.0-885-g1a94337d\",\"pid\":\"23\",\"installationPath\":\"/root/azkaban-solo-server/lib/azkaban-web-server-3.51.0-885-g1a94337d.jar\",\"usedMemory\":441719504,\"xmx\":1998585856,\"isDatabaseUp\":true,\"executorStatusMap\":{\"370\":{\"id\":370,\"host\":\"localhost\",\"port\":12321,\"isActive\":true}},\"API_APP_build\":\"Feb 15, 2023 12:39:12 PM\",\"client_Name\":\"Starter_Version\",\"uiVersion\":\"b412a37a5c-29\",\"appVersion\":\"692-290b96c8ef\",\"companyName\":\"microsoft\",\"timeZone\":\"America/New_York\",\"dmsVersion\":\"cc3476e192-139\",\"dmsSparkVersion\":\"dc0385aa63-208\",\"dataProcessor\":\"74092e20b1-380\",\"jarVersion\":\"a127c772fe-29\",\"isNewProject\":false},\"events\":[],\"execStatus\":\"\",\"isLoading\":false,\"hasResult\":false,\"showAllDone\":false,\"showEvents\":true,\"socket\":null},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"test_case_name\":\"test oracle\",\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"source\":\"\",\"target\":\"\",\"mappings\":{\"60a89415-e6d9-46e5-81c3-93af8bbcc7e8\":{\"source\":\"ae115e3d-6c3a-460d-abb7-c9de9d4f5e2d\",\"target\":\"c1421cc3-322f-4886-afbf-e230b9d7b445\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"sourceColumnName\":\"PERSON_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"number\",\"sourceNullable\":false,\"targetColumnName\":\"PERSON_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"number\",\"targetNullable\":false,\"isPrimaryKey\":true},{\"sourceColumnName\":\"LAST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"LAST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false},{\"sourceColumnName\":\"FIRST_NAME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar2\",\"sourceNullable\":false,\"targetColumnName\":\"FIRST_NAME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar2\",\"targetNullable\":false,\"isPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}},\"reRender\":1}}",
+  "executorMemory" : "5g",
+  "executorCores" : 2,
+  "session_id" : "5e62b0c5-3cd9-481d-b315-15dbbaa6d8e1",
+  "executeOn" : "LOCAL",
+  "flowName" : "dataq1678375862221",
+  "APP_VERSION" : "692-290b96c8ef",
+  "flowDesc" : "test oracle",
+  "LicensedName" : "microsoft",
+  "numExecutors" : 2,
+  "livy" : false,
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DATAQ",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "oracle_delme",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "PERSONS" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "PERSONS",
+          "tblSize" : "null",
+          "tblRecordCount" : null,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DATAQ",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "oracle_delme",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "PERSONS" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "PERSONS",
+          "tblSize" : "null",
+          "tblRecordCount" : null,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "PERSONS" : "PERSONS"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ "PERSON_ID" ],
+        "compareKeyNew" : [ {
+          "srcColumn" : "PERSON_ID",
+          "destColumn" : "PERSON_ID"
+        } ],
+        "columnMapping" : [ {
+          "srcColumn" : "PERSON_ID",
+          "destColumn" : "PERSON_ID"
+        }, {
+          "srcColumn" : "LAST_NAME",
+          "destColumn" : "LAST_NAME"
+        }, {
+          "srcColumn" : "FIRST_NAME",
+          "destColumn" : "FIRST_NAME"
+        } ]
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "b412a37a5c-29",
+  "API_APP_BUILD" : "Feb 15, 2023 12:39:12 PM",
+  "parameters" : [ ],
+  "email" : [ ],
+  "session.id" : "5e62b0c5-3cd9-481d-b315-15dbbaa6d8e1",
+  "flowType" : "CELL BY CELL COMPARE",
+  "flowId" : 8418,
+  "dmsProjectId" : 663,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:45.033086995Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}

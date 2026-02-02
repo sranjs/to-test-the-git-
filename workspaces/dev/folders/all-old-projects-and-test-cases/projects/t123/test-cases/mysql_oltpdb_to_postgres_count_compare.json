@@ -1,0 +1,782 @@
+{
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"reports\":[\"Table Count\"],\"tablesList\":{\"source\":[{\"id\":\"944af8f5-8bac-4c7a-aa1b-f16caf5f9139\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_web_returns\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":320,\"tableSize\":0.09,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"9e5043fc-d728-4b18-8813-1a7efed8825d\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"reason\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"r_reason_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"r_reason_sk\"],\"foreignKeyInfo\":null,\"count\":35,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"r_reason_sk\",\"indexInfo\":null},{\"id\":\"37652cb7-877b-4cb5-90e7-9fbb9c7c6e3d\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_purchase\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1022,\"tableSize\":0.22,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"720f4423-e47e-4304-9ed5-f110c2edad3b\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_catalog_order\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":681,\"tableSize\":0.14,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"f8373ae2-4fda-4054-b704-925c861df95a\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"order_number_test\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":3072,\"tableSize\":0.14,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"d6019b3b-b8eb-4e53-ab28-80ec845382b9\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_store\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"6231395a-ebb7-4397-ac53-c678958a8658\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"web_sales\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"ws_item_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ws_item_sk\",\"ws_order_number\"],\"foreignKeyInfo\":null,\"count\":3003,\"tableSize\":0.5,\"noOfPartition\":0,\"partitionColumn\":\"ws_item_sk\",\"indexInfo\":null},{\"id\":\"1aea925e-9e11-43eb-9ab9-a59be0d4f290\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_call_center\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"6cd0e140-8e00-416d-8069-402431dc1edc\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_web_order_lineitem\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":3071,\"tableSize\":0.5,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"70f7f168-7f8f-421b-881c-e95dac8d6c06\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"inventory\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"inv_date_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"inv_date_sk\",\"inv_item_sk\",\"inv_warehouse_sk\"],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"inv_date_sk\",\"indexInfo\":null},{\"id\":\"96aeeaac-655a-4c95-9501-e9c5b65a025c\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_promotion\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"a0c20d58-e40a-4600-9260-eccbd90a1e54\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_web_site\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"cd01aae8-4379-41be-9f8a-3bfa2b994a4d\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_purchase_lineitem\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":12383,\"tableSize\":1.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"17eb863f-1928-436b-bba9-635e6bc3e9d7\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"call_center\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"cc_call_center_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"cc_call_center_sk\"],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"cc_call_center_sk\",\"indexInfo\":null},{\"id\":\"36778e0d-0a56-4954-896b-4e402db3cb17\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_catalog_order_lineitem\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":6055,\"tableSize\":1.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"2e4789af-6817-4da1-a780-6e78d2308bf7\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"household_demographics\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"hd_demo_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"hd_demo_sk\"],\"foreignKeyInfo\":null,\"count\":7311,\"tableSize\":0.41,\"noOfPartition\":0,\"partitionColumn\":\"hd_demo_sk\",\"indexInfo\":null},{\"id\":\"ca5fb922-8f11-42a5-ae4d-1f58940330ac\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_catalog_page\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":150,\"tableSize\":0.06,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"4ec7f267-e3b1-4831-852c-d45627542d9e\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"date_dim\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"d_date_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"d_date_sk\"],\"foreignKeyInfo\":null,\"count\":72540,\"tableSize\":12.03,\"noOfPartition\":0,\"partitionColumn\":\"d_date_sk\",\"indexInfo\":null},{\"id\":\"f3a5873c-5f1a-436d-b9c4-22d06e21af57\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"observations\",\"partitionProperties\":{\"numberOfPart\":5,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":144925,\"tableSize\":27.56,\"noOfPartition\":5,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"0ae98461-abab-42e8-b4b5-0c2d8e0c32f7\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"observations_hist\",\"partitionProperties\":{\"numberOfPart\":5,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":145521,\"tableSize\":27.56,\"noOfPartition\":5,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"1855feb0-0bfa-4107-8761-f0799de45c2c\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"web_sales_d\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"ws_item_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ws_item_sk\",\"ws_order_number\"],\"foreignKeyInfo\":null,\"count\":3059,\"tableSize\":0.48,\"noOfPartition\":0,\"partitionColumn\":\"ws_item_sk\",\"indexInfo\":null},{\"id\":\"f09f5d76-7600-4228-a665-ca3152505052\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"observations_codes\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":211,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"a8839e0c-fb88-4693-98bd-b30d7a98bdc2\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_warehouse\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"7c1b838c-646d-4dc3-aa99-56e3920171c9\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_customer_address\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":25,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"8d6a5271-327d-459a-b473-55073b5399e1\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_inventory\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":59924,\"tableSize\":4.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"156ab807-523f-4095-a28f-12cf85286a8b\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_zip_to_gmt\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":99660,\"tableSize\":3.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"f6aac8d2-45eb-41b6-9620-bc5dc5462f68\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"catalog_page\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"cp_catalog_page_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"cp_catalog_page_sk\"],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"cp_catalog_page_sk\",\"indexInfo\":null},{\"id\":\"054713b3-21f9-4821-ad79-6161e0d529c8\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"customer_address\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"ca_address_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ca_address_sk\"],\"foreignKeyInfo\":null,\"count\":49678,\"tableSize\":8.52,\"noOfPartition\":0,\"partitionColumn\":\"ca_address_sk\",\"indexInfo\":null},{\"id\":\"94d3e8e3-5b58-4f7a-86b1-b4c1b0b084c6\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"item\",\"partitionProperties\":{\"numberOfPart\":6,\"column\":\"i_item_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"i_item_sk\"],\"foreignKeyInfo\":null,\"count\":14935,\"tableSize\":52.14,\"noOfPartition\":6,\"partitionColumn\":\"i_item_sk\",\"indexInfo\":null},{\"id\":\"96d7c12e-b6a4-433c-b251-494f2e3abef1\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_web_order\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":256,\"tableSize\":0.11,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"8148dd18-c5f7-44fc-a554-bf0241614759\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"time_dim\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"t_time_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"t_time_sk\"],\"foreignKeyInfo\":null,\"count\":86138,\"tableSize\":9.52,\"noOfPartition\":0,\"partitionColumn\":\"t_time_sk\",\"indexInfo\":null},{\"id\":\"ce649059-234f-494a-8ade-9fd752a42cd4\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"customer_demographics\",\"partitionProperties\":{\"numberOfPart\":9,\"column\":\"cd_demo_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"cd_demo_sk\"],\"foreignKeyInfo\":null,\"count\":1911871,\"tableSize\":142.66,\"noOfPartition\":9,\"partitionColumn\":\"cd_demo_sk\",\"indexInfo\":null},{\"id\":\"82a3408c-6708-4178-9fcb-3c016113e05a\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_web_page\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":6,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"c0afa96c-a757-4840-b22a-278a7441d4dd\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"store\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"s_store_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"s_store_sk\"],\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"s_store_sk\",\"indexInfo\":null},{\"id\":\"9e47010b-e0f2-40b8-a478-6f146df7f577\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"warehouse\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"w_warehouse_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"w_warehouse_sk\"],\"foreignKeyInfo\":null,\"count\":5,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"w_warehouse_sk\",\"indexInfo\":null},{\"id\":\"3c7c3103-209e-4ddc-b9c8-6d9129d045fc\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_customer\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":4860,\"tableSize\":3.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"7aa0e06c-bbc7-4e22-8681-5131d1c22121\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"observations_codes_10\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"048e390a-2047-425b-846f-9f8c91958269\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"observations_hist_10\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":10,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"fac23c8b-49a2-4c12-aad5-5dda01885032\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"web_page\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"wp_web_page_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"wp_web_page_sk\"],\"foreignKeyInfo\":null,\"count\":60,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"wp_web_page_sk\",\"indexInfo\":null},{\"id\":\"c4e1ac53-4c69-4f52-a09b-5e552d8f5f98\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"income_band\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"ib_income_band_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"ib_income_band_sk\"],\"foreignKeyInfo\":null,\"count\":20,\"tableSize\":0.02,\"noOfPartition\":0,\"partitionColumn\":\"ib_income_band_sk\",\"indexInfo\":null},{\"id\":\"2a47ca9b-5b66-4f8b-a54c-d7e43c6fc8cf\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"ship_mode\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"sm_ship_mode_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"sm_ship_mode_sk\"],\"foreignKeyInfo\":null,\"count\":20,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"sm_ship_mode_sk\",\"indexInfo\":null},{\"id\":\"f2ee2831-b8da-474e-aa15-838879e99d95\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_catalog_returns\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":595,\"tableSize\":0.16,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"7639c572-c4c7-4ce0-8a24-c578b5238918\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_item\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":468,\"tableSize\":0.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"bd79b6f5-548d-49a1-8cfd-9a94cb7585c8\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"s_store_returns\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":1200,\"tableSize\":0.25,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"4a8ec37c-4011-4e60-97f5-8c2cf6bc2874\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"web_site\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"web_site_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"web_site_sk\"],\"foreignKeyInfo\":null,\"count\":30,\"tableSize\":0.03,\"noOfPartition\":0,\"partitionColumn\":\"web_site_sk\",\"indexInfo\":null},{\"id\":\"b92d1eee-b3c3-45e9-86ca-458612172d85\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"customer\",\"partitionProperties\":{\"numberOfPart\":5,\"column\":\"c_customer_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"c_customer_sk\"],\"foreignKeyInfo\":null,\"count\":98230,\"tableSize\":26.06,\"noOfPartition\":5,\"partitionColumn\":\"c_customer_sk\",\"indexInfo\":null},{\"id\":\"06d65299-5772-4604-b111-58c9c168a2a3\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"Mysql_oltpdb\",\"schemaName\":\"OLTPDB\",\"typeTable\":\"TABLE\",\"tableName\":\"promotion\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":\"p_promo_sk\"},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"p_promo_sk\"],\"foreignKeyInfo\":null,\"count\":300,\"tableSize\":0.11,\"noOfPartition\":0,\"partitionColumn\":\"p_promo_sk\",\"indexInfo\":null}],\"target\":[{\"id\":\"68030f7b-3be7-4094-9b69-3ab9f36ae56a\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"persons\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"01a849d0-ddff-4546-811e-5b16b5898761\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"product_baddata\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"c6281c85-3eb6-4a9f-9db7-066521fa2ca3\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"test_column_type\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"45e3f327-c177-419a-939d-b20e4cf85fdb\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"product1\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"9fd28b14-fe7b-41be-9979-f10351da5479\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"isis_key_mapping\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"af8a2a11-8e9a-4762-a2a6-d022aea11101\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"department\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"dept_id\"],\"foreignKeyInfo\":null,\"count\":8,\"tableSize\":1,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"71342e4a-af69-43ae-87c2-9a3dbca56375\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"entity_rule\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"f1b2fc7c-6c06-4310-a6da-c414a63d8025\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"branch\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":0,\"tableSize\":0,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null},{\"id\":\"be76cf08-cb2e-4d42-831d-da8aae99e295\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"postgres\",\"schemaName\":\"DataQ_Demo1\",\"typeTable\":\"TABLE\",\"tableName\":\"customer\",\"partitionProperties\":{\"numberOfPart\":null,\"column\":null},\"defaultSchema\":null,\"schema\":null,\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":[\"cust_id\"],\"foreignKeyInfo\":null,\"count\":8,\"tableSize\":1,\"noOfPartition\":null,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":8,\"test_case_name\":\"Mysql_oltpdb_to_postgres_count_compare\",\"stopDifferences\":false,\"dataProfileBasic\":false,\"chunks\":false,\"badRecordsCount\":15,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"countsCompareTolerance\":0,\"notification\":{\"email\":false,\"slack\":false,\"mailingList\":\"\",\"template\":\"default\",\"notifyOn\":\"ALWAYS\",\"edit\":false}},\"mapping\":{\"mappings\":{\"693006051742\":{\"source\":\"b92d1eee-b3c3-45e9-86ca-458612172d85\",\"target\":\"be76cf08-cb2e-4d42-831d-da8aae99e295\",\"matchBoth\":\"a=b\",\"columnMapping\":[]}}},\"dataQualityState\":{},\"columnRules\":{},\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"dataStandarization\":{\"trimAllColumns\":false,\"data\":{}},\"sqlTransformation\":{\"editData\":null,\"sql\":\"\",\"sqlName\":\"\",\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"693006051742\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "executorMemory" : "2g",
+  "executorCores" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "mysql_oltpdb_to_postgres_count_compare",
+  "APP_VERSION" : "7_49",
+  "flowDesc" : "Mysql_oltpdb_to_postgres_count_compare",
+  "LicensedName" : "7_49",
+  "numExecutors" : 2,
+  "livy" : false,
+  "groupName" : "dev",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "OLTPDB",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "Mysql_oltpdb",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "s_web_returns" : null,
+          "reason" : {
+            "numberOfPart" : 0,
+            "column" : "r_reason_sk"
+          },
+          "s_purchase" : null,
+          "s_catalog_order" : null,
+          "order_number_test" : null,
+          "s_store" : null,
+          "web_sales" : {
+            "numberOfPart" : 0,
+            "column" : "ws_item_sk"
+          },
+          "s_call_center" : null,
+          "s_web_order_lineitem" : null,
+          "inventory" : {
+            "numberOfPart" : 0,
+            "column" : "inv_date_sk"
+          },
+          "s_promotion" : null,
+          "s_web_site" : null,
+          "s_purchase_lineitem" : null,
+          "call_center" : {
+            "numberOfPart" : 0,
+            "column" : "cc_call_center_sk"
+          },
+          "s_catalog_order_lineitem" : null,
+          "household_demographics" : {
+            "numberOfPart" : 0,
+            "column" : "hd_demo_sk"
+          },
+          "s_catalog_page" : null,
+          "date_dim" : {
+            "numberOfPart" : 0,
+            "column" : "d_date_sk"
+          },
+          "observations" : null,
+          "observations_hist" : null,
+          "web_sales_d" : {
+            "numberOfPart" : 0,
+            "column" : "ws_item_sk"
+          },
+          "observations_codes" : null,
+          "s_warehouse" : null,
+          "s_customer_address" : null,
+          "s_inventory" : null,
+          "s_zip_to_gmt" : null,
+          "catalog_page" : {
+            "numberOfPart" : 0,
+            "column" : "cp_catalog_page_sk"
+          },
+          "customer_address" : {
+            "numberOfPart" : 0,
+            "column" : "ca_address_sk"
+          },
+          "item" : {
+            "numberOfPart" : 6,
+            "column" : "i_item_sk"
+          },
+          "s_web_order" : null,
+          "time_dim" : {
+            "numberOfPart" : 0,
+            "column" : "t_time_sk"
+          },
+          "customer_demographics" : {
+            "numberOfPart" : 9,
+            "column" : "cd_demo_sk"
+          },
+          "s_web_page" : null,
+          "store" : {
+            "numberOfPart" : 0,
+            "column" : "s_store_sk"
+          },
+          "warehouse" : {
+            "numberOfPart" : 0,
+            "column" : "w_warehouse_sk"
+          },
+          "s_customer" : null,
+          "observations_codes_10" : null,
+          "observations_hist_10" : null,
+          "web_page" : {
+            "numberOfPart" : 0,
+            "column" : "wp_web_page_sk"
+          },
+          "income_band" : {
+            "numberOfPart" : 0,
+            "column" : "ib_income_band_sk"
+          },
+          "ship_mode" : {
+            "numberOfPart" : 0,
+            "column" : "sm_ship_mode_sk"
+          },
+          "s_catalog_returns" : null,
+          "s_item" : null,
+          "s_store_returns" : null,
+          "web_site" : {
+            "numberOfPart" : 0,
+            "column" : "web_site_sk"
+          },
+          "customer" : {
+            "numberOfPart" : 5,
+            "column" : "c_customer_sk"
+          },
+          "promotion" : {
+            "numberOfPart" : 0,
+            "column" : "p_promo_sk"
+          }
+        },
+        "tableProperties" : [ {
+          "tblName" : "s_web_returns",
+          "tblSize" : "0.09",
+          "tblRecordCount" : 320,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "reason",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 35,
+          "primaryKeys" : [ "r_reason_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_purchase",
+          "tblSize" : "0.22",
+          "tblRecordCount" : 1022,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_catalog_order",
+          "tblSize" : "0.14",
+          "tblRecordCount" : 681,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "order_number_test",
+          "tblSize" : "0.14",
+          "tblRecordCount" : 3072,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_store",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "web_sales",
+          "tblSize" : "0.5",
+          "tblRecordCount" : 3003,
+          "primaryKeys" : [ "ws_item_sk", "ws_order_number" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_call_center",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_web_order_lineitem",
+          "tblSize" : "0.5",
+          "tblRecordCount" : 3071,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "inventory",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ "inv_date_sk", "inv_item_sk", "inv_warehouse_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_promotion",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_web_site",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_purchase_lineitem",
+          "tblSize" : "1.52",
+          "tblRecordCount" : 12383,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "call_center",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ "cc_call_center_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_catalog_order_lineitem",
+          "tblSize" : "1.52",
+          "tblRecordCount" : 6055,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "household_demographics",
+          "tblSize" : "0.41",
+          "tblRecordCount" : 7311,
+          "primaryKeys" : [ "hd_demo_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_catalog_page",
+          "tblSize" : "0.06",
+          "tblRecordCount" : 150,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "date_dim",
+          "tblSize" : "12.03",
+          "tblRecordCount" : 72540,
+          "primaryKeys" : [ "d_date_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "observations",
+          "tblSize" : "27.56",
+          "tblRecordCount" : 144925,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "observations_hist",
+          "tblSize" : "27.56",
+          "tblRecordCount" : 145521,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "web_sales_d",
+          "tblSize" : "0.48",
+          "tblRecordCount" : 3059,
+          "primaryKeys" : [ "ws_item_sk", "ws_order_number" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "observations_codes",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 211,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_warehouse",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_customer_address",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 25,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_inventory",
+          "tblSize" : "4.52",
+          "tblRecordCount" : 59924,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_zip_to_gmt",
+          "tblSize" : "3.52",
+          "tblRecordCount" : 99660,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "catalog_page",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ "cp_catalog_page_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "customer_address",
+          "tblSize" : "8.52",
+          "tblRecordCount" : 49678,
+          "primaryKeys" : [ "ca_address_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "item",
+          "tblSize" : "52.14",
+          "tblRecordCount" : 14935,
+          "primaryKeys" : [ "i_item_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_web_order",
+          "tblSize" : "0.11",
+          "tblRecordCount" : 256,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "time_dim",
+          "tblSize" : "9.52",
+          "tblRecordCount" : 86138,
+          "primaryKeys" : [ "t_time_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "customer_demographics",
+          "tblSize" : "142.66",
+          "tblRecordCount" : 1911871,
+          "primaryKeys" : [ "cd_demo_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_web_page",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 6,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "store",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ "s_store_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "warehouse",
+          "tblSize" : "0.03",
+          "tblRecordCount" : 5,
+          "primaryKeys" : [ "w_warehouse_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_customer",
+          "tblSize" : "3.52",
+          "tblRecordCount" : 4860,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "observations_codes_10",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 10,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "observations_hist_10",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 10,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "web_page",
+          "tblSize" : "0.03",
+          "tblRecordCount" : 60,
+          "primaryKeys" : [ "wp_web_page_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "income_band",
+          "tblSize" : "0.02",
+          "tblRecordCount" : 20,
+          "primaryKeys" : [ "ib_income_band_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "ship_mode",
+          "tblSize" : "0.03",
+          "tblRecordCount" : 20,
+          "primaryKeys" : [ "sm_ship_mode_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_catalog_returns",
+          "tblSize" : "0.16",
+          "tblRecordCount" : 595,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_item",
+          "tblSize" : "0.52",
+          "tblRecordCount" : 468,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "s_store_returns",
+          "tblSize" : "0.25",
+          "tblRecordCount" : 1200,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "web_site",
+          "tblSize" : "0.03",
+          "tblRecordCount" : 30,
+          "primaryKeys" : [ "web_site_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "customer",
+          "tblSize" : "26.06",
+          "tblRecordCount" : 98230,
+          "primaryKeys" : [ "c_customer_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "promotion",
+          "tblSize" : "0.11",
+          "tblRecordCount" : 300,
+          "primaryKeys" : [ "p_promo_sk" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "DataQ_Demo1",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "postgres",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "persons" : null,
+          "product_baddata" : null,
+          "test_column_type" : null,
+          "product1" : null,
+          "isis_key_mapping" : null,
+          "department" : null,
+          "entity_rule" : null,
+          "branch" : null,
+          "customer" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "persons",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "product_baddata",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "test_column_type",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "product1",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "isis_key_mapping",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "department",
+          "tblSize" : "1",
+          "tblRecordCount" : 8,
+          "primaryKeys" : [ "dept_id" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "entity_rule",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "branch",
+          "tblSize" : "0",
+          "tblRecordCount" : 0,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        }, {
+          "tblName" : "customer",
+          "tblSize" : "1",
+          "tblRecordCount" : 8,
+          "primaryKeys" : [ "cust_id" ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "COUNTS_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 693006051742,
+        "matchBoth" : true,
+        "compareType" : "COUNTS_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "customer" : "customer"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "COUNTS_COMPARE_TOLERANCE" : "0",
+        "BAD_RECORD_COUNT" : "15"
+      }
+    }
+  },
+  "root" : "dataCompare",
+  "hadoop" : false,
+  "UI_VERSION" : "7_49",
+  "API_APP_BUILD" : "7_49",
+  "parameters" : [ ],
+  "email" : [ ],
+  "flowType" : "COUNTS COMPARE",
+  "flowId" : 12071,
+  "dmsProjectId" : 685,
+  "syncInfo" : {
+    "syncId" : "FOLDER",
+    "timestamp" : "2026-02-02T07:20:45.056857211Z",
+    "syncType" : "FOLDER",
+    "user" : "system"
+  }
+}
